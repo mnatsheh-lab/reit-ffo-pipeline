@@ -1,0 +1,6 @@
+anthropic
+requests
+pdfplumber
+pandas
+openpyxl
+python-dotenv
