@@ -11,13 +11,19 @@ STATS = b"<html><body><p>Portfolio statistics. Units 104,000. Occupancy 95.5% as
 
 
 class FakeEdgar:
-    def __init__(self, filings, items=None):
+    def __init__(self, filings, items=None, forms=None):
         self.filings = filings      # list of (accession, filed_date, {name: bytes})
         self.items = items or {}    # accession -> 8-K item list (default "2.02,9.01")
+        self.forms = forms or {}    # accession -> form type (default "8-K")
+
+    def filings_between(self, cik, start, end, forms):
+        return [{"accessionNumber": a, "filingDate": d, "form": self.forms.get(a, "8-K"), "items": self.items.get(a, "")}
+                for a, d, _ in self.filings if start <= date.fromisoformat(d) <= end and self.forms.get(a, "8-K") in forms]
 
     def earnings_filings(self, cik, start, end):
-        return [{"accessionNumber": a, "filingDate": d, "form": "8-K", "items": self.items.get(a, "2.02,9.01")}
+        rows = [{"accessionNumber": a, "filingDate": d, "form": self.forms.get(a, "8-K"), "items": self.items.get(a, "2.02,9.01")}
                 for a, d, _ in self.filings if start <= date.fromisoformat(d) <= end]
+        return [r for r in rows if r["form"].startswith("8-K") and ("2.02" in r["items"] or "7.01" in r["items"])]
 
     def filing_documents(self, cik, acc):
         docs = next(x for a, _, x in self.filings if a == acc)
@@ -91,6 +97,24 @@ class RulesTests(unittest.TestCase):
         choice, why = pick(edgar, 1, Quarter.parse("2026Q2"))
         self.assertIsNotNone(choice, why)
         self.assertIn("7.01", why)
+
+
+class FallbackTests(unittest.TestCase):
+    def test_mislabeled_8k(self):
+        """Camden Q3 2022: the earnings release was filed as an Item 9.01-only 8-K."""
+        (cpt,) = need(DOCS / "CPT/CPT_2026Q2_earnings.htm")
+        edgar = FakeEdgar([("C1", "2026-07-30", {"exhibit992supplement2q26.htm": cpt})], items={"C1": "9.01"})
+        choice, why = pick(edgar, 1, Quarter.parse("2026Q2"))
+        self.assertIsNotNone(choice, why)
+        self.assertIn("other item tags", why)
+
+    def test_10q_when_no_release(self):
+        (maa,) = need(DOCS / "MAA/MAA_2026Q2_earnings.htm")
+        edgar = FakeEdgar([("Q1", "2026-08-05", {"form10q.htm": maa}), ("X", "2026-07-10", {"notice.htm": STATS})],
+                          items={"X": "8.01"}, forms={"Q1": "10-Q"})
+        choice, why = pick(edgar, 1, Quarter.parse("2026Q2"))
+        self.assertIsNotNone(choice, why)
+        self.assertEqual(why.split(": ")[1].split(" filed")[0], "10-Q")
 
 
 if __name__ == "__main__":
