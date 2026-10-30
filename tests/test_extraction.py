@@ -124,6 +124,24 @@ class RestateTests(unittest.TestCase):
         amort = next(x for x in r["steps"] if x["category"] == "debt_cost_amortization")
         self.assertFalse(amort["applied"])
 
+    def test_rules_11_to_13_and_label_overrides(self):
+        e = maa_extraction("2026Q2")
+        e["core_adjustments"] = [
+            L("Gain on sale of non-depreciable real estate assets", -900, "property_sale_gain_loss"),  # model's category
+            L("COVID-19 related costs", 400, "other"),
+            L("Mark-to-market debt adjustment", -300, "other"),
+            L("Other depreciation and amortization", 487, "re_depreciation"),
+        ]
+        r = restate(e)
+        by = {s["label"]: s for s in r["steps"]}
+        self.assertTrue(by["Gain on sale of non-depreciable real estate assets"]["applied"])   # gain removed
+        self.assertEqual(by["Gain on sale of non-depreciable real estate assets"]["category"], "land_sale_gain_loss")
+        self.assertTrue(by["COVID-19 related costs"]["applied"])                              # added back (exception)
+        self.assertTrue(by["Mark-to-market debt adjustment"]["applied"])                      # benefit removed
+        self.assertFalse(by["Other depreciation and amortization"]["applied"])                # kept as cost
+        self.assertEqual(r["conservative_core_ffo"], e["ffo_total"]["amount"] - 900 + 400 - 300)
+        self.assertFalse(any(f.startswith("Review") for f in r["flags"]))
+
     def test_annual_capex_not_used(self):
         e = maa_extraction("2026Q2")
         e["affo_adjustments"], e["affo_total"] = [], None
