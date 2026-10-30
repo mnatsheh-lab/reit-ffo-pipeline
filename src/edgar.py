@@ -83,6 +83,11 @@ class EdgarClient:
                 out.append(f)
         return sorted(out, key=lambda f: f["filingDate"])
 
+    def filings_between(self, cik: int, start: date, end: date, forms: tuple[str, ...]) -> list[dict]:
+        """All filings of the given forms filed between start and end, oldest first."""
+        out = [f for f in self.filings(cik) if f["form"] in forms and start <= date.fromisoformat(f["filingDate"]) <= end]
+        return sorted(out, key=lambda f: f["filingDate"])
+
     def filing_documents(self, cik: int, accession: str) -> list[dict]:
         """Files inside one filing (name, size)."""
         base = ARCHIVE_URL.format(cik=cik, acc=accession.replace("-", ""))

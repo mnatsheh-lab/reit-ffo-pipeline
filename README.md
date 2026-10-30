@@ -92,6 +92,7 @@ output/            restated FFO tables
 | Command | What it does |
 |---|---|
 | `run_test_cheap.bat` | Tests the low-cost setup on the 15 answer-key quarters: free rule check, then a few-cent re-extraction compared with the answer key. |
+| `run_retry_missing.bat` | Retries only quarters marked missing (e.g. mislabeled 8-Ks, companies that filed only a 10-Q), then extracts them. |
 | `run_check_universe.bat` | Free: checks every REIT's SEC ID against EDGAR before any paid run. |
 | `run_pilot_MAA.bat` | Pilot: MAA from 2022 to today (~18 quarters), then rebuilds the dashboard. Asks before spending. |
 | `run_all.bat` | Every REIT, every missing quarter since 2022. Asks before each paid step; safe to stop and restart. |

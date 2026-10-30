@@ -53,8 +53,6 @@ def pick(edgar: EdgarClient, cik: int, q: Quarter) -> tuple[dict | None, str]:
     """
     start, end = q.filing_window()
     filings = sorted(edgar.earnings_filings(cik, start, end), key=lambda f: f["filingDate"])
-    if not filings:
-        return None, "no earnings 8-K in the filing window"
     earnings = [f for f in filings if "2.02" in (f.get("items") or "")]
     others = [f for f in filings if f not in earnings]
     cands, source = [], ""
@@ -70,6 +68,19 @@ def pick(edgar: EdgarClient, cik: int, q: Quarter) -> tuple[dict | None, str]:
             return None, f"no earnings 8-K qualifies and {len(found)} other filings contain a reconciliation"
         if found:
             cands, source = found[0][1], "Item 7.01 8-K"
+    if not cands:
+        # Fallback 1: an 8-K tagged only with other items (e.g. Camden's Q3 2022 release was filed
+        # as Item 9.01 only). Fallback 2: the 10-Q, for companies that stopped issuing earnings
+        # releases (e.g. during a pending acquisition). Each is used only if exactly one filing qualifies.
+        seen = {f["accessionNumber"] for f in filings}
+        for label, forms in (("8-K with other item tags", ("8-K", "8-K/A")), ("10-Q", ("10-Q",))):
+            pool = [f for f in edgar.filings_between(cik, start, end, forms) if f["accessionNumber"] not in seen]
+            found = [(f, c) for f, c in ((f, _qualifying(edgar, cik, f, q)) for f in pool) if c]
+            if len(found) == 1:
+                cands, source = found[0][1], label
+                break
+            if len(found) > 1:
+                return None, f"{len(found)} {label} filings contain a reconciliation"
     if not cands:
         return None, "no exhibit passed the checks"
     # Prefer the most complete document: reconciliation page strength, then share-count and
