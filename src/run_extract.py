@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 from . import config
-from .extract import extract_document
+from .extract import EXTRACTION_VERSION, extract_document
 from .quarters import Quarter
 from .restate import restate
 
@@ -46,9 +46,13 @@ def main(argv=None) -> int:
     for r in todo:
         out_path = EXTRACT_DIR / f"{r['ticker']}_{r['quarter']}.json"
         q = Quarter.parse(r["quarter"])
-        if out_path.exists() and not args.redo:
-            result = json.loads(out_path.read_text())
-            print(f"{r['ticker']} {r['quarter']}: already extracted (use --redo to repeat)")
+        existing = json.loads(out_path.read_text()) if out_path.exists() else None
+        current = existing and existing["extraction"].get("version") == EXTRACTION_VERSION
+        if current and not args.redo:
+            result = existing
+            result["restated"] = restate(result["extraction"])   # definition changes apply without re-extraction
+            out_path.write_text(json.dumps(result, indent=2))
+            print(f"{r['ticker']} {r['quarter']}: already extracted; restatement recomputed")
         else:
             print(f"{r['ticker']} {r['quarter']}: extracting {r['filename']} ...", flush=True)
             ext = extract_document(client, model, Path(r["path"]).read_bytes(), r["filename"],
