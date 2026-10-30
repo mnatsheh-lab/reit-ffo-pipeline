@@ -17,7 +17,8 @@ OUTPUT_DIR = ROOT / "output"
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "").strip()
 SEC_USER_AGENT = os.getenv("SEC_USER_AGENT", "").strip().strip('"')
 MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5-5")
-EXTRACT_MODEL = os.getenv("CLAUDE_EXTRACT_MODEL", MODEL)
+EXTRACT_MODEL = os.getenv("CLAUDE_EXTRACT_MODEL", MODEL)               # stage 2 / fallback
+EXTRACT_FAST_MODEL = os.getenv("CLAUDE_FAST_MODEL", "claude-haiku-5-5")  # stage 1 ("none" to skip)
 
 # The universe: every U.S.-listed multifamily REIT (75% rule, docs/multifamily_rule.md) since 2018.
 # CIKs are verified against EDGAR with `python -m src.universe` before any paid run.

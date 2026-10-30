@@ -164,17 +164,14 @@ def validate(ext: dict) -> list[str]:
     return errors
 
 
-def extract_document(client, model: str, raw: bytes, filename: str, ticker: str, quarter_label: str,
-                     period_end_text: str) -> dict:
-    pages = split_pages(raw, filename)
-    cands = candidate_pages(pages)
+def _attempt(client, model: str, pages: list[Page], ticker: str, quarter_label: str, period_end_text: str,
+             usage: dict) -> tuple[dict | None, list[str], int]:
     user = (f"Company: {ticker}. Target quarter: {quarter_label} (three months ended {period_end_text}).\n"
-            f"Pages likely to contain the reconciliation:\n\n{pages_prompt(cands)}")
+            f"Pages likely to contain the reconciliation:\n\n{pages_prompt(pages)}")
     messages = [{"role": "user", "content": user}]
-    usage = {"input_tokens": 0, "output_tokens": 0}
     ext, errors, attempts, calls = None, ["no extraction returned"], 0, 0
     # Up to 2 extraction attempts (the second after a failed arithmetic check), plus at most
-    # 2 reminders if Claude answers in text instead of calling the tool.
+    # 2 reminders if the model answers in text instead of calling the tool.
     while attempts < 2 and calls < 4:
         calls += 1
         resp = client.messages.create(
@@ -198,7 +195,10 @@ def extract_document(client, model: str, raw: bytes, filename: str, ticker: str,
             continue
         attempts += 1
         ext = dict(block.input)
-        errors = validate(ext)
+        try:
+            errors = validate(ext)
+        except (KeyError, TypeError) as exc:      # malformed form: treat as a failed check
+            errors = [f"form incomplete: {exc}"]
         if not errors:
             break
         messages.append({"role": "user", "content": [{
@@ -206,11 +206,28 @@ def extract_document(client, model: str, raw: bytes, filename: str, ticker: str,
             "content": "These checks failed:\n- " + "\n- ".join(errors) +
                        "\nRe-read the pages, fix missing or mis-signed lines, and call record_reconciliation again.",
         }]})
+    return ext, errors, attempts
+
+
+def extract_document(client, model: str, raw: bytes, filename: str, ticker: str, quarter_label: str,
+                     period_end_text: str, fast_model: str | None = None) -> dict:
+    """Stage 1: fast_model on the small page set (cheap). Stage 2, only if stage 1 doesn't tie:
+    the strong model on the full page set. Pass fast_model=None to go straight to stage 2."""
+    pages = split_pages(raw, filename)
+    usage = {"input_tokens": 0, "output_tokens": 0}
+    stages = ([(fast_model, candidate_pages(pages, small=True))] if fast_model else []) + [(model, candidate_pages(pages))]
+    ext = errors = None
+    for stage, (m, cands) in enumerate(stages, 1):
+        ext, errors, attempts = _attempt(client, m, cands, ticker, quarter_label, period_end_text, usage)
+        if ext is not None and not errors:
+            break
     if ext is None:
         raise RuntimeError("Claude did not return an extraction")
     ext["version"] = EXTRACTION_VERSION
     ext["validation_errors"] = errors
     ext["attempts"] = attempts
+    ext["model"] = m
+    ext["stage"] = stage
     ext["usage"] = usage
     ext["candidate_pages"] = [{"seq": p.seq, "printed": p.printed} for p in cands]
     return ext

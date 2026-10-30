@@ -45,7 +45,8 @@ def main(argv=None) -> int:
 
     new = [r for r in todo if needs_extraction(r)]
     if new:
-        print(f"{len(new)} document(s) to extract, roughly {len(new) * 20_000 / 1e6:.1f}M Claude tokens; "
+        print(f"{len(new)} document(s) to extract, roughly {len(new) * 6_000 / 1e6:.1f}M tokens on the fast model "
+              f"(more for any that fall back to {config.EXTRACT_MODEL}); "
               f"{len(todo) - len(new)} already done.")
         if not args.yes and input("Start? Type y and press Enter: ").strip().lower() != "y":
             print("Cancelled.")
@@ -57,6 +58,7 @@ def main(argv=None) -> int:
     model = config.EXTRACT_MODEL
     EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
     rows, tin, tout = [], 0, 0
+    stage_counts: dict[int, int] = {}
 
     for r in todo:
         out_path = EXTRACT_DIR / f"{r['ticker']}_{r['quarter']}.json"
@@ -70,8 +72,9 @@ def main(argv=None) -> int:
             print(f"{r['ticker']} {r['quarter']}: already extracted; restatement recomputed")
         else:
             print(f"{r['ticker']} {r['quarter']}: extracting {r['filename']} ...", flush=True)
+            fast = None if config.EXTRACT_FAST_MODEL.lower() == "none" else config.EXTRACT_FAST_MODEL
             ext = extract_document(client, model, Path(r["path"]).read_bytes(), r["filename"],
-                                   r["ticker"], str(q), q.period_end_text)
+                                   r["ticker"], str(q), q.period_end_text, fast_model=fast)
             tin += ext["usage"]["input_tokens"]
             tout += ext["usage"]["output_tokens"]
             result = {
@@ -81,7 +84,8 @@ def main(argv=None) -> int:
             }
             out_path.write_text(json.dumps(result, indent=2))
             status = "TIES" if not ext["validation_errors"] else "DOES NOT TIE: " + "; ".join(ext["validation_errors"])
-            print(f"    {status} (attempts: {ext['attempts']})")
+            print(f"    {status} ({ext['model']}, {ext['usage']['input_tokens']:,} input tokens)")
+            stage_counts[ext["stage"]] = stage_counts.get(ext["stage"], 0) + 1
         res = result["restated"]
         rows.append({
             "ticker": r["ticker"], "quarter": r["quarter"],
@@ -120,6 +124,8 @@ def main(argv=None) -> int:
         print(line(max((r for r in rows if r["ticker"] == t), key=lambda r: r["quarter"])))
     if tin:
         print(f"\nClaude tokens used: {tin:,} in / {tout:,} out")
+        if stage_counts:
+            print(f"Done by the fast model: {stage_counts.get(1, 0)}; needed the fallback model: {stage_counts.get(2, 0)}")
 
     if ANSWER_KEY.exists():
         from .verify_extraction import compare_maa

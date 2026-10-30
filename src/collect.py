@@ -19,6 +19,7 @@ from . import config
 from .agent import CollectionAgent
 from .edgar import EdgarClient
 from .quarters import Quarter
+from .rules import pick, save
 from .universe import quarters_for
 
 MANIFEST_JSON = config.OUTPUT_DIR / "collection_manifest.json"
@@ -50,6 +51,9 @@ def main(argv=None) -> int:
     parser.add_argument("--end", help="last quarter (default: latest reported)")
     parser.add_argument("--retry-missing", action="store_true", help="also retry quarters marked missing")
     parser.add_argument("--yes", action="store_true", help="don't ask for confirmation")
+    parser.add_argument("--no-rules", action="store_true", help="use the agent for every quarter")
+    parser.add_argument("--check-rules", action="store_true",
+                        help="free test: re-pick every saved quarter with the rules and compare with the manifest")
     args = parser.parse_args(argv)
 
     problems = config.check_settings()
@@ -63,6 +67,8 @@ def main(argv=None) -> int:
         return 1
 
     manifest = load_manifest()
+    if args.check_rules:
+        return check_rules(manifest, tickers)
     done = {k for k, r in manifest.items() if r["status"].startswith("saved") or (r["status"] == "missing" and not args.retry_missing)}
     plan = {}
     for t in tickers:
@@ -77,7 +83,8 @@ def main(argv=None) -> int:
     print("Plan:")
     for t, qs in plan.items():
         print(f"  {t:5} {len(qs):3} quarters  ({qs[0]} to {qs[-1]})")
-    print(f"Total: {n} company-quarters, roughly {n * TOKENS_PER_QUARTER / 1e6:.1f}M Claude tokens.")
+    print(f"Total: {n} company-quarters. Free rules are tried first; the agent (about "
+          f"{TOKENS_PER_QUARTER // 1000}K Claude tokens a quarter) only handles quarters the rules can't settle.")
     if not args.yes and input("Start? Type y and press Enter: ").strip().lower() != "y":
         print("Cancelled.")
         return 0
@@ -88,16 +95,39 @@ def main(argv=None) -> int:
     edgar = EdgarClient(config.SEC_USER_AGENT, config.CACHE_DIR)
     agent = CollectionAgent(client, config.MODEL, edgar, config.EDGAR_DIR)
     tin = tout = 0
+    by_method = {"rules": 0, "agent": 0}
     for t, qs in plan.items():
-        for i in range(0, len(qs), 4):
-            batch = qs[i:i + 4]
-            print(f"\n=== {t}: {', '.join(map(str, batch))} ===", flush=True)
+        cik = config.REITS[t]["cik"]
+        leftover = []
+        if not args.no_rules:
+            print(f"\n=== {t}: rules ===", flush=True)
+            for q in qs:
+                try:
+                    choice, why = pick(edgar, cik, q)
+                except Exception as exc:
+                    choice, why = None, f"{type(exc).__name__}: {exc}"
+                if choice:
+                    rec = save(choice, t, cik, q, config.EDGAR_DIR, edgar, why)
+                    manifest[(t, str(q))] = rec
+                    by_method["rules"] += 1
+                    print(f"  {q}: SAVED (rules)       {rec['filename']}")
+                else:
+                    leftover.append(q)
+                    print(f"  {q}: to agent            {why}")
+            save_manifest(manifest)
+        else:
+            leftover = qs
+        for i in range(0, len(leftover), 4):
+            batch = leftover[i:i + 4]
+            print(f"\n=== {t}: agent for {', '.join(map(str, batch))} ===", flush=True)
             try:
-                result = agent.run(t, config.REITS[t]["cik"], batch)
+                result = agent.run(t, cik, batch)
             except Exception as exc:          # keep going; the batch stays unresolved and can be retried
                 print(f"  ERROR {type(exc).__name__}: {exc}")
                 continue
             for r in result.records:
+                r["method"] = "agent"
+                by_method["agent"] += r["status"].startswith("saved")
                 manifest[(r["ticker"], r["quarter"])] = r
                 print(f"  {r['quarter']}: {r['status'].upper():17} {r['filename'] or r['reason'][:90]}")
             tin += result.input_tokens
@@ -110,7 +140,29 @@ def main(argv=None) -> int:
     print("\n=== Manifest totals ===")
     for status, k in sorted(counts.items()):
         print(f"  {status}: {k}")
+    print(f"  This run: {by_method['rules']} saved by rules (free), {by_method['agent']} by the agent")
     print(f"  Claude tokens this run: {tin:,} in / {tout:,} out")
+    return 0
+
+
+def check_rules(manifest: dict, tickers: list[str]) -> int:
+    """Free: does the rule picker choose the same document the manifest already has?"""
+    edgar = EdgarClient(config.SEC_USER_AGENT, config.CACHE_DIR)
+    same = differ = deferred = 0
+    for (t, qs), r in sorted(manifest.items()):
+        if t not in tickers or not r["status"].startswith("saved"):
+            continue
+        choice, why = pick(edgar, config.REITS[t]["cik"], Quarter.parse(qs))
+        if choice is None:
+            deferred += 1
+            print(f"  {t} {qs}: rules defer to the agent ({why})")
+        elif choice["filing"]["accessionNumber"] == r["accession"] and choice["doc"]["name"] == r["filename"]:
+            same += 1
+            print(f"  {t} {qs}: same document ({r['filename']})")
+        else:
+            differ += 1
+            print(f"  {t} {qs}: DIFFERENT - rules pick {choice['doc']['name']}, manifest has {r['filename']}")
+    print(f"\nSame: {same}   Different: {differ}   Deferred to agent: {deferred}")
     return 0
 
 

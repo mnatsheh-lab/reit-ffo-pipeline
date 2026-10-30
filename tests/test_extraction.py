@@ -178,6 +178,30 @@ class ExtractLoopTests(unittest.TestCase):
         self.assertIn("record_reconciliation", claude.calls[1]["messages"][2]["content"])  # reminder turn
 
 
+    def test_two_stage_fast_then_fallback(self):
+        doc = Path("/mnt/user-data/uploads/reit-ffo-pipeline/data/raw/edgar/MAA/MAA_2026Q2_earnings.htm")
+        if not doc.exists():
+            self.skipTest("EDGAR document not available")
+        good = maa_extraction("2026Q2")
+        bad = copy.deepcopy(good); bad["ffo_adjustments"] = bad["ffo_adjustments"][1:]
+        # fast model fails twice -> strong model succeeds on the full page set
+        claude = ScriptedClaude([bad, bad, good])
+        ext = extract_document(claude, "strong", doc.read_bytes(), doc.name, "MAA", "2026Q2", "June 30, 2026", fast_model="fast")
+        self.assertEqual([c["model"] for c in claude.calls], ["fast", "fast", "strong"])
+        self.assertEqual((ext["stage"], ext["model"], ext["validation_errors"]), (2, "strong", []))
+        small = claude.calls[0]["messages"][0]["content"]; full = claude.calls[2]["messages"][0]["content"]
+        self.assertLess(len(small), len(full))
+        self.assertIn("161,037", small)                   # the reconciliation is in the small set
+        # fast model succeeds -> no fallback call
+        claude2 = ScriptedClaude([good])
+        ext2 = extract_document(claude2, "strong", doc.read_bytes(), doc.name, "MAA", "2026Q2", "June 30, 2026", fast_model="fast")
+        self.assertEqual((ext2["stage"], len(claude2.calls)), (1, 1))
+
+    def test_compress_keeps_numbers(self):
+        from src.pages import compress
+        self.assertEqual(compress("Net income | | | $ | 120,828 | | | (1,091 | ) | 12.3 | %"), "Net income | $120,828 | (1,091) | 12.3%")
+
+
 class AnswerKeyTests(unittest.TestCase):
     def test_compare_with_workbook(self):
         wb = ROOT / "data" / "answer_key" / "MAA_FFO_Reconciliation.xlsx"

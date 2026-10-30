@@ -56,6 +56,13 @@ A web dashboard, rebuilt after each daily pipeline run:
 
 The dashboard only displays stored pipeline records and does no calculation of its own, so every figure traces back to a page in a filing.
 
+## Keeping costs down
+
+- **Collection:** free rules pick the exhibit when the choice is clear (verified FFO reconciliation for the right period, one qualifying filing); the Claude agent only handles the rest.
+- **Extraction, stage 1:** a fast, low-cost model (Claude Haiku 5.5) reads a small set of pages: the two best reconciliation pages plus the share-count and capex pages, with table filler stripped out.
+- **Extraction, stage 2:** only if stage 1 does not tie to the reported totals, Claude Sonnet 5.5 re-reads the full page set.
+- Every result must still pass the same arithmetic checks, so the cheaper path cannot lower accuracy without being caught.
+
 ## Accuracy testing
 
 An answer key was built by hand: 15 supplementals (MAA, CPT, IRT, NXRT, BRT for Q4 2025–Q2 2026), a full manual reconciliation of MAA (`data/answer_key/`), and spot checks of other REITs and pre-2020 quarters. The pipeline is graded on:
@@ -84,6 +91,7 @@ output/            restated FFO tables
 
 | Command | What it does |
 |---|---|
+| `run_test_cheap.bat` | Tests the low-cost setup on the 15 answer-key quarters: free rule check, then a few-cent re-extraction compared with the answer key. |
 | `run_check_universe.bat` | Free: checks every REIT's SEC ID against EDGAR before any paid run. |
 | `run_pilot_MAA.bat` | Pilot: MAA from 2018 to today (~34 quarters), then rebuilds the dashboard. Asks before spending. |
 | `run_all.bat` | Every REIT, every missing quarter since 2018. Asks before each paid step; safe to stop and restart. |
