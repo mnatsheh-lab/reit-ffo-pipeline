@@ -31,6 +31,8 @@ Net income to common shareholders, adjusted per the Nareit FFO White Paper (2018
 | 6 | Transaction, merger and acquisition-pursuit costs | **Keep as a cost** | Growth through acquisitions has a real price. |
 | 7 | Severance and restructuring | **Keep as a cost** | Reorganizations recur at large companies. |
 | 8 | Non-cash stock compensation | **Keep as a cost** | Dilutes shareholders, so it is a real cost. |
+| 9 | Amortization of deferred financing costs (and debt discounts/premiums) | **Keep as a cost; remove benefits** | Loan fees are a real cost of borrowing, just spread over the loan's life. *Added Oct 30, 2026 after NXRT's add-back of ~$0.065/share.* |
+| 10 | Depreciation of non-real-estate assets ("other depreciation") | **Keep as a cost** | Nareit adds back only real estate depreciation; offices and IT wear out and are replaced. *Added Oct 30, 2026 after IRT's add-back.* |
 
 ## From Conservative Core FFO to Conservative AFFO
 
@@ -42,7 +44,8 @@ Net income to common shareholders, adjusted per the Nareit FFO White Paper (2018
 
 - **Net lines.** Where a company reports a single net line (e.g. "casualty related charges and (recoveries), net"), the sign of the net amount decides the treatment: a net charge is kept as a cost; a net recovery is removed.
 - **Combined or missing items.** If a filing combines items that this definition treats differently, or omits an item, the pipeline searches the 10-Q notes. If the item still cannot be separated, the quarter is flagged **restated with limits**, naming the item. The pipeline never guesses.
-- **Unlisted adjustment types.** Any company adjustment not covered above is flagged for review rather than auto-classified.
+- **Unlisted adjustment types.** Any company adjustment not covered above gets the conservative default (costs kept in earnings, gains removed) and is flagged on the dashboard as pending review until a rule is added here.
+- **Recurring capex not in the company's AFFO.** If a company's own AFFO does not deduct recurring capex (e.g. NXRT, BRT), Conservative AFFO uses the quarterly recurring capex from the company's capex table and says so. If only an annual or per-unit figure is disclosed, Conservative AFFO is not computed for that quarter.
 - **One-sided treatments** (items 2 and 5) mean Conservative Core FFO will usually be at or below each company's own Core FFO. This is intentional.
 
 ## Worked example: MAA

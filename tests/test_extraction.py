@@ -88,8 +88,50 @@ class RestateTests(unittest.TestCase):
         e["core_adjustments"].append(L("Mystery item", 500, "other"))
         r = restate(e)
         self.assertIsNone(r["conservative_affo"])
-        self.assertTrue(any("Unlisted adjustment" in f for f in r["flags"]))
+        self.assertTrue(any("Review: 'Mystery item'" in f for f in r["flags"]))
         self.assertTrue(any("No recurring capex" in f for f in r["flags"]))
+
+    def test_nxrt_style_rules(self):
+        """NXRT Q4 2025 core section as extracted on the first live run."""
+        e = {
+            "core_metric_name": "Core FFO", "affo_metric_name": "AFFO", "affo_starts_from": "core",
+            "ffo_total": T("FFO attributable to common stockholders", 13160, 19),
+            "core_adjustments": [
+                L("Loss on extinguishment of debt and modification costs", 0, "debt_extinguishment", 19),
+                L("Casualty-related expenses/(recoveries)", 1700, "casualty", 19),
+                L("Casualty loss", 4, "casualty", 19),
+                L("Amortization of deferred financing costs", 1656, "debt_cost_amortization", 19),
+                L("Mark-to-market adjustments of interest rate caps", 26, "derivative_mtm", 19),
+                L("Adjustment for noncontrolling interests", -13, "noncontrolling_interest", 19),
+            ],
+            "core_total": T("Core FFO attributable to common stockholders", 16533, 19),
+            "affo_adjustments": [L("Equity-based compensation expense", 2546, "stock_comp", 19),
+                                 L("Adjustment for noncontrolling interests", -10, "noncontrolling_interest", 19)],
+            "affo_total": T("AFFO attributable to common stockholders", 19069, 19),
+            "recurring_capex_disclosed": {"label": "Capital expenditures - recurring", "amount": 2000, "basis": "quarter",
+                                          "scope": "company total", "page_seq": 22, "page_printed": "20"},
+            "diluted_shares": T("Weighted average diluted shares", 25411, 19),
+        }
+        r = restate(e)
+        # Kept: casualty (1,700 + 4) and financing-cost amortization (1,656). Applied: derivative (+26), NCI (-13).
+        self.assertEqual(r["conservative_core_ffo"], 13160 + 26 - 13)
+        self.assertAlmostEqual(r["conservative_core_ffo_ps"], 0.5184, places=4)
+        # Stock comp add-back in AFFO is not applied; capex comes from the separate table.
+        self.assertEqual(r["conservative_affo"], 13173 - 2000)
+        self.assertEqual(r["recurring_capex_source"], "capex_table")
+        self.assertTrue(any("separate table" in f for f in r["flags"]))
+        self.assertFalse(any("Amortization of deferred financing costs" in f for f in r["flags"]))  # now a firm rule
+        amort = next(x for x in r["steps"] if x["category"] == "debt_cost_amortization")
+        self.assertFalse(amort["applied"])
+
+    def test_annual_capex_not_used(self):
+        e = maa_extraction("2026Q2")
+        e["affo_adjustments"], e["affo_total"] = [], None
+        e["recurring_capex_disclosed"] = {"label": "Estimated recurring capex", "amount": 5278, "basis": "annual",
+                                          "scope": "BRT share", "page_seq": 16, "page_printed": "12"}
+        r = restate(e)
+        self.assertIsNone(r["conservative_affo"])
+        self.assertTrue(any("'annual' basis" in f for f in r["flags"]))
 
 
 class ScriptedClaude:

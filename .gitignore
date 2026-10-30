@@ -225,3 +225,7 @@ data/raw/
 
 # Excel lock files
 ~$*
+
+# Run logs regenerated on every run (contain local paths)
+output/collection_manifest.csv
+output/collection_manifest.json

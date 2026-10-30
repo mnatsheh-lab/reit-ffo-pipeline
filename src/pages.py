@@ -80,11 +80,42 @@ def reconciliation_score(text: str) -> float:
     return score
 
 
+GUIDANCE = re.compile(r"guidance|outlook|full year 20\d\d estimate", re.I)
+
+
+def shares_score(text: str) -> float:
+    low = text.lower()
+    score = 0.0
+    if re.search(r"(diluted )?shares (and units )?outstanding for (ffo|funds from operations)", low):
+        score += 6
+    if re.search(r"weighted average[^\n]{0,80}(diluted|op units|units)", low):
+        score += 2
+    if re.search(r"\bffo\b|funds from operations", low):
+        score += 1
+    return score - 4 * bool(GUIDANCE.search(low)) if score else 0.0
+
+
+def capex_score(text: str) -> float:
+    low = text.lower()
+    score = 0.0
+    if re.search(r"recurring capital expenditure|recurring capex|maintenance capital", low):
+        score += 5
+    if re.search(r"historical capital expenditures|capital expenditures summary", low):
+        score += 4
+    if re.search(r"capital expenditure", low):
+        score += 1
+    return score - 4 * bool(GUIDANCE.search(low)) if score else 0.0
+
+
 def candidate_pages(pages: list[Page], top: int = 4) -> list[Page]:
-    """Best-scoring pages plus the page after each (reconciliations often span two pages)."""
+    """Best-scoring reconciliation pages plus the page after each (reconciliations often span
+    two pages), plus the best pages for the FFO share count and for recurring capex."""
     ranked = sorted(pages, key=lambda p: reconciliation_score(p.text), reverse=True)
     chosen = {p.seq for p in ranked[:top] if reconciliation_score(p.text) > 0}
     for seq in list(chosen):
         if seq + 1 <= len(pages) and reconciliation_score(pages[seq].text) > 10:
             chosen.add(seq + 1)
+    for scorer in (shares_score, capex_score):
+        best = sorted((p for p in pages if scorer(p.text) > 0), key=lambda p: scorer(p.text), reverse=True)[:2]
+        chosen |= {p.seq for p in best}
     return [p for p in pages if p.seq in chosen]

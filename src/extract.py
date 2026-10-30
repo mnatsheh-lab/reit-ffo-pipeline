@@ -27,6 +27,7 @@ CATEGORIES = {
     "transaction_costs": "Transaction, merger, acquisition-pursuit, integration costs",
     "severance_restructuring": "Severance, restructuring, executive transition, software transition",
     "stock_comp": "Non-cash / stock-based compensation",
+    "non_re_depreciation": "Depreciation/amortization of NON-real-estate assets (corporate offices, IT, 'other depreciation')",
     # AFFO items
     "recurring_capex": "Recurring / maintenance capital expenditures",
     "straight_line_rent": "Straight-line rent and similar non-cash revenue",
@@ -55,6 +56,21 @@ TOTAL = {
 }
 NULLABLE_TOTAL = {"anyOf": [TOTAL, {"type": "null"}]}
 
+EXTRACTION_VERSION = 2   # bump when the form or prompt changes; older results are re-extracted
+
+CAPEX_DISCLOSED = {
+    "anyOf": [{
+        "type": "object",
+        "properties": {
+            "label": {"type": "string"}, "amount": {"type": "number", "description": "Positive amount spent, same unit as the totals"},
+            "basis": {"type": "string", "enum": ["quarter", "year_to_date", "annual", "per_unit_only", "other"]},
+            "scope": {"type": "string", "description": "e.g. 'company total', 'company share (excl. JV partners)'"},
+            "page_seq": {"type": "integer"}, "page_printed": {"type": "string"},
+        },
+        "required": ["label", "amount", "basis", "scope", "page_seq", "page_printed"],
+    }, {"type": "null"}],
+}
+
 RECORD_TOOL = {
     "name": "record_reconciliation",
     "description": "Record the company's net income -> FFO -> adjusted FFO -> AFFO reconciliation for the target quarter.",
@@ -72,7 +88,8 @@ RECORD_TOOL = {
             "core_total": NULLABLE_TOTAL,
             "affo_adjustments": {"type": "array", "items": LINE},
             "affo_total": NULLABLE_TOTAL,
-            "diluted_shares": {**TOTAL, "description": "Weighted average diluted share count used for FFO per share (shares + units if FFO includes units), same unit as printed"},
+            "diluted_shares": {**TOTAL, "description": "The share count the company divides by for FFO per share (shares + units if FFO includes units)"},
+            "recurring_capex_disclosed": {**CAPEX_DISCLOSED, "description": "Only if the AFFO section has NO recurring capex line: the recurring/maintenance capex for the quarter from another table; else null"},
             "reported_per_share": {
                 "type": "object",
                 "properties": {"ffo": {"type": ["number", "null"]}, "core": {"type": ["number", "null"]}, "affo": {"type": ["number", "null"]}},
@@ -82,7 +99,7 @@ RECORD_TOOL = {
         },
         "required": ["amount_unit", "core_metric_name", "affo_metric_name", "affo_starts_from", "starting_line",
                      "ffo_adjustments", "ffo_total", "core_adjustments", "core_total", "affo_adjustments",
-                     "affo_total", "diluted_shares", "reported_per_share", "notes"],
+                     "affo_total", "diluted_shares", "recurring_capex_disclosed", "reported_per_share", "notes"],
     },
 }
 
@@ -97,6 +114,14 @@ Rules:
   (core_total or ffo_total, per affo_starts_from) + affo_adjustments = affo_total.
 - Sign each amount as its effect on reaching the next subtotal: printed in parentheses or subtracted -> negative.
 - If a company has no adjusted FFO metric, set core_total null and core_adjustments []. Same for AFFO.
+- diluted_shares: the share count the company actually uses for FFO per share. It may be on a different page
+  (e.g. "Diluted shares outstanding for FFO and AFFO" or "weighted average common shares and units"). Use the
+  current-quarter figure, in the same unit as the dollar totals (if totals are in thousands and the count is
+  printed in full, divide it by 1,000). Check it reproduces the reported per-share figures.
+- recurring_capex_disclosed: if the company's AFFO does not subtract recurring (maintenance) capital expenditures,
+  look for the current quarter's recurring capex in another table on these pages (e.g. a capital expenditures
+  table or a sentence in the highlights). Prefer the company's own share and the quarterly figure; record the
+  basis honestly (quarter, year_to_date, annual, per_unit_only). Use null if it is not disclosed.
 - Copy labels exactly as printed. Give the page_seq and page_printed from the [[PAGE ...]] marker where each line appears.
 - Categories: {json.dumps(CATEGORIES)}
 - Use 'other' only when nothing else fits. Never invent or estimate numbers; if something is unclear, say so in notes.
@@ -183,6 +208,7 @@ def extract_document(client, model: str, raw: bytes, filename: str, ticker: str,
         }]})
     if ext is None:
         raise RuntimeError("Claude did not return an extraction")
+    ext["version"] = EXTRACTION_VERSION
     ext["validation_errors"] = errors
     ext["attempts"] = attempts
     ext["usage"] = usage

@@ -10,7 +10,8 @@ from __future__ import annotations
 REMOVE_BOTH = {"investment_gain_loss", "derivative_mtm"}
 # Keep costs in earnings; remove gains/recoveries. A positive adjustment is an add-back of a cost
 # (kept in, i.e. not applied); a negative adjustment removes a gain or recovery (applied).
-KEEP_COSTS = {"legal", "casualty", "debt_extinguishment", "transaction_costs", "severance_restructuring", "stock_comp"}
+KEEP_COSTS = {"legal", "casualty", "debt_extinguishment", "transaction_costs", "severance_restructuring", "stock_comp",
+              "debt_cost_amortization", "non_re_depreciation"}
 CAPEX = {"recurring_capex"}
 # AFFO-only items our definition does not use.
 IGNORED_AFFO = {"straight_line_rent", "debt_cost_amortization"}
@@ -22,10 +23,18 @@ REASONS = {
     "transaction_costs": "Acquisition-driven growth has a real cost; kept as a cost",
     "severance_restructuring": "Reorganizations recur; kept as a cost",
     "stock_comp": "Stock compensation dilutes shareholders; kept as a cost",
+    "debt_cost_amortization": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost",
+    "non_re_depreciation": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost",
     "investment_gain_loss": "Non-real-estate investment results removed (gains and losses)",
     "derivative_mtm": "Non-cash derivative revaluation removed (gains and losses)",
     "other": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review",
 }
+
+
+# Types the definition does not list yet. Until reviewed they get the conservative default
+# (costs kept, gains removed) and are flagged.
+PROVISIONAL = {"other": REASONS["other"]}
+REVIEW_NEEDED = set(PROVISIONAL) | {"re_depreciation", "jv_depreciation", "property_sale_gain_loss", "re_impairment", "nareit_other", "straight_line_rent", "recurring_capex"}
 
 
 def treat(line: dict) -> tuple[bool, str]:
@@ -33,10 +42,12 @@ def treat(line: dict) -> tuple[bool, str]:
     cat, amt = line["category"], line["amount"]
     if cat in REMOVE_BOTH:
         return True, REASONS[cat]
-    if cat in KEEP_COSTS or cat == "other":
-        return (amt < 0), REASONS[cat] + (" (gain/recovery removed)" if amt < 0 else " (company add-back reversed)")
-    # NAREIT-type items appearing in a core section: follow the company (and flag).
-    return True, "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+    if cat == "noncontrolling_interest":
+        return True, "Noncontrolling interests' share of the adjustments; applied as the company did"
+    reason = REASONS.get(cat) or PROVISIONAL.get(cat) or f"'{cat}' item in the company's adjusted section; costs kept, gains removed (provisional rule, review)"
+    if amt == 0:
+        return False, reason + " (zero this quarter)"
+    return (amt < 0), reason + (" (gain/recovery removed)" if amt < 0 else " (company add-back reversed)")
 
 
 def restate(ext: dict) -> dict:
@@ -48,22 +59,32 @@ def restate(ext: dict) -> dict:
     # Company adjustments that our definition rules on: the core section, plus any
     # definition items a company places in its AFFO section.
     rule_lines = [("core", l) for l in ext.get("core_adjustments", [])]
-    rule_lines += [("affo", l) for l in ext.get("affo_adjustments", []) if l["category"] in REMOVE_BOTH | KEEP_COSTS | {"other"}]
+    # AFFO-section items: only those the definition rules on as part of earnings. Stock comp and
+    # financing-cost amortization added back in AFFO are simply not added back (no effect needed).
+    rule_lines += [("affo", l) for l in ext.get("affo_adjustments", [])
+                   if l["category"] in REMOVE_BOTH | KEEP_COSTS | {"other"} and l["category"] not in {"stock_comp", "debt_cost_amortization"}]
     cons_core = ffo
     for section, line in rule_lines:
         applied, reason = treat(line)
-        if line["category"] == "other":
-            flags.append(f"Unlisted adjustment: {line['label']}")
-        if line["category"] not in REMOVE_BOTH | KEEP_COSTS | {"other"}:
-            flags.append(f"Unexpected item in adjusted section: {line['label']}")
+        if line["category"] in REVIEW_NEEDED and line["amount"] != 0:
+            flags.append(f"Review: '{line['label']}' ({line['category']}) handled by a provisional rule")
         if applied:
             cons_core += line["amount"]
         steps.append({**line, "section": section, "applied": applied, "effect": line["amount"] if applied else 0.0, "reason": reason})
 
     capex_lines = [l for l in ext.get("affo_adjustments", []) if l["category"] in CAPEX]
+    capex_source = "affo_reconciliation" if capex_lines else None
+    disclosed = ext.get("recurring_capex_disclosed")
+    if not capex_lines and disclosed and disclosed.get("basis") == "quarter" and disclosed.get("amount"):
+        capex_lines = [{**disclosed, "amount": -abs(disclosed["amount"]), "category": "recurring_capex"}]
+        capex_source = "capex_table"
+        flags.append(f"Recurring capex taken from a separate table (page {disclosed.get('page_printed') or disclosed.get('page_seq')}): "
+                     "the company's own AFFO does not deduct it")
+    elif not capex_lines and disclosed:
+        flags.append(f"Recurring capex only disclosed on a '{disclosed.get('basis')}' basis; Conservative AFFO not computed")
+    elif not capex_lines:
+        flags.append("No recurring capex disclosed; Conservative AFFO not computed")
     cons_affo = cons_core + sum(l["amount"] for l in capex_lines) if capex_lines else None
-    if not capex_lines:
-        flags.append("No recurring capex line disclosed; Conservative AFFO not computed")
 
     def ps(x):
         return round(x / shares, 4) if (x is not None and shares) else None
@@ -76,6 +97,6 @@ def restate(ext: dict) -> dict:
         "company_affo_name": ext.get("affo_metric_name"), "company_affo": affo_reported, "company_affo_ps": ps(affo_reported),
         "conservative_core_ffo": cons_core, "conservative_core_ffo_ps": ps(cons_core),
         "conservative_affo": cons_affo, "conservative_affo_ps": ps(cons_affo),
-        "recurring_capex": [{**l} for l in capex_lines],
+        "recurring_capex": [{**l} for l in capex_lines], "recurring_capex_source": capex_source,
         "steps": steps, "flags": flags, "diluted_shares": shares,
     }
