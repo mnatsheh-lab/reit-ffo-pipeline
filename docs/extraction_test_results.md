@@ -31,6 +31,15 @@
 
 \* BRT discloses recurring capex for Q4 2025 only on a full-year basis, so Conservative AFFO is not computed for that quarter rather than estimated.
 
+## Low-cost configuration (Oct 30, 2026)
+
+The same 15 quarters were re-extracted with the low-cost setup (Claude Haiku 5.5 on a small page set, Sonnet only as fallback):
+
+- **15 / 15** handled by Haiku alone; the Sonnet fallback was never needed.
+- **15 / 15** tie to reported totals; **MAA 42 / 42** vs the answer key.
+- **Every per-share result identical** to the Sonnet run above (NAREIT FFO, Conservative Core FFO, Conservative AFFO).
+- **Tokens:** 134,270 in / 43,514 out, about $0.035 for all 15 (≈ $0.002 per quarter, ~22× cheaper than Sonnet).
+
 ## Findings
 
 - **Camden Q1 2026:** Core FFO $1.70 vs Conservative $1.20. Camden added back $51.2M of legal costs and settlements, $1.8M of pursuit costs and a casualty charge; the definition keeps them as costs.
