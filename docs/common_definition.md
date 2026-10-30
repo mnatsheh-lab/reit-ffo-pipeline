@@ -1,6 +1,6 @@
 # Common FFO Definition
 
-This project restates every REIT, every quarter since Q1 2020, to one fixed definition, applied retroactively regardless of the definition the company used at the time. The outlook is deliberately **risk-averse**: where a judgment is needed, costs are treated as recurring parts of running the business.
+This project restates every REIT, every quarter since Q1 2022, to one fixed definition, applied retroactively regardless of the definition the company used at the time. The outlook is deliberately **risk-averse**: where a judgment is needed, costs are treated as recurring parts of running the business.
 
 Two metrics are reported:
 

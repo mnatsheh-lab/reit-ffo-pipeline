@@ -1,5 +1,5 @@
 @echo off
-REM Pilot: MAA from 2020 to today (about 26 quarters). Asks before spending.
+REM Pilot: MAA from 2022 to today (about 18 quarters). Asks before spending.
 cd /d "%~dp0"
 set PYTHONIOENCODING=utf-8
 python -m pip install -q -r requirements.txt

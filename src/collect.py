@@ -1,6 +1,6 @@
 """Run the collection agent across the universe.
 
-    python -m src.collect                                # every REIT, every missing quarter since 2020
+    python -m src.collect                                # every REIT, every missing quarter since 2022
     python -m src.collect --tickers MAA                  # one REIT
     python -m src.collect --tickers MAA --start 2026Q2 --end 2026Q2
     python -m src.collect --yes                          # skip the confirmation prompt
@@ -47,7 +47,7 @@ def save_manifest(records: dict[tuple[str, str], dict]) -> None:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Collect FFO reconciliation documents from SEC EDGAR")
     parser.add_argument("--tickers", nargs="+", default=list(config.REITS))
-    parser.add_argument("--start", help="first quarter, e.g. 2020Q1 (default: each REIT's own start)")
+    parser.add_argument("--start", help="first quarter, e.g. 2022Q1 (default: each REIT's own start)")
     parser.add_argument("--end", help="last quarter (default: latest reported)")
     parser.add_argument("--retry-missing", action="store_true", help="also retry quarters marked missing")
     parser.add_argument("--yes", action="store_true", help="don't ask for confirmation")

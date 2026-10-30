@@ -1,5 +1,5 @@
 @echo off
-REM Everything: every REIT, every missing quarter since 2020. Asks before each paid step.
+REM Everything: every REIT, every missing quarter since 2022. Asks before each paid step.
 REM Safe to stop and restart: finished quarters are skipped.
 cd /d "%~dp0"
 set PYTHONIOENCODING=utf-8

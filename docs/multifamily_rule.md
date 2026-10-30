@@ -1,6 +1,6 @@
 # Multifamily Rule
 
-Decides which REITs belong in the universe. Applied to every REIT (SIC code 6798) with an exchange ticker, for every year from 2020 onward, and re-checked in each daily run.
+Decides which REITs belong in the universe. Applied to every REIT (SIC code 6798) with an exchange ticker, for every year from 2022 onward, and re-checked in each daily run.
 
 ## The rule
 
