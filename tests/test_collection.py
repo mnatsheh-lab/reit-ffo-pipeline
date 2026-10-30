@@ -74,6 +74,13 @@ class TextTests(unittest.TestCase):
         s2 = reconciliation_signals(document_text(RELEASE, "x.htm"), "June 30, 2026")
         self.assertFalse(s2["has_reconciliation_words"])
 
+    def test_generic_depreciation_wording_passes(self):
+        brt_style = b"""<p>The tables below provide a reconciliation of net loss to FFO and AFFO.</p>
+        <table><tr><td>Net loss</td><td>(3,405)</td></tr><tr><td>Depreciation and amortization</td><td>6,710</td></tr>
+        <tr><td>Funds from operations</td><td>5,505</td></tr></table><p>Three months ended June 30, 2026</p>"""
+        s = reconciliation_signals(document_text(brt_style, "x.htm"), "June 30, 2026")
+        self.assertTrue(s["has_reconciliation_words"])
+
     def test_real_maa_pdf(self):
         pdf = Path("/home/claude/REIT_Supplementals/MAA/MAA_2026Q2_supplemental.pdf")
         if not pdf.exists():

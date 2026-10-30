@@ -17,6 +17,7 @@ OUTPUT_DIR = ROOT / "output"
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "").strip()
 SEC_USER_AGENT = os.getenv("SEC_USER_AGENT", "").strip().strip('"')
 MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5-5")
+EXTRACT_MODEL = os.getenv("CLAUDE_EXTRACT_MODEL", MODEL)
 
 # SEC Central Index Keys. The universe step (Phase 8) will build this list automatically;
 # for now it holds the five answer-key REITs.
