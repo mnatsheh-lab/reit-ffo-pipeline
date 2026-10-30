@@ -101,7 +101,7 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 - [x] Common FFO definition (`docs/common_definition.md`)
 - [x] Multifamily rule (`docs/multifamily_rule.md`)
 - [x] Collection agent — 15/15 documents correct against the answer key ([results](docs/collection_test_results.md))
-- [ ] Extraction and restatement — code written and tested offline; first live run pending
+- [x] Extraction and restatement — 15/15 quarters tie; MAA 42/42 vs answer key ([results](docs/extraction_test_results.md))
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
 - [ ] Backfill to Q1 2018
