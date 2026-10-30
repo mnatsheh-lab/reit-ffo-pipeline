@@ -87,6 +87,7 @@ output/            restated FFO tables
 | `run_test_MAA.bat` | Collects one quarter (MAA Q2 2026). Use first to check everything works. |
 | `run_collect.bat` | Collects all five answer-key REITs, Q4 2025 to Q2 2026. |
 | `python -m src.collect --tickers MAA CPT --start 2025Q4 --end 2026Q2` | Custom run. |
+| `run_extract.bat` | Extracts every saved reconciliation, applies the Conservative Core FFO definition, and checks MAA against the answer key. Results in `output/restated_ffo.csv` and `output/extractions/`. |
 | `run_verify.bat` | Re-checks saved documents and compares them with the hand-collected answer key. |
 | `python -m unittest discover tests` | Offline tests (no API key or internet needed). |
 
@@ -100,7 +101,7 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 - [x] Common FFO definition (`docs/common_definition.md`)
 - [x] Multifamily rule (`docs/multifamily_rule.md`)
 - [x] Collection agent — 15/15 documents correct against the answer key ([results](docs/collection_test_results.md))
-- [ ] Extraction and restatement
+- [ ] Extraction and restatement — code written and tested offline; first live run pending
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
 - [ ] Backfill to Q1 2018
