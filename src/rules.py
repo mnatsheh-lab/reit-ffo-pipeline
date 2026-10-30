@@ -32,32 +32,52 @@ def score_document(raw: bytes, name: str, q: Quarter) -> dict:
     }
 
 
+def _qualifying(edgar, cik, filing, q):
+    out = []
+    for doc in edgar.filing_documents(cik, filing["accessionNumber"]):
+        if doc["size"] and doc["size"] < 5_000:
+            continue
+        raw = edgar.get_bytes(doc["url"])
+        sc = score_document(raw, doc["name"], q)
+        if sc["verified"] and sc["right_period"] and sc["recon"] >= MIN_RECON_SCORE:
+            out.append({"filing": filing, "doc": doc, "raw": raw, **sc})
+    return out
+
+
 def pick(edgar: EdgarClient, cik: int, q: Quarter) -> tuple[dict | None, str]:
-    """Return (choice, explanation). choice is None when the agent should decide."""
+    """Return (choice, explanation). choice is None when the agent should decide.
+
+    Earnings filings (Item 2.02) are checked first, earliest first; the first one with a qualifying
+    exhibit wins. Investor-presentation filings (Item 7.01 only) often repeat the reconciliation, so
+    they are used only when no earnings filing qualifies, and then only if exactly one does.
+    """
     start, end = q.filing_window()
-    filings = edgar.earnings_filings(cik, start, end)
+    filings = sorted(edgar.earnings_filings(cik, start, end), key=lambda f: f["filingDate"])
     if not filings:
         return None, "no earnings 8-K in the filing window"
-    cands = []
-    for f in filings:
-        for doc in edgar.filing_documents(cik, f["accessionNumber"]):
-            if doc["size"] and doc["size"] < 5_000:
-                continue
-            raw = edgar.get_bytes(doc["url"])
-            sc = score_document(raw, doc["name"], q)
-            if sc["verified"] and sc["right_period"] and sc["recon"] >= MIN_RECON_SCORE:
-                cands.append({"filing": f, "doc": doc, "raw": raw, **sc})
+    earnings = [f for f in filings if "2.02" in (f.get("items") or "")]
+    others = [f for f in filings if f not in earnings]
+    cands, source = [], ""
+    for f in earnings:
+        cands = _qualifying(edgar, cik, f, q)
+        if cands:
+            source = "earnings 8-K"
+            break
+    if not cands:
+        found = [(f, _qualifying(edgar, cik, f, q)) for f in others]
+        found = [(f, c) for f, c in found if c]
+        if len(found) > 1:
+            return None, f"no earnings 8-K qualifies and {len(found)} other filings contain a reconciliation"
+        if found:
+            cands, source = found[0][1], "Item 7.01 8-K"
     if not cands:
         return None, "no exhibit passed the checks"
-    filings_with_cands = {c["filing"]["accessionNumber"] for c in cands}
-    if len(filings_with_cands) > 1:
-        # e.g. an amended 8-K or a separate supplemental filing: let the agent judge
-        return None, f"{len(filings_with_cands)} filings contain a reconciliation"
     # Prefer the most complete document: reconciliation page strength, then share-count and
     # capex pages (supplementals have them; press releases often don't), then length.
     cands.sort(key=lambda c: (round(c["recon"]), c["extras"], c["size"]), reverse=True)
     best = cands[0]
-    return best, f"rules: best of {len(cands)} qualifying exhibit(s) (reconciliation score {best['recon']:.0f})"
+    return best, (f"rules: {source} filed {best['filing']['filingDate']}, best of {len(cands)} qualifying "
+                  f"exhibit(s) (reconciliation score {best['recon']:.0f})")
 
 
 def save(choice: dict, ticker: str, cik: int, q: Quarter, out_dir: Path, edgar: EdgarClient, reason: str) -> dict:

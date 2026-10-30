@@ -33,6 +33,9 @@ Net income to common shareholders, adjusted per the Nareit FFO White Paper (2018
 | 8 | Non-cash stock compensation | **Keep as a cost** | Dilutes shareholders, so it is a real cost. |
 | 9 | Amortization of deferred financing costs (and debt discounts/premiums) | **Keep as a cost; remove benefits** | Loan fees are a real cost of borrowing, just spread over the loan's life. *Added Oct 30, 2026 after NXRT's add-back of ~$0.065/share.* |
 | 10 | Depreciation of non-real-estate assets ("other depreciation") | **Keep as a cost** | Nareit adds back only real estate depreciation; offices and IT wear out and are replaced. *Added Oct 30, 2026 after IRT's add-back.* |
+| 11 | Gains/losses on sale of non-depreciable real estate (land) | **Remove gains, keep losses** | Land sales are one-off and don't come from renting apartments. *Added Oct 30, 2026 (MAA 2022–2023).* |
+| 12 | COVID-19 / pandemic-related costs | **Add back (as companies do)** | **Deliberate exception** to the risk-averse approach: the pandemic is treated as a true one-time event. *Added Oct 30, 2026 (MAA 2022).* |
+| 13 | Mark-to-market (fair-value) amortization of assumed debt | **Keep costs, remove benefits** (same as rule 9) | It usually lowers reported interest below the cash actually paid; a conservative, cash-focused measure keeps the real cost of borrowing. *Added Oct 30, 2026 (MAA 2023).* |
 
 ## From Conservative Core FFO to Conservative AFFO
 

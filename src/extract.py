@@ -28,10 +28,12 @@ CATEGORIES = {
     "severance_restructuring": "Severance, restructuring, executive transition, software transition",
     "stock_comp": "Non-cash / stock-based compensation",
     "non_re_depreciation": "Depreciation/amortization of NON-real-estate assets (corporate offices, IT, 'other depreciation')",
+    "land_sale_gain_loss": "Gains/losses on sale of NON-depreciable real estate (land parcels)",
+    "pandemic_costs": "COVID-19 / pandemic-related costs",
     # AFFO items
     "recurring_capex": "Recurring / maintenance capital expenditures",
     "straight_line_rent": "Straight-line rent and similar non-cash revenue",
-    "debt_cost_amortization": "Amortization of deferred financing costs, debt discounts/premiums",
+    "debt_cost_amortization": "Amortization of deferred financing costs, debt discounts/premiums, mark-to-market (fair value) debt adjustments",
     "other": "Anything that fits none of the above (describe it in the label)",
 }
 

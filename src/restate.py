@@ -6,12 +6,32 @@ stays in earnings), with the reason recorded for the dashboard.
 """
 from __future__ import annotations
 
+import re
+
 # Remove both gains and losses (apply the company's adjustment whatever its sign).
-REMOVE_BOTH = {"investment_gain_loss", "derivative_mtm"}
+# pandemic_costs: the one deliberate exception to the risk-averse approach (user decision, Oct 30, 2026):
+# COVID-19 costs are treated as a true one-time event and the company's add-back is applied.
+REMOVE_BOTH = {"investment_gain_loss", "derivative_mtm", "pandemic_costs"}
 # Keep costs in earnings; remove gains/recoveries. A positive adjustment is an add-back of a cost
 # (kept in, i.e. not applied); a negative adjustment removes a gain or recovery (applied).
 KEEP_COSTS = {"legal", "casualty", "debt_extinguishment", "transaction_costs", "severance_restructuring", "stock_comp",
-              "debt_cost_amortization", "non_re_depreciation"}
+              "debt_cost_amortization", "non_re_depreciation", "land_sale_gain_loss"}
+
+# Label patterns that fix the category regardless of what the model chose, so a rule never depends
+# on the model filing an item consistently.
+LABEL_RULES = [
+    (re.compile(r"covid|pandemic", re.I), "pandemic_costs"),
+    (re.compile(r"non-?depreciable", re.I), "land_sale_gain_loss"),
+    (re.compile(r"mark[- ]to[- ]market (adjustment(s)? (on|of|to) )?debt|fair value adjustment.{0,30}(debt|mortgage)", re.I), "debt_cost_amortization"),
+    (re.compile(r"^(?=.*\bother\b)(?=.*depreciation)", re.I), "non_re_depreciation"),
+]
+
+
+def normalize(line: dict) -> dict:
+    for pattern, cat in LABEL_RULES:
+        if pattern.search(line.get("label", "")):
+            return {**line, "category": cat}
+    return line
 CAPEX = {"recurring_capex"}
 # AFFO-only items our definition does not use.
 IGNORED_AFFO = {"straight_line_rent", "debt_cost_amortization"}
@@ -23,7 +43,9 @@ REASONS = {
     "transaction_costs": "Acquisition-driven growth has a real cost; kept as a cost",
     "severance_restructuring": "Reorganizations recur; kept as a cost",
     "stock_comp": "Stock compensation dilutes shareholders; kept as a cost",
-    "debt_cost_amortization": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost",
+    "debt_cost_amortization": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed",
+    "land_sale_gain_loss": "Land sales are one-off, not rental earnings: gains removed, losses kept",
+    "pandemic_costs": "COVID-19 costs treated as a one-time event; company's add-back applied (deliberate exception)",
     "non_re_depreciation": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost",
     "investment_gain_loss": "Non-real-estate investment results removed (gains and losses)",
     "derivative_mtm": "Non-cash derivative revaluation removed (gains and losses)",
@@ -58,10 +80,10 @@ def restate(ext: dict) -> dict:
 
     # Company adjustments that our definition rules on: the core section, plus any
     # definition items a company places in its AFFO section.
-    rule_lines = [("core", l) for l in ext.get("core_adjustments", [])]
+    rule_lines = [("core", normalize(l)) for l in ext.get("core_adjustments", [])]
     # AFFO-section items: only those the definition rules on as part of earnings. Stock comp and
     # financing-cost amortization added back in AFFO are simply not added back (no effect needed).
-    rule_lines += [("affo", l) for l in ext.get("affo_adjustments", [])
+    rule_lines += [("affo", l) for l in map(normalize, ext.get("affo_adjustments", []))
                    if l["category"] in REMOVE_BOTH | KEEP_COSTS | {"other"} and l["category"] not in {"stock_comp", "debt_cost_amortization"}]
     cons_core = ffo
     for section, line in rule_lines:
