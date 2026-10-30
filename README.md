@@ -74,12 +74,22 @@ data/answer_key/   hand-built reconciliations used for testing
 output/            restated FFO tables
 ```
 
-## Setup
+## Setup (Windows)
 
-```bash
-pip install -r requirements.txt
-cp .env.example .env   # then add your API key and SEC user agent
-```
+1. Install Python 3.11+.
+2. Double-click `setup.bat`: installs the libraries and creates `.env`.
+3. Paste your Claude API key into `.env` after `ANTHROPIC_API_KEY=`.
+
+## Running
+
+| Command | What it does |
+|---|---|
+| `run_test_MAA.bat` | Collects one quarter (MAA Q2 2026). Use first to check everything works. |
+| `run_collect.bat` | Collects all five answer-key REITs, Q4 2025 to Q2 2026. |
+| `python -m src.collect --tickers MAA CPT --start 2025Q4 --end 2026Q2` | Custom run. |
+| `python -m unittest discover tests` | Offline tests (no API key or internet needed). |
+
+Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is logged in `output/collection_manifest.csv` (filing, exhibit, EDGAR link, the agent's reason, and automatic checks).
 
 ## Status
 
@@ -88,7 +98,7 @@ cp .env.example .env   # then add your API key and SEC user agent
 - [x] MAA hand reconciliation (Q4 2025, Q1 2026, Q2 2026; all checks tie to reported figures)
 - [x] Common FFO definition (`docs/common_definition.md`)
 - [x] Multifamily rule (`docs/multifamily_rule.md`)
-- [ ] Collection agent (fixed list, current quarters)
+- [ ] Collection agent (fixed list, current quarters) — code written and tested offline; first live run pending
 - [ ] Extraction and restatement
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
