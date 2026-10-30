@@ -1,0 +1,235 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\definecolor{accent}{RGB}{30,60,110}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\titleformat{\section}{\large\bfseries\color{accent}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcommand{\checkbox}{\raisebox{-0.5pt}{\framebox(7,7){}}}
+\newlist{todo}{itemize}{2}
+\setlist[todo]{label=\checkbox, leftmargin=1.6em, itemsep=2pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries REIT FFO Comparability Pipeline}\\[4pt]
+  {\large Project Plan}\\[8pt]
+  Mohammad Natsheh \quad\textbar\quad MRED, Clemson University \quad\textbar\quad October 2026
+\end{center}
+
+\section{Project Summary}
+
+Funds from operations (FFO) is the main earnings measure for REITs, but the
+company-defined versions (Core FFO, Normalized FFO, CFFO, FFO as Adjusted,
+AFFO) are not comparable across peers. Each REIT adds back different items,
+companies change their own definitions over time, and the reconciliations sit
+in quarterly filings with different layouts.
+
+\textbf{One-sentence description.} Our application helps REIT equity analysts
+and real estate investors make apples-to-apples valuation and peer-comparison
+decisions across all U.S.\ publicly traded multifamily REITs by using an AI
+agent that monitors SEC EDGAR daily to track which REITs are listed, collect
+every quarterly earnings filing since 2018, and extract each FFO
+reconciliation, to produce a continuously updated, restated FFO history on one
+common definition, with source-page citations and plain-language explanations
+of how each REIT's reported metrics differ.
+
+The pipeline is written in Python on the Claude API and:
+\begin{enumerate}[itemsep=1pt]
+  \item \textbf{tracks the universe}: finds every listed multifamily REIT,
+        including those listed at any point since 2018 that have since been
+        acquired, merged or liquidated;
+  \item \textbf{collects} each quarterly earnings document from SEC EDGAR;
+  \item \textbf{extracts} every line of each FFO reconciliation into structured data;
+  \item \textbf{restates} every company-quarter to one fixed common definition,
+        applied retroactively (the arithmetic runs in code, not in the AI);
+  \item \textbf{explains} how each REIT's reported metrics differ, with page citations; and
+  \item \textbf{updates itself daily}, picking up new quarters, new REITs and exits.
+\end{enumerate}
+
+\begin{center}
+\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{Track universe} $\rightarrow$ \textbf{Collect} (EDGAR API) $\rightarrow$
+\textbf{Extract} (AI) $\rightarrow$ \textbf{Restate} (Python) $\rightarrow$
+\textbf{Explain and report} \\[2pt] \textit{runs daily on a schedule}}}
+\end{center}
+
+\section{Scope}
+
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Companies:} every U.S.\ exchange-listed REIT that meets the
+        multifamily rule (Phase 4), at any point from 2018 to today.
+  \item \textbf{Period:} Q1 2018 to the latest reported quarter, then every new
+        quarter as it is filed. Roughly 35 quarters of history.
+  \item \textbf{Metrics:} NAREIT FFO, each company's own ``core'' metric, and AFFO.
+  \item \textbf{Common definition:} one fixed definition, today's, applied to
+        every quarter regardless of what definition the company used at the time.
+  \item \textbf{Disclosure limits:} where an older filing combines or omits an
+        item the definition needs, the pipeline searches the 10-Q notes; if the
+        item still cannot be separated, the quarter is flagged ``restated with
+        limits'' rather than guessed.
+\end{itemize}
+
+\subsection*{Current universe (October 2026)}
+
+{\small\noindent
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}p{3.9cm} >{\raggedright\arraybackslash}p{3.0cm} L@{}}
+\toprule
+\textbf{Ticker} & \textbf{Company} & \textbf{Markets} & \textbf{``Core'' metric / note} \\
+\midrule
+VMRK & Vivmark Residential & Coastal & Formed Aug.\ 2026 from AvalonBay (Core FFO) and Equity Residential (Normalized FFO); history kept as two companies before the merger \\
+ESS  & Essex Property Trust & West Coast & Core FFO \\
+UDR  & UDR & Mixed & FFO as Adjusted \\
+MAA  & Mid-America Apartment Communities & Sunbelt & Core FFO, Core AFFO \\
+CPT  & Camden Property Trust & Sunbelt & Core FFO, Core AFFO \\
+IRT  & Independence Realty Trust & Sunbelt/Midwest & CFFO; acquiring Centerspace \\
+NXRT & NexPoint Residential Trust & Sunbelt & Core FFO \\
+BRT  & BRT Apartments & Sunbelt & No core metric (FFO, AFFO) \\
+CSR  & Centerspace & Midwest/Mountain & Core FFO; being acquired by IRT \\
+CLPR & Clipper Realty & New York City & AFFO; inclusion decided by the multifamily rule \\
+\bottomrule
+\end{tabularx}}
+
+\subsection*{Former REITs in the 2018+ history (examples)}
+Veris Residential (taken private 2026), Elme Communities (liquidated 2026),
+Aimco (liquidating), AIR Communities (taken private 2024), Preferred Apartment
+Communities and Bluerock Residential (acquired 2022). Including them avoids
+\textbf{survivorship bias}: a history built only from today's survivors would
+skew every comparison.
+
+\section{Testing Strategy}
+
+The hand-built set is the answer key the pipeline is graded against:
+\begin{itemize}[itemsep=1pt]
+  \item 15 supplementals collected by hand: MAA, CPT, IRT, NXRT and BRT for
+        Q4 2025--Q2 2026.
+  \item MAA reconciled by hand for all three quarters (Excel workbook).
+  \item Spot checks: one quarter each for three or four other REITs, plus at
+        least two pre-2020 quarters to test older layouts.
+\end{itemize}
+
+\section{Project Steps}
+
+\subsection{Phase 1 --- Scope and Background}
+\begin{todo}
+  \item Confirm scope: all U.S.-listed multifamily REITs, Q1 2018 to present. \textit{Done.}
+  \item Read the Nareit FFO White Paper and list the NAREIT-standard adjustments.
+\end{todo}
+
+\subsection{Phase 2 --- Answer Key Documents}
+\begin{todo}
+  \item Collect 15 supplementals by hand. \textit{Done.}
+  \item Rename files consistently and store in \texttt{data/raw/}. \textit{Done.}
+  \item Replace the BRT Q4 2025 file with a text-based copy from EDGAR.
+  \item Record the EDGAR filing each file came from (form, date, exhibit).
+\end{todo}
+
+\subsection{Phase 3 --- Manual Baseline (MAA)}
+\begin{todo}
+  \item Q2 2026 reconciliation. \textit{Done (worked example).}
+  \item Q4 2025 and Q1 2026 reconciliations; all checks show OK.
+  \item Fill in the Adjustment Log for all three quarters.
+\end{todo}
+
+\subsection{Phase 4 --- Definitions}
+\begin{todo}
+  \item Build the adjustment map across the five answer-key REITs.
+  \item Write the common FFO definition: which items are included and why.
+  \item Write the \textbf{multifamily rule} (e.g.\ more than half of NOI or
+        real estate from apartments) used to decide which REITs are in the universe.
+  \item Define the ``restated with limits'' flag and when it applies.
+\end{todo}
+
+\subsection{Phase 5 --- Collection Agent (fixed list, current quarters)}
+\begin{todo}
+  \item Set up Python, the Claude API key and the repository. \textit{Repository done.}
+  \item Write EDGAR tools: list a company's filings, list a filing's exhibits, download a file.
+        Send the User-Agent header the SEC requires.
+  \item Agent finds each earnings 8-K and picks the exhibit holding the FFO reconciliation.
+  \item Checks: file mentions ``Funds from Operations'' and the right period end.
+  \item Run on the five answer-key REITs; compare against the 15 hand-collected files.
+\end{todo}
+
+\subsection{Phase 6 --- Extraction and Restatement}
+\begin{todo}
+  \item Define the JSON schema for one reconciliation (lines, amounts, per-share, pages).
+  \item Prompt Claude to fill it and to flag unclear items instead of guessing.
+  \item Check in code that extracted lines sum to reported totals.
+  \item Map line items to common categories; compute restated FFO in Python.
+  \item Generate a plain-language note per company-quarter.
+  \item Test on MAA against the manual baseline until it matches.
+\end{todo}
+
+\subsection{Phase 7 --- Accuracy Testing}
+\begin{todo}
+  \item Collection: correct filing and exhibit for every answer-key company-quarter.
+  \item Extraction: match to \$0.01 per share.
+  \item Error log by type: wrong document, wrong number, misclassified adjustment,
+        wrong page, missed item.
+\end{todo}
+
+\subsection{Phase 8 --- Live Universe and Daily Updates}
+\begin{todo}
+  \item Pull all REITs (SIC code 6798) with tickers from the SEC company list.
+  \item Claude classifies each candidate against the multifamily rule, citing the 10-K.
+  \item New entries are proposed for review before they join the universe.
+  \item Detect exits from Form 25 (delisting) and Form 15 (deregistration); keep history.
+  \item Schedule a daily run with GitHub Actions: new quarters, new REITs, exits.
+\end{todo}
+
+\subsection{Phase 9 --- Backfill to Q1 2018}
+\begin{todo}
+  \item Identify every multifamily REIT listed at any point since 2018, including former ones.
+  \item Collect and extract all quarters from Q1 2018 onward.
+  \item Search 10-Q notes where reconciliations lack detail; flag what cannot be separated.
+  \item Spot-check pre-2020 quarters by hand.
+  \item Report the share of quarters fully restated vs.\ restated with limits.
+\end{todo}
+
+\subsection{Phase 10 --- Deliverables}
+\begin{todo}
+  \item Full proposal after fall break (scope, method, universe, test plan).
+  \item Code repository on GitHub with a README.
+  \item Restated FFO history (Excel and data files).
+  \item Optional results website (e.g.\ Vercel) showing the latest comparison.
+  \item Write-up of findings and accuracy results.
+  \item Short resume summary of the project.
+\end{todo}
+
+\section{Data Sources}
+\begin{itemize}[itemsep=1pt]
+  \item SEC EDGAR via the free API (\texttt{data.sec.gov}): 8-K earnings exhibits,
+        10-Q and 10-K filings, Forms 25 and 15, and the company list with SIC codes.
+  \item REIT investor relations sites: quarterly supplementals (answer key).
+  \item Nareit FFO White Paper (baseline definition).
+  \item Claude API: classification, extraction and explanations.
+\end{itemize}
+
+\section*{References}
+\small
+\begin{itemize}[itemsep=1pt, label={}]
+  \item \href{https://www.regardsofwallstreet.com/news/avalonbay-avb-merger-closes-vmrk-august-17}{AvalonBay--Equity Residential merger closes as Vivmark}
+  \item \href{https://www.insidearbitrage.com/?p=174660}{IRT to acquire Centerspace}
+  \item \href{https://www.multihousingnews.com/affinius-capital-jv-closes-3-5b-acquisition-of-veris-residential/}{Veris Residential taken private}
+  \item \href{https://finviz.com/news/407432/elme-communities-announces-suspended-nyse-trading-anticipates-trading-will-begin-otc-effective-october-26-2026}{Elme Communities NYSE trading suspended}
+  \item \href{https://digital-release.kxan.com/business/press-releases/cision/20260330LA22745/aimco-provides-update-on-liquidation-activities}{Aimco liquidation update}
+  \item \href{https://www.sec.gov/Archives/edgar/data/0000912595/000119312526323756/maa-ex99_1.htm}{MAA Q2 2026 8-K}
+\end{itemize}
+
+\end{document}
