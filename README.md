@@ -84,6 +84,9 @@ output/            restated FFO tables
 
 | Command | What it does |
 |---|---|
+| `run_check_universe.bat` | Free: checks every REIT's SEC ID against EDGAR before any paid run. |
+| `run_pilot_MAA.bat` | Pilot: MAA from 2018 to today (~34 quarters), then rebuilds the dashboard. Asks before spending. |
+| `run_all.bat` | Every REIT, every missing quarter since 2018. Asks before each paid step; safe to stop and restart. |
 | `run_test_MAA.bat` | Collects one quarter (MAA Q2 2026). Use first to check everything works. |
 | `run_collect.bat` | Collects all five answer-key REITs, Q4 2025 to Q2 2026. |
 | `python -m src.collect --tickers MAA CPT --start 2025Q4 --end 2026Q2` | Custom run. |
@@ -105,7 +108,7 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 - [x] Extraction and restatement — 15/15 quarters tie; MAA 42/42 vs answer key ([results](docs/extraction_test_results.md))
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
-- [ ] Backfill to Q1 2018
+- [ ] Backfill to Q1 2018 — universe of 17 REITs / 466 company-quarters configured; resumable yearly batches; pilot pending
 - [x] FFO dashboard demo (`dashboard/index.html`, built by `python -m src.build_dashboard`)
 
 ## Author

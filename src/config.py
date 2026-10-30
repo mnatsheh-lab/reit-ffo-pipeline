@@ -19,15 +19,33 @@ SEC_USER_AGENT = os.getenv("SEC_USER_AGENT", "").strip().strip('"')
 MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5-5")
 EXTRACT_MODEL = os.getenv("CLAUDE_EXTRACT_MODEL", MODEL)
 
-# SEC Central Index Keys. The universe step (Phase 8) will build this list automatically;
-# for now it holds the five answer-key REITs.
+# The universe: every U.S.-listed multifamily REIT (75% rule, docs/multifamily_rule.md) since 2018.
+# CIKs are verified against EDGAR with `python -m src.universe` before any paid run.
+# start/end bound the quarters collected (inclusive); None = open. Notes explain each boundary.
 REITS: dict[str, dict] = {
-    "MAA": {"cik": 912595, "name": "Mid-America Apartment Communities"},
-    "CPT": {"cik": 906345, "name": "Camden Property Trust"},
-    "IRT": {"cik": 1466085, "name": "Independence Realty Trust"},
+    # Current constituents (FTSE Nareit Apartments, Aug 2026)
+    "MAA":  {"cik": 912595,  "name": "Mid-America Apartment Communities"},
+    "CPT":  {"cik": 906345,  "name": "Camden Property Trust"},
+    "IRT":  {"cik": 1466085, "name": "Independence Realty Trust"},
     "NXRT": {"cik": 1620393, "name": "NexPoint Residential Trust"},
-    "BRT": {"cik": 14846, "name": "BRT Apartments Corp."},
+    "BRT":  {"cik": 14846,   "name": "BRT Apartments Corp."},
+    "ESS":  {"cik": 920522,  "name": "Essex Property Trust"},
+    "UDR":  {"cik": 74208,   "name": "UDR, Inc."},
+    "CSR":  {"cik": 798359,  "name": "Centerspace", "note": "Investors Real Estate Trust until 2020; being acquired by IRT"},
+    "CLPR": {"cik": 1649096, "name": "Clipper Realty"},
+    # Merged into Vivmark Residential (VMRK) on Aug 17, 2026; history kept as two companies.
+    "AVB":  {"cik": 915912,  "name": "AvalonBay Communities", "end": "2026Q2"},
+    "EQR":  {"cik": 906107,  "name": "Equity Residential", "end": "2026Q2"},
+    # Former REITs (kept to avoid survivorship bias). Boundaries are provisional until the
+    # Phase 8 classifier checks the 75% rule year by year.
+    "AIV":  {"cik": 922864,  "name": "Aimco", "end": "2020Q3", "note": "Pre-split Aimco; the post-2020 development company is excluded pending review"},
+    "AIRC": {"cik": 1820877, "name": "AIR Communities", "start": "2020Q4", "end": "2024Q1", "note": "Spun off from Aimco Dec 2020; taken private 2024"},
+    "APTS": {"cik": 1481832, "name": "Preferred Apartment Communities", "end": "2022Q1", "note": "Acquired 2022"},
+    "BRG":  {"cik": 1442626, "name": "Bluerock Residential Growth REIT", "end": "2022Q2", "note": "Acquired 2022"},
+    "ELME": {"cik": 104894,  "name": "Elme Communities", "start": "2021Q3", "end": "2025Q2", "note": "WashREIT until 2022; multifamily after office/retail sales; liquidated 2025-26"},
+    "VRE":  {"cik": 924901,  "name": "Veris Residential", "start": "2022Q1", "end": "2025Q4", "note": "Mack-Cali until 2021; multifamily after office exits; taken private 2026"},
 }
+FIRST_QUARTER = "2018Q1"
 
 
 def check_settings() -> list[str]:

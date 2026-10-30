@@ -68,12 +68,15 @@ class EdgarClient:
         return rows
 
     def earnings_filings(self, cik: int, start: date, end: date) -> list[dict]:
-        """8-K filings with Item 2.02 (Results of Operations) filed between start and end."""
+        """8-K filings with Item 2.02 (Results of Operations) or 7.01 filed between start and end."""
         out = []
         for f in self.filings(cik):
             if f["form"] not in ("8-K", "8-K/A"):
                 continue
-            if "2.02" not in (f.get("items") or ""):
+            items = f.get("items") or ""
+            # Item 2.02 = results of operations. Some REITs file the supplemental separately
+            # under Item 7.01 (Regulation FD), so include those too.
+            if "2.02" not in items and "7.01" not in items:
                 continue
             filed = date.fromisoformat(f["filingDate"])
             if start <= filed <= end:

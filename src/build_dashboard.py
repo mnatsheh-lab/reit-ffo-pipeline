@@ -54,6 +54,10 @@ def build(extract_dir: Path, out: Path = OUT) -> Path:
     data.sort(key=lambda x: (x["ticker"], x["quarter"]))
     html = TEMPLATE.read_text(encoding="utf-8")
     html = html.replace("/*__DATA__*/[]", json.dumps(data, separators=(",", ":")))
+    tick = sorted({d["ticker"] for d in data}); qs = sorted({d["quarter"] for d in data})
+    q = lambda x: f"Q{x[5]} {x[:4]}"
+    coverage = f"{len(tick)} REITs, {len(data)} company-quarters ({q(qs[0])}–{q(qs[-1])})" if data else "no data yet"
+    html = html.replace("__COVERAGE__", coverage)
     html = html.replace("__BUILT__", date.today().strftime("%B %d, %Y").replace(" 0", " "))
     out.write_text(html, encoding="utf-8")
     return out

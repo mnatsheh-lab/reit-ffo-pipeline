@@ -27,6 +27,7 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--tickers", nargs="+")
     parser.add_argument("--redo", action="store_true", help="re-extract even if a result already exists")
+    parser.add_argument("--yes", action="store_true", help="don't ask for confirmation")
     args = parser.parse_args(argv)
 
     problems = config.check_settings()
@@ -35,6 +36,20 @@ def main(argv=None) -> int:
         return 1
     manifest = json.loads((config.OUTPUT_DIR / "collection_manifest.json").read_text())
     todo = [r for r in manifest if r["status"].startswith("saved") and (not args.tickers or r["ticker"] in [t.upper() for t in args.tickers])]
+
+    def needs_extraction(r):
+        p = EXTRACT_DIR / f"{r['ticker']}_{r['quarter']}.json"
+        if args.redo or not p.exists():
+            return True
+        return json.loads(p.read_text())["extraction"].get("version") != EXTRACTION_VERSION
+
+    new = [r for r in todo if needs_extraction(r)]
+    if new:
+        print(f"{len(new)} document(s) to extract, roughly {len(new) * 20_000 / 1e6:.1f}M Claude tokens; "
+              f"{len(todo) - len(new)} already done.")
+        if not args.yes and input("Start? Type y and press Enter: ").strip().lower() != "y":
+            print("Cancelled.")
+            return 0
 
     import anthropic
 
@@ -85,12 +100,24 @@ def main(argv=None) -> int:
         w.writerows(rows)
     (config.OUTPUT_DIR / "restated_ffo.json").write_text(json.dumps(rows, indent=2))
 
-    print("\n=== Restated FFO per share ===")
-    print(f"{'REIT':5} {'Qtr':7} {'NAREIT':>7} {'Co. core':>9} {'Cons. core':>10} {'Co. AFFO':>9} {'Cons. AFFO':>10}  Ties")
     fmt = lambda x: f"{x:.2f}" if isinstance(x, (int, float)) else "-"
-    for row in rows:
-        print(f"{row['ticker']:5} {row['quarter']:7} {fmt(row['nareit_ffo_ps']):>7} {fmt(row['company_core_ps']):>9} "
-              f"{fmt(row['conservative_core_ffo_ps']):>10} {fmt(row['company_affo_ps']):>9} {fmt(row['conservative_affo_ps']):>10}  {'yes' if row['ties'] else 'NO'}")
+    head = f"{'REIT':5} {'Qtr':7} {'NAREIT':>7} {'Co. core':>9} {'Cons. core':>10} {'Co. AFFO':>9} {'Cons. AFFO':>10}  Ties"
+    line = lambda row: (f"{row['ticker']:5} {row['quarter']:7} {fmt(row['nareit_ffo_ps']):>7} {fmt(row['company_core_ps']):>9} "
+                        f"{fmt(row['conservative_core_ffo_ps']):>10} {fmt(row['company_affo_ps']):>9} {fmt(row['conservative_affo_ps']):>10}  {'yes' if row['ties'] else 'NO'}")
+    print("\n=== Summary by REIT ===")
+    for t in sorted({r["ticker"] for r in rows}):
+        rs = [r for r in rows if r["ticker"] == t]
+        print(f"  {t:5} {len(rs):3} quarters, {sum(r['ties'] for r in rs):3} tie, {sum(1 for r in rs if r['conservative_affo_ps'] is None):3} without Conservative AFFO")
+    bad = [r for r in rows if not r["ties"]]
+    print(f"\n=== Quarters that do not tie ({len(bad)}) ===")
+    if bad:
+        print(head)
+        for row in bad:
+            print(line(row))
+    print("\n=== Latest quarter per REIT ===")
+    print(head)
+    for t in sorted({r["ticker"] for r in rows}):
+        print(line(max((r for r in rows if r["ticker"] == t), key=lambda r: r["quarter"])))
     if tin:
         print(f"\nClaude tokens used: {tin:,} in / {tout:,} out")
 
