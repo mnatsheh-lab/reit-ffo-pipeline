@@ -1,0 +1,233 @@
+{
+  "ticker": "CPT",
+  "quarter": "2026Q2",
+  "period_end": "2026-06-30",
+  "source": {
+    "accession": "0001628280-26-051083",
+    "filename": "exhibit992supplement2q26.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000162828026051083/exhibit992supplement2q26.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core funds from operations",
+    "affo_metric_name": "Core adjusted funds from operations",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income attributable to common shareholders",
+      "amount": 18790,
+      "page_seq": 6,
+      "page_printed": "6"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 153451,
+        "category": "re_depreciation",
+        "page_seq": 6,
+        "page_printed": "6"
+      },
+      {
+        "label": "Income allocated to non-controlling interests",
+        "amount": 1916,
+        "category": "noncontrolling_interest",
+        "page_seq": 6,
+        "page_printed": "6"
+      },
+      {
+        "label": "Gain on sale of operating property",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 6,
+        "page_printed": "6"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 174157,
+      "page_seq": 6,
+      "page_printed": "6"
+    },
+    "core_adjustments": [
+      {
+        "label": "Plus: Casualty-related expenses (a)",
+        "amount": -3729,
+        "category": "casualty",
+        "page_seq": 6,
+        "page_printed": "6"
+      },
+      {
+        "label": "Plus: Legal costs and settlements (b)(c)",
+        "amount": 412,
+        "category": "legal",
+        "page_seq": 6,
+        "page_printed": "6"
+      },
+      {
+        "label": "Plus: Expensed transaction, development, and other pursuit costs (c)",
+        "amount": 4237,
+        "category": "transaction_costs",
+        "page_seq": 6,
+        "page_printed": "6"
+      },
+      {
+        "label": "Plus: Investment losses (b)",
+        "amount": 0,
+        "category": "investment_gain_loss",
+        "page_seq": 6,
+        "page_printed": "6"
+      },
+      {
+        "label": "Plus: Other miscellaneous items (a)",
+        "amount": 1,
+        "category": "other",
+        "page_seq": 6,
+        "page_printed": "6"
+      }
+    ],
+    "core_total": {
+      "label": "Core funds from operations",
+      "amount": 175078,
+      "page_seq": 6,
+      "page_printed": "6"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Less: Recurring capitalized expenditures (d)",
+        "amount": -30142,
+        "category": "recurring_capex",
+        "page_seq": 6,
+        "page_printed": "6"
+      }
+    ],
+    "affo_total": {
+      "label": "Core adjusted funds from operations",
+      "amount": 144936,
+      "page_seq": 6,
+      "page_printed": "6"
+    },
+    "diluted_shares": {
+      "label": "FFO/Core FFO/Core AFFO - diluted",
+      "amount": 103957,
+      "page_seq": 6,
+      "page_printed": "6"
+    },
+    "reported_per_share": {
+      "ffo": 1.68,
+      "core": 1.68,
+      "affo": 1.39
+    },
+    "notes": "Gain on sale of operating property and Investment losses were printed as \"\u2014\" for the quarter, so I recorded them as 0. The same reconciliation appears on page 22 and is identical. Diluted shares are in thousands.",
+    "validation_errors": [],
+    "attempts": 1,
+    "usage": {
+      "input_tokens": 12518,
+      "output_tokens": 1197
+    },
+    "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": "4"
+      },
+      {
+        "seq": 5,
+        "printed": "5"
+      },
+      {
+        "seq": 6,
+        "printed": "6"
+      },
+      {
+        "seq": 7,
+        "printed": "7"
+      },
+      {
+        "seq": 22,
+        "printed": "22"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 174157,
+    "nareit_ffo_ps": 1.6753,
+    "company_core_name": "Core funds from operations",
+    "company_core": 175078,
+    "company_core_ps": 1.6841,
+    "company_affo_name": "Core adjusted funds from operations",
+    "company_affo": 144936,
+    "company_affo_ps": 1.3942,
+    "conservative_core_ffo": 170428,
+    "conservative_core_ffo_ps": 1.6394,
+    "conservative_affo": 140286,
+    "conservative_affo_ps": 1.3495,
+    "recurring_capex": [
+      {
+        "label": "Less: Recurring capitalized expenditures (d)",
+        "amount": -30142,
+        "category": "recurring_capex",
+        "page_seq": 6,
+        "page_printed": "6"
+      }
+    ],
+    "steps": [
+      {
+        "label": "Plus: Casualty-related expenses (a)",
+        "amount": -3729,
+        "category": "casualty",
+        "page_seq": 6,
+        "page_printed": "6",
+        "section": "core",
+        "applied": true,
+        "effect": -3729,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Plus: Legal costs and settlements (b)(c)",
+        "amount": 412,
+        "category": "legal",
+        "page_seq": 6,
+        "page_printed": "6",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Plus: Expensed transaction, development, and other pursuit costs (c)",
+        "amount": 4237,
+        "category": "transaction_costs",
+        "page_seq": 6,
+        "page_printed": "6",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Plus: Investment losses (b)",
+        "amount": 0,
+        "category": "investment_gain_loss",
+        "page_seq": 6,
+        "page_printed": "6",
+        "section": "core",
+        "applied": true,
+        "effect": 0,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Plus: Other miscellaneous items (a)",
+        "amount": 1,
+        "category": "other",
+        "page_seq": 6,
+        "page_printed": "6",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Unlisted adjustment: Plus: Other miscellaneous items (a)"
+    ],
+    "diluted_shares": 103957
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "ticker": "MAA",
+  "quarter": "2026Q1",
+  "period_end": "2026-03-31",
+  "source": {
+    "accession": "0001193125-26-191620",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000119312526191620/maa-ex99_1.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income available for MAA common shareholders",
+      "amount": 123437,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization of real estate assets",
+        "amount": 160493,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Gain on sale of depreciable real estate assets",
+        "amount": -20164,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "MAA\u2019s share of depreciation and amortization of real estate assets of real estate joint venture",
+        "amount": 170,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Net income attributable to noncontrolling interests",
+        "amount": 2252,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common shareholders and unitholders",
+      "amount": 266188,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "core_adjustments": [
+      {
+        "label": "Loss on embedded derivative in preferred shares (1)",
+        "amount": 1574,
+        "category": "derivative_mtm",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Gain on investments, net of tax (1)(2)",
+        "amount": -17237,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Casualty related charges and (recoveries), net (1)",
+        "amount": 4519,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common shareholders and unitholders",
+      "amount": 255044,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -18748,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO attributable to common shareholders and unitholders",
+      "amount": 236296,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "diluted_shares": {
+      "label": "FFO weighted average common shares and units - diluted",
+      "amount": 119629,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "reported_per_share": {
+      "ffo": 2.23,
+      "core": 2.13,
+      "affo": 1.98
+    },
+    "notes": "The reconciliation continues past Core AFFO to FAD. I excluded the capex lines after Core AFFO because they are below the AFFO total. Share counts are in thousands.",
+    "validation_errors": [],
+    "attempts": 1,
+    "usage": {
+      "input_tokens": 15584,
+      "output_tokens": 1179
+    },
+    "candidate_pages": [
+      {
+        "seq": 7,
+        "printed": "7"
+      },
+      {
+        "seq": 8,
+        "printed": "8"
+      },
+      {
+        "seq": 9,
+        "printed": "9"
+      },
+      {
+        "seq": 10,
+        "printed": "10"
+      },
+      {
+        "seq": 11,
+        "printed": "11"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 266188,
+    "nareit_ffo_ps": 2.2251,
+    "company_core_name": "Core FFO",
+    "company_core": 255044,
+    "company_core_ps": 2.132,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 236296,
+    "company_affo_ps": 1.9752,
+    "conservative_core_ffo": 250525,
+    "conservative_core_ffo_ps": 2.0942,
+    "conservative_affo": 231777,
+    "conservative_affo_ps": 1.9375,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -18748,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "steps": [
+      {
+        "label": "Loss on embedded derivative in preferred shares (1)",
+        "amount": 1574,
+        "category": "derivative_mtm",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": true,
+        "effect": 1574,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Gain on investments, net of tax (1)(2)",
+        "amount": -17237,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": true,
+        "effect": -17237,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Casualty related charges and (recoveries), net (1)",
+        "amount": 4519,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 119629
+  }
+}

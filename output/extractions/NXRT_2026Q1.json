@@ -1,0 +1,234 @@
+{
+  "ticker": "NXRT",
+  "quarter": "2026Q1",
+  "period_end": "2026-03-31",
+  "source": {
+    "accession": "0001193125-26-183645",
+    "filename": "nxrt-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1620393/000119312526183645/nxrt-ex99_1.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -6781,
+      "page_seq": 19,
+      "page_printed": "17"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization",
+        "amount": 24291,
+        "category": "re_depreciation",
+        "page_seq": 19,
+        "page_printed": "17"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": -69,
+        "category": "noncontrolling_interest",
+        "page_seq": 19,
+        "page_printed": "17"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders",
+      "amount": 17441,
+      "page_seq": 19,
+      "page_printed": "17"
+    },
+    "core_adjustments": [
+      {
+        "label": "Casualty-related recoveries",
+        "amount": -1753,
+        "category": "casualty",
+        "page_seq": 19,
+        "page_printed": "17"
+      },
+      {
+        "label": "Casualty loss",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 19,
+        "page_printed": "17"
+      },
+      {
+        "label": "Amortization of deferred financing costs",
+        "amount": 1683,
+        "category": "debt_cost_amortization",
+        "page_seq": 19,
+        "page_printed": "17"
+      },
+      {
+        "label": "Mark-to-market adjustments of interest rate caps",
+        "amount": -98,
+        "category": "derivative_mtm",
+        "page_seq": 19,
+        "page_printed": "17"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": 1,
+        "category": "noncontrolling_interest",
+        "page_seq": 19,
+        "page_printed": "17"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common stockholders",
+      "amount": 17274,
+      "page_seq": 19,
+      "page_printed": "17"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Equity-based compensation expense",
+        "amount": 2362,
+        "category": "stock_comp",
+        "page_seq": 19,
+        "page_printed": "17"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": -9,
+        "category": "noncontrolling_interest",
+        "page_seq": 19,
+        "page_printed": "17"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to common stockholders",
+      "amount": 19627,
+      "page_seq": 19,
+      "page_printed": "17"
+    },
+    "diluted_shares": {
+      "label": "Weighted average common shares outstanding - diluted",
+      "amount": 25398,
+      "page_seq": 19,
+      "page_printed": "17"
+    },
+    "reported_per_share": {
+      "ffo": 0.69,
+      "core": 0.68,
+      "affo": 0.77
+    },
+    "notes": "Casualty loss was \"\u2014\" for Q1 2026 (entered as 0). Sums check: 17,441 -1,753 +1,683 -98 +1 = 17,274; +2,362 -9 = 19,627.",
+    "validation_errors": [],
+    "attempts": 1,
+    "usage": {
+      "input_tokens": 16221,
+      "output_tokens": 1169
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "7"
+      },
+      {
+        "seq": 19,
+        "printed": "17"
+      },
+      {
+        "seq": 32,
+        "printed": "30"
+      },
+      {
+        "seq": 33,
+        "printed": "31"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 17441,
+    "nareit_ffo_ps": 0.6867,
+    "company_core_name": "Core FFO",
+    "company_core": 17274,
+    "company_core_ps": 0.6801,
+    "company_affo_name": "AFFO",
+    "company_affo": 19627,
+    "company_affo_ps": 0.7728,
+    "conservative_core_ffo": 17274,
+    "conservative_core_ffo_ps": 0.6801,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "steps": [
+      {
+        "label": "Casualty-related recoveries",
+        "amount": -1753,
+        "category": "casualty",
+        "page_seq": 19,
+        "page_printed": "17",
+        "section": "core",
+        "applied": true,
+        "effect": -1753,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Casualty loss",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 19,
+        "page_printed": "17",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of deferred financing costs",
+        "amount": 1683,
+        "category": "debt_cost_amortization",
+        "page_seq": 19,
+        "page_printed": "17",
+        "section": "core",
+        "applied": true,
+        "effect": 1683,
+        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+      },
+      {
+        "label": "Mark-to-market adjustments of interest rate caps",
+        "amount": -98,
+        "category": "derivative_mtm",
+        "page_seq": 19,
+        "page_printed": "17",
+        "section": "core",
+        "applied": true,
+        "effect": -98,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": 1,
+        "category": "noncontrolling_interest",
+        "page_seq": 19,
+        "page_printed": "17",
+        "section": "core",
+        "applied": true,
+        "effect": 1,
+        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+      },
+      {
+        "label": "Equity-based compensation expense",
+        "amount": 2362,
+        "category": "stock_comp",
+        "page_seq": 19,
+        "page_printed": "17",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Unexpected item in adjusted section: Amortization of deferred financing costs",
+      "Unexpected item in adjusted section: Adjustment for noncontrolling interests",
+      "No recurring capex line disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 25398
+  }
+}

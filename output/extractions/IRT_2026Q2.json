@@ -1,0 +1,208 @@
+{
+  "ticker": "IRT",
+  "quarter": "2026Q2",
+  "period_end": "2026-06-30",
+  "source": {
+    "accession": "0001437749-26-025436",
+    "filename": "ex_955950.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1466085/000143774926025436/ex_955950.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "CFFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net (loss) income",
+      "amount": 3418,
+      "page_seq": 13,
+      "page_printed": "11"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 64319,
+        "category": "re_depreciation",
+        "page_seq": 13,
+        "page_printed": "11"
+      },
+      {
+        "label": "Our share of real estate depreciation and amortization from investments in unconsolidated real estate entities",
+        "amount": 831,
+        "category": "jv_depreciation",
+        "page_seq": 13,
+        "page_printed": "11"
+      },
+      {
+        "label": "(Gain on sale) loss on impairment of real estate assets, net, excluding prepayment gains",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 13,
+        "page_printed": "11"
+      },
+      {
+        "label": "Gain on sale of real estate associated with unconsolidated real estate entities",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 13,
+        "page_printed": "11"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 68568,
+      "page_seq": 13,
+      "page_printed": "11"
+    },
+    "core_adjustments": [
+      {
+        "label": "Other depreciation and amortization",
+        "amount": 542,
+        "category": "re_depreciation",
+        "page_seq": 13,
+        "page_printed": "11"
+      },
+      {
+        "label": "Casualty (gains) losses, net",
+        "amount": -553,
+        "category": "casualty",
+        "page_seq": 13,
+        "page_printed": "11"
+      },
+      {
+        "label": "Loan (premium accretion) discount amortization, net",
+        "amount": -2021,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "11"
+      },
+      {
+        "label": "Other loss",
+        "amount": 105,
+        "category": "other",
+        "page_seq": 13,
+        "page_printed": "11"
+      }
+    ],
+    "core_total": {
+      "label": "CFFO",
+      "amount": 66641,
+      "page_seq": 13,
+      "page_printed": "11"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted-average shares and units outstanding",
+      "amount": 241342.036,
+      "page_seq": 13,
+      "page_printed": "11"
+    },
+    "reported_per_share": {
+      "ffo": 0.28,
+      "core": 0.28,
+      "affo": null
+    },
+    "notes": "Company reports FFO and CFFO only; no AFFO. Share count printed as 241,342,036 actual shares; entered in thousands (241,342.036) to match the dollar unit. The two zero lines (impairment/gain on sale, JV gain on sale) are shown as \"\u2014\" for Q2 2026 in the trailing five-quarter table. The same reconciliation also appears on seq 14 (printed page 12).",
+    "validation_errors": [],
+    "attempts": 2,
+    "usage": {
+      "input_tokens": 28707,
+      "output_tokens": 2438
+    },
+    "candidate_pages": [
+      {
+        "seq": 11,
+        "printed": "9"
+      },
+      {
+        "seq": 12,
+        "printed": "10"
+      },
+      {
+        "seq": 13,
+        "printed": "11"
+      },
+      {
+        "seq": 14,
+        "printed": "12"
+      },
+      {
+        "seq": 15,
+        "printed": "13"
+      },
+      {
+        "seq": 26,
+        "printed": "24"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 68568,
+    "nareit_ffo_ps": 0.2841,
+    "company_core_name": "CFFO",
+    "company_core": 66641,
+    "company_core_ps": 0.2761,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 66536,
+    "conservative_core_ffo_ps": 0.2757,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "steps": [
+      {
+        "label": "Other depreciation and amortization",
+        "amount": 542,
+        "category": "re_depreciation",
+        "page_seq": 13,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": 542,
+        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+      },
+      {
+        "label": "Casualty (gains) losses, net",
+        "amount": -553,
+        "category": "casualty",
+        "page_seq": 13,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -553,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Loan (premium accretion) discount amortization, net",
+        "amount": -2021,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -2021,
+        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+      },
+      {
+        "label": "Other loss",
+        "amount": 105,
+        "category": "other",
+        "page_seq": 13,
+        "page_printed": "11",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Unexpected item in adjusted section: Other depreciation and amortization",
+      "Unexpected item in adjusted section: Loan (premium accretion) discount amortization, net",
+      "Unlisted adjustment: Other loss",
+      "No recurring capex line disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 241342.036
+  }
+}

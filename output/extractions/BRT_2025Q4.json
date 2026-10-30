@@ -1,0 +1,206 @@
+{
+  "ticker": "BRT",
+  "quarter": "2025Q4",
+  "period_end": "2025-12-31",
+  "source": {
+    "accession": "0000014846-26-000008",
+    "filename": "exhibit991q42025.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000008/exhibit991q42025.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "Adjusted funds from operations",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "GAAP Net loss income attributable to common stockholders",
+      "amount": -4321,
+      "page_seq": 10,
+      "page_printed": "6"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Add: depreciation of properties",
+        "amount": 6656,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: our share of depreciation in unconsolidated joint ventures",
+        "amount": 2594,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: provision for credit loss",
+        "amount": 5,
+        "category": "nareit_other",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Deduct: gain on sales of real estate",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Deduct: our share of earnings from sale of unconsolidated joint venture properties",
+        "amount": -52,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Adjust for non-controlling interests",
+        "amount": -5,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "6"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 4877,
+      "page_seq": 10,
+      "page_printed": "6"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Adjustments for: deferred rent concessions and straight-line rent accruals",
+        "amount": -76,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Adjust for: our share of deferred rent concessions and straight-line rent accruals",
+        "amount": -17,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: amortization of restricted stock and RSU expense",
+        "amount": 1171,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: amortization of deferred mortgage and debt costs",
+        "amount": 351,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: our share of deferred mortgage costs from unconsolidated joint venture properties",
+        "amount": 22,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: amortization of fair value adjustment for mortgage debt",
+        "amount": 146,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Adjustments for non-controlling interests",
+        "amount": 0,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "6"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations",
+      "amount": 6474,
+      "page_seq": 10,
+      "page_printed": "6"
+    },
+    "diluted_shares": {
+      "amount": 18033.763,
+      "label": "Weighted average number of shares of common stock outstanding: Basic and diluted (converted to thousands)",
+      "page_seq": 8,
+      "page_printed": "4"
+    },
+    "reported_per_share": {
+      "ffo": 0.26,
+      "core": null,
+      "affo": 0.34
+    },
+    "notes": "No adjusted/core FFO metric; AFFO starts from FFO. The FFO page doesn't print a share count. I used the GAAP basic and diluted weighted average shares, 18,033,763 as printed, and entered them in thousands to match the dollar amounts. FFO of 4,877 divided by that count is about 0.27, but the reported FFO per share is 0.26. AFFO divided by it is about 0.36, against 0.34 reported. The reported per-share figures probably use a larger diluted count, which isn't shown in these pages. The 'gain on sales of real estate' line and the last non-controlling interest line print as '\u2014', so I recorded them as 0.",
+    "validation_errors": [
+      "affo: total / diluted_shares = 0.36 but reported per share = 0.34"
+    ],
+    "attempts": 2,
+    "usage": {
+      "input_tokens": 17734,
+      "output_tokens": 3760
+    },
+    "candidate_pages": [
+      {
+        "seq": 6,
+        "printed": "2"
+      },
+      {
+        "seq": 8,
+        "printed": "4"
+      },
+      {
+        "seq": 10,
+        "printed": "6"
+      },
+      {
+        "seq": 29,
+        "printed": "25"
+      },
+      {
+        "seq": 30,
+        "printed": "26"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 4877,
+    "nareit_ffo_ps": 0.2704,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "Adjusted funds from operations",
+    "company_affo": 6474,
+    "company_affo_ps": 0.359,
+    "conservative_core_ffo": 4877,
+    "conservative_core_ffo_ps": 0.2704,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "steps": [
+      {
+        "label": "Add: amortization of restricted stock and RSU expense",
+        "amount": 1171,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": "6",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Extraction did not tie to reported totals",
+      "No recurring capex line disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 18033.763
+  }
+}

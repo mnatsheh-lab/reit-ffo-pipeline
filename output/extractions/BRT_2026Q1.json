@@ -1,0 +1,186 @@
+{
+  "ticker": "BRT",
+  "quarter": "2026Q1",
+  "period_end": "2026-03-31",
+  "source": {
+    "accession": "0000014846-26-000018",
+    "filename": "exhibit991q12026.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000018/exhibit991q12026.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "Adjusted funds from operations attributable to common stockholders",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "GAAP Net loss attributable to common stockholders",
+      "amount": -2682,
+      "page_seq": 10,
+      "page_printed": "6"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Add: depreciation and amortization of properties",
+        "amount": 6683,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: our share of depreciation in unconsolidated joint venture properties",
+        "amount": 2246,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Adjustments for non-controlling interests",
+        "amount": -4,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "6"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT Funds from operations attributable to common stockholders",
+      "amount": 6243,
+      "page_seq": 10,
+      "page_printed": "6"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Adjustments for: deferred rent concessions and straight line rent",
+        "amount": -189,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Adjustments for: our share of straight-line rent and rent concession accruals from unconsolidated joint venture properties",
+        "amount": -31,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: amortization of restricted stock and RSU expense",
+        "amount": 922,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: amortization of deferred mortgage and debt costs",
+        "amount": 279,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: our share of deferred mortgage costs from unconsolidated joint venture properties",
+        "amount": 43,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Add: amortization of fair value adjustment for mortgage debt",
+        "amount": 72,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "6"
+      },
+      {
+        "label": "Adjustments for non-controlling interests",
+        "amount": 0,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "6"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations attributable to common stockholders",
+      "amount": 7339,
+      "page_seq": 10,
+      "page_printed": "6"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of shares of common stock outstanding: Basic and diluted (in thousands)",
+      "amount": 18063.713,
+      "page_seq": 8,
+      "page_printed": "4"
+    },
+    "reported_per_share": {
+      "ffo": 0.33,
+      "core": null,
+      "affo": 0.39
+    },
+    "notes": "BRT reports no adjusted/core FFO metric; AFFO is built directly from NAREIT FFO. The share count used for FFO/AFFO per share is not printed in the pages provided. I used the GAAP weighted average basic and diluted count, 18,063,713 shares, converted to thousands. It gives about 0.35 for FFO and 0.41 for AFFO, not the reported 0.33 and 0.39. Period-end shares outstanding of 18,882 thousand (page seq 6) give 0.33 and 0.39, so the per-share denominator probably includes unvested restricted stock. The AFFO NCI adjustment is printed as \"\u2014\", so it is recorded as 0. Blank rows in the source were skipped. The subtotals foot to the printed totals.",
+    "validation_errors": [
+      "ffo: total / diluted_shares = 0.35 but reported per share = 0.33",
+      "affo: total / diluted_shares = 0.41 but reported per share = 0.39"
+    ],
+    "attempts": 2,
+    "usage": {
+      "input_tokens": 15746,
+      "output_tokens": 3792
+    },
+    "candidate_pages": [
+      {
+        "seq": 6,
+        "printed": "2"
+      },
+      {
+        "seq": 8,
+        "printed": "4"
+      },
+      {
+        "seq": 10,
+        "printed": "6"
+      },
+      {
+        "seq": 24,
+        "printed": "20"
+      },
+      {
+        "seq": 25,
+        "printed": "21"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 6243,
+    "nareit_ffo_ps": 0.3456,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "Adjusted funds from operations attributable to common stockholders",
+    "company_affo": 7339,
+    "company_affo_ps": 0.4063,
+    "conservative_core_ffo": 6243,
+    "conservative_core_ffo_ps": 0.3456,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "steps": [
+      {
+        "label": "Add: amortization of restricted stock and RSU expense",
+        "amount": 922,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": "6",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Extraction did not tie to reported totals",
+      "No recurring capex line disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 18063.713
+  }
+}
