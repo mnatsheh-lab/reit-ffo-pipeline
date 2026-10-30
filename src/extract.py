@@ -99,7 +99,8 @@ Rules:
 - If a company has no adjusted FFO metric, set core_total null and core_adjustments []. Same for AFFO.
 - Copy labels exactly as printed. Give the page_seq and page_printed from the [[PAGE ...]] marker where each line appears.
 - Categories: {json.dumps(CATEGORIES)}
-- Use 'other' only when nothing else fits. Never invent or estimate numbers; if something is unclear, say so in notes."""
+- Use 'other' only when nothing else fits. Never invent or estimate numbers; if something is unclear, say so in notes.
+- Always respond by calling the record_reconciliation tool."""
 
 
 def pages_prompt(pages: list[Page]) -> str:
@@ -146,27 +147,42 @@ def extract_document(client, model: str, raw: bytes, filename: str, ticker: str,
             f"Pages likely to contain the reconciliation:\n\n{pages_prompt(cands)}")
     messages = [{"role": "user", "content": user}]
     usage = {"input_tokens": 0, "output_tokens": 0}
-    ext, errors, attempts = None, [], 0
-    for attempts in (1, 2):
+    ext, errors, attempts, calls = None, ["no extraction returned"], 0, 0
+    # Up to 2 extraction attempts (the second after a failed arithmetic check), plus at most
+    # 2 reminders if Claude answers in text instead of calling the tool.
+    while attempts < 2 and calls < 4:
+        calls += 1
         resp = client.messages.create(
             model=model, max_tokens=8000, system=SYSTEM_PROMPT, tools=[RECORD_TOOL],
-            tool_choice={"type": "tool", "name": "record_reconciliation"}, messages=messages,
+            tool_choice={"type": "auto"}, messages=messages,
         )
         u = getattr(resp, "usage", None)
         if u is not None:
             usage["input_tokens"] += getattr(u, "input_tokens", 0) or 0
             usage["output_tokens"] += getattr(u, "output_tokens", 0) or 0
-        block = next(b for b in resp.content if b.type == "tool_use")
+        content = []
+        for b in resp.content:
+            if b.type == "text":
+                content.append({"type": "text", "text": b.text})
+            elif b.type == "tool_use":
+                content.append({"type": "tool_use", "id": b.id, "name": b.name, "input": b.input})
+        block = next((b for b in resp.content if b.type == "tool_use" and b.name == RECORD_TOOL["name"]), None)
+        messages.append({"role": "assistant", "content": content or [{"type": "text", "text": "(no content)"}]})
+        if block is None:
+            messages.append({"role": "user", "content": "Please record the reconciliation now by calling the record_reconciliation tool."})
+            continue
+        attempts += 1
         ext = dict(block.input)
         errors = validate(ext)
         if not errors:
             break
-        messages.append({"role": "assistant", "content": [{"type": "tool_use", "id": block.id, "name": block.name, "input": block.input}]})
         messages.append({"role": "user", "content": [{
             "type": "tool_result", "tool_use_id": block.id, "is_error": True,
             "content": "These checks failed:\n- " + "\n- ".join(errors) +
                        "\nRe-read the pages, fix missing or mis-signed lines, and call record_reconciliation again.",
         }]})
+    if ext is None:
+        raise RuntimeError("Claude did not return an extraction")
     ext["validation_errors"] = errors
     ext["attempts"] = attempts
     ext["usage"] = usage
