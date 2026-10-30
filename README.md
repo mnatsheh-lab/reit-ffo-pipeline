@@ -87,7 +87,7 @@ cp .env.example .env   # then add your API key and SEC user agent
 - [x] Answer-key documents collected
 - [x] MAA hand reconciliation (Q4 2025, Q1 2026, Q2 2026; all checks tie to reported figures)
 - [x] Common FFO definition (`docs/common_definition.md`)
-- [ ] Multifamily rule
+- [x] Multifamily rule (`docs/multifamily_rule.md`)
 - [ ] Collection agent (fixed list, current quarters)
 - [ ] Extraction and restatement
 - [ ] Accuracy testing
