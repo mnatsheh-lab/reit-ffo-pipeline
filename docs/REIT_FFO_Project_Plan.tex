@@ -3,6 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{array}
@@ -207,10 +208,43 @@ The hand-built set is the answer key the pipeline is graded against:
   \item Full proposal after fall break (scope, method, universe, test plan).
   \item Code repository on GitHub with a README.
   \item Restated FFO history (Excel and data files).
-  \item Optional results website (e.g.\ Vercel) showing the latest comparison.
+  \item Interactive FFO dashboard (published on Vercel), as specified in Section~\ref{sec:dashboard}.
   \item Write-up of findings and accuracy results.
   \item Short resume summary of the project.
 \end{todo}
+
+\section{Final Product: FFO Dashboard}\label{sec:dashboard}
+
+A web dashboard, rebuilt automatically after each daily pipeline run, with:
+\begin{enumerate}[itemsep=2pt]
+  \item \textbf{REIT selector.} A drop-down menu listing every REIT in the
+        universe (current and former), plus a quarter selector (Q1 2018 to latest).
+  \item \textbf{Restated FFO on the common definition.} The headline figure
+        (total and per share) using this project's calculation, shown beside
+        the company's own reported FFO and ``core'' metric.
+  \item \textbf{The formula.} The calculation written out step by step, e.g.
+        \[
+        \text{FFO} = \text{Net income} + \text{RE depreciation} - \text{Gains on sale}
+        + \text{JV depreciation} + \text{NCI}
+        \]
+        \[
+        \text{Common FFO} = \text{FFO} \pm \text{adjustments under the common definition}
+        \]
+        with the REIT's actual numbers substituted into each term.
+  \item \textbf{Line-item references.} Every term in the formula shows the
+        amount, the exact line-item name as printed in the filing, and its
+        location, e.g.\ \textit{``Legal costs, settlements and (recoveries),
+        net'' --- \$53,000K --- page 10}, with a link to the source document
+        on SEC EDGAR.
+  \item \textbf{Flags.} Quarters ``restated with limits'' are marked, with the
+        item that could not be separated.
+\end{enumerate}
+
+\textbf{How the data supports it.} The extraction step stores, for every
+number, the line-item label as printed, the page and the source filing. The
+restatement step records which items the common definition kept or removed.
+The dashboard only displays these stored records; it does no calculation of
+its own, so every figure on screen traces back to a page in a filing.
 
 \section{Data Sources}
 \begin{itemize}[itemsep=1pt]

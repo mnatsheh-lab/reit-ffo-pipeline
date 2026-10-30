@@ -43,6 +43,19 @@ Current universe (October 2026):
 
 Former REITs in the history include Veris Residential, Elme Communities, Aimco, AIR Communities, Preferred Apartment Communities and Bluerock Residential.
 
+## Final product: FFO dashboard
+
+A web dashboard, rebuilt after each daily pipeline run:
+
+1. **REIT selector:** drop-down of every REIT in the universe (current and former), plus a quarter selector.
+2. **Restated FFO:** the headline figure on this project's common definition, beside the company's own reported FFO and "core" metric.
+3. **The formula:** the calculation written out step by step, with the REIT's actual numbers in each term:
+   `FFO = Net income + RE depreciation − Gains on sale + JV depreciation + NCI`, then `Common FFO = FFO ± adjustments under the common definition`.
+4. **Line-item references:** every term shows its amount, the line-item name exactly as printed in the filing, and its page, e.g. *"Legal costs, settlements and (recoveries), net" — $53,000K — page 10*, linked to the source filing on SEC EDGAR.
+5. **Flags:** quarters restated with limits are marked, with the item that could not be separated.
+
+The dashboard only displays stored pipeline records and does no calculation of its own, so every figure traces back to a page in a filing.
+
 ## Accuracy testing
 
 An answer key was built by hand: 15 supplementals (MAA, CPT, IRT, NXRT, BRT for Q4 2025–Q2 2026), a full manual reconciliation of MAA (`data/answer_key/`), and spot checks of other REITs and pre-2020 quarters. The pipeline is graded on:
@@ -79,6 +92,7 @@ cp .env.example .env   # then add your API key and SEC user agent
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
 - [ ] Backfill to Q1 2018
+- [ ] FFO dashboard
 
 ## Author
 
