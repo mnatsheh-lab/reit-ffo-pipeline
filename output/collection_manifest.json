@@ -219,7 +219,7 @@
     "ticker": "BRT",
     "cik": 14846,
     "quarter": "2025Q4",
-    "status": "saved_unverified",
+    "status": "saved",
     "accession": "0000014846-26-000008",
     "filename": "exhibit991q42025.htm",
     "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000008/exhibit991q42025.htm",
@@ -227,7 +227,7 @@
     "reason": "Supplemental package for three/twelve months ended Dec 31, 2025 with FFO and AFFO section.",
     "checks": {
       "mentions_ffo": true,
-      "has_reconciliation_words": false,
+      "has_reconciliation_words": true,
       "mentions_period_end": true,
       "ffo_mentions": 19
     },
@@ -237,7 +237,7 @@
     "ticker": "BRT",
     "cik": 14846,
     "quarter": "2026Q1",
-    "status": "saved_unverified",
+    "status": "saved",
     "accession": "0000014846-26-000018",
     "filename": "exhibit991q12026.htm",
     "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000018/exhibit991q12026.htm",
@@ -245,7 +245,7 @@
     "reason": "Supplemental package for three months ended Mar 31, 2026 with FFO and AFFO section.",
     "checks": {
       "mentions_ffo": true,
-      "has_reconciliation_words": false,
+      "has_reconciliation_words": true,
       "mentions_period_end": true,
       "ffo_mentions": 17
     },
@@ -255,7 +255,7 @@
     "ticker": "BRT",
     "cik": 14846,
     "quarter": "2026Q2",
-    "status": "saved_unverified",
+    "status": "saved",
     "accession": "0000014846-26-000038",
     "filename": "exhibit991q22026.htm",
     "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000038/exhibit991q22026.htm",
@@ -263,7 +263,7 @@
     "reason": "Supplemental package for three months ended Jun 30, 2026 with FFO and AFFO section.",
     "checks": {
       "mentions_ffo": true,
-      "has_reconciliation_words": false,
+      "has_reconciliation_words": true,
       "mentions_period_end": true,
       "ffo_mentions": 17
     },
