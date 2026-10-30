@@ -1,0 +1,249 @@
+{
+  "ticker": "EQR",
+  "quarter": "2024Q1",
+  "period_end": "2024-03-31",
+  "source": {
+    "accession": "0000950170-24-046921",
+    "filename": "0000950170-24-046921.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906107/000095017024046921/0000950170-24-046921.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Normalized FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income",
+      "amount": 305032,
+      "page_seq": 11,
+      "page_printed": "6"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Net (income) loss attributable to Noncontrolling Interests \u2013 Partially Owned Properties",
+        "amount": -970,
+        "category": "noncontrolling_interest",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Preferred distributions",
+        "amount": -547,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Premium on redemption of Preferred Shares",
+        "amount": -1444,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Depreciation",
+        "amount": 225695,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Depreciation \u2013 Non-real estate additions",
+        "amount": -955,
+        "category": "non_re_depreciation",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Depreciation \u2013 Partially Owned Properties",
+        "amount": -542,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Depreciation \u2013 Unconsolidated Properties",
+        "amount": 335,
+        "category": "jv_depreciation",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Net (gain) loss on sales of real estate properties",
+        "amount": -188185,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": "6"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO available to Common Shares and Units",
+      "amount": 338419,
+      "page_seq": 11,
+      "page_printed": "6"
+    },
+    "core_adjustments": [
+      {
+        "label": "Write-off of pursuit costs",
+        "amount": 548,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Debt extinguishment and preferred share redemption (gains) losses",
+        "amount": 1444,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Non-operating asset (gains) losses",
+        "amount": -6106,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "6"
+      },
+      {
+        "label": "Other miscellaneous items",
+        "amount": 30591,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "6"
+      }
+    ],
+    "core_total": {
+      "label": "Normalized FFO available to Common Shares and Units",
+      "amount": 364896,
+      "page_seq": 11,
+      "page_printed": "6"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average Common Shares and Units outstanding \u2013 diluted",
+      "amount": 390561,
+      "page_seq": 11,
+      "page_printed": "6"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Capital Expenditures to Real Estate",
+      "amount": 73520,
+      "basis": "quarter",
+      "scope": "company total (same store and non-same store/other); includes building improvements, renovation expenditures and replacements, of which approx. $22.3M same store renovation is NOI-enhancing",
+      "page_seq": 28,
+      "page_printed": "23"
+    },
+    "reported_per_share": {
+      "ffo": 0.87,
+      "core": 0.93,
+      "affo": null
+    },
+    "notes": "EQR does not report an AFFO metric; affo fields null. Its reconciliation starts at Net income and deducts NCI, preferred distributions and preferred redemption premium before FFO available to Common Shares and Units (338,419), which is the ffo_total used. Normalized FFO available to Common Shares and Units (364,896) is the core_total. Two classification judgment calls: 'Premium on redemption of Preferred Shares' was categorized as debt_extinguishment, and 'Non-operating asset (gains) losses' (-6,106) was categorized as other because the printed label does not say whether the asset is real estate or non-real-estate. Recurring capex is taken from the Q1 2024 Capital Expenditures to Real Estate total (73,520), which includes renovation spend, so it is an upper bound on maintenance capex. Diluted shares 390,561 reproduce FFO/share 0.87 and Normalized FFO/share 0.93. Verified arithmetic: 305,032 to 302,071 to 338,419 to 364,896.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8552,
+      "output_tokens": 4580
+    },
+    "candidate_pages": [
+      {
+        "seq": 11,
+        "printed": "6"
+      },
+      {
+        "seq": 12,
+        "printed": "7"
+      },
+      {
+        "seq": 28,
+        "printed": "23"
+      },
+      {
+        "seq": 35,
+        "printed": "30"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 338419,
+    "nareit_ffo_ps": 0.8665,
+    "company_core_name": "Normalized FFO",
+    "company_core": 364896,
+    "company_core_ps": 0.9343,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 332313,
+    "conservative_core_ffo_ps": 0.8509,
+    "conservative_affo": 258793,
+    "conservative_affo_ps": 0.6626,
+    "recurring_capex": [
+      {
+        "label": "Capital Expenditures to Real Estate",
+        "amount": -73520,
+        "basis": "quarter",
+        "scope": "company total (same store and non-same store/other); includes building improvements, renovation expenditures and replacements, of which approx. $22.3M same store renovation is NOI-enhancing",
+        "page_seq": 28,
+        "page_printed": "23",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
+    "steps": [
+      {
+        "label": "Write-off of pursuit costs",
+        "amount": 548,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "6",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Debt extinguishment and preferred share redemption (gains) losses",
+        "amount": 1444,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "6",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+      },
+      {
+        "label": "Non-operating asset (gains) losses",
+        "amount": -6106,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "6",
+        "section": "core",
+        "applied": true,
+        "effect": -6106,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Other miscellaneous items",
+        "amount": 30591,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "6",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Non-operating asset (gains) losses' (other) handled by a provisional rule",
+      "Review: 'Other miscellaneous items' (other) handled by a provisional rule",
+      "Recurring capex taken from a separate table (page 23): the company's own AFFO does not deduct it"
+    ],
+    "diluted_shares": 390561
+  }
+}
