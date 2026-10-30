@@ -37,10 +37,12 @@ REITS: dict[str, dict] = {
     # Merged into Vivmark Residential (VMRK) on Aug 17, 2026; history kept as two companies.
     "AVB":  {"cik": 915912,  "name": "AvalonBay Communities", "end": "2026Q2"},
     "EQR":  {"cik": 906107,  "name": "Equity Residential", "end": "2026Q2"},
+    # EQR was the legal survivor: its CIK is now registered as Vivmark Residential (VMRK).
+    "VMRK": {"cik": 906107,  "name": "Vivmark Residential", "start": "2026Q3", "note": "AvalonBay + Equity Residential, merged Aug 17, 2026"},
     # Former REITs (kept to avoid survivorship bias). Boundaries are provisional until the
     # Phase 8 classifier checks the 75% rule year by year.
-    "AIV":  {"cik": 922864,  "name": "Aimco", "end": "2020Q3", "note": "Pre-split Aimco; the post-2020 development company is excluded pending review"},
-    "AIRC": {"cik": 1820877, "name": "AIR Communities", "start": "2020Q4", "end": "2024Q1", "note": "Spun off from Aimco Dec 2020; taken private 2024"},
+    "AIV":  {"cik": 922864,  "name": "Apartment Investment and Management (Aimco)", "end": "2020Q3", "note": "Pre-split Aimco; the post-2020 development company is excluded pending review"},
+    "AIRC": {"cik": 1820877, "name": "Apartment Income REIT (AIR Communities)", "start": "2020Q4", "end": "2024Q1", "note": "Spun off from Aimco Dec 2020; taken private 2024"},
     "APTS": {"cik": 1481832, "name": "Preferred Apartment Communities", "end": "2022Q1", "note": "Acquired 2022"},
     "BRG":  {"cik": 1442626, "name": "Bluerock Residential Growth REIT", "end": "2022Q2", "note": "Acquired 2022"},
     "ELME": {"cik": 104894,  "name": "Elme Communities", "start": "2021Q3", "end": "2025Q2", "note": "WashREIT until 2022; multifamily after office/retail sales; liquidated 2025-26"},
