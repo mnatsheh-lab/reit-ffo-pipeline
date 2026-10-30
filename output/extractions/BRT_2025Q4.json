@@ -128,26 +128,37 @@
       "page_printed": "6"
     },
     "diluted_shares": {
-      "amount": 18033.763,
-      "label": "Weighted average number of shares of common stock outstanding: Basic and diluted (converted to thousands)",
-      "page_seq": 8,
-      "page_printed": "4"
+      "label": "Diluted shares outstanding for FFO and AFFO",
+      "amount": 18956.528,
+      "page_seq": 11,
+      "page_printed": "7"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Estimated Recurring Capital Expenditures (1) - BRT Share of Expenditures",
+      "amount": 5278,
+      "basis": "annual",
+      "scope": "company share (excl. JV partners), consolidated and unconsolidated, twelve months ended Dec 31, 2025",
+      "page_seq": 16,
+      "page_printed": "12"
     },
     "reported_per_share": {
       "ffo": 0.26,
       "core": null,
       "affo": 0.34
     },
-    "notes": "No adjusted/core FFO metric; AFFO starts from FFO. The FFO page doesn't print a share count. I used the GAAP basic and diluted weighted average shares, 18,033,763 as printed, and entered them in thousands to match the dollar amounts. FFO of 4,877 divided by that count is about 0.27, but the reported FFO per share is 0.26. AFFO divided by it is about 0.36, against 0.34 reported. The reported per-share figures probably use a larger diluted count, which isn't shown in these pages. The 'gain on sales of real estate' line and the last non-controlling interest line print as '\u2014', so I recorded them as 0.",
-    "validation_errors": [
-      "affo: total / diluted_shares = 0.36 but reported per share = 0.34"
-    ],
-    "attempts": 2,
+    "notes": "No adjusted FFO (core) metric. AFFO starts from FFO and does not subtract recurring capex; recurring capex disclosed only on a twelve-month basis ($5,278,000 BRT share, converted to thousands). Gain on sales of real estate and NCI AFFO adjustment printed as \"\u2014\" (recorded as 0). Provision for credit loss categorized as nareit_other since it is in the FFO section.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
     "usage": {
-      "input_tokens": 17734,
-      "output_tokens": 3760
+      "input_tokens": 11083,
+      "output_tokens": 2111
     },
     "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": "29"
+      },
       {
         "seq": 6,
         "printed": "2"
@@ -161,6 +172,14 @@
         "printed": "6"
       },
       {
+        "seq": 11,
+        "printed": "7"
+      },
+      {
+        "seq": 16,
+        "printed": "12"
+      },
+      {
         "seq": 29,
         "printed": "25"
       },
@@ -172,35 +191,23 @@
   },
   "restated": {
     "nareit_ffo": 4877,
-    "nareit_ffo_ps": 0.2704,
+    "nareit_ffo_ps": 0.2573,
     "company_core_name": null,
     "company_core": null,
     "company_core_ps": null,
     "company_affo_name": "Adjusted funds from operations",
     "company_affo": 6474,
-    "company_affo_ps": 0.359,
+    "company_affo_ps": 0.3415,
     "conservative_core_ffo": 4877,
-    "conservative_core_ffo_ps": 0.2704,
+    "conservative_core_ffo_ps": 0.2573,
     "conservative_affo": null,
     "conservative_affo_ps": null,
     "recurring_capex": [],
-    "steps": [
-      {
-        "label": "Add: amortization of restricted stock and RSU expense",
-        "amount": 1171,
-        "category": "stock_comp",
-        "page_seq": 10,
-        "page_printed": "6",
-        "section": "affo",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
-      }
-    ],
+    "recurring_capex_source": null,
+    "steps": [],
     "flags": [
-      "Extraction did not tie to reported totals",
-      "No recurring capex line disclosed; Conservative AFFO not computed"
+      "Recurring capex only disclosed on a 'annual' basis; Conservative AFFO not computed"
     ],
-    "diluted_shares": 18033.763
+    "diluted_shares": 18956.528
   }
 }

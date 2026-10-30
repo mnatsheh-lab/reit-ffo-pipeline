@@ -111,19 +111,25 @@
       "page_seq": 6,
       "page_printed": "6"
     },
+    "recurring_capex_disclosed": null,
     "reported_per_share": {
       "ffo": 1.15,
       "core": 1.7,
       "affo": 1.55
     },
-    "notes": "Same reconciliation also appears on page 21 without footnote markers. Weighted shares include OP units conversion (106,493 vs 104,899 EPS diluted).",
+    "notes": "Values taken from the Funds from Operations page (seq 6). The same reconciliation also appears on page 21. The shares figure of 106,493 reproduces the reported per-share amounts.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 10942,
-      "output_tokens": 1183
+      "input_tokens": 13905,
+      "output_tokens": 1220
     },
     "candidate_pages": [
+      {
+        "seq": 2,
+        "printed": "2"
+      },
       {
         "seq": 4,
         "printed": "4"
@@ -143,6 +149,10 @@
       {
         "seq": 21,
         "printed": "21"
+      },
+      {
+        "seq": 25,
+        "printed": "25"
       }
     ]
   },
@@ -168,6 +178,7 @@
         "page_printed": "6"
       }
     ],
+    "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
         "label": "Plus: Casualty-related expenses (a)",
@@ -226,7 +237,7 @@
       }
     ],
     "flags": [
-      "Unlisted adjustment: Plus: Other miscellaneous items (a)"
+      "Review: 'Plus: Other miscellaneous items (a)' (other) handled by a provisional rule"
     ],
     "diluted_shares": 106493
   }

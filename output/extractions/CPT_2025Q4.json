@@ -43,7 +43,7 @@
       {
         "label": "Impairment associated with land development activities",
         "amount": 12916,
-        "category": "nareit_other",
+        "category": "re_impairment",
         "page_seq": 6,
         "page_printed": "6"
       }
@@ -111,17 +111,19 @@
       "page_seq": 6,
       "page_printed": "6"
     },
+    "recurring_capex_disclosed": null,
     "reported_per_share": {
       "ffo": 1.73,
       "core": 1.76,
       "affo": 1.46
     },
-    "notes": "Impairment associated with land development activities is included in the net income to FFO section as printed, so it is categorized nareit_other because it is not depreciable real estate. Severance, loss on early retirement of debt, and advocacy contributions are dashes (zero) for the quarter and are omitted. The same reconciliation also appears on page 23, with the label \"Plus: Miscellaneous other items\".",
+    "notes": "Casualty-related expenses line is labeled \"Less:\" but the amount of 59 is printed positive and is added (189,501+59+2,277+1,131+106=193,074). Severance, loss on early retirement of debt and advocacy contributions are zero or dashes this quarter, so they are omitted. The same reconciliation also appears on page 23.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 12692,
-      "output_tokens": 1255
+      "input_tokens": 14809,
+      "output_tokens": 1274
     },
     "candidate_pages": [
       {
@@ -143,6 +145,10 @@
       {
         "seq": 23,
         "printed": "23"
+      },
+      {
+        "seq": 27,
+        "printed": "27"
       }
     ]
   },
@@ -168,6 +174,7 @@
         "page_printed": "6"
       }
     ],
+    "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
         "label": "Less: Casualty-related expenses, net of (recoveries) (a)",
@@ -215,7 +222,7 @@
       }
     ],
     "flags": [
-      "Unlisted adjustment: Plus: Other miscellaneous items (a)"
+      "Review: 'Plus: Other miscellaneous items (a)' (other) handled by a provisional rule"
     ],
     "diluted_shares": 109486
   }

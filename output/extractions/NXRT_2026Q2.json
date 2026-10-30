@@ -111,19 +111,32 @@
       "page_seq": 21,
       "page_printed": "19"
     },
+    "recurring_capex_disclosed": {
+      "label": "Capitalized Maintenance Expenditures - Recurring",
+      "amount": 4624,
+      "basis": "quarter",
+      "scope": "company total",
+      "page_seq": 22,
+      "page_printed": "20"
+    },
     "reported_per_share": {
       "ffo": 0.6,
       "core": 0.66,
       "affo": 0.77
     },
-    "notes": "Casualty loss was printed as \"\u2014\" for Q2 2026, recorded as 0. Diluted shares equal basic because of the net loss (anti-dilutive).",
+    "notes": "AFFO does not subtract recurring capex; Q2 2026 recurring capex of $4,624K taken from Historical Capital Expenditures table. Casualty loss was \"\u2014\" (0) in Q2 2026.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 16299,
-      "output_tokens": 1156
+      "input_tokens": 19087,
+      "output_tokens": 1268
     },
     "candidate_pages": [
+      {
+        "seq": 2,
+        "printed": ""
+      },
       {
         "seq": 9,
         "printed": "7"
@@ -131,6 +144,10 @@
       {
         "seq": 21,
         "printed": "19"
+      },
+      {
+        "seq": 22,
+        "printed": "20"
       },
       {
         "seq": 34,
@@ -151,11 +168,22 @@
     "company_affo_name": "AFFO",
     "company_affo": 19651,
     "company_affo_ps": 0.7701,
-    "conservative_core_ffo": 16836,
-    "conservative_core_ffo_ps": 0.6598,
-    "conservative_affo": null,
-    "conservative_affo_ps": null,
-    "recurring_capex": [],
+    "conservative_core_ffo": 15152,
+    "conservative_core_ffo_ps": 0.5938,
+    "conservative_affo": 10528,
+    "conservative_affo_ps": 0.4126,
+    "recurring_capex": [
+      {
+        "label": "Capitalized Maintenance Expenditures - Recurring",
+        "amount": -4624,
+        "basis": "quarter",
+        "scope": "company total",
+        "page_seq": 22,
+        "page_printed": "20",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
     "steps": [
       {
         "label": "Casualty-related expenses/(recoveries)",
@@ -177,7 +205,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (zero this quarter)"
       },
       {
         "label": "Amortization of deferred financing costs",
@@ -186,9 +214,9 @@
         "page_seq": 21,
         "page_printed": "19",
         "section": "core",
-        "applied": true,
-        "effect": 1684,
-        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost (company add-back reversed)"
       },
       {
         "label": "Mark-to-market adjustments of interest rate caps",
@@ -210,24 +238,11 @@
         "section": "core",
         "applied": true,
         "effect": -7,
-        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
-      },
-      {
-        "label": "Equity-based compensation expense",
-        "amount": 2736,
-        "category": "stock_comp",
-        "page_seq": 21,
-        "page_printed": "19",
-        "section": "affo",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
       }
     ],
     "flags": [
-      "Unexpected item in adjusted section: Amortization of deferred financing costs",
-      "Unexpected item in adjusted section: Adjustment for noncontrolling interests",
-      "No recurring capex line disclosed; Conservative AFFO not computed"
+      "Recurring capex taken from a separate table (page 20): the company's own AFFO does not deduct it"
     ],
     "diluted_shares": 25517
   }

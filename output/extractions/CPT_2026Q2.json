@@ -111,19 +111,25 @@
       "page_seq": 6,
       "page_printed": "6"
     },
+    "recurring_capex_disclosed": null,
     "reported_per_share": {
       "ffo": 1.68,
       "core": 1.68,
       "affo": 1.39
     },
-    "notes": "Gain on sale of operating property and Investment losses were printed as \"\u2014\" for the quarter, so I recorded them as 0. The same reconciliation appears on page 22 and is identical. Diluted shares are in thousands.",
+    "notes": "Gain on sale of operating property and Investment losses show \"\u2014\" for the current quarter, so I recorded them as 0. Page 22 repeats the same reconciliation. FFO and the other totals use the three-month 2026 column.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 12518,
-      "output_tokens": 1197
+      "input_tokens": 15582,
+      "output_tokens": 1230
     },
     "candidate_pages": [
+      {
+        "seq": 2,
+        "printed": "2"
+      },
       {
         "seq": 4,
         "printed": "4"
@@ -143,6 +149,10 @@
       {
         "seq": 22,
         "printed": "22"
+      },
+      {
+        "seq": 26,
+        "printed": "26"
       }
     ]
   },
@@ -168,6 +178,7 @@
         "page_printed": "6"
       }
     ],
+    "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
         "label": "Plus: Casualty-related expenses (a)",
@@ -226,7 +237,7 @@
       }
     ],
     "flags": [
-      "Unlisted adjustment: Plus: Other miscellaneous items (a)"
+      "Review: 'Plus: Other miscellaneous items (a)' (other) handled by a provisional rule"
     ],
     "diluted_shares": 103957
   }

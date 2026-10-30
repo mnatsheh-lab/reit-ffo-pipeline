@@ -10,7 +10,7 @@
   "extraction": {
     "amount_unit": "thousands",
     "core_metric_name": null,
-    "affo_metric_name": "Adjusted funds from operations attributable to common stockholders",
+    "affo_metric_name": "AFFO",
     "affo_starts_from": "ffo",
     "starting_line": {
       "label": "GAAP Net loss attributable to common stockholders",
@@ -107,27 +107,37 @@
       "page_printed": "6"
     },
     "diluted_shares": {
-      "label": "Weighted average number of shares of common stock outstanding: Basic and diluted (in thousands)",
-      "amount": 18063.713,
-      "page_seq": 8,
-      "page_printed": "4"
+      "label": "Diluted shares outstanding for FFO and AFFO",
+      "amount": 18967.25,
+      "page_seq": 11,
+      "page_printed": "7"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Estimated Recurring Capital Expenditures - BRT Share of Capital Expenditures",
+      "amount": 1638,
+      "basis": "quarter",
+      "scope": "company share (excl. JV partners)",
+      "page_seq": 15,
+      "page_printed": "11"
     },
     "reported_per_share": {
       "ffo": 0.33,
       "core": null,
       "affo": 0.39
     },
-    "notes": "BRT reports no adjusted/core FFO metric; AFFO is built directly from NAREIT FFO. The share count used for FFO/AFFO per share is not printed in the pages provided. I used the GAAP weighted average basic and diluted count, 18,063,713 shares, converted to thousands. It gives about 0.35 for FFO and 0.41 for AFFO, not the reported 0.33 and 0.39. Period-end shares outstanding of 18,882 thousand (page seq 6) give 0.33 and 0.39, so the per-share denominator probably includes unvested restricted stock. The AFFO NCI adjustment is printed as \"\u2014\", so it is recorded as 0. Blank rows in the source were skipped. The subtotals foot to the printed totals.",
-    "validation_errors": [
-      "ffo: total / diluted_shares = 0.35 but reported per share = 0.33",
-      "affo: total / diluted_shares = 0.41 but reported per share = 0.39"
-    ],
-    "attempts": 2,
+    "notes": "No adjusted/core FFO metric. AFFO does not subtract recurring capex; BRT share of recurring capex was $1,638,000 (shown here in thousands) from the capex table. The AFFO non-controlling interest adjustment is printed as \"\u2014\" (recorded as 0). Diluted shares were printed in full as 18,967,250 and converted to thousands.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
     "usage": {
-      "input_tokens": 15746,
-      "output_tokens": 3792
+      "input_tokens": 9889,
+      "output_tokens": 1759
     },
     "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": "23"
+      },
       {
         "seq": 6,
         "printed": "2"
@@ -141,6 +151,14 @@
         "printed": "6"
       },
       {
+        "seq": 11,
+        "printed": "7"
+      },
+      {
+        "seq": 15,
+        "printed": "11"
+      },
+      {
         "seq": 24,
         "printed": "20"
       },
@@ -152,35 +170,33 @@
   },
   "restated": {
     "nareit_ffo": 6243,
-    "nareit_ffo_ps": 0.3456,
+    "nareit_ffo_ps": 0.3291,
     "company_core_name": null,
     "company_core": null,
     "company_core_ps": null,
-    "company_affo_name": "Adjusted funds from operations attributable to common stockholders",
+    "company_affo_name": "AFFO",
     "company_affo": 7339,
-    "company_affo_ps": 0.4063,
+    "company_affo_ps": 0.3869,
     "conservative_core_ffo": 6243,
-    "conservative_core_ffo_ps": 0.3456,
-    "conservative_affo": null,
-    "conservative_affo_ps": null,
-    "recurring_capex": [],
-    "steps": [
+    "conservative_core_ffo_ps": 0.3291,
+    "conservative_affo": 4605,
+    "conservative_affo_ps": 0.2428,
+    "recurring_capex": [
       {
-        "label": "Add: amortization of restricted stock and RSU expense",
-        "amount": 922,
-        "category": "stock_comp",
-        "page_seq": 10,
-        "page_printed": "6",
-        "section": "affo",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+        "label": "Estimated Recurring Capital Expenditures - BRT Share of Capital Expenditures",
+        "amount": -1638,
+        "basis": "quarter",
+        "scope": "company share (excl. JV partners)",
+        "page_seq": 15,
+        "page_printed": "11",
+        "category": "recurring_capex"
       }
     ],
+    "recurring_capex_source": "capex_table",
+    "steps": [],
     "flags": [
-      "Extraction did not tie to reported totals",
-      "No recurring capex line disclosed; Conservative AFFO not computed"
+      "Recurring capex taken from a separate table (page 11): the company's own AFFO does not deduct it"
     ],
-    "diluted_shares": 18063.713
+    "diluted_shares": 18967.25
   }
 }

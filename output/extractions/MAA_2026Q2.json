@@ -34,7 +34,7 @@
         "page_printed": "10"
       },
       {
-        "label": "MAA's share of depreciation and amortization of real estate assets of real estate joint venture",
+        "label": "MAA\u2019s share of depreciation and amortization of real estate assets of real estate joint venture",
         "amount": 168,
         "category": "jv_depreciation",
         "page_seq": 10,
@@ -104,17 +104,19 @@
       "page_seq": 10,
       "page_printed": "10"
     },
+    "recurring_capex_disclosed": null,
     "reported_per_share": {
       "ffo": 2.1,
       "core": 2.08,
       "affo": 1.77
     },
-    "notes": "Reconciliation continues below Core AFFO to FAD (redevelopment, revenue enhancing, commercial, other capex), not included since it is beyond AFFO. Shares in thousands.",
+    "notes": "Reconciliation starts from net income available for MAA common shareholders. FAD section below Core AFFO (redevelopment, revenue enhancing, commercial, other capex) ignored as beyond Core AFFO. Per-share checks: 249,846/119,094=2.10; 247,524/119,094=2.08; 210,282/119,094=1.77.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 20185,
-      "output_tokens": 1198
+      "input_tokens": 23446,
+      "output_tokens": 1283
     },
     "candidate_pages": [
       {
@@ -136,6 +138,10 @@
       {
         "seq": 11,
         "printed": "11"
+      },
+      {
+        "seq": 13,
+        "printed": "13"
       }
     ]
   },
@@ -161,6 +167,7 @@
         "page_printed": "10"
       }
     ],
+    "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
         "label": "(Gain) loss on embedded derivative in preferred shares (1)",

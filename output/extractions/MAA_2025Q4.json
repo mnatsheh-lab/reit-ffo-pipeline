@@ -118,17 +118,19 @@
       "page_seq": 10,
       "page_printed": "10"
     },
+    "recurring_capex_disclosed": null,
     "reported_per_share": {
       "ffo": 1.79,
       "core": 2.23,
       "affo": 1.91
     },
-    "notes": "Gain on consolidation of third-party development shown as \"\u2014\" for Q4 2025 (recorded as 0). Reconciliation continues to FAD (redevelopment, revenue enhancing, commercial, other capex), not included since Core AFFO is the AFFO metric.",
+    "notes": "Gain on consolidation of third-party development was \"\u2014\" in the current quarter (recorded as 0). Per-share check: 214,630/119,987=1.79; 267,572/119,987=2.23; 229,312/119,987=1.91. FAD is also presented below Core AFFO but is not part of the Core AFFO reconciliation.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 20353,
-      "output_tokens": 1327
+      "input_tokens": 23614,
+      "output_tokens": 1378
     },
     "candidate_pages": [
       {
@@ -150,6 +152,10 @@
       {
         "seq": 11,
         "printed": "11"
+      },
+      {
+        "seq": 13,
+        "printed": "13"
       }
     ]
   },
@@ -175,6 +181,7 @@
         "page_printed": "10"
       }
     ],
+    "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
         "label": "Loss (gain) on embedded derivative in preferred shares (1)",

@@ -104,17 +104,19 @@
       "page_seq": 10,
       "page_printed": "10"
     },
+    "recurring_capex_disclosed": null,
     "reported_per_share": {
       "ffo": 2.23,
       "core": 2.13,
       "affo": 1.98
     },
-    "notes": "The reconciliation continues past Core AFFO to FAD. I excluded the capex lines after Core AFFO because they are below the AFFO total. Share counts are in thousands.",
+    "notes": "Core AFFO is derived from Core FFO less recurring capex. FAD and subsequent capex lines below Core AFFO were excluded because they are beyond the AFFO total.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 15584,
-      "output_tokens": 1179
+      "input_tokens": 18845,
+      "output_tokens": 1211
     },
     "candidate_pages": [
       {
@@ -136,6 +138,10 @@
       {
         "seq": 11,
         "printed": "11"
+      },
+      {
+        "seq": 13,
+        "printed": "13"
       }
     ]
   },
@@ -161,6 +167,7 @@
         "page_printed": "10"
       }
     ],
+    "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
         "label": "Loss on embedded derivative in preferred shares (1)",

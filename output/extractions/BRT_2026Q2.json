@@ -10,7 +10,7 @@
   "extraction": {
     "amount_unit": "thousands",
     "core_metric_name": null,
-    "affo_metric_name": "AFFO",
+    "affo_metric_name": "Adjusted funds from operations",
     "affo_starts_from": "ffo",
     "starting_line": {
       "label": "GAAP Net loss attributable to common stockholders",
@@ -100,24 +100,37 @@
       "page_printed": "6"
     },
     "diluted_shares": {
-      "label": "Shares outstanding (thousands) (period-end, not weighted-average diluted)",
-      "amount": 18762,
-      "page_seq": 6,
-      "page_printed": "2"
+      "label": "Diluted shares outstanding for FFO and AFFO",
+      "amount": 18825,
+      "page_seq": 11,
+      "page_printed": "7"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Estimated Recurring Capital Expenditures",
+      "amount": 1816,
+      "basis": "quarter",
+      "scope": "BRT share of capital expenditures (consolidated and unconsolidated, excl. JV partners)",
+      "page_seq": 16,
+      "page_printed": "12"
     },
     "reported_per_share": {
       "ffo": 0.29,
       "core": null,
       "affo": 0.36
     },
-    "notes": "The provided pages don't show the weighted average diluted share count used for FFO per share. The diluted_shares value is the period-end shares outstanding (18,762 thousand) from the Financial Highlights page, used only as a placeholder. Per-share figures are from page seq 6. The company reports no separate core or adjusted FFO metric. AFFO is built from NAREIT FFO. The reconciliation sums correctly: -3,221 + 6,708 + 2,022 - 4 = 5,505, and 5,505 + 23 - 17 + 948 + 280 + 41 + 69 = 6,849.",
+    "notes": "AFFO does not subtract recurring capex; the quarter's recurring capex is from the capex table (printed in full dollars as $1,816,000, converted to thousands). No core/adjusted FFO metric. Diluted shares printed as 18,825,000, converted to thousands.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 7793,
-      "output_tokens": 1614
+      "input_tokens": 10801,
+      "output_tokens": 1389
     },
     "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": "29"
+      },
       {
         "seq": 6,
         "printed": "2"
@@ -125,6 +138,14 @@
       {
         "seq": 10,
         "printed": "6"
+      },
+      {
+        "seq": 11,
+        "printed": "7"
+      },
+      {
+        "seq": 16,
+        "printed": "12"
       },
       {
         "seq": 29,
@@ -142,34 +163,33 @@
   },
   "restated": {
     "nareit_ffo": 5505,
-    "nareit_ffo_ps": 0.2934,
+    "nareit_ffo_ps": 0.2924,
     "company_core_name": null,
     "company_core": null,
     "company_core_ps": null,
-    "company_affo_name": "AFFO",
+    "company_affo_name": "Adjusted funds from operations",
     "company_affo": 6849,
-    "company_affo_ps": 0.365,
+    "company_affo_ps": 0.3638,
     "conservative_core_ffo": 5505,
-    "conservative_core_ffo_ps": 0.2934,
-    "conservative_affo": null,
-    "conservative_affo_ps": null,
-    "recurring_capex": [],
-    "steps": [
+    "conservative_core_ffo_ps": 0.2924,
+    "conservative_affo": 3689,
+    "conservative_affo_ps": 0.196,
+    "recurring_capex": [
       {
-        "label": "Add: amortization of restricted stock and RSU expense",
-        "amount": 948,
-        "category": "stock_comp",
-        "page_seq": 10,
-        "page_printed": "6",
-        "section": "affo",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+        "label": "Estimated Recurring Capital Expenditures",
+        "amount": -1816,
+        "basis": "quarter",
+        "scope": "BRT share of capital expenditures (consolidated and unconsolidated, excl. JV partners)",
+        "page_seq": 16,
+        "page_printed": "12",
+        "category": "recurring_capex"
       }
     ],
+    "recurring_capex_source": "capex_table",
+    "steps": [],
     "flags": [
-      "No recurring capex line disclosed; Conservative AFFO not computed"
+      "Recurring capex taken from a separate table (page 12): the company's own AFFO does not deduct it"
     ],
-    "diluted_shares": 18762
+    "diluted_shares": 18825
   }
 }

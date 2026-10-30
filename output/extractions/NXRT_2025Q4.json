@@ -9,8 +9,8 @@
   },
   "extraction": {
     "amount_unit": "thousands",
-    "core_metric_name": "Core FFO",
-    "affo_metric_name": "AFFO",
+    "core_metric_name": "Core FFO attributable to common stockholders",
+    "affo_metric_name": "AFFO attributable to common stockholders",
     "affo_starts_from": "core",
     "starting_line": {
       "label": "Net income (loss)",
@@ -127,24 +127,37 @@
       "page_printed": "19"
     },
     "diluted_shares": {
-      "label": "Weighted average common shares outstanding - diluted (2)",
+      "label": "Weighted average common shares outstanding - diluted",
       "amount": 25411,
       "page_seq": 21,
       "page_printed": "19"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Capitalized Maintenance Expenditures - Recurring",
+      "amount": 3845,
+      "basis": "quarter",
+      "scope": "company total",
+      "page_seq": 22,
+      "page_printed": "20"
     },
     "reported_per_share": {
       "ffo": 0.52,
       "core": 0.65,
       "affo": 0.75
     },
-    "notes": "Q4 2025 column. Amortization of deferred financing costs was placed after FFO in Core FFO adjustments, as printed. Zero-valued lines (shown as \u2014) are included as printed. Diluted share count for FFO is 25,411 (the reconciliation table), not the 25,364 on the summary page.",
+    "notes": "Q4 2025 column used. Zero-valued lines (gain on sales, loss on extinguishment, forfeited deposits) printed as \"\u2014\". Diluted share count of 25,411 is from the FFO table (differs from the 25,364 in the income statement summary). AFFO does not subtract recurring capex; Q4 recurring capex of $3,845 is from the Historical Capital Expenditures table.",
+    "version": 2,
     "validation_errors": [],
     "attempts": 1,
     "usage": {
-      "input_tokens": 21827,
-      "output_tokens": 1366
+      "input_tokens": 24886,
+      "output_tokens": 1506
     },
     "candidate_pages": [
+      {
+        "seq": 2,
+        "printed": ""
+      },
       {
         "seq": 9,
         "printed": "7"
@@ -162,6 +175,10 @@
         "printed": "19"
       },
       {
+        "seq": 22,
+        "printed": "20"
+      },
+      {
         "seq": 33,
         "printed": "31"
       }
@@ -170,17 +187,28 @@
   "restated": {
     "nareit_ffo": 13160,
     "nareit_ffo_ps": 0.5179,
-    "company_core_name": "Core FFO",
+    "company_core_name": "Core FFO attributable to common stockholders",
     "company_core": 16533,
     "company_core_ps": 0.6506,
-    "company_affo_name": "AFFO",
+    "company_affo_name": "AFFO attributable to common stockholders",
     "company_affo": 19069,
     "company_affo_ps": 0.7504,
-    "conservative_core_ffo": 14829,
-    "conservative_core_ffo_ps": 0.5836,
-    "conservative_affo": null,
-    "conservative_affo_ps": null,
-    "recurring_capex": [],
+    "conservative_core_ffo": 13173,
+    "conservative_core_ffo_ps": 0.5184,
+    "conservative_affo": 9328,
+    "conservative_affo_ps": 0.3671,
+    "recurring_capex": [
+      {
+        "label": "Capitalized Maintenance Expenditures - Recurring",
+        "amount": -3845,
+        "basis": "quarter",
+        "scope": "company total",
+        "page_seq": 22,
+        "page_printed": "20",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
     "steps": [
       {
         "label": "Loss on extinguishment of debt and modification costs",
@@ -191,7 +219,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
       },
       {
         "label": "Casualty-related expenses/(recoveries)",
@@ -224,7 +252,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
       },
       {
         "label": "Amortization of deferred financing costs",
@@ -233,9 +261,9 @@
         "page_seq": 21,
         "page_printed": "19",
         "section": "core",
-        "applied": true,
-        "effect": 1656,
-        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost (company add-back reversed)"
       },
       {
         "label": "Mark-to-market adjustments of interest rate caps",
@@ -257,25 +285,11 @@
         "section": "core",
         "applied": true,
         "effect": -13,
-        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
-      },
-      {
-        "label": "Equity-based compensation expense",
-        "amount": 2546,
-        "category": "stock_comp",
-        "page_seq": 21,
-        "page_printed": "19",
-        "section": "affo",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Stock compensation dilutes shareholders; kept as a cost (company add-back reversed)"
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
       }
     ],
     "flags": [
-      "Unlisted adjustment: Gain on forfeited deposits",
-      "Unexpected item in adjusted section: Amortization of deferred financing costs",
-      "Unexpected item in adjusted section: Adjustment for noncontrolling interests",
-      "No recurring capex line disclosed; Conservative AFFO not computed"
+      "Recurring capex taken from a separate table (page 20): the company's own AFFO does not deduct it"
     ],
     "diluted_shares": 25411
   }

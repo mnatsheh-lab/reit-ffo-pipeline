@@ -15,116 +15,133 @@
     "starting_line": {
       "label": "Net income (loss)",
       "amount": 34015,
-      "page_seq": 13,
-      "page_printed": "11"
+      "page_seq": 14,
+      "page_printed": "12"
     },
     "ffo_adjustments": [
       {
         "label": "Real estate depreciation and amortization",
         "amount": 62497,
         "category": "re_depreciation",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "Our share of real estate depreciation and amortization from investments in unconsolidated real estate entities",
         "amount": 609,
         "category": "jv_depreciation",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "(Gain on sale) loss on impairment of real estate assets, net, excluding prepayment gains",
         "amount": -17491,
         "category": "property_sale_gain_loss",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "Gain on sale of real estate associated with unconsolidated real estate entities",
         "amount": -187,
         "category": "property_sale_gain_loss",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       }
     ],
     "ffo_total": {
       "label": "FFO",
       "amount": 79443,
-      "page_seq": 13,
-      "page_printed": "11"
+      "page_seq": 14,
+      "page_printed": "12"
     },
     "core_adjustments": [
       {
         "label": "Other depreciation and amortization",
         "amount": 487,
-        "category": "other",
-        "page_seq": 13,
-        "page_printed": "11"
+        "category": "non_re_depreciation",
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "Casualty losses (gains), net",
         "amount": 755,
         "category": "casualty",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "Loan (premium accretion) discount amortization, net",
         "amount": -2013,
         "category": "debt_cost_amortization",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "Prepayment (gains) penalties on asset dispositions",
         "amount": 0,
         "category": "debt_extinguishment",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
-        "label": "Loss on extinguishment of debt",
+        "label": "Loss (gain) on extinguishment of debt",
         "amount": 0,
         "category": "debt_extinguishment",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       },
       {
         "label": "Other loss",
         "amount": 238,
         "category": "other",
-        "page_seq": 13,
-        "page_printed": "11"
+        "page_seq": 14,
+        "page_printed": "12"
       }
     ],
     "core_total": {
       "label": "CFFO",
       "amount": 78910,
-      "page_seq": 13,
-      "page_printed": "11"
+      "page_seq": 14,
+      "page_printed": "12"
     },
     "affo_adjustments": [],
     "affo_total": null,
     "diluted_shares": {
       "label": "Weighted-average shares and units outstanding",
       "amount": 243707.137,
-      "page_seq": 13,
-      "page_printed": "11"
+      "page_seq": 14,
+      "page_printed": "12"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Across our total portfolio for the three months ended December 31, 2025, recurring capital expenditures were $5.8 million, or $169 per unit",
+      "amount": 5800,
+      "basis": "quarter",
+      "scope": "company total (total portfolio)",
+      "page_seq": 7,
+      "page_printed": "5"
     },
     "reported_per_share": {
       "ffo": 0.33,
       "core": 0.32,
       "affo": null
     },
-    "notes": "The company has no AFFO metric. Its adjusted FFO metric is CFFO. The reconciliation starts from total net income (loss), not net income available to common shares. The FFO section has no separate noncontrolling interest line. The share count includes OP units. It is printed as 243,707,137 shares and entered in thousands (243,707.137) to match the dollar amounts. The prepayment gains line and the loss on extinguishment of debt line print as \"\u2014\" for the quarter, so I recorded them as 0.",
+    "notes": "No AFFO metric is reported. Net income is not adjusted for noncontrolling interests; FFO is computed from total net income and divided by shares plus OP units. The prepayment gains/penalties and extinguishment lines show \"\u2014\" for the quarter, so I recorded them as 0. The recurring capex figure is rounded from \"$5.8 million\" in the narrative.",
+    "version": 2,
     "validation_errors": [],
-    "attempts": 2,
+    "attempts": 1,
     "usage": {
-      "input_tokens": 60027,
-      "output_tokens": 2674
+      "input_tokens": 32568,
+      "output_tokens": 1388
     },
     "candidate_pages": [
+      {
+        "seq": 2,
+        "printed": "24"
+      },
+      {
+        "seq": 7,
+        "printed": "5"
+      },
       {
         "seq": 11,
         "printed": "9"
@@ -162,27 +179,38 @@
     "company_affo_ps": null,
     "conservative_core_ffo": 77430,
     "conservative_core_ffo_ps": 0.3177,
-    "conservative_affo": null,
-    "conservative_affo_ps": null,
-    "recurring_capex": [],
+    "conservative_affo": 71630,
+    "conservative_affo_ps": 0.2939,
+    "recurring_capex": [
+      {
+        "label": "Across our total portfolio for the three months ended December 31, 2025, recurring capital expenditures were $5.8 million, or $169 per unit",
+        "amount": -5800,
+        "basis": "quarter",
+        "scope": "company total (total portfolio)",
+        "page_seq": 7,
+        "page_printed": "5",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
     "steps": [
       {
         "label": "Other depreciation and amortization",
         "amount": 487,
-        "category": "other",
-        "page_seq": 13,
-        "page_printed": "11",
+        "category": "non_re_depreciation",
+        "page_seq": 14,
+        "page_printed": "12",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost (company add-back reversed)"
       },
       {
         "label": "Casualty losses (gains), net",
         "amount": 755,
         "category": "casualty",
-        "page_seq": 13,
-        "page_printed": "11",
+        "page_seq": 14,
+        "page_printed": "12",
         "section": "core",
         "applied": false,
         "effect": 0.0,
@@ -192,41 +220,41 @@
         "label": "Loan (premium accretion) discount amortization, net",
         "amount": -2013,
         "category": "debt_cost_amortization",
-        "page_seq": 13,
-        "page_printed": "11",
+        "page_seq": 14,
+        "page_printed": "12",
         "section": "core",
         "applied": true,
         "effect": -2013,
-        "reason": "NAREIT-type item in the company's adjusted section; applied as the company did (flagged)"
+        "reason": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost (gain/recovery removed)"
       },
       {
         "label": "Prepayment (gains) penalties on asset dispositions",
         "amount": 0,
         "category": "debt_extinguishment",
-        "page_seq": 13,
-        "page_printed": "11",
+        "page_seq": 14,
+        "page_printed": "12",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
       },
       {
-        "label": "Loss on extinguishment of debt",
+        "label": "Loss (gain) on extinguishment of debt",
         "amount": 0,
         "category": "debt_extinguishment",
-        "page_seq": 13,
-        "page_printed": "11",
+        "page_seq": 14,
+        "page_printed": "12",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
       },
       {
         "label": "Other loss",
         "amount": 238,
         "category": "other",
-        "page_seq": 13,
-        "page_printed": "11",
+        "page_seq": 14,
+        "page_printed": "12",
         "section": "core",
         "applied": false,
         "effect": 0.0,
@@ -234,10 +262,8 @@
       }
     ],
     "flags": [
-      "Unlisted adjustment: Other depreciation and amortization",
-      "Unexpected item in adjusted section: Loan (premium accretion) discount amortization, net",
-      "Unlisted adjustment: Other loss",
-      "No recurring capex line disclosed; Conservative AFFO not computed"
+      "Review: 'Other loss' (other) handled by a provisional rule",
+      "Recurring capex taken from a separate table (page 5): the company's own AFFO does not deduct it"
     ],
     "diluted_shares": 243707.137
   }
