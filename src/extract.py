@@ -27,6 +27,7 @@ CATEGORIES = {
     "transaction_costs": "Transaction, merger, acquisition-pursuit, integration costs",
     "severance_restructuring": "Severance, restructuring, executive transition, software transition",
     "stock_comp": "Non-cash / stock-based compensation",
+    "non_re_depreciation": "Depreciation/amortization of NON-real-estate assets (corporate offices, IT, 'other depreciation')",
     # AFFO items
     "recurring_capex": "Recurring / maintenance capital expenditures",
     "straight_line_rent": "Straight-line rent and similar non-cash revenue",

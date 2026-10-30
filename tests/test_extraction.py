@@ -120,7 +120,9 @@ class RestateTests(unittest.TestCase):
         self.assertEqual(r["conservative_affo"], 13173 - 2000)
         self.assertEqual(r["recurring_capex_source"], "capex_table")
         self.assertTrue(any("separate table" in f for f in r["flags"]))
-        self.assertTrue(any("Amortization of deferred financing costs" in f for f in r["flags"]))
+        self.assertFalse(any("Amortization of deferred financing costs" in f for f in r["flags"]))  # now a firm rule
+        amort = next(x for x in r["steps"] if x["category"] == "debt_cost_amortization")
+        self.assertFalse(amort["applied"])
 
     def test_annual_capex_not_used(self):
         e = maa_extraction("2026Q2")
