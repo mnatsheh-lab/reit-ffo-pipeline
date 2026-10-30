@@ -1,6 +1,6 @@
 # REIT FFO Comparability Pipeline
 
-An AI pipeline that tracks every U.S. publicly traded multifamily REIT, collects each quarterly earnings filing from SEC EDGAR since 2018, extracts every line of each FFO reconciliation, and restates all companies to one common FFO definition, so they can be compared fairly across companies and over time. It updates itself daily.
+An AI pipeline that tracks every U.S. publicly traded multifamily REIT, collects each quarterly earnings filing from SEC EDGAR since 2020, extracts every line of each FFO reconciliation, and restates all companies to one common FFO definition, so they can be compared fairly across companies and over time. It updates itself daily.
 
 > Helps REIT equity analysts and real estate investors make apples-to-apples valuation and peer-comparison decisions across all U.S. listed multifamily REITs, by using an AI agent that monitors SEC EDGAR daily to produce a continuously updated, restated FFO history with source-page citations.
 
@@ -23,8 +23,8 @@ Track universe → Collect → Extract → Restate → Explain and report
 
 ## Scope
 
-- **Companies:** every U.S. exchange-listed multifamily REIT at any point since 2018.
-- **Period:** Q1 2018 to the latest quarter, then each new quarter as it is filed.
+- **Companies:** every U.S. exchange-listed multifamily REIT at any point since 2020.
+- **Period:** Q1 2020 to the latest quarter, then each new quarter as it is filed.
 
 Current universe (October 2026):
 
@@ -93,8 +93,8 @@ output/            restated FFO tables
 |---|---|
 | `run_test_cheap.bat` | Tests the low-cost setup on the 15 answer-key quarters: free rule check, then a few-cent re-extraction compared with the answer key. |
 | `run_check_universe.bat` | Free: checks every REIT's SEC ID against EDGAR before any paid run. |
-| `run_pilot_MAA.bat` | Pilot: MAA from 2018 to today (~34 quarters), then rebuilds the dashboard. Asks before spending. |
-| `run_all.bat` | Every REIT, every missing quarter since 2018. Asks before each paid step; safe to stop and restart. |
+| `run_pilot_MAA.bat` | Pilot: MAA from 2020 to today (~26 quarters), then rebuilds the dashboard. Asks before spending. |
+| `run_all.bat` | Every REIT, every missing quarter since 2020. Asks before each paid step; safe to stop and restart. |
 | `run_test_MAA.bat` | Collects one quarter (MAA Q2 2026). Use first to check everything works. |
 | `run_collect.bat` | Collects all five answer-key REITs, Q4 2025 to Q2 2026. |
 | `python -m src.collect --tickers MAA CPT --start 2025Q4 --end 2026Q2` | Custom run. |
@@ -107,7 +107,7 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 
 ## Status
 
-- [x] Scope defined: all U.S. listed multifamily REITs, Q1 2018 to present
+- [x] Scope defined: all U.S. listed multifamily REITs, Q1 2020 to present (narrowed from 2018 to reduce cost)
 - [x] Answer-key documents collected
 - [x] MAA hand reconciliation (Q4 2025, Q1 2026, Q2 2026; all checks tie to reported figures)
 - [x] Common FFO definition (`docs/common_definition.md`)
@@ -116,7 +116,7 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 - [x] Extraction and restatement — 15/15 quarters tie; MAA 42/42 vs answer key ([results](docs/extraction_test_results.md))
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
-- [ ] Backfill to Q1 2018 — universe of 17 REITs / 466 company-quarters configured; resumable yearly batches; pilot pending
+- [ ] Backfill to Q1 2020 — universe of 17 REITs / 354 company-quarters configured; resumable yearly batches; pilot pending
 - [x] FFO dashboard demo (`dashboard/index.html`, built by `python -m src.build_dashboard`)
 
 ## Author
