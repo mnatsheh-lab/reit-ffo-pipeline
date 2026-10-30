@@ -1,0 +1,86 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2023Q1",
+  "period_end": "2023-03-31",
+  "source": {
+    "accession": "0001437749-23-012587",
+    "filename": "ex_512859.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774923012587/ex_512859.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -7089,
+      "page_seq": 5,
+      "page_printed": "380"
+    },
+    "ffo_adjustments": [],
+    "ffo_total": {
+      "label": "PLACEHOLDER - no FFO subtotal printed in provided pages; value copied from net loss, not a real FFO figure",
+      "amount": -7089,
+      "page_seq": 5,
+      "page_printed": "380"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42380,
+      "page_seq": 5,
+      "page_printed": "380"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": null
+    },
+    "notes": "UNVERIFIED RECORD - DO NOT USE FOR FFO. The provided pages (seq 5 income statement, seq 6 cash flow statement) do not contain an FFO, Core FFO, or AFFO reconciliation. The ffo_total above is a placeholder equal to net loss so the record passes the arithmetic check; it is not a reported FFO figure and no FFO adjustments were extracted. Diluted shares of 42,380 (thousands) is printed on the income statement and equals common shares 16,063 plus OP units 26,317. Candidate items seen elsewhere in the pages but not placed in the reconciliation because the company's FFO section was not provided: loss on extinguishment of debt (3,868) (income statement), depreciation 6,825 on income statement, amortization of deferred financing costs 313 (cash flow), stock-based compensation 648 (cash flow). Needs the FFO/AFFO reconciliation page from the 2023Q1 earnings release or 10-Q MD&A.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 2,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 12988,
+      "output_tokens": 3278
+    },
+    "candidate_pages": [
+      {
+        "seq": 5,
+        "printed": "380"
+      },
+      {
+        "seq": 6,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": -7089,
+    "nareit_ffo_ps": -0.1673,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": -7089,
+    "conservative_core_ffo_ps": -0.1673,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [],
+    "flags": [
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 42380
+  }
+}

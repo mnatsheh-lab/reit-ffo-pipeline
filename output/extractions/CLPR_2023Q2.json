@@ -1,0 +1,225 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2023Q2",
+  "period_end": "2023-06-30",
+  "source": {
+    "accession": "0001437749-23-021920",
+    "filename": "0001437749-23-021920.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774923021920/0001437749-23-021920.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -3295,
+      "page_seq": 10,
+      "page_printed": "22"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 7269,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "22"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 3974,
+      "page_seq": 10,
+      "page_printed": "22"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 121,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Amortization of above- and below-market leases",
+        "amount": -8,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Straight-line rent adjustments",
+        "amount": 32,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Amortization of debt origination costs",
+        "amount": 362,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Amortization of LTIP awards",
+        "amount": 783,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 357,
+        "category": "transaction_costs",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Certain litigation-related expenses",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "22"
+      },
+      {
+        "label": "Recurring capital spending",
+        "amount": -129,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "22"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO",
+      "amount": 5492,
+      "page_seq": 10,
+      "page_printed": "22"
+    },
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42380,
+      "page_seq": 8,
+      "page_printed": "380"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": 0.13
+    },
+    "notes": "Three months ended June 30, 2023 column. CLPR reports FFO and AFFO only (no core FFO). FFO per share not printed in the reconciliation. AFFO per share $0.13 reproduces as 5,492 / 42,380 = 0.13. Loss on extinguishment of debt and litigation expenses are '-' (zero) in the current quarter. Above/below-market lease amortization (8) classified as straight_line_rent (non-cash rent item). Amortization of real estate tax intangible classified as 'other'. Recurring capex is deducted within AFFO, so no separate disclosure needed.",
+    "ffo_adjustments_dummy": null,
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8879,
+      "output_tokens": 2552
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "380"
+      },
+      {
+        "seq": 9,
+        "printed": "158"
+      },
+      {
+        "seq": 10,
+        "printed": "22"
+      },
+      {
+        "seq": 11,
+        "printed": "010"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 3974,
+    "nareit_ffo_ps": 0.0938,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 5492,
+    "company_affo_ps": 0.1296,
+    "conservative_core_ffo": 3974,
+    "conservative_core_ffo_ps": 0.0938,
+    "conservative_affo": 3845,
+    "conservative_affo_ps": 0.0907,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital spending",
+        "amount": -129,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "22"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 121,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "22",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 357,
+        "category": "transaction_costs",
+        "page_seq": 10,
+        "page_printed": "22",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "22",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Certain litigation-related expenses",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "22",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 42380
+  }
+}

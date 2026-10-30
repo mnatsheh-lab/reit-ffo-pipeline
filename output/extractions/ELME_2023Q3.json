@@ -1,0 +1,217 @@
+{
+  "ticker": "ELME",
+  "quarter": "2023Q3",
+  "period_end": "2023-09-30",
+  "source": {
+    "accession": "0000104894-23-000110",
+    "filename": "0000104894-23-000110.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/104894/000010489423000110/0000104894-23-000110.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -43618,
+      "page_seq": 21,
+      "page_printed": "18"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 21904,
+        "category": "re_depreciation",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Real estate impairment",
+        "amount": 41860,
+        "category": "re_impairment",
+        "page_seq": 21,
+        "page_printed": "18"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT funds from operations (FFO) (1)",
+      "amount": 20146,
+      "page_seq": 21,
+      "page_printed": "18"
+    },
+    "core_adjustments": [
+      {
+        "label": "Transformation costs",
+        "amount": 985,
+        "category": "severance_restructuring",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Relocation expense",
+        "amount": 306,
+        "category": "other",
+        "page_seq": 21,
+        "page_printed": "18"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO (1)",
+      "amount": 21437,
+      "page_seq": 21,
+      "page_printed": "18"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital improvements",
+        "amount": -1490,
+        "category": "recurring_capex",
+        "page_seq": 22,
+        "page_printed": "19"
+      },
+      {
+        "label": "Straight-line rent, net",
+        "amount": -74,
+        "category": "straight_line_rent",
+        "page_seq": 22,
+        "page_printed": "19"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization of debt costs",
+        "amount": 1348,
+        "category": "debt_cost_amortization",
+        "page_seq": 22,
+        "page_printed": "19"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -155,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": "19"
+      },
+      {
+        "label": "Amortization and expensing of restricted share and unit compensation (3)",
+        "amount": 1432,
+        "category": "stock_comp",
+        "page_seq": 22,
+        "page_printed": "19"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO (1)",
+      "amount": 21207,
+      "page_seq": 22,
+      "page_printed": "19"
+    },
+    "diluted_shares": {
+      "label": "Average shares - fully diluted (for NAREIT FFO and Core FFO)",
+      "amount": 87799,
+      "page_seq": 21,
+      "page_printed": "18"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.23,
+      "core": 0.24,
+      "affo": null
+    },
+    "notes": "Three-month column ended Sept 30, 2023 (third data column on seq 21/22). Starting line and FFO/Core FFO taken from the NAREIT FFO/AFFO schedule (seq 21); AFFO taken from seq 22. Zero-value lines omitted (loss on extinguishment of debt, severance, structuring, pursuit write-off, tenant improvements, leasing commissions, non-cash fair value interest). Transformation costs mapped to severance_restructuring (judgment call; company lists them separately). Relocation expense and amortization of lease intangibles mapped to 'other'. Company also reports Core AFFO of $22,498 (starts from AFFO, adds severance, relocation, structuring, transformation, pursuit items); not captured in affo_total since AFFO is the AFFO subtotal. Diluted share count 87,799 reproduces reported per-share figures (20,146/87,799 = 0.23; 21,437/87,799 = 0.24). Reported AFFO per share not disclosed. Recurring capital improvements are deducted in AFFO, so recurring_capex_disclosed is null.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 9697,
+      "output_tokens": 4116
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "7"
+      },
+      {
+        "seq": 13,
+        "printed": "10"
+      },
+      {
+        "seq": 15,
+        "printed": "12"
+      },
+      {
+        "seq": 21,
+        "printed": "18"
+      },
+      {
+        "seq": 22,
+        "printed": "19"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 20146,
+    "nareit_ffo_ps": 0.2295,
+    "company_core_name": "Core FFO",
+    "company_core": 21437,
+    "company_core_ps": 0.2442,
+    "company_affo_name": "AFFO",
+    "company_affo": 21207,
+    "company_affo_ps": 0.2415,
+    "conservative_core_ffo": 19991,
+    "conservative_core_ffo_ps": 0.2277,
+    "conservative_affo": 18501,
+    "conservative_affo_ps": 0.2107,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital improvements",
+        "amount": -1490,
+        "category": "recurring_capex",
+        "page_seq": 22,
+        "page_printed": "19"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Transformation costs",
+        "amount": 985,
+        "category": "severance_restructuring",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Relocation expense",
+        "amount": 306,
+        "category": "other",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -155,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": "19",
+        "section": "affo",
+        "applied": true,
+        "effect": -155,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Relocation expense' (other) handled by a provisional rule",
+      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 87799
+  }
+}

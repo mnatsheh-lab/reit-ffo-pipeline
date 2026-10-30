@@ -1,0 +1,214 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2024Q2",
+  "period_end": "2024-06-30",
+  "source": {
+    "accession": "0001437749-24-024286",
+    "filename": "0001437749-24-024286.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774924024286/0001437749-24-024286.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -1743,
+      "page_seq": 8,
+      "page_printed": "24"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 7455,
+        "category": "re_depreciation",
+        "page_seq": 8,
+        "page_printed": "24"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 5712,
+      "page_seq": 8,
+      "page_printed": "24"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 120,
+        "category": "other",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Amortization of above- and below-market leases",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Straight-line rent adjustments",
+        "amount": 38,
+        "category": "straight_line_rent",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Amortization of debt origination costs",
+        "amount": 530,
+        "category": "debt_cost_amortization",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Amortization of LTIP awards",
+        "amount": 713,
+        "category": "stock_comp",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 8,
+        "page_printed": "24"
+      },
+      {
+        "label": "Recurring capital spending",
+        "amount": -61,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": "24"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO",
+      "amount": 7052,
+      "page_seq": 8,
+      "page_printed": "24"
+    },
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42394,
+      "page_seq": 6,
+      "page_printed": "380"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": 0.17
+    },
+    "notes": "Three-month column for June 30, 2024 only. FFO per share is not printed in the reconciliation, so ffo is null. AFFO per share $0.17 reproduces: 7,052 / 42,394 = 0.166. Diluted shares (42,394) is common shares 16,077 plus OP units 26,317, from the income statement page. Amortization of above- and below-market leases and transaction pursuit costs and loss on extinguishment are shown as '-' for Q2 2024 and recorded as 0. Amortization of real estate tax intangible has no dedicated category, so it is recorded as 'other'. The company does not report a core FFO metric. Recurring capital spending is already deducted in AFFO, so recurring_capex_disclosed is null.",
+    "starting_line_dummy": "ignore",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 56232,
+      "output_tokens": 2572
+    },
+    "candidate_pages": [
+      {
+        "seq": 6,
+        "printed": "380"
+      },
+      {
+        "seq": 8,
+        "printed": "24"
+      },
+      {
+        "seq": 9,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 5712,
+    "nareit_ffo_ps": 0.1347,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 7052,
+    "company_affo_ps": 0.1663,
+    "conservative_core_ffo": 5712,
+    "conservative_core_ffo_ps": 0.1347,
+    "conservative_affo": 5651,
+    "conservative_affo_ps": 0.1333,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital spending",
+        "amount": -61,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": "24"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 120,
+        "category": "other",
+        "page_seq": 8,
+        "page_printed": "24",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of above- and below-market leases",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 8,
+        "page_printed": "24",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 8,
+        "page_printed": "24",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 8,
+        "page_printed": "24",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 42394
+  }
+}

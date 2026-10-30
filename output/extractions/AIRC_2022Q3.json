@@ -1,0 +1,265 @@
+{
+  "ticker": "AIRC",
+  "quarter": "2022Q3",
+  "period_end": "2022-09-30",
+  "source": {
+    "accession": "0000950170-22-022005",
+    "filename": "0000950170-22-022005.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1820877/000095017022022005/0000950170-22-022005.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Pro forma FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income attributable to AIR common stockholders",
+      "amount": 1760,
+      "page_seq": 22,
+      "page_printed": ""
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization, net of noncontrolling partners\u2019 interest",
+        "amount": 85057,
+        "category": "re_depreciation",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Gain on dispositions of real estate and derecognition of leased properties, net of noncontrolling partners' interest",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Income tax adjustments related to gain on dispositions and other tax-related items",
+        "amount": -348,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments",
+        "amount": -5198,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Amounts allocable to participating securities",
+        "amount": -52,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": ""
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT FFO attributable to AIR common stockholders",
+      "amount": 81219,
+      "page_seq": 22,
+      "page_printed": ""
+    },
+    "core_adjustments": [
+      {
+        "label": "Loss on extinguishment of debt (1)",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Separation, business transformation, and transition related costs (2)",
+        "amount": 1419,
+        "category": "severance_restructuring",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Non-cash straight-line rent (3)",
+        "amount": 3660,
+        "category": "straight_line_rent",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Incremental cash received from leased properties (4)",
+        "amount": 109,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Casualty and other (5)",
+        "amount": 4280,
+        "category": "casualty",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments",
+        "amount": -581,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": ""
+      },
+      {
+        "label": "Amounts allocable to participating securities",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": ""
+      }
+    ],
+    "core_total": {
+      "label": "Pro forma FFO attributable to AIR common stockholders",
+      "amount": 90106,
+      "page_seq": 22,
+      "page_printed": ""
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Total shares and dilutive share equivalents",
+      "amount": 154057,
+      "page_seq": 22,
+      "page_printed": ""
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.53,
+      "core": 0.58,
+      "affo": null
+    },
+    "notes": "Three-month 2022 column only. AIR reports no AFFO metric; its adjusted FFO is 'Pro forma FFO', so core_total is Pro forma FFO and affo fields are null. Shares reported in full (154,057 thousand of shares printed as 154,057 in the table, unit consistent with the thousands totals; reproduces $0.53 NAREIT FFO and $0.58 pro forma FFO). Zero-valued lines ('\u2014' printed) are included with amount 0: gain on dispositions, loss on extinguishment of debt. The 'Separation, business transformation, and transition related costs' line was mapped to severance_restructuring as the closest fit (footnote describes consulting, placement, legal and transformation costs). 'Incremental cash received from leased properties' and the participating securities/tax lines were mapped to 'other'. Recurring capex not set because the company has no AFFO section; for reference, Supplemental Schedule 9 (page 33 printed page per TOC, seq 35) shows Capital Replacements of $7,885 thousand for the three months ended Sept 30, 2022 (consolidated, not adjusted for NCI). Page numbers printed on this schedule are blank in the markers.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 9077,
+      "output_tokens": 3548
+    },
+    "candidate_pages": [
+      {
+        "seq": 5,
+        "printed": ""
+      },
+      {
+        "seq": 22,
+        "printed": ""
+      },
+      {
+        "seq": 23,
+        "printed": "20"
+      },
+      {
+        "seq": 35,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 81219,
+    "nareit_ffo_ps": 0.5272,
+    "company_core_name": "Pro forma FFO",
+    "company_core": 90106,
+    "company_core_ps": 0.5849,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 80638,
+    "conservative_core_ffo_ps": 0.5234,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Loss on extinguishment of debt (1)",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Separation, business transformation, and transition related costs (2)",
+        "amount": 1419,
+        "category": "severance_restructuring",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Non-cash straight-line rent (3)",
+        "amount": 3660,
+        "category": "straight_line_rent",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "'straight_line_rent' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (company add-back reversed)"
+      },
+      {
+        "label": "Incremental cash received from leased properties (4)",
+        "amount": 109,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Casualty and other (5)",
+        "amount": 4280,
+        "category": "casualty",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments",
+        "amount": -581,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": -581,
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
+      },
+      {
+        "label": "Amounts allocable to participating securities",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 22,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      }
+    ],
+    "flags": [
+      "Review: 'Non-cash straight-line rent (3)' (straight_line_rent) handled by a provisional rule",
+      "Review: 'Incremental cash received from leased properties (4)' (other) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 154057
+  }
+}

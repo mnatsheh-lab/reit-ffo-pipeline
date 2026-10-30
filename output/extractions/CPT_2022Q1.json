@@ -1,0 +1,146 @@
+{
+  "ticker": "CPT",
+  "quarter": "2022Q1",
+  "period_end": "2022-03-31",
+  "source": {
+    "accession": "0000906345-22-000019",
+    "filename": "0000906345-22-000019.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000090634522000019/0000906345-22-000019.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net income attributable to common shareholders",
+      "amount": 80745,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 110537,
+        "category": "re_depreciation",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Adjustments for unconsolidated joint ventures",
+        "amount": 2709,
+        "category": "jv_depreciation",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Income allocated to non-controlling interests",
+        "amount": 2856,
+        "category": "noncontrolling_interest",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on sale of operating property",
+        "amount": -36372,
+        "category": "property_sale_gain_loss",
+        "page_seq": 8,
+        "page_printed": "5"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 160475,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Less: recurring capitalized expenditures (a)",
+        "amount": -14251,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": "5"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations",
+      "amount": 146224,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of common shares outstanding: FFO/AFFO - diluted",
+      "amount": 107025,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 1.5,
+      "core": null,
+      "affo": 1.37
+    },
+    "notes": "Camden reports FFO and AFFO only (no Core FFO). AFFO deducts recurring capitalized expenditures, so recurring_capex_disclosed is null. Figures checked: 80,745 + 110,537 + 2,709 + 2,856 - 36,372 = 160,475; 160,475 - 14,251 = 146,224. Per-share check: 160,475/107,025 = 1.50; 146,224/107,025 = 1.37. Same reconciliation repeats on seq 10 (printed 7) and seq 19 (printed 8); values identical. The 'Weighted average number of common shares outstanding' label is a section header; the FFO/AFFO diluted line is 107,025 thousand shares.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 9858,
+      "output_tokens": 1957
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "5"
+      },
+      {
+        "seq": 9,
+        "printed": "6"
+      },
+      {
+        "seq": 10,
+        "printed": "7"
+      },
+      {
+        "seq": 19,
+        "printed": "8"
+      },
+      {
+        "seq": 20,
+        "printed": "9"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 160475,
+    "nareit_ffo_ps": 1.4994,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 146224,
+    "company_affo_ps": 1.3663,
+    "conservative_core_ffo": 160475,
+    "conservative_core_ffo_ps": 1.4994,
+    "conservative_affo": 146224,
+    "conservative_affo_ps": 1.3663,
+    "recurring_capex": [
+      {
+        "label": "Less: recurring capitalized expenditures (a)",
+        "amount": -14251,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": "5"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [],
+    "flags": [],
+    "diluted_shares": 107025
+  }
+}

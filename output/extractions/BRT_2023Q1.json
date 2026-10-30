@@ -1,0 +1,250 @@
+{
+  "ticker": "BRT",
+  "quarter": "2023Q1",
+  "period_end": "2023-03-31",
+  "source": {
+    "accession": "0000014846-23-000014",
+    "filename": "0000014846-23-000014.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484623000014/0000014846-23-000014.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "Adjusted funds from operations",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "GAAP Net (loss) income attributable to common stockholders",
+      "amount": -4098,
+      "page_seq": 10,
+      "page_printed": "8"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Add: depreciation of properties",
+        "amount": 8008,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Add: our share of depreciation in unconsolidated joint venture properties",
+        "amount": 1376,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Deduct: our share of equity in earnings from sale of unconsolidated joint venture properties",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Deduct: gain on sale of real estate",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Adjustments for non-controlling interests",
+        "amount": -4,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "8"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT Funds from operations attributable to common stockholders",
+      "amount": 5282,
+      "page_seq": 10,
+      "page_printed": "8"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Adjustments for: straight-line rent accruals",
+        "amount": 19,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Add: our share of loss on extinguishment of debt from unconsolidated joint venture properties",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Add: amortization of restricted stock and RSU expense",
+        "amount": 1410,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Add: amortization of deferred mortgage and debt costs",
+        "amount": 252,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Add: our share of deferred mortgage costs from unconsolidated joint venture properties",
+        "amount": 27,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Add: amortization of fair value adjustment for mortgage debt",
+        "amount": 157,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Less: gain on insurance proceeds",
+        "amount": -240,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Less: our share of gain on insurance proceeds from unconsolidated joint venture properties",
+        "amount": -30,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "8"
+      },
+      {
+        "label": "Adjustments for non-controlling interests",
+        "amount": -3,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "8"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations attributable to common stockholders",
+      "amount": 6874,
+      "page_seq": 10,
+      "page_printed": "8"
+    },
+    "diluted_shares": {
+      "label": "Diluted shares outstanding for FFO and AFFO (19,137,577 expressed in thousands)",
+      "amount": 19137.577,
+      "page_seq": 11,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Estimated Recurring Capital Expenditures (BRT Share of Capital Expenditures column)",
+      "amount": 1224,
+      "basis": "quarter",
+      "scope": "company share (excl. JV partners)",
+      "page_seq": 28,
+      "page_printed": "10"
+    },
+    "reported_per_share": {
+      "ffo": 0.28,
+      "core": null,
+      "affo": 0.36
+    },
+    "notes": "Reconciliation taken from the FFO/AFFO tables (page 8). Starts from GAAP net loss attributable to common stockholders; company has no separate core FFO, so core fields are null. Zero-valued dash lines (2023 equity in earnings from JV sale, gain on sale of real estate, JV debt extinguishment loss) are included at 0. Ties: -4,098 + 8,008 + 1,376 - 4 = 5,282; 5,282 + 19 + 1,410 + 252 + 27 + 157 - 240 - 30 - 3 = 6,874. Per-share check: 5,282/19,137.577 = 0.28 and 6,874/19,137.577 = 0.36, matching reported. The FFO denominator (19,137,577 diluted shares and units for FFO and AFFO) differs from the income statement diluted count of 18,064,301, which equals basic because of the net loss. Recurring capex is not subtracted in AFFO; the value-add/capex table shows BRT share estimated recurring capex of $1,224,000 for the quarter ended March 31, 2023 (recorded as 1,224 thousand). Page printed numbers: the capex table is on printed page 10 (seq 28).",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 7287,
+      "output_tokens": 4153
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "7"
+      },
+      {
+        "seq": 10,
+        "printed": "8"
+      },
+      {
+        "seq": 11,
+        "printed": "9"
+      },
+      {
+        "seq": 28,
+        "printed": "10"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 5282,
+    "nareit_ffo_ps": 0.276,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "Adjusted funds from operations",
+    "company_affo": 6874,
+    "company_affo_ps": 0.3592,
+    "conservative_core_ffo": 5012,
+    "conservative_core_ffo_ps": 0.2619,
+    "conservative_affo": 3788,
+    "conservative_affo_ps": 0.1979,
+    "recurring_capex": [
+      {
+        "label": "Estimated Recurring Capital Expenditures (BRT Share of Capital Expenditures column)",
+        "amount": -1224,
+        "basis": "quarter",
+        "scope": "company share (excl. JV partners)",
+        "page_seq": 28,
+        "page_printed": "10",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
+    "steps": [
+      {
+        "label": "Add: our share of loss on extinguishment of debt from unconsolidated joint venture properties",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "8",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Less: gain on insurance proceeds",
+        "amount": -240,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "8",
+        "section": "affo",
+        "applied": true,
+        "effect": -240,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Less: our share of gain on insurance proceeds from unconsolidated joint venture properties",
+        "amount": -30,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "8",
+        "section": "affo",
+        "applied": true,
+        "effect": -30,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Recurring capex taken from a separate table (page 10): the company's own AFFO does not deduct it"
+    ],
+    "diluted_shares": 19137.577
+  }
+}

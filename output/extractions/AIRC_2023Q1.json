@@ -1,0 +1,236 @@
+{
+  "ticker": "AIRC",
+  "quarter": "2023Q1",
+  "period_end": "2023-03-31",
+  "source": {
+    "accession": "0000950170-23-016407",
+    "filename": "0000950170-23-016407.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1820877/000095017023016407/0000950170-23-016407.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Pro forma FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net (loss) income attributable to AIR common stockholders",
+      "amount": -11457,
+      "page_seq": 18,
+      "page_printed": "15"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization, net of noncontrolling partners\u2019 interest",
+        "amount": 90012,
+        "category": "re_depreciation",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Gain on dispositions of real estate, net of noncontrolling partners\u2019 interest",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -5922,
+        "category": "noncontrolling_interest",
+        "page_seq": 18,
+        "page_printed": "15"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT FFO attributable to AIR common stockholders",
+      "amount": 72633,
+      "page_seq": 18,
+      "page_printed": "15"
+    },
+    "core_adjustments": [
+      {
+        "label": "Non-cash straight-line rent (1)",
+        "amount": 3090,
+        "category": "straight_line_rent",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Loss on derivative instruments (2)",
+        "amount": 2144,
+        "category": "derivative_mtm",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Loss on extinguishment of debt (3)",
+        "amount": 2008,
+        "category": "debt_extinguishment",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Business transformation and transition related costs (4)",
+        "amount": 213,
+        "category": "severance_restructuring",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Casualty losses and other (5)",
+        "amount": 1846,
+        "category": "casualty",
+        "page_seq": 18,
+        "page_printed": "15"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -626,
+        "category": "noncontrolling_interest",
+        "page_seq": 18,
+        "page_printed": "15"
+      }
+    ],
+    "core_total": {
+      "label": "Pro forma FFO attributable to AIR common stockholders",
+      "amount": 81308,
+      "page_seq": 18,
+      "page_printed": "15"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Total shares and dilutive share equivalents",
+      "amount": 148884,
+      "page_seq": 18,
+      "page_printed": "15"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.49,
+      "core": 0.55,
+      "affo": null
+    },
+    "notes": "AIR reports no AFFO; Pro forma FFO is the adjusted FFO metric (core_total). Starting line is net loss attributable to AIR common stockholders. Gain on dispositions of real estate is shown as an em dash (zero) for Q1 2023; recorded as 0. 'Business transformation and transition related costs' ($213) mapped to severance_restructuring as the closest fit (ERP/finance transformation); it could also be viewed as transaction/other. Diluted shares 148,884 (thousands) reproduces $0.49 NAREIT FFO and $0.55 Pro forma FFO per share (72,633/148,884 and 81,308/148,884). Recurring capex left null: no AFFO section exists, so the AFFO-capex fallback was not applied. For reference, page 27 (Supplemental Schedule 9) discloses proportionate Capital Replacements of $6,212 thousand for the quarter, which is not part of the reconciliation. Page seq 18 printed '15' used for all lines; the page 16 FFO information (Schedule 2a) reconciles to the same $72,633 and $81,308.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8766,
+      "output_tokens": 3000
+    },
+    "candidate_pages": [
+      {
+        "seq": 5,
+        "printed": ""
+      },
+      {
+        "seq": 18,
+        "printed": "15"
+      },
+      {
+        "seq": 19,
+        "printed": "16"
+      },
+      {
+        "seq": 20,
+        "printed": "17"
+      },
+      {
+        "seq": 30,
+        "printed": "27"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 72633,
+    "nareit_ffo_ps": 0.4878,
+    "company_core_name": "Pro forma FFO",
+    "company_core": 81308,
+    "company_core_ps": 0.5461,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 74151,
+    "conservative_core_ffo_ps": 0.498,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Non-cash straight-line rent (1)",
+        "amount": 3090,
+        "category": "straight_line_rent",
+        "page_seq": 18,
+        "page_printed": "15",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "'straight_line_rent' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (company add-back reversed)"
+      },
+      {
+        "label": "Loss on derivative instruments (2)",
+        "amount": 2144,
+        "category": "derivative_mtm",
+        "page_seq": 18,
+        "page_printed": "15",
+        "section": "core",
+        "applied": true,
+        "effect": 2144,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Loss on extinguishment of debt (3)",
+        "amount": 2008,
+        "category": "debt_extinguishment",
+        "page_seq": 18,
+        "page_printed": "15",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+      },
+      {
+        "label": "Business transformation and transition related costs (4)",
+        "amount": 213,
+        "category": "severance_restructuring",
+        "page_seq": 18,
+        "page_printed": "15",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Casualty losses and other (5)",
+        "amount": 1846,
+        "category": "casualty",
+        "page_seq": 18,
+        "page_printed": "15",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -626,
+        "category": "noncontrolling_interest",
+        "page_seq": 18,
+        "page_printed": "15",
+        "section": "core",
+        "applied": true,
+        "effect": -626,
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
+      }
+    ],
+    "flags": [
+      "Review: 'Non-cash straight-line rent (1)' (straight_line_rent) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 148884
+  }
+}

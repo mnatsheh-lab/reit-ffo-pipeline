@@ -1,0 +1,462 @@
+{
+  "ticker": "APTS",
+  "quarter": "2022Q1",
+  "period_end": "2022-03-31",
+  "source": {
+    "accession": "0001481832-22-000066",
+    "filename": "0001481832-22-000066.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1481832/000148183222000066/0001481832-22-000066.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net loss attributable to common stockholders (See note 1)",
+      "amount": -34984,
+      "page_seq": 14,
+      "page_printed": "S - 3"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation of real estate assets",
+        "amount": 32274,
+        "category": "re_depreciation",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Amortization of acquired intangible assets and deferred leasing costs",
+        "amount": 5620,
+        "category": "re_depreciation",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Net loss attributable to Class A Unitholders (See note 2)",
+        "amount": -64,
+        "category": "noncontrolling_interest",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Gain on sale of real estate",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders and Unitholders",
+      "amount": 2846,
+      "page_seq": 14,
+      "page_printed": "S - 3"
+    },
+    "core_adjustments": [
+      {
+        "label": "Acquisition and pursuit costs",
+        "amount": 100,
+        "category": "transaction_costs",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Loan cost amortization on acquisition line of credit and loan coordination fees (See note 3)",
+        "amount": 301,
+        "category": "debt_cost_amortization",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Payment of costs related to property refinancing",
+        "amount": 363,
+        "category": "debt_extinguishment",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Internalization costs (See note 4)",
+        "amount": 244,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Corporate governance and merger-related costs",
+        "amount": 5291,
+        "category": "transaction_costs",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Deemed dividends for redemptions of and non-cash dividends on preferred stock, plus expenses incurred on calls of preferred stock (See note 5)",
+        "amount": 1682,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Expenses related to the COVID-19 global pandemic",
+        "amount": 0,
+        "category": "pandemic_costs",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common stockholders and Unitholders",
+      "amount": 10827,
+      "page_seq": 14,
+      "page_printed": "S - 3"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Non-cash equity compensation to directors and executives",
+        "amount": 1223,
+        "category": "stock_comp",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Non-cash income for current expected credit losses (See note 12)",
+        "amount": 240,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Amortization of loan closing costs (See note 6)",
+        "amount": 1294,
+        "category": "debt_cost_amortization",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Depreciation/amortization of non-real estate assets",
+        "amount": 451,
+        "category": "non_re_depreciation",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Net loan origination fees received (See note 7)",
+        "amount": 683,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Deferred interest income received (See note 8)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Amortization of lease inducements (See note 9)",
+        "amount": 447,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Cash received in excess of (exceeded by) amortization of purchase option termination revenues (See note 10)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Non-cash loan interest income (See note 11)",
+        "amount": -2027,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Cash paid for loan closing costs",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Amortization of acquired real estate intangible liabilities and straight-line rent adjustments (See note 13)",
+        "amount": -1604,
+        "category": "straight_line_rent",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Amortization of deferred revenues (See note 14)",
+        "amount": -940,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      },
+      {
+        "label": "Normally recurring capital expenditures (See note 15)",
+        "amount": -1883,
+        "category": "recurring_capex",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to common stockholders and Unitholders",
+      "amount": 8711,
+      "page_seq": 14,
+      "page_printed": "S - 3"
+    },
+    "diluted_shares": {
+      "label": "Common Stock and Class A Units (basic weighted average, used for per-share FFO/Core FFO/AFFO)",
+      "amount": 56723,
+      "page_seq": 14,
+      "page_printed": "S - 3"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.05,
+      "core": 0.19,
+      "affo": 0.15
+    },
+    "notes": "Reconciliation starts from net loss attributable to common stockholders (not the cash-flow net loss of $(7,844)). Per-share figures use the basic weighted average of Common Stock and Class A Units (56,723K), which reproduces $0.05 FFO, $0.19 Core FFO and $0.15 AFFO; the diluted count of 62,457K does not reproduce Core FFO per share. Gain on sale of real estate is nil in 2022. Categorization judgment calls: Internalization costs coded as 'other'; deemed dividends/preferred call expenses coded as 'other'; CECL non-cash income, net loan origination fees, lease inducement amortization, non-cash loan interest income and deferred revenue amortization coded as 'other'. Straight-line/intangible liability amortization coded straight_line_rent. Recurring capex is subtracted in AFFO, so recurring_capex_disclosed is null. Arithmetic checks: FFO 2,846; Core 10,827; AFFO 8,711.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8756,
+      "output_tokens": 4258
+    },
+    "candidate_pages": [
+      {
+        "seq": 6,
+        "printed": "3"
+      },
+      {
+        "seq": 14,
+        "printed": "3"
+      },
+      {
+        "seq": 18,
+        "printed": "7"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 2846,
+    "nareit_ffo_ps": 0.0502,
+    "company_core_name": "Core FFO",
+    "company_core": 10827,
+    "company_core_ps": 0.1909,
+    "company_affo_name": "AFFO",
+    "company_affo": 8711,
+    "company_affo_ps": 0.1536,
+    "conservative_core_ffo": -121,
+    "conservative_core_ffo_ps": -0.0021,
+    "conservative_affo": -2004,
+    "conservative_affo_ps": -0.0353,
+    "recurring_capex": [
+      {
+        "label": "Normally recurring capital expenditures (See note 15)",
+        "amount": -1883,
+        "category": "recurring_capex",
+        "page_seq": 14,
+        "page_printed": "S - 3"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Acquisition and pursuit costs",
+        "amount": 100,
+        "category": "transaction_costs",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Loan cost amortization on acquisition line of credit and loan coordination fees (See note 3)",
+        "amount": 301,
+        "category": "debt_cost_amortization",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (company add-back reversed)"
+      },
+      {
+        "label": "Payment of costs related to property refinancing",
+        "amount": 363,
+        "category": "debt_extinguishment",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+      },
+      {
+        "label": "Internalization costs (See note 4)",
+        "amount": 244,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Corporate governance and merger-related costs",
+        "amount": 5291,
+        "category": "transaction_costs",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Deemed dividends for redemptions of and non-cash dividends on preferred stock, plus expenses incurred on calls of preferred stock (See note 5)",
+        "amount": 1682,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Expenses related to the COVID-19 global pandemic",
+        "amount": 0,
+        "category": "pandemic_costs",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "core",
+        "applied": true,
+        "effect": 0,
+        "reason": "COVID-19 costs treated as a one-time event; company's add-back applied (deliberate exception)"
+      },
+      {
+        "label": "Non-cash income for current expected credit losses (See note 12)",
+        "amount": 240,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Depreciation/amortization of non-real estate assets",
+        "amount": 451,
+        "category": "non_re_depreciation",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Net loan origination fees received (See note 7)",
+        "amount": 683,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Deferred interest income received (See note 8)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Amortization of lease inducements (See note 9)",
+        "amount": 447,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Cash received in excess of (exceeded by) amortization of purchase option termination revenues (See note 10)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Non-cash loan interest income (See note 11)",
+        "amount": -2027,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": true,
+        "effect": -2027,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Cash paid for loan closing costs",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Amortization of deferred revenues (See note 14)",
+        "amount": -940,
+        "category": "other",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": true,
+        "effect": -940,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Internalization costs (See note 4)' (other) handled by a provisional rule",
+      "Review: 'Deemed dividends for redemptions of and non-cash dividends on preferred stock, plus expenses incurred on calls of preferred stock (See note 5)' (other) handled by a provisional rule",
+      "Review: 'Non-cash income for current expected credit losses (See note 12)' (other) handled by a provisional rule",
+      "Review: 'Net loan origination fees received (See note 7)' (other) handled by a provisional rule",
+      "Review: 'Amortization of lease inducements (See note 9)' (other) handled by a provisional rule",
+      "Review: 'Non-cash loan interest income (See note 11)' (other) handled by a provisional rule",
+      "Review: 'Amortization of deferred revenues (See note 14)' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 56723
+  }
+}

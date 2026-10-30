@@ -1,0 +1,205 @@
+{
+  "ticker": "ELME",
+  "quarter": "2025Q2",
+  "period_end": "2025-06-30",
+  "source": {
+    "accession": "0000104894-25-000084",
+    "filename": "0000104894-25-000084.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/104894/000010489425000084/0000104894-25-000084.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -3566,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 23560,
+        "category": "re_depreciation",
+        "page_seq": 19,
+        "page_printed": "16"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT funds from operations (FFO)",
+      "amount": 19994,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "core_adjustments": [
+      {
+        "label": "Other non-operating expenses (2)",
+        "amount": 1503,
+        "category": "legal",
+        "page_seq": 19,
+        "page_printed": "16"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO (1)",
+      "amount": 21497,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Leasing commissions capitalized",
+        "amount": -4,
+        "category": "recurring_capex",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Recurring capital improvements",
+        "amount": -3203,
+        "category": "recurring_capex",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Straight-line rent, net",
+        "amount": 86,
+        "category": "straight_line_rent",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization of debt costs",
+        "amount": 1269,
+        "category": "debt_cost_amortization",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -167,
+        "category": "other",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Amortization and expensing of restricted share and unit compensation",
+        "amount": 1740,
+        "category": "stock_comp",
+        "page_seq": 20,
+        "page_printed": "17"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO (1)",
+      "amount": 19715,
+      "page_seq": 20,
+      "page_printed": "17"
+    },
+    "diluted_shares": {
+      "label": "Average shares - fully diluted (for NAREIT FFO and Core FFO)",
+      "amount": 88414,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.23,
+      "core": 0.24,
+      "affo": null
+    },
+    "notes": "Q2 2025 three-month column. Recorded AFFO (19,715) as the affo_total; the company also reports Core AFFO of 21,218 on page 17 (AFFO 19,715 + other non-operating expenses 1,503 = 21,218; non-share-based severance and land easement gain are nil for the quarter). Core AFFO is not recorded in the affo_total slot. The 'Other non-operating expenses' line is advisory and legal services tied to the strategic review and cooperation agreement; categorized as legal. 'Non-real estate depreciation and amortization of debt costs' combines non-RE depreciation and debt cost amortization; categorized as debt_cost_amortization. Lease intangible amortization categorized as other. AFFO deducts recurring capital improvements, so recurring_capex_disclosed is null. Check: 19,994/88,414 = 0.23 and 21,497/88,414 = 0.24 match reported per-share figures. Share count is already in thousands. Page 8 (seq 11) shows the same Q2 FFO-to-Core FFO figures.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 9345,
+      "output_tokens": 4227
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "5"
+      },
+      {
+        "seq": 11,
+        "printed": "8"
+      },
+      {
+        "seq": 13,
+        "printed": "10"
+      },
+      {
+        "seq": 19,
+        "printed": "16"
+      },
+      {
+        "seq": 20,
+        "printed": "17"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 19994,
+    "nareit_ffo_ps": 0.2261,
+    "company_core_name": "Core FFO",
+    "company_core": 21497,
+    "company_core_ps": 0.2431,
+    "company_affo_name": "AFFO",
+    "company_affo": 19715,
+    "company_affo_ps": 0.223,
+    "conservative_core_ffo": 19827,
+    "conservative_core_ffo_ps": 0.2243,
+    "conservative_affo": 16620,
+    "conservative_affo_ps": 0.188,
+    "recurring_capex": [
+      {
+        "label": "Leasing commissions capitalized",
+        "amount": -4,
+        "category": "recurring_capex",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Recurring capital improvements",
+        "amount": -3203,
+        "category": "recurring_capex",
+        "page_seq": 20,
+        "page_printed": "17"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Other non-operating expenses (2)",
+        "amount": 1503,
+        "category": "legal",
+        "page_seq": 19,
+        "page_printed": "16",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -167,
+        "category": "other",
+        "page_seq": 20,
+        "page_printed": "17",
+        "section": "affo",
+        "applied": true,
+        "effect": -167,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 88414
+  }
+}

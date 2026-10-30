@@ -1,0 +1,248 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2022Q4",
+  "period_end": "2022-12-31",
+  "source": {
+    "accession": "0001437749-23-006928",
+    "filename": "0001437749-23-006928.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774923006928/0001437749-23-006928.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -3354,
+      "page_seq": 11,
+      "page_printed": "798"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 6764,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "798"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 3410,
+      "page_seq": 11,
+      "page_printed": "798"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 121,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Amortization of above- and below-market leases",
+        "amount": -9,
+        "category": "straight_line_rent",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Straight-line rent adjustments",
+        "amount": 57,
+        "category": "straight_line_rent",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Amortization of debt origination costs",
+        "amount": 313,
+        "category": "debt_cost_amortization",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Amortization of LTIP awards",
+        "amount": 856,
+        "category": "stock_comp",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Gain on involuntary conversion",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Litigation settlement and other",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Certain litigation-related expenses",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "798"
+      },
+      {
+        "label": "Recurring capital spending",
+        "amount": -50,
+        "category": "recurring_capex",
+        "page_seq": 11,
+        "page_printed": "798"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO",
+      "amount": 4698,
+      "page_seq": 11,
+      "page_printed": "798"
+    },
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42380,
+      "page_seq": 8,
+      "page_printed": "380"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": 0.11
+    },
+    "notes": "Three months ended December 31, 2022 column. CLPR reports FFO and AFFO only (no core FFO). FFO per share not reported. Zero-amount lines (transaction pursuit costs, loss on extinguishment, gain on involuntary conversion, litigation settlement, certain litigation-related expenses) are shown as '-' for Q4 2022 and entered as 0. Diluted shares 42,380 (thousands) is the 'Diluted shares outstanding' line on the statement of operations (16,063 common + 26,317 OP units); it reproduces AFFO/share: 4,698/42,380 = $0.11. Recurring capital spending (50) is already an AFFO line, so recurring_capex_disclosed is null. Categories for the amortization of above/below-market leases (-9) and real estate tax intangible (121) are judgment calls: mapped to straight_line_rent and re_depreciation respectively.",
+    "page_seq_placeholder": 0,
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 57285,
+      "output_tokens": 2803
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "380"
+      },
+      {
+        "seq": 9,
+        "printed": "566"
+      },
+      {
+        "seq": 11,
+        "printed": "798"
+      },
+      {
+        "seq": 12,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 3410,
+    "nareit_ffo_ps": 0.0805,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 4698,
+    "company_affo_ps": 0.1109,
+    "conservative_core_ffo": 3410,
+    "conservative_core_ffo_ps": 0.0805,
+    "conservative_affo": 3360,
+    "conservative_affo_ps": 0.0793,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital spending",
+        "amount": -50,
+        "category": "recurring_capex",
+        "page_seq": 11,
+        "page_printed": "798"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "798",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "798",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Gain on involuntary conversion",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 11,
+        "page_printed": "798",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (zero this quarter)"
+      },
+      {
+        "label": "Litigation settlement and other",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "798",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Certain litigation-related expenses",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "798",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 42380
+  }
+}

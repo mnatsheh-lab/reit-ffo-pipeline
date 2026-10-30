@@ -1,0 +1,352 @@
+{
+  "ticker": "ELME",
+  "quarter": "2024Q3",
+  "period_end": "2024-09-30",
+  "source": {
+    "accession": "0000104894-24-000084",
+    "filename": "0000104894-24-000084.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/104894/000010489424000084/0000104894-24-000084.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -2970,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 23474,
+        "category": "re_depreciation",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Real estate impairment",
+        "amount": 0,
+        "category": "re_impairment",
+        "page_seq": 12,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT funds from operations",
+      "amount": 20504,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "Structuring expenses",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 147,
+        "category": "debt_extinguishment",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Severance expense",
+        "amount": 13,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Transformation costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Write-off of pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Relocation expense",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on land easements",
+        "amount": 0,
+        "category": "land_sale_gain_loss",
+        "page_seq": 12,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core funds from operations",
+      "amount": 20664,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Non-cash loss on extinguishment of debt",
+        "amount": 147,
+        "category": "debt_extinguishment",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Tenant improvements and incentives, net of reimbursements",
+        "amount": 0,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Leasing commissions capitalized",
+        "amount": -30,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Recurring capital improvements",
+        "amount": -2284,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Straight-line rent, net",
+        "amount": 26,
+        "category": "straight_line_rent",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization of debt costs",
+        "amount": 1326,
+        "category": "debt_cost_amortization",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -201,
+        "category": "other",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Amortization and expensing of restricted share and unit compensation",
+        "amount": 1578,
+        "category": "stock_comp",
+        "page_seq": 21,
+        "page_printed": "18"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO",
+      "amount": 21066,
+      "page_seq": 21,
+      "page_printed": "18"
+    },
+    "diluted_shares": {
+      "label": "Weighted average shares outstanding - diluted (for NAREIT and Core FFO)",
+      "amount": 87994,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.23,
+      "core": 0.23,
+      "affo": null
+    },
+    "notes": "Three months ended September 30, 2024, in thousands. Starting line is net loss (2,970); NAREIT FFO 20,504 and Core FFO 20,664 foot to the printed totals. AFFO is reconciled from NAREIT FFO (not Core FFO) on page 18 and totals 21,066 (AFFO subtotal). The company also reports Core AFFO of 21,079 for the quarter, which is a further layer (AFFO plus severance, gain on land easements, etc.) and is not recorded here; the Core AFFO line items were not used. The AFFO section subtracts recurring capital improvements and leasing commissions, so recurring_capex_disclosed is null. Zero-value lines (real estate impairment, structuring, transformation, write-off, relocation, gain on land easements, TI net of reimbursements) are shown as 0 for the quarter. 'Amortization of lease intangibles, net' was categorized as 'other' since no category fits. Per-share AFFO is not reported. Diluted shares 87,994 check: 20,504/87,994 = 0.23 and 20,664/87,994 = 0.23.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 9711,
+      "output_tokens": 4203
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "6"
+      },
+      {
+        "seq": 12,
+        "printed": "9"
+      },
+      {
+        "seq": 14,
+        "printed": "11"
+      },
+      {
+        "seq": 20,
+        "printed": "17"
+      },
+      {
+        "seq": 21,
+        "printed": "18"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 20504,
+    "nareit_ffo_ps": 0.233,
+    "company_core_name": "Core FFO",
+    "company_core": 20664,
+    "company_core_ps": 0.2348,
+    "company_affo_name": "AFFO",
+    "company_affo": 21066,
+    "company_affo_ps": 0.2394,
+    "conservative_core_ffo": 20303,
+    "conservative_core_ffo_ps": 0.2307,
+    "conservative_affo": 17989,
+    "conservative_affo_ps": 0.2044,
+    "recurring_capex": [
+      {
+        "label": "Tenant improvements and incentives, net of reimbursements",
+        "amount": 0,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Leasing commissions capitalized",
+        "amount": -30,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Recurring capital improvements",
+        "amount": -2284,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Structuring expenses",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 147,
+        "category": "debt_extinguishment",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+      },
+      {
+        "label": "Severance expense",
+        "amount": 13,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Transformation costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Write-off of pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Relocation expense",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Gain on land easements",
+        "amount": 0,
+        "category": "land_sale_gain_loss",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Land sales are one-off, not rental earnings: gains removed, losses kept (zero this quarter)"
+      },
+      {
+        "label": "Non-cash loss on extinguishment of debt",
+        "amount": 147,
+        "category": "debt_extinguishment",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -201,
+        "category": "other",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "affo",
+        "applied": true,
+        "effect": -201,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 87994
+  }
+}

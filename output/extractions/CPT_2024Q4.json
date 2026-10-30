@@ -1,0 +1,279 @@
+{
+  "ticker": "CPT",
+  "quarter": "2024Q4",
+  "period_end": "2024-12-31",
+  "source": {
+    "accession": "0000906345-25-000003",
+    "filename": "0000906345-25-000003.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000090634525000003/0000906345-25-000003.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core funds from operations",
+    "affo_metric_name": "Core adjusted funds from operations",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income attributable to common shareholders",
+      "amount": 40691,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 142403,
+        "category": "re_depreciation",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Income allocated to non-controlling interests",
+        "amount": 1918,
+        "category": "noncontrolling_interest",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on sale of operating properties",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Impairment associated with land development activities",
+        "amount": 0,
+        "category": "re_impairment",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 185012,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "core_adjustments": [
+      {
+        "label": "Plus: Casualty-related expenses, net of recoveries",
+        "amount": 3080,
+        "category": "casualty",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Severance",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Legal costs and settlements",
+        "amount": 1577,
+        "category": "legal",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Loss on early retirement of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Expensed transaction, development, and other pursuit costs",
+        "amount": 710,
+        "category": "transaction_costs",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Advocacy contributions",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Less: Miscellaneous (income)/expense",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "core_total": {
+      "label": "Core funds from operations",
+      "amount": 190379,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Less: recurring capitalized expenditures",
+        "amount": -29107,
+        "category": "recurring_capex",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "affo_total": {
+      "label": "Core adjusted funds from operations",
+      "amount": 161272,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "diluted_shares": {
+      "label": "FFO/Core FFO/Core AFFO - diluted",
+      "amount": 110109,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 1.68,
+      "core": 1.73,
+      "affo": 1.46
+    },
+    "notes": "Three-month Dec 31, 2024 column used. The same FFO reconciliation appears again on seq 18 (printed 6) and a duplicate balance sheet on seq 8/19; values identical. Gain on sale of operating properties and land development impairment are shown as dashes (zero) for Q4 2024; the impairment is labeled as land development, mapped to re_impairment with amount 0. Advocacy contributions and miscellaneous (income)/expense are zero this quarter, mapped to 'other'. Per-share check: 185,012/110,109=1.68; 190,379/110,109=1.73; 161,272/110,109=1.46. Footnote letters omitted from labels. AFFO deducts recurring capitalized expenditures, so recurring_capex_disclosed is null.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 11401,
+      "output_tokens": 2679
+    },
+    "candidate_pages": [
+      {
+        "seq": 7,
+        "printed": "5"
+      },
+      {
+        "seq": 8,
+        "printed": "6"
+      },
+      {
+        "seq": 9,
+        "printed": "7"
+      },
+      {
+        "seq": 18,
+        "printed": "6"
+      },
+      {
+        "seq": 19,
+        "printed": "7"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 185012,
+    "nareit_ffo_ps": 1.6803,
+    "company_core_name": "Core funds from operations",
+    "company_core": 190379,
+    "company_core_ps": 1.729,
+    "company_affo_name": "Core adjusted funds from operations",
+    "company_affo": 161272,
+    "company_affo_ps": 1.4647,
+    "conservative_core_ffo": 185012,
+    "conservative_core_ffo_ps": 1.6803,
+    "conservative_affo": 155905,
+    "conservative_affo_ps": 1.4159,
+    "recurring_capex": [
+      {
+        "label": "Less: recurring capitalized expenditures",
+        "amount": -29107,
+        "category": "recurring_capex",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Plus: Casualty-related expenses, net of recoveries",
+        "amount": 3080,
+        "category": "casualty",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Plus: Severance",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Plus: Legal costs and settlements",
+        "amount": 1577,
+        "category": "legal",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Plus: Loss on early retirement of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Plus: Expensed transaction, development, and other pursuit costs",
+        "amount": 710,
+        "category": "transaction_costs",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Plus: Advocacy contributions",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Less: Miscellaneous (income)/expense",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 110109
+  }
+}

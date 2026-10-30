@@ -1,0 +1,345 @@
+{
+  "ticker": "AVB",
+  "quarter": "2022Q1",
+  "period_end": "2022-03-31",
+  "source": {
+    "accession": "0000915912-22-000009",
+    "filename": "0000915912-22-000009.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/915912/000091591222000009/0000915912-22-000009.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income attributable to common stockholders",
+      "amount": 262044,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation - real estate assets, including joint venture adjustments",
+        "amount": 200652,
+        "category": "re_depreciation",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Distributions to noncontrolling interests",
+        "amount": 12,
+        "category": "noncontrolling_interest",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on sale of previously depreciated real estate",
+        "amount": -148800,
+        "category": "property_sale_gain_loss",
+        "page_seq": 12,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders",
+      "amount": 313908,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "Unconsolidated entity (gains) losses, net",
+        "amount": -255,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on interest rate contract",
+        "amount": -729,
+        "category": "derivative_mtm",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Advocacy contributions",
+        "amount": 150,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Executive transition compensation costs",
+        "amount": 402,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Severance related costs",
+        "amount": 41,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Development pursuit write-offs and expensed transaction costs, net of recoveries",
+        "amount": 159,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on for-sale condominiums (1)",
+        "amount": -1002,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "For-sale condominium marketing, operating and administrative costs (1)",
+        "amount": 766,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "For-sale condominium imputed carry cost (2)",
+        "amount": 919,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on other real estate transactions, net",
+        "amount": -37,
+        "category": "land_sale_gain_loss",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Legal settlements",
+        "amount": 130,
+        "category": "legal",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Income tax expense (benefit) (3)",
+        "amount": 2471,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common stockholders",
+      "amount": 316923,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Average shares outstanding - diluted",
+      "amount": 139976.082,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 2.24,
+      "core": 2.26,
+      "affo": null
+    },
+    "notes": "Reconciliation taken from Table 3 (Definitions and Reconciliations, printed p.9), which starts from Net income attributable to common stockholders ($262,044), not the $262,076 net income in Table 1. Core FFO is the only adjusted FFO metric; AVB reports no AFFO, so affo fields are null. Diluted shares printed as 139,976,082 and divided by 1,000 to match thousands units; check: 313,908/139,976 = 2.24 and 316,923/139,976 = 2.26. Sums verified: FFO and Core FFO foot to reported totals. Ambiguous categories: 'Unconsolidated entity (gains) losses, net' coded 'other'; 'Gain on other real estate transactions, net' coded land_sale_gain_loss (nature not stated); condominium lines and income tax expense coded 'other'. Gain on extinguishment of consolidated debt is a dash (none) for Q1 2022 and omitted. recurring_capex_disclosed null because there is no AFFO section and no recurring capex figure in the pages provided. Duplicate Table 3 appears on seq 39 (printed 22, Attachment 11); seq 12 used.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8883,
+      "output_tokens": 3359
+    },
+    "candidate_pages": [
+      {
+        "seq": 11,
+        "printed": "8"
+      },
+      {
+        "seq": 12,
+        "printed": "9"
+      },
+      {
+        "seq": 13,
+        "printed": "10"
+      },
+      {
+        "seq": 39,
+        "printed": "22"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 313908,
+    "nareit_ffo_ps": 2.2426,
+    "company_core_name": "Core FFO",
+    "company_core": 316923,
+    "company_core_ps": 2.2641,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 311885,
+    "conservative_core_ffo_ps": 2.2281,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Unconsolidated entity (gains) losses, net",
+        "amount": -255,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -255,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Gain on interest rate contract",
+        "amount": -729,
+        "category": "derivative_mtm",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -729,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Advocacy contributions",
+        "amount": 150,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Executive transition compensation costs",
+        "amount": 402,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Severance related costs",
+        "amount": 41,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Development pursuit write-offs and expensed transaction costs, net of recoveries",
+        "amount": 159,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Gain on for-sale condominiums (1)",
+        "amount": -1002,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -1002,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "For-sale condominium marketing, operating and administrative costs (1)",
+        "amount": 766,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "For-sale condominium imputed carry cost (2)",
+        "amount": 919,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Gain on other real estate transactions, net",
+        "amount": -37,
+        "category": "land_sale_gain_loss",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -37,
+        "reason": "Land sales are one-off, not rental earnings: gains removed, losses kept (gain/recovery removed)"
+      },
+      {
+        "label": "Legal settlements",
+        "amount": 130,
+        "category": "legal",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Income tax expense (benefit) (3)",
+        "amount": 2471,
+        "category": "other",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Unconsolidated entity (gains) losses, net' (other) handled by a provisional rule",
+      "Review: 'Advocacy contributions' (other) handled by a provisional rule",
+      "Review: 'Gain on for-sale condominiums (1)' (other) handled by a provisional rule",
+      "Review: 'For-sale condominium marketing, operating and administrative costs (1)' (other) handled by a provisional rule",
+      "Review: 'For-sale condominium imputed carry cost (2)' (other) handled by a provisional rule",
+      "Review: 'Income tax expense (benefit) (3)' (other) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 139976.082
+  }
+}

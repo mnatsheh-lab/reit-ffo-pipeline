@@ -1,0 +1,286 @@
+{
+  "ticker": "CPT",
+  "quarter": "2023Q3",
+  "period_end": "2023-09-30",
+  "source": {
+    "accession": "0000906345-23-000043",
+    "filename": "0000906345-23-000043.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000090634523000043/0000906345-23-000043.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core funds from operations",
+    "affo_metric_name": "Core adjusted funds from operations",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income attributable to common shareholders",
+      "amount": 47963,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 141362,
+        "category": "re_depreciation",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Adjustments for unconsolidated joint ventures",
+        "amount": 0,
+        "category": "jv_depreciation",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Income allocated to non-controlling interests",
+        "amount": 1856,
+        "category": "noncontrolling_interest",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on sale of operating property",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on acquisition of unconsolidated joint venture interests",
+        "amount": 0,
+        "category": "nareit_other",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 191181,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "core_adjustments": [
+      {
+        "label": "Plus: Casualty-related expenses, net of (recoveries)",
+        "amount": -436,
+        "category": "casualty",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Severance",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Legal costs and settlements",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Loss on early retirement of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Plus: Expensed development & other pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Less: Net below market lease amortization",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Less: Miscellaneous (income)/expense (a)",
+        "amount": 0,
+        "category": "investment_gain_loss",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "core_total": {
+      "label": "Core funds from operations",
+      "amount": 190745,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Less: recurring capitalized expenditures (b)",
+        "amount": -26554,
+        "category": "recurring_capex",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "affo_total": {
+      "label": "Core adjusted funds from operations",
+      "amount": 164191,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of common shares outstanding: FFO/Core FFO/Core AFFO - diluted",
+      "amount": 110301,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 1.73,
+      "core": 1.73,
+      "affo": 1.49
+    },
+    "notes": "Figures are for the three months ended Sep 30, 2023 (first column). Reconciliation appears on seq 7 (printed p.5) and again in the Non-GAAP section on seq 9 (printed p.7) and as a duplicate on seq 17 (printed p.6); values are identical. Subtotals verified: 47,963+141,362+1,856=191,181; 191,181-436=190,745; 190,745-26,554=164,191. Per-share check: 191,181/110,301=1.73; 190,745/110,301=1.73; 164,191/110,301=1.49. Zero-value lines shown as '\u2014' in the filing are recorded as 0. Net below market lease amortization was categorized as 'other' (no matching category). Miscellaneous (income)/expense is an earn-out from a previously sold technology investment, categorized as investment_gain_loss; amount is zero for the quarter. Expensed development & other pursuit costs categorized as transaction_costs; amount is zero for the quarter.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 11369,
+      "output_tokens": 2799
+    },
+    "candidate_pages": [
+      {
+        "seq": 7,
+        "printed": "5"
+      },
+      {
+        "seq": 8,
+        "printed": "6"
+      },
+      {
+        "seq": 9,
+        "printed": "7"
+      },
+      {
+        "seq": 17,
+        "printed": "6"
+      },
+      {
+        "seq": 18,
+        "printed": "7"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 191181,
+    "nareit_ffo_ps": 1.7333,
+    "company_core_name": "Core funds from operations",
+    "company_core": 190745,
+    "company_core_ps": 1.7293,
+    "company_affo_name": "Core adjusted funds from operations",
+    "company_affo": 164191,
+    "company_affo_ps": 1.4886,
+    "conservative_core_ffo": 190745,
+    "conservative_core_ffo_ps": 1.7293,
+    "conservative_affo": 164191,
+    "conservative_affo_ps": 1.4886,
+    "recurring_capex": [
+      {
+        "label": "Less: recurring capitalized expenditures (b)",
+        "amount": -26554,
+        "category": "recurring_capex",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Plus: Casualty-related expenses, net of (recoveries)",
+        "amount": -436,
+        "category": "casualty",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": true,
+        "effect": -436,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Plus: Severance",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Plus: Legal costs and settlements",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Plus: Loss on early retirement of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Plus: Expensed development & other pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Less: Net below market lease amortization",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Less: Miscellaneous (income)/expense (a)",
+        "amount": 0,
+        "category": "investment_gain_loss",
+        "page_seq": 7,
+        "page_printed": "5",
+        "section": "core",
+        "applied": true,
+        "effect": 0,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 110301
+  }
+}

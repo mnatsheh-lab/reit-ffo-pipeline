@@ -1,0 +1,153 @@
+{
+  "ticker": "CPT",
+  "quarter": "2022Q2",
+  "period_end": "2022-06-30",
+  "source": {
+    "accession": "0000906345-22-000028",
+    "filename": "0000906345-22-000028.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000090634522000028/0000906345-22-000028.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "Adjusted funds from operations",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net income attributable to common shareholders",
+      "amount": 497315,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 155206,
+        "category": "re_depreciation",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Adjustments for unconsolidated joint ventures",
+        "amount": 0,
+        "category": "jv_depreciation",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Income allocated to non-controlling interests",
+        "amount": 1571,
+        "category": "noncontrolling_interest",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on sale of operating property",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 8,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on acquisition of unconsolidated joint venture interests",
+        "amount": -474146,
+        "category": "nareit_other",
+        "page_seq": 8,
+        "page_printed": "5"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 179946,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Less: recurring capitalized expenditures (a)",
+        "amount": -21430,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": "5"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations",
+      "amount": 158516,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "diluted_shares": {
+      "label": "FFO/AFFO - diluted",
+      "amount": 109745,
+      "page_seq": 8,
+      "page_printed": "5"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 1.64,
+      "core": null,
+      "affo": 1.44
+    },
+    "notes": "Three-month 2022 column only. Camden's FFO includes a large $474,146K gain on acquisition of unconsolidated joint venture interests (change-in-control gain), mapped to nareit_other. Camden has no core FFO metric. AFFO is FFO less recurring capitalized expenditures, so recurring capex is in the AFFO section and recurring_capex_disclosed is null. Reproduced checks: 497,315+155,206+1,571-474,146 = 179,946; 179,946-21,430 = 158,516; 179,946/109,745 = $1.64; 158,516/109,745 = $1.44. The same reconciliation appears on seq 19 (printed 8) and in the Non-GAAP section on seq 10 (printed 7); seq 8 used as the source. The JV adjustment and gain on sale of operating property show as '\u2014' (zero) for the current quarter.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10642,
+      "output_tokens": 2155
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "5"
+      },
+      {
+        "seq": 9,
+        "printed": "6"
+      },
+      {
+        "seq": 10,
+        "printed": "7"
+      },
+      {
+        "seq": 19,
+        "printed": "8"
+      },
+      {
+        "seq": 20,
+        "printed": "9"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 179946,
+    "nareit_ffo_ps": 1.6397,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "Adjusted funds from operations",
+    "company_affo": 158516,
+    "company_affo_ps": 1.4444,
+    "conservative_core_ffo": 179946,
+    "conservative_core_ffo_ps": 1.6397,
+    "conservative_affo": 158516,
+    "conservative_affo_ps": 1.4444,
+    "recurring_capex": [
+      {
+        "label": "Less: recurring capitalized expenditures (a)",
+        "amount": -21430,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": "5"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [],
+    "flags": [],
+    "diluted_shares": 109745
+  }
+}

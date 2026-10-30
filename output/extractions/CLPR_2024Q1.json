@@ -1,0 +1,90 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2024Q1",
+  "period_end": "2024-03-31",
+  "source": {
+    "accession": "0001437749-24-015070",
+    "filename": "ex_668236.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774924015070/ex_668236.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -2666,
+      "page_seq": 7,
+      "page_printed": "138"
+    },
+    "ffo_adjustments": [],
+    "ffo_total": {
+      "label": "NOT A REAL FFO FIGURE: no FFO subtotal is printed on these pages; net loss carried only to satisfy the form",
+      "amount": -2666,
+      "page_seq": 7,
+      "page_printed": "138"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42380,
+      "page_seq": 4,
+      "page_printed": "380"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": null
+    },
+    "notes": "The supplied pages contain NO FFO, Core FFO or AFFO reconciliation for Clipper Realty for Q1 2024. They contain the income statement (seq 4), the cash flow statement (seq 5), and an Adjusted EBITDA and NOI reconciliation (seq 7). The ffo_total entry is a placeholder equal to net loss (-2,666) so the form validates. It is not an FFO figure and should not be used as one. starting_line is the net loss that opens the Adjusted EBITDA reconciliation, not an FFO starting line. Diluted shares: the income statement is in thousands and prints 'Diluted shares outstanding' as 42,380 (16,063 common + 26,317 OP units), so the figure is already in thousands and is entered unchanged. No FFO per-share figure is printed, so the share count could not be checked against one. recurring_capex_disclosed is null: no recurring/maintenance capex line appears in these pages. The 'Additions to land, buildings and improvements' line of (22,247) in the cash flow statement is total investment spending, not recurring capex, so it was not used. Net loss attributable to common stockholders was (1,011) and basic and diluted loss per share was $(0.09); neither is an FFO measure.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 2,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 15528,
+      "output_tokens": 4143
+    },
+    "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": "380"
+      },
+      {
+        "seq": 5,
+        "printed": "348"
+      },
+      {
+        "seq": 7,
+        "printed": "138"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": -2666,
+    "nareit_ffo_ps": -0.0629,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": -2666,
+    "conservative_core_ffo_ps": -0.0629,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [],
+    "flags": [
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 42380
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2025Q1",
+  "period_end": "2025-03-31",
+  "source": {
+    "accession": "0001437749-25-016114",
+    "filename": "0001437749-25-016114.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774925016114/0001437749-25-016114.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -35103,
+      "page_seq": 8,
+      "page_printed": ""
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 7636,
+        "category": "re_depreciation",
+        "page_seq": 8,
+        "page_printed": ""
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": -27467,
+      "page_seq": 8,
+      "page_printed": ""
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 120,
+        "category": "other",
+        "page_seq": 8,
+        "page_printed": ""
+      },
+      {
+        "label": "Straight-line rent adjustments",
+        "amount": 22,
+        "category": "straight_line_rent",
+        "page_seq": 8,
+        "page_printed": ""
+      },
+      {
+        "label": "Amortization of debt origination costs",
+        "amount": 457,
+        "category": "debt_cost_amortization",
+        "page_seq": 8,
+        "page_printed": ""
+      },
+      {
+        "label": "Amortization of LTIP awards",
+        "amount": 1143,
+        "category": "stock_comp",
+        "page_seq": 8,
+        "page_printed": ""
+      },
+      {
+        "label": "Impairment of Long-Lived Assets",
+        "amount": 33780,
+        "category": "re_impairment",
+        "page_seq": 8,
+        "page_printed": ""
+      },
+      {
+        "label": "Recurring capital spending",
+        "amount": -35,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": ""
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO",
+      "amount": 8020,
+      "page_seq": 8,
+      "page_printed": ""
+    },
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42464,
+      "page_seq": 6,
+      "page_printed": "380"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": 0.19
+    },
+    "notes": "Three months ended March 31, 2025, in thousands. The FFO section starts from net loss (before NCI allocation) and adds only real estate D&A; the impairment of long-lived assets ($33,780) is added back in the AFFO section, not in FFO. No core/adjusted FFO metric is reported. Recurring capital spending is subtracted within AFFO, so no separate recurring capex disclosure is needed. Subtotals verified: -35,103 + 7,636 = -27,467; AFFO sums to 8,020. AFFO per share 8,020 / 42,464 = $0.19, matching the reported figure. FFO per share is not reported. The 'Amortization of real estate tax intangible' line (120) was categorized as 'other' because no listed category fits it. Diluted share count taken from the Statement of Operations (common shares + OP units, 42,464), which is the count used for AFFO per share; it is printed on a page without a printed page number in the reconciliation.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 57001,
+      "output_tokens": 2403
+    },
+    "candidate_pages": [
+      {
+        "seq": 6,
+        "printed": "380"
+      },
+      {
+        "seq": 7,
+        "printed": "396"
+      },
+      {
+        "seq": 8,
+        "printed": ""
+      },
+      {
+        "seq": 9,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": -27467,
+    "nareit_ffo_ps": -0.6468,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 8020,
+    "company_affo_ps": 0.1889,
+    "conservative_core_ffo": -27467,
+    "conservative_core_ffo_ps": -0.6468,
+    "conservative_affo": -27502,
+    "conservative_affo_ps": -0.6477,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital spending",
+        "amount": -35,
+        "category": "recurring_capex",
+        "page_seq": 8,
+        "page_printed": ""
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 120,
+        "category": "other",
+        "page_seq": 8,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 42464
+  }
+}

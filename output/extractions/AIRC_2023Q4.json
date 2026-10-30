@@ -1,0 +1,300 @@
+{
+  "ticker": "AIRC",
+  "quarter": "2023Q4",
+  "period_end": "2023-12-31",
+  "source": {
+    "accession": "0001628280-24-003885",
+    "filename": "0001628280-24-003885.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1820877/000162828024003885/0001628280-24-003885.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Run-Rate FFO",
+    "affo_metric_name": "Run-Rate AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net (loss) income attributable to AIR common stockholders",
+      "amount": -16256,
+      "page_seq": 15,
+      "page_printed": "13"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization, net of noncontrolling partners\u2019 interest",
+        "amount": 95427,
+        "category": "re_depreciation",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Gain on dispositions and impairments of real estate, net of noncontrolling partners\u2019 interest",
+        "amount": -2206,
+        "category": "property_sale_gain_loss",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Income tax adjustments related to gain on dispositions and other tax-related items",
+        "amount": -3439,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -5671,
+        "category": "noncontrolling_interest",
+        "page_seq": 15,
+        "page_printed": "13"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT FFO attributable to AIR common stockholders",
+      "amount": 67855,
+      "page_seq": 15,
+      "page_printed": "13"
+    },
+    "core_adjustments": [
+      {
+        "label": "Loss (gain) on derivative instruments (1)",
+        "amount": 13467,
+        "category": "derivative_mtm",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Non-cash straight-line rent (2)",
+        "amount": 3068,
+        "category": "straight_line_rent",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Business transformation and transition related costs (3)",
+        "amount": 6826,
+        "category": "severance_restructuring",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Legal reserve",
+        "amount": 3500,
+        "category": "legal",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Casualty loss (gain) and other (5)",
+        "amount": 1477,
+        "category": "casualty",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -1805,
+        "category": "noncontrolling_interest",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Cash swap acceleration income, net of common noncontrolling interests in AIR OP and participating securities",
+        "amount": -2857,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "13"
+      },
+      {
+        "label": "Casualty and legal expense in excess of run-rate, net of common noncontrolling interests in AIR OP and participating securities (5)",
+        "amount": 2767,
+        "category": "casualty",
+        "page_seq": 15,
+        "page_printed": "13"
+      }
+    ],
+    "core_total": {
+      "label": "Run-Rate FFO attributable to AIR common stockholders",
+      "amount": 94298,
+      "page_seq": 15,
+      "page_printed": "13"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Capital Replacements, net of common noncontrolling interests in AIR OP and participating securities",
+        "amount": -9597,
+        "category": "recurring_capex",
+        "page_seq": 15,
+        "page_printed": "13"
+      }
+    ],
+    "affo_total": {
+      "label": "Run-Rate AFFO attributable to AIR common stockholders",
+      "amount": 84701,
+      "page_seq": 15,
+      "page_printed": "13"
+    },
+    "diluted_shares": {
+      "label": "Total shares and dilutive share equivalents",
+      "amount": 146514,
+      "page_seq": 15,
+      "page_printed": "13"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": 0.64,
+      "affo": 0.58
+    },
+    "notes": "Three months ended Dec 31, 2023 column. Core subtotal is AIR's Run-Rate FFO (94,298); the Pro forma FFO subtotal (94,388) falls between the Pro forma adjustments and the cash swap / casualty-legal items and is not separately recorded (verified: 67,855 + 26,533 = 94,388; 94,388 - 2,857 + 2,767 = 94,298). AFFO starts from Run-Rate FFO. Reported per share: Run-Rate FFO $0.64 and Run-Rate AFFO $0.58, both reproduced by 146,514 shares. NAREIT FFO per share is not printed in this table, so ffo reported per share is null (67,855 / 146,514 = 0.46 is not a printed figure). Business transformation costs mapped to severance_restructuring; casualty and legal expense in excess of run-rate mapped to casualty. Capital Replacements are deducted in AFFO, so no separate recurring capex disclosure is needed.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 2,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 23396,
+      "output_tokens": 7961
+    },
+    "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": ""
+      },
+      {
+        "seq": 15,
+        "printed": "13"
+      },
+      {
+        "seq": 16,
+        "printed": "14"
+      },
+      {
+        "seq": 17,
+        "printed": "15"
+      },
+      {
+        "seq": 32,
+        "printed": "30"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 67855,
+    "nareit_ffo_ps": 0.4631,
+    "company_core_name": "Run-Rate FFO",
+    "company_core": 94298,
+    "company_core_ps": 0.6436,
+    "company_affo_name": "Run-Rate AFFO",
+    "company_affo": 84701,
+    "company_affo_ps": 0.5781,
+    "conservative_core_ffo": 76660,
+    "conservative_core_ffo_ps": 0.5232,
+    "conservative_affo": 67063,
+    "conservative_affo_ps": 0.4577,
+    "recurring_capex": [
+      {
+        "label": "Capital Replacements, net of common noncontrolling interests in AIR OP and participating securities",
+        "amount": -9597,
+        "category": "recurring_capex",
+        "page_seq": 15,
+        "page_printed": "13"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Loss (gain) on derivative instruments (1)",
+        "amount": 13467,
+        "category": "derivative_mtm",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": true,
+        "effect": 13467,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Non-cash straight-line rent (2)",
+        "amount": 3068,
+        "category": "straight_line_rent",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "'straight_line_rent' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (company add-back reversed)"
+      },
+      {
+        "label": "Business transformation and transition related costs (3)",
+        "amount": 6826,
+        "category": "severance_restructuring",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Legal reserve",
+        "amount": 3500,
+        "category": "legal",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Casualty loss (gain) and other (5)",
+        "amount": 1477,
+        "category": "casualty",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -1805,
+        "category": "noncontrolling_interest",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": true,
+        "effect": -1805,
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
+      },
+      {
+        "label": "Cash swap acceleration income, net of common noncontrolling interests in AIR OP and participating securities",
+        "amount": -2857,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": true,
+        "effect": -2857,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Casualty and legal expense in excess of run-rate, net of common noncontrolling interests in AIR OP and participating securities (5)",
+        "amount": 2767,
+        "category": "casualty",
+        "page_seq": 15,
+        "page_printed": "13",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Non-cash straight-line rent (2)' (straight_line_rent) handled by a provisional rule",
+      "Review: 'Cash swap acceleration income, net of common noncontrolling interests in AIR OP and participating securities' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 146514
+  }
+}

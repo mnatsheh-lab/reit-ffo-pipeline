@@ -1,0 +1,245 @@
+{
+  "ticker": "ELME",
+  "quarter": "2024Q2",
+  "period_end": "2024-06-30",
+  "source": {
+    "accession": "0000104894-24-000075",
+    "filename": "0000104894-24-000075.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/104894/000010489424000075/0000104894-24-000075.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -3471,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 23895,
+        "category": "re_depreciation",
+        "page_seq": 12,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT funds from operations",
+      "amount": 20424,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "Structuring expenses",
+        "amount": 60,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9"
+      },
+      {
+        "label": "Severance expense",
+        "amount": 64,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core funds from operations",
+      "amount": 20548,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital improvements",
+        "amount": -2144,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Straight-line rent, net",
+        "amount": 25,
+        "category": "straight_line_rent",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization of debt costs",
+        "amount": 1259,
+        "category": "debt_cost_amortization",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -163,
+        "category": "other",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Amortization and expensing of restricted share and unit compensation (3)",
+        "amount": 1045,
+        "category": "stock_comp",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Non-share-based severance expense",
+        "amount": 64,
+        "category": "severance_restructuring",
+        "page_seq": 21,
+        "page_printed": "18"
+      },
+      {
+        "label": "Structuring expenses",
+        "amount": 60,
+        "category": "transaction_costs",
+        "page_seq": 21,
+        "page_printed": "18"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO",
+      "amount": 20570,
+      "page_seq": 21,
+      "page_printed": "18"
+    },
+    "diluted_shares": {
+      "label": "Weighted average shares outstanding - diluted (for NAREIT and Core FFO)",
+      "amount": 87975,
+      "page_seq": 12,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.23,
+      "core": 0.23,
+      "affo": null
+    },
+    "notes": "Three-month column for June 30, 2024 used throughout. Page 18 AFFO table lists AFFO (1) = 20,446 (starts from NAREIT FFO 20,424; adjustments: recurring capital improvements -2,144, straight-line rent +25, non-RE D&A of debt costs +1,259, lease intangibles -163, restricted share comp +1,045); Core AFFO = 20,570 after adding non-share-based severance 64 and structuring 60. Recorded Core AFFO as affo_total, with affo_starts_from 'ffo' so the walk runs NAREIT FFO -> Core AFFO. The intermediate AFFO subtotal (20,446) is not separately captured by the schema. Core FFO walk (page 9) reconciles: 20,424 + 60 + 64 = 20,548. Zero-value lines (real estate impairment, loss on extinguishment, transformation costs, relocation, pursuit costs, land easement gain, TI, leasing commissions, deferred taxes) omitted. Allocation to participating securities (79) appears after Core FFO but is not part of the reconciliation subtotals; not included. Per-share check: 20,424/87,975 = 0.23; 20,548/87,975 = 0.23. Company does not report AFFO per share (null). Recurring capex is subtracted in AFFO, so recurring_capex_disclosed is null.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 9680,
+      "output_tokens": 5393
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "6"
+      },
+      {
+        "seq": 12,
+        "printed": "9"
+      },
+      {
+        "seq": 14,
+        "printed": "11"
+      },
+      {
+        "seq": 20,
+        "printed": "17"
+      },
+      {
+        "seq": 21,
+        "printed": "18"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 20424,
+    "nareit_ffo_ps": 0.2322,
+    "company_core_name": "Core FFO",
+    "company_core": 20548,
+    "company_core_ps": 0.2336,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 20570,
+    "company_affo_ps": 0.2338,
+    "conservative_core_ffo": 20261,
+    "conservative_core_ffo_ps": 0.2303,
+    "conservative_affo": 18117,
+    "conservative_affo_ps": 0.2059,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital improvements",
+        "amount": -2144,
+        "category": "recurring_capex",
+        "page_seq": 21,
+        "page_printed": "18"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Structuring expenses",
+        "amount": 60,
+        "category": "transaction_costs",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Severance expense",
+        "amount": 64,
+        "category": "severance_restructuring",
+        "page_seq": 12,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -163,
+        "category": "other",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "affo",
+        "applied": true,
+        "effect": -163,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Non-share-based severance expense",
+        "amount": 64,
+        "category": "severance_restructuring",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Structuring expenses",
+        "amount": 60,
+        "category": "transaction_costs",
+        "page_seq": 21,
+        "page_printed": "18",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 87975
+  }
+}

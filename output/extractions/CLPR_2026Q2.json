@@ -1,0 +1,213 @@
+{
+  "ticker": "CLPR",
+  "quarter": "2026Q2",
+  "period_end": "2026-06-30",
+  "source": {
+    "accession": "0001437749-26-026253",
+    "filename": "0001437749-26-026253.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649096/000143774926026253/0001437749-26-026253.txt"
+  },
+  "extraction": {
+    "affo_adjustments": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 121,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Straight-line rent adjustments",
+        "amount": -276,
+        "category": "straight_line_rent",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Amortization of debt origination costs",
+        "amount": 868,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Amortization of LTIP awards",
+        "amount": 1086,
+        "category": "stock_comp",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Loss on impairment of Long-Lived Assets",
+        "amount": 0,
+        "category": "re_impairment",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Loss on disposal of long-lived assets",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Litigation settlement and other",
+        "amount": 209,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": ""
+      },
+      {
+        "label": "Recurring capital spending",
+        "amount": -11,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": ""
+      }
+    ],
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "affo_total": {
+      "label": "AFFO",
+      "amount": 3755,
+      "page_seq": 10,
+      "page_printed": ""
+    },
+    "amount_unit": "thousands",
+    "core_adjustments": [],
+    "core_metric_name": null,
+    "core_total": null,
+    "diluted_shares": {
+      "label": "Diluted shares outstanding",
+      "amount": 42475,
+      "page_seq": 7,
+      "page_printed": ""
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 8023,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": ""
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 1758,
+      "page_seq": 10,
+      "page_printed": ""
+    },
+    "notes": "Single-company 8-K table; FFO and AFFO only (no Core FFO). Three-month 2026 column used. Zero-value lines (transaction pursuit costs, impairment, loss on disposal) are shown as \"-\" in the 2026 Q2 column. Recurring capital spending is printed as (11) and is already deducted in AFFO, so no separate capex disclosure is needed. Per-share FFO is not printed; AFFO per share $0.09 reproduces as 3,755 / 42,475 = 0.088. The \"Loss on disposal of long-lived assets\" line was categorized as property_sale_gain_loss (zero in the quarter). The real estate tax intangible amortization was categorized as other since no listed category fits.",
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": 0.09
+    },
+    "recurring_capex_disclosed": null,
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -6265,
+      "page_seq": 10,
+      "page_printed": ""
+    },
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 64033,
+      "output_tokens": 2477
+    },
+    "candidate_pages": [
+      {
+        "seq": 7,
+        "printed": ""
+      },
+      {
+        "seq": 8,
+        "printed": ""
+      },
+      {
+        "seq": 10,
+        "printed": ""
+      },
+      {
+        "seq": 11,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 1758,
+    "nareit_ffo_ps": 0.0414,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 3755,
+    "company_affo_ps": 0.0884,
+    "conservative_core_ffo": 1758,
+    "conservative_core_ffo_ps": 0.0414,
+    "conservative_affo": 1747,
+    "conservative_affo_ps": 0.0411,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital spending",
+        "amount": -11,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": ""
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Amortization of real estate tax intangible",
+        "amount": 121,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Transaction pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 10,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Litigation settlement and other",
+        "amount": 209,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 42475
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "ticker": "ELME",
+  "quarter": "2022Q1",
+  "period_end": "2022-03-31",
+  "source": {
+    "accession": "0000104894-22-000060",
+    "filename": "0000104894-22-000060.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/104894/000010489422000060/0000104894-22-000060.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net (loss) income",
+      "amount": -7724,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 22200,
+        "category": "re_depreciation",
+        "page_seq": 19,
+        "page_printed": "16"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT funds from operations (FFO)",
+      "amount": 14476,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "core_adjustments": [
+      {
+        "label": "Severance expense",
+        "amount": 474,
+        "category": "severance_restructuring",
+        "page_seq": 19,
+        "page_printed": "16"
+      },
+      {
+        "label": "Transformation costs",
+        "amount": 2223,
+        "category": "severance_restructuring",
+        "page_seq": 19,
+        "page_printed": "16"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO (1)",
+      "amount": 17173,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Tenant improvements and incentives, net of reimbursements",
+        "amount": -549,
+        "category": "other",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Recurring capital improvements",
+        "amount": -1238,
+        "category": "recurring_capex",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Straight-line rent, net",
+        "amount": -190,
+        "category": "straight_line_rent",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization of debt costs",
+        "amount": 1208,
+        "category": "debt_cost_amortization",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -172,
+        "category": "other",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Amortization and expensing of restricted share and unit compensation (2)",
+        "amount": 2081,
+        "category": "stock_comp",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Non-share-based severance expense",
+        "amount": 202,
+        "category": "severance_restructuring",
+        "page_seq": 20,
+        "page_printed": "17"
+      },
+      {
+        "label": "Transformation costs (3)",
+        "amount": 2162,
+        "category": "severance_restructuring",
+        "page_seq": 20,
+        "page_printed": "17"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO (1)",
+      "amount": 17980,
+      "page_seq": 20,
+      "page_printed": "17"
+    },
+    "diluted_shares": {
+      "label": "Average shares - fully diluted (for NAREIT FFO and Core FFO)",
+      "amount": 87253,
+      "page_seq": 19,
+      "page_printed": "16"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.17,
+      "core": 0.2,
+      "affo": null
+    },
+    "notes": "Net loss/FFO/Core FFO taken from the 3/31/2022 column of the FFO table (seq 19); cross-checked against the Core FFO reconciliation on seq 13. Zero-value lines (discontinued ops RE D&A, loss on extinguishment, loss on interest rate derivatives, insurance gain, leasing commissions, cash loss on extinguishment, share-based items at zero) omitted. AFFO table starts from NAREIT FFO (14,476), not Core FFO. The printed AFFO subtotal of 15,616 sits mid-list; it is not used as a total here, and the affo_adjustments run from NAREIT FFO straight to Core AFFO 17,980 (sum checks: 14,476 + 3,504 = 17,980). Core AFFO is the company's final AFFO-type metric. Company's AFFO subtotal is 15,616 (page 17). Transformation costs classified as severance_restructuring (strategic shift incl. consulting and termination benefits); this is a judgment call. Tenant improvements and amortization of lease intangibles classified as 'other'. Recurring capital improvements are already deducted in AFFO, so recurring_capex_disclosed is null. Allocation to participating securities (72) is not in the FFO-to-Core FFO chain and is excluded. Company reports no AFFO per-share figure. Diluted share count 87,253 is already in thousands and reproduces $0.17 (14,476/87,253) and $0.20 (17,173/87,253).",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8369,
+      "output_tokens": 5071
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "7"
+      },
+      {
+        "seq": 13,
+        "printed": "10"
+      },
+      {
+        "seq": 15,
+        "printed": "12"
+      },
+      {
+        "seq": 19,
+        "printed": "16"
+      },
+      {
+        "seq": 20,
+        "printed": "17"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 14476,
+    "nareit_ffo_ps": 0.1659,
+    "company_core_name": "Core FFO",
+    "company_core": 17173,
+    "company_core_ps": 0.1968,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 17980,
+    "company_affo_ps": 0.2061,
+    "conservative_core_ffo": 13755,
+    "conservative_core_ffo_ps": 0.1576,
+    "conservative_affo": 12517,
+    "conservative_affo_ps": 0.1435,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital improvements",
+        "amount": -1238,
+        "category": "recurring_capex",
+        "page_seq": 20,
+        "page_printed": "17"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Severance expense",
+        "amount": 474,
+        "category": "severance_restructuring",
+        "page_seq": 19,
+        "page_printed": "16",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Transformation costs",
+        "amount": 2223,
+        "category": "severance_restructuring",
+        "page_seq": 19,
+        "page_printed": "16",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Tenant improvements and incentives, net of reimbursements",
+        "amount": -549,
+        "category": "other",
+        "page_seq": 20,
+        "page_printed": "17",
+        "section": "affo",
+        "applied": true,
+        "effect": -549,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Amortization of lease intangibles, net",
+        "amount": -172,
+        "category": "other",
+        "page_seq": 20,
+        "page_printed": "17",
+        "section": "affo",
+        "applied": true,
+        "effect": -172,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Non-share-based severance expense",
+        "amount": 202,
+        "category": "severance_restructuring",
+        "page_seq": 20,
+        "page_printed": "17",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Transformation costs (3)",
+        "amount": 2162,
+        "category": "severance_restructuring",
+        "page_seq": 20,
+        "page_printed": "17",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Tenant improvements and incentives, net of reimbursements' (other) handled by a provisional rule",
+      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 87253
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "ticker": "CSR",
+  "quarter": "2023Q2",
+  "period_end": "2023-06-30",
+  "source": {
+    "accession": "0000798359-23-000083",
+    "filename": "0000798359-23-000083.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/798359/000079835923000083/0000798359-23-000083.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income (loss) available to common shareholders",
+      "amount": -3470,
+      "page_seq": 16,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Noncontrolling interests \u2013 Operating Partnership and Series E preferred units",
+        "amount": -712,
+        "category": "noncontrolling_interest",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Depreciation and amortization",
+        "amount": 24371,
+        "category": "re_depreciation",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Less depreciation \u2013 non real estate",
+        "amount": -89,
+        "category": "non_re_depreciation",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Less depreciation \u2013 partially owned entities",
+        "amount": -19,
+        "category": "jv_depreciation",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "(Gain) loss on sale of real estate and other assets",
+        "amount": 71,
+        "category": "property_sale_gain_loss",
+        "page_seq": 16,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO applicable to common shares and Units",
+      "amount": 20152,
+      "page_seq": 16,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "Non-cash casualty (gain) loss",
+        "amount": -52,
+        "category": "casualty",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Technology implementation costs (1)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Interest rate swap termination, amortization, and mark-to-market",
+        "amount": 159,
+        "category": "derivative_mtm",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Amortization of assumed debt",
+        "amount": -116,
+        "category": "debt_cost_amortization",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Severance and transition related costs",
+        "amount": -19,
+        "category": "severance_restructuring",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Loss on litigation settlement and one-time trial costs (2)",
+        "amount": 3201,
+        "category": "legal",
+        "page_seq": 16,
+        "page_printed": "9"
+      },
+      {
+        "label": "Other miscellaneous items (3)",
+        "amount": -22,
+        "category": "investment_gain_loss",
+        "page_seq": 16,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO applicable to common shares and Units",
+      "amount": 23303,
+      "page_seq": 16,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average shares and Units - diluted",
+      "amount": 18269,
+      "page_seq": 16,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 1.11,
+      "core": 1.28,
+      "affo": null
+    },
+    "notes": "Reconciliation starts from net income (loss) available to common shareholders (not net income before NCI). FFO total of 20,152 is the 'FFO applicable to common shares and Units' line; the diluted FFO line (20,312, after adding back 160 preferred dividends) is not used as the subtotal. Core FFO subtotal 23,303 likewise; diluted Core FFO 23,463. Share count 18,269 (thousands) reproduces $1.11 (20,312/18,269) and $1.28 (23,463/18,269) diluted per-share figures. Company reports no AFFO metric, so affo fields are null. Dash (\u2014) lines entered as 0. The swap line combines termination, amortization and mark-to-market; categorized as derivative_mtm. Other miscellaneous items are described by the company as (gain) loss on investments. No AFFO section exists, so recurring capex is not applicable and set null.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10237,
+      "output_tokens": 3216
+    },
+    "candidate_pages": [
+      {
+        "seq": 14,
+        "printed": "7"
+      },
+      {
+        "seq": 16,
+        "printed": "9"
+      },
+      {
+        "seq": 17,
+        "printed": "10"
+      },
+      {
+        "seq": 23,
+        "printed": "16"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 20152,
+    "nareit_ffo_ps": 1.1031,
+    "company_core_name": "Core FFO",
+    "company_core": 23303,
+    "company_core_ps": 1.2755,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 20102,
+    "conservative_core_ffo_ps": 1.1003,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Non-cash casualty (gain) loss",
+        "amount": -52,
+        "category": "casualty",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -52,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+      },
+      {
+        "label": "Technology implementation costs (1)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Interest rate swap termination, amortization, and mark-to-market",
+        "amount": 159,
+        "category": "derivative_mtm",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": 159,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Amortization of assumed debt",
+        "amount": -116,
+        "category": "debt_cost_amortization",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -116,
+        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Pursuit costs",
+        "amount": 0,
+        "category": "transaction_costs",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Severance and transition related costs",
+        "amount": -19,
+        "category": "severance_restructuring",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -19,
+        "reason": "Reorganizations recur; kept as a cost (gain/recovery removed)"
+      },
+      {
+        "label": "Loss on litigation settlement and one-time trial costs (2)",
+        "amount": 3201,
+        "category": "legal",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Other miscellaneous items (3)",
+        "amount": -22,
+        "category": "investment_gain_loss",
+        "page_seq": 16,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -22,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      }
+    ],
+    "flags": [
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 18269
+  }
+}

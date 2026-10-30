@@ -1,0 +1,283 @@
+{
+  "ticker": "CSR",
+  "quarter": "2024Q3",
+  "period_end": "2024-09-30",
+  "source": {
+    "accession": "0000798359-24-000123",
+    "filename": "centerspace093024exhibit991.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/798359/000079835924000123/centerspace093024exhibit991.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income (loss) available to common shareholders",
+      "amount": -6166,
+      "page_seq": 13,
+      "page_printed": "8"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Noncontrolling interests \u2013 Operating Partnership and Series E preferred units",
+        "amount": -1095,
+        "category": "noncontrolling_interest",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Depreciation and amortization",
+        "amount": 26084,
+        "category": "re_depreciation",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Less depreciation \u2013 non real estate",
+        "amount": -81,
+        "category": "non_re_depreciation",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Less depreciation \u2013 partially owned entities",
+        "amount": -25,
+        "category": "jv_depreciation",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Impairment of real estate",
+        "amount": 0,
+        "category": "re_impairment",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "(Gain) loss on sale of real estate and other assets",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 13,
+        "page_printed": "8"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO applicable to common shares and Units",
+      "amount": 18717,
+      "page_seq": 13,
+      "page_printed": "8"
+    },
+    "core_adjustments": [
+      {
+        "label": "Non-cash casualty (recovery) loss",
+        "amount": -632,
+        "category": "casualty",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Interest rate swap amortization",
+        "amount": 171,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Amortization of assumed debt",
+        "amount": 263,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Severance and transition related costs",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Loss on litigation settlement and associated trial costs (2)",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Redemption of preferred shares",
+        "amount": 3511,
+        "category": "other",
+        "page_seq": 13,
+        "page_printed": "8"
+      },
+      {
+        "label": "Other miscellaneous items (3)",
+        "amount": -61,
+        "category": "other",
+        "page_seq": 13,
+        "page_printed": "8"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO applicable to common shares and Units",
+      "amount": 21969,
+      "page_seq": 13,
+      "page_printed": "8"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average shares and Units for FFO and Core FFO - diluted",
+      "amount": 18676,
+      "page_seq": 13,
+      "page_printed": "8"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Total Recurring Capital Expenditures (2) per Apartment Home \u2013 Same-Store",
+      "amount": 347,
+      "basis": "per_unit_only",
+      "scope": "same-store, dollars per apartment home for the quarter (not in thousands; no company-total figure disclosed)",
+      "page_seq": 20,
+      "page_printed": "15"
+    },
+    "reported_per_share": {
+      "ffo": 1.01,
+      "core": 1.18,
+      "affo": null
+    },
+    "notes": "Centerspace (CSR) reports no AFFO; core_total is Core FFO, so AFFO fields are null. Three-month column (9/30/2024) used. FFO and Core FFO reconcile to printed subtotals. Diluted per-share figures check: 18,877/18,676 = $1.01 and 22,129/18,676 = $1.18 (diluted subtotals add back $160 Series D preferred dividends, which are not part of the FFO-to-Core FFO adjustments). Interest rate swap amortization was classified as debt_cost_amortization (judgment call). Redemption of preferred shares and 'Other miscellaneous items' (gain on investments and one-time professional fees) were classified as 'other'. recurring_capex_disclosed uses the same-store per-home figure ($347) from the Portfolio Summary, which is per-home in dollars, not a company total, so the amount is not in thousands. The starting_line amount is net loss available to common shareholders.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 11710,
+      "output_tokens": 3411
+    },
+    "candidate_pages": [
+      {
+        "seq": 13,
+        "printed": "8"
+      },
+      {
+        "seq": 14,
+        "printed": "9"
+      },
+      {
+        "seq": 20,
+        "printed": "15"
+      },
+      {
+        "seq": 22,
+        "printed": "17"
+      },
+      {
+        "seq": 23,
+        "printed": "18"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 18717,
+    "nareit_ffo_ps": 1.0022,
+    "company_core_name": "Core FFO",
+    "company_core": 21969,
+    "company_core_ps": 1.1763,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 18024,
+    "conservative_core_ffo_ps": 0.9651,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Non-cash casualty (recovery) loss",
+        "amount": -632,
+        "category": "casualty",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": true,
+        "effect": -632,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Interest rate swap amortization",
+        "amount": 171,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (company add-back reversed)"
+      },
+      {
+        "label": "Amortization of assumed debt",
+        "amount": 263,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (company add-back reversed)"
+      },
+      {
+        "label": "Severance and transition related costs",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Loss on litigation settlement and associated trial costs (2)",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "Redemption of preferred shares",
+        "amount": 3511,
+        "category": "other",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Other miscellaneous items (3)",
+        "amount": -61,
+        "category": "other",
+        "page_seq": 13,
+        "page_printed": "8",
+        "section": "core",
+        "applied": true,
+        "effect": -61,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Redemption of preferred shares' (other) handled by a provisional rule",
+      "Review: 'Other miscellaneous items (3)' (other) handled by a provisional rule",
+      "Recurring capex only disclosed on a 'per_unit_only' basis; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 18676
+  }
+}

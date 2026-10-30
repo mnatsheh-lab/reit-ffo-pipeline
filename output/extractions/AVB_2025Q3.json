@@ -1,0 +1,285 @@
+{
+  "ticker": "AVB",
+  "quarter": "2025Q3",
+  "period_end": "2025-09-30",
+  "source": {
+    "accession": "0000915912-25-000022",
+    "filename": "0000915912-25-000022.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/915912/000091591225000022/0000915912-25-000022.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income attributable to common stockholders",
+      "amount": 381306,
+      "page_seq": 11,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation - real estate assets, including joint venture adjustments",
+        "amount": 227962,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Income attributable to noncontrolling interests",
+        "amount": 2856,
+        "category": "noncontrolling_interest",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on sale of previously depreciated real estate, net",
+        "amount": -180155,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 431969,
+      "page_seq": 11,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "Unconsolidated entity gains, net (1)",
+        "amount": -42350,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Structured Investment Program loan reserve (2)",
+        "amount": 236,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Hedge accounting activity",
+        "amount": 2,
+        "category": "derivative_mtm",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Advocacy contributions",
+        "amount": 150,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Severance related costs",
+        "amount": 751,
+        "category": "severance_restructuring",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Expensed transaction, development and other pursuit costs, net of recoveries (3)",
+        "amount": 503,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Other real estate activity (4)",
+        "amount": -127,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Legal settlements and costs",
+        "amount": 3252,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "9"
+      },
+      {
+        "label": "Income tax (benefit) expense",
+        "amount": -193,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO",
+      "amount": 394193,
+      "page_seq": 11,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average common shares outstanding - diluted",
+      "amount": 143535.401,
+      "page_seq": 11,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 3.01,
+      "core": 2.75,
+      "affo": null
+    },
+    "notes": "AVB reports FFO and Core FFO only; no AFFO metric, so affo fields are null. Q3 2025 column used (first column). Casualty loss on real estate is shown as a dash for Q3 2025 (zero), so it is omitted. Executive transition compensation costs is a dash for Q3 2025 (zero), so it is omitted. Diluted shares printed as 143,535,401 and converted to thousands (143,535.401). Recomputed per-share checks: 431,969 / 143,535.401 = 3.01 FFO; 394,193 / 143,535.401 = 2.75 Core FFO. Subtotals verified arithmetically. The same reconciliation appears again on printed page 22 (seq 38); page seq 11 was used. Categories: SIP loan reserve, advocacy contributions, other real estate activity (gains on non-operating real estate), and income tax benefit were classified as 'other' because no listed category fits. Unconsolidated entity gains (net unrealized gains on property technology investments) were classified as investment_gain_loss.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8868,
+      "output_tokens": 2733
+    },
+    "candidate_pages": [
+      {
+        "seq": 11,
+        "printed": "9"
+      },
+      {
+        "seq": 12,
+        "printed": "10"
+      },
+      {
+        "seq": 38,
+        "printed": "22"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 431969,
+    "nareit_ffo_ps": 3.0095,
+    "company_core_name": "Core FFO",
+    "company_core": 394193,
+    "company_core_ps": 2.7463,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 389301,
+    "conservative_core_ffo_ps": 2.7122,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Unconsolidated entity gains, net (1)",
+        "amount": -42350,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -42350,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Structured Investment Program loan reserve (2)",
+        "amount": 236,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Hedge accounting activity",
+        "amount": 2,
+        "category": "derivative_mtm",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": 2,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Advocacy contributions",
+        "amount": 150,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+      },
+      {
+        "label": "Severance related costs",
+        "amount": 751,
+        "category": "severance_restructuring",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Expensed transaction, development and other pursuit costs, net of recoveries (3)",
+        "amount": 503,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Other real estate activity (4)",
+        "amount": -127,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -127,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      },
+      {
+        "label": "Legal settlements and costs",
+        "amount": 3252,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Income tax (benefit) expense",
+        "amount": -193,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -193,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Structured Investment Program loan reserve (2)' (other) handled by a provisional rule",
+      "Review: 'Advocacy contributions' (other) handled by a provisional rule",
+      "Review: 'Other real estate activity (4)' (other) handled by a provisional rule",
+      "Review: 'Income tax (benefit) expense' (other) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 143535.401
+  }
+}
