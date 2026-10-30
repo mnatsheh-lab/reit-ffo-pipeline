@@ -98,7 +98,11 @@ class ScriptedClaude:
 
     def create(self, **kw):
         self.calls.append(kw)
-        return NS(content=[NS(type="tool_use", id=f"t{len(self.calls)}", name="record_reconciliation", input=self.inputs.pop(0))],
+        assert kw["tool_choice"] == {"type": "auto"}
+        nxt = self.inputs.pop(0)
+        if isinstance(nxt, str):   # Claude replies in text instead of calling the tool
+            return NS(content=[NS(type="text", text=nxt)], stop_reason="end_turn", usage=NS(input_tokens=500, output_tokens=50))
+        return NS(content=[NS(type="tool_use", id=f"t{len(self.calls)}", name="record_reconciliation", input=nxt)],
                   stop_reason="tool_use", usage=NS(input_tokens=1000, output_tokens=300))
 
 
@@ -117,8 +121,19 @@ class ExtractLoopTests(unittest.TestCase):
         first_prompt = claude.calls[0]["messages"][0]["content"]
         self.assertIn("[[PAGE seq=10 printed=10]]", first_prompt)    # reconciliation page was sent
         self.assertIn("161,037", first_prompt)
-        retry_msg = claude.calls[1]["messages"][-1]["content"][0]["content"]
+        retry_msg = claude.calls[1]["messages"][2]["content"][0]["content"]  # user turn after the first attempt
         self.assertIn("ffo_total", retry_msg)
+
+
+    def test_text_reply_gets_reminder(self):
+        doc = Path("/mnt/user-data/uploads/reit-ffo-pipeline/data/raw/edgar/MAA/MAA_2026Q2_earnings.htm")
+        if not doc.exists():
+            self.skipTest("EDGAR document not available")
+        claude = ScriptedClaude(["Here is the reconciliation...", maa_extraction("2026Q2")])
+        ext = extract_document(claude, "m", doc.read_bytes(), doc.name, "MAA", "2026Q2", "June 30, 2026")
+        self.assertEqual(ext["validation_errors"], [])
+        self.assertEqual(len(claude.calls), 2)
+        self.assertIn("record_reconciliation", claude.calls[1]["messages"][2]["content"])  # reminder turn
 
 
 class AnswerKeyTests(unittest.TestCase):
