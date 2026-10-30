@@ -11,11 +11,12 @@ STATS = b"<html><body><p>Portfolio statistics. Units 104,000. Occupancy 95.5% as
 
 
 class FakeEdgar:
-    def __init__(self, filings):
+    def __init__(self, filings, items=None):
         self.filings = filings      # list of (accession, filed_date, {name: bytes})
+        self.items = items or {}    # accession -> 8-K item list (default "2.02,9.01")
 
     def earnings_filings(self, cik, start, end):
-        return [{"accessionNumber": a, "filingDate": d, "form": "8-K", "items": "2.02"}
+        return [{"accessionNumber": a, "filingDate": d, "form": "8-K", "items": self.items.get(a, "2.02,9.01")}
                 for a, d, _ in self.filings if start <= date.fromisoformat(d) <= end]
 
     def filing_documents(self, cik, acc):
@@ -65,10 +66,31 @@ class RulesTests(unittest.TestCase):
         self.assertIsNone(pick(edgar, 1, Quarter.parse("2026Q2"))[0])
         self.assertIsNone(pick(FakeEdgar([]), 1, Quarter.parse("2026Q2"))[0])
         (maa,) = need(DOCS / "MAA/MAA_2026Q2_earnings.htm")
-        two = FakeEdgar([("A1", "2026-07-29", {"a.htm": maa}), ("A2", "2026-08-05", {"b.htm": maa})])
+        # two investor-presentation filings, no earnings 8-K: ambiguous, defer
+        two = FakeEdgar([("A1", "2026-07-29", {"a.htm": maa}), ("A2", "2026-08-05", {"b.htm": maa})],
+                        items={"A1": "7.01,9.01", "A2": "7.01,9.01"})
         choice, why = pick(two, 1, Quarter.parse("2026Q2"))
         self.assertIsNone(choice)
-        self.assertIn("2 filings", why)
+        self.assertIn("2 other filings", why)
+
+    def test_earnings_8k_beats_investor_presentation(self):
+        """MAA's real pattern: Item 7.01 presentation 8-Ks around the earnings 8-K."""
+        (maa,) = need(DOCS / "MAA/MAA_2026Q2_earnings.htm")
+        edgar = FakeEdgar([("P1", "2026-06-02", {"presentation.htm": maa}),   # REITweek deck, before release
+                           ("E1", "2026-07-29", {"maa-ex99_1.htm": maa, "maa-ex99_2.htm": STATS}),
+                           ("P2", "2026-09-10", {"deck.htm": maa})],
+                          items={"P1": "7.01,9.01", "E1": "2.02,9.01", "P2": "7.01,9.01"})
+        choice, why = pick(edgar, 1, Quarter.parse("2026Q2"))
+        self.assertIsNotNone(choice, why)
+        self.assertEqual((choice["filing"]["accessionNumber"], choice["doc"]["name"]), ("E1", "maa-ex99_1.htm"))
+        self.assertIn("earnings 8-K", why)
+
+    def test_single_presentation_used_when_no_earnings_8k(self):
+        (maa,) = need(DOCS / "MAA/MAA_2026Q2_earnings.htm")
+        edgar = FakeEdgar([("P1", "2026-07-29", {"supp.htm": maa})], items={"P1": "7.01,9.01"})
+        choice, why = pick(edgar, 1, Quarter.parse("2026Q2"))
+        self.assertIsNotNone(choice, why)
+        self.assertIn("7.01", why)
 
 
 if __name__ == "__main__":
