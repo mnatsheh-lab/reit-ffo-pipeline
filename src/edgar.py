@@ -128,7 +128,10 @@ def document_text(raw: bytes, name: str) -> str:
 
 
 FFO_PATTERNS = [r"funds\s+from\s+operations", r"\bFFO\b"]
-RECON_PATTERNS = [r"reconciliation", r"depreciation\s+and\s+amortization\s+of\s+real\s+estate|real\s+estate\s+depreciation"]
+# Companies word the depreciation line differently ("Depreciation and amortization of real estate
+# assets", "Real estate depreciation", or just "Depreciation and amortization" at BRT), so only
+# require the word "depreciation" alongside "reconciliation".
+RECON_PATTERNS = [r"reconciliation", r"depreciation"]
 
 
 def reconciliation_signals(text: str, period_end_text: str) -> dict:
