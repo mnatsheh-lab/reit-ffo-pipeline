@@ -1,0 +1,272 @@
+[
+  {
+    "ticker": "MAA",
+    "cik": 912595,
+    "quarter": "2025Q4",
+    "status": "saved",
+    "accession": "0001193125-26-037610",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000119312526037610/maa-ex99_1.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\MAA\\MAA_2025Q4_earnings.htm",
+    "reason": "Ex. 99.1 release/supplemental contains the net income to FFO/Core FFO/Core AFFO reconciliation for Q4 2025; Ex. 99.2 has no FFO content.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 6
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "MAA",
+    "cik": 912595,
+    "quarter": "2026Q1",
+    "status": "saved",
+    "accession": "0001193125-26-191620",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000119312526191620/maa-ex99_1.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\MAA\\MAA_2026Q1_earnings.htm",
+    "reason": "Ex. 99.1 contains the Q1 2026 reconciliation of net income to FFO/Core FFO/Core AFFO; Ex. 99.2 has no FFO content.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 6
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "MAA",
+    "cik": 912595,
+    "quarter": "2026Q2",
+    "status": "saved",
+    "accession": "0001193125-26-323756",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000119312526323756/maa-ex99_1.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\MAA\\MAA_2026Q2_earnings.htm",
+    "reason": "Ex. 99.1 contains the Q2 2026 reconciliation of net income to FFO/Core FFO/Core AFFO; Ex. 99.2 has no FFO content.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 6
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "CPT",
+    "cik": 906345,
+    "quarter": "2025Q4",
+    "status": "saved",
+    "accession": "0001628280-26-005842",
+    "filename": "exhibit992supplement4q25.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000162828026005842/exhibit992supplement4q25.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\CPT\\CPT_2025Q4_earnings.htm",
+    "reason": "Supplemental package covering the three months ended Dec 31, 2025, with FFO/Core FFO/Core AFFO reconciliation.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 18
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "CPT",
+    "cik": 906345,
+    "quarter": "2026Q1",
+    "status": "saved",
+    "accession": "0001628280-26-028942",
+    "filename": "exhibit992supplement1q26.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000162828026028942/exhibit992supplement1q26.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\CPT\\CPT_2026Q1_earnings.htm",
+    "reason": "Supplemental package covering the three months ended Mar 31, 2026, with FFO/Core FFO/Core AFFO reconciliation.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 18
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "CPT",
+    "cik": 906345,
+    "quarter": "2026Q2",
+    "status": "saved",
+    "accession": "0001628280-26-051083",
+    "filename": "exhibit992supplement2q26.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000162828026051083/exhibit992supplement2q26.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\CPT\\CPT_2026Q2_earnings.htm",
+    "reason": "Supplemental package covering the three months ended Jun 30, 2026, with FFO/Core FFO/Core AFFO reconciliation.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 18
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "IRT",
+    "cik": 1466085,
+    "quarter": "2025Q4",
+    "status": "saved",
+    "accession": "0001437749-26-003792",
+    "filename": "ex_895776.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1466085/000143774926003792/ex_895776.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\IRT\\IRT_2025Q4_earnings.htm",
+    "reason": "Supplemental (Ex 99.2) with full FFO/CFFO reconciliation for three months ended Dec 31, 2025.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 8
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "IRT",
+    "cik": 1466085,
+    "quarter": "2026Q1",
+    "status": "saved",
+    "accession": "0001437749-26-013863",
+    "filename": "ex_910342.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1466085/000143774926013863/ex_910342.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\IRT\\IRT_2026Q1_earnings.htm",
+    "reason": "Supplemental (Ex 99.2) with full FFO/CFFO reconciliation for three months ended Mar 31, 2026.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 7
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "IRT",
+    "cik": 1466085,
+    "quarter": "2026Q2",
+    "status": "saved",
+    "accession": "0001437749-26-025436",
+    "filename": "ex_955950.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1466085/000143774926025436/ex_955950.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\IRT\\IRT_2026Q2_earnings.htm",
+    "reason": "Supplemental (Ex 99.2) with full FFO/CFFO reconciliation for three months ended Jun 30, 2026.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 7
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "NXRT",
+    "cik": 1620393,
+    "quarter": "2025Q4",
+    "status": "saved",
+    "accession": "0001193125-26-065382",
+    "filename": "nxrt-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1620393/000119312526065382/nxrt-ex99_1.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\NXRT\\NXRT_2025Q4_earnings.htm",
+    "reason": "Q4/FY2025 earnings supplement with FFO, Core FFO and AFFO reconciliation section.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 1
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "NXRT",
+    "cik": 1620393,
+    "quarter": "2026Q1",
+    "status": "saved",
+    "accession": "0001193125-26-183645",
+    "filename": "nxrt-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1620393/000119312526183645/nxrt-ex99_1.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\NXRT\\NXRT_2026Q1_earnings.htm",
+    "reason": "Q1 2026 earnings supplement with FFO, Core FFO and AFFO reconciliation section.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 1
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "NXRT",
+    "cik": 1620393,
+    "quarter": "2026Q2",
+    "status": "saved",
+    "accession": "0001193125-26-331611",
+    "filename": "nxrt-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1620393/000119312526331611/nxrt-ex99_1.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\NXRT\\NXRT_2026Q2_earnings.htm",
+    "reason": "Q2 2026 earnings supplement with FFO, Core FFO and AFFO reconciliation section.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": true,
+      "mentions_period_end": true,
+      "ffo_mentions": 1
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "BRT",
+    "cik": 14846,
+    "quarter": "2025Q4",
+    "status": "saved_unverified",
+    "accession": "0000014846-26-000008",
+    "filename": "exhibit991q42025.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000008/exhibit991q42025.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\BRT\\BRT_2025Q4_earnings.htm",
+    "reason": "Supplemental package for three/twelve months ended Dec 31, 2025 with FFO and AFFO section.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": false,
+      "mentions_period_end": true,
+      "ffo_mentions": 19
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "BRT",
+    "cik": 14846,
+    "quarter": "2026Q1",
+    "status": "saved_unverified",
+    "accession": "0000014846-26-000018",
+    "filename": "exhibit991q12026.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000018/exhibit991q12026.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\BRT\\BRT_2026Q1_earnings.htm",
+    "reason": "Supplemental package for three months ended Mar 31, 2026 with FFO and AFFO section.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": false,
+      "mentions_period_end": true,
+      "ffo_mentions": 17
+    },
+    "collected_on": "2026-10-30"
+  },
+  {
+    "ticker": "BRT",
+    "cik": 14846,
+    "quarter": "2026Q2",
+    "status": "saved_unverified",
+    "accession": "0000014846-26-000038",
+    "filename": "exhibit991q22026.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000038/exhibit991q22026.htm",
+    "path": "C:\\Users\\Andromeda\\Documents\\GitHub\\reit-ffo-pipeline\\data\\raw\\edgar\\BRT\\BRT_2026Q2_earnings.htm",
+    "reason": "Supplemental package for three months ended Jun 30, 2026 with FFO and AFFO section.",
+    "checks": {
+      "mentions_ffo": true,
+      "has_reconciliation_words": false,
+      "mentions_period_end": true,
+      "ffo_mentions": 17
+    },
+    "collected_on": "2026-10-30"
+  }
+]
