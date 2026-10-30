@@ -15,101 +15,101 @@
     "starting_line": {
       "label": "Net income attributable to common shareholders",
       "amount": 42449,
-      "page_seq": 6,
-      "page_printed": "6"
+      "page_seq": 21,
+      "page_printed": "21"
     },
     "ffo_adjustments": [
       {
         "label": "Real estate depreciation and amortization",
         "amount": 146390,
         "category": "re_depreciation",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       },
       {
         "label": "Income allocated to non-controlling interests",
         "amount": 1925,
         "category": "noncontrolling_interest",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       },
       {
         "label": "Gain on sale of operating property",
         "amount": -67878,
         "category": "property_sale_gain_loss",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       }
     ],
     "ffo_total": {
       "label": "Funds from operations",
       "amount": 122886,
-      "page_seq": 6,
-      "page_printed": "6"
+      "page_seq": 21,
+      "page_printed": "21"
     },
     "core_adjustments": [
       {
-        "label": "Plus: Casualty-related expenses (a)",
+        "label": "Plus: Casualty-related expenses",
         "amount": 250,
         "category": "casualty",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       },
       {
-        "label": "Plus: Legal costs and settlements (b)(c)",
+        "label": "Plus: Legal costs and settlements",
         "amount": 51192,
         "category": "legal",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       },
       {
-        "label": "Plus: Expensed transaction, development, and other pursuit costs (c)",
+        "label": "Plus: Expensed transaction, development, and other pursuit costs",
         "amount": 1842,
         "category": "transaction_costs",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       },
       {
-        "label": "Plus: Investment losses (b)",
+        "label": "Plus: Investment losses",
         "amount": 4855,
         "category": "investment_gain_loss",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       },
       {
-        "label": "Plus: Other miscellaneous items (a)",
+        "label": "Plus: Other miscellaneous items",
         "amount": 61,
         "category": "other",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       }
     ],
     "core_total": {
       "label": "Core funds from operations",
       "amount": 181086,
-      "page_seq": 6,
-      "page_printed": "6"
+      "page_seq": 21,
+      "page_printed": "21"
     },
     "affo_adjustments": [
       {
-        "label": "Less: Recurring capitalized expenditures (d)",
+        "label": "Less: Recurring capitalized expenditures",
         "amount": -16150,
         "category": "recurring_capex",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       }
     ],
     "affo_total": {
       "label": "Core adjusted funds from operations",
       "amount": 164936,
-      "page_seq": 6,
-      "page_printed": "6"
+      "page_seq": 21,
+      "page_printed": "21"
     },
     "diluted_shares": {
-      "label": "FFO/Core FFO/Core AFFO - diluted",
+      "label": "FFO/Core FFO/Core AFFO diluted",
       "amount": 106493,
-      "page_seq": 6,
-      "page_printed": "6"
+      "page_seq": 21,
+      "page_printed": "21"
     },
     "recurring_capex_disclosed": null,
     "reported_per_share": {
@@ -117,27 +117,17 @@
       "core": 1.7,
       "affo": 1.55
     },
-    "notes": "Values taken from the Funds from Operations page (seq 6). The same reconciliation also appears on page 21. The shares figure of 106,493 reproduces the reported per-share amounts.",
+    "notes": "Starts from net income attributable to common shareholders (not total net income). Figures identical on page 6 and page 21; page 21 used for labels. Subtotals verified: 42,449 + adjustments = 122,886; 122,886 + 58,200 = 181,086; 181,086 - 16,150 = 164,936. Per-share check with 106,493 diluted shares: 1.15, 1.70, 1.55 all reproduce. Recurring capex is deducted in Core AFFO, so no separate disclosure needed. 'Other miscellaneous items' (61) coded as other.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 13905,
-      "output_tokens": 1220
+      "input_tokens": 7884,
+      "output_tokens": 2325
     },
     "candidate_pages": [
-      {
-        "seq": 2,
-        "printed": "2"
-      },
-      {
-        "seq": 4,
-        "printed": "4"
-      },
-      {
-        "seq": 5,
-        "printed": "5"
-      },
       {
         "seq": 6,
         "printed": "6"
@@ -149,10 +139,6 @@
       {
         "seq": 21,
         "printed": "21"
-      },
-      {
-        "seq": 25,
-        "printed": "25"
       }
     ]
   },
@@ -171,65 +157,65 @@
     "conservative_affo_ps": 1.0479,
     "recurring_capex": [
       {
-        "label": "Less: Recurring capitalized expenditures (d)",
+        "label": "Less: Recurring capitalized expenditures",
         "amount": -16150,
         "category": "recurring_capex",
-        "page_seq": 6,
-        "page_printed": "6"
+        "page_seq": 21,
+        "page_printed": "21"
       }
     ],
     "recurring_capex_source": "affo_reconciliation",
     "steps": [
       {
-        "label": "Plus: Casualty-related expenses (a)",
+        "label": "Plus: Casualty-related expenses",
         "amount": 250,
         "category": "casualty",
-        "page_seq": 6,
-        "page_printed": "6",
+        "page_seq": 21,
+        "page_printed": "21",
         "section": "core",
         "applied": false,
         "effect": 0.0,
         "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
       },
       {
-        "label": "Plus: Legal costs and settlements (b)(c)",
+        "label": "Plus: Legal costs and settlements",
         "amount": 51192,
         "category": "legal",
-        "page_seq": 6,
-        "page_printed": "6",
+        "page_seq": 21,
+        "page_printed": "21",
         "section": "core",
         "applied": false,
         "effect": 0.0,
         "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
       },
       {
-        "label": "Plus: Expensed transaction, development, and other pursuit costs (c)",
+        "label": "Plus: Expensed transaction, development, and other pursuit costs",
         "amount": 1842,
         "category": "transaction_costs",
-        "page_seq": 6,
-        "page_printed": "6",
+        "page_seq": 21,
+        "page_printed": "21",
         "section": "core",
         "applied": false,
         "effect": 0.0,
         "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
       },
       {
-        "label": "Plus: Investment losses (b)",
+        "label": "Plus: Investment losses",
         "amount": 4855,
         "category": "investment_gain_loss",
-        "page_seq": 6,
-        "page_printed": "6",
+        "page_seq": 21,
+        "page_printed": "21",
         "section": "core",
         "applied": true,
         "effect": 4855,
         "reason": "Non-real-estate investment results removed (gains and losses)"
       },
       {
-        "label": "Plus: Other miscellaneous items (a)",
+        "label": "Plus: Other miscellaneous items",
         "amount": 61,
         "category": "other",
-        "page_seq": 6,
-        "page_printed": "6",
+        "page_seq": 21,
+        "page_printed": "21",
         "section": "core",
         "applied": false,
         "effect": 0.0,
@@ -237,7 +223,7 @@
       }
     ],
     "flags": [
-      "Review: 'Plus: Other miscellaneous items (a)' (other) handled by a provisional rule"
+      "Review: 'Plus: Other miscellaneous items' (other) handled by a provisional rule"
     ],
     "diluted_shares": 106493
   }

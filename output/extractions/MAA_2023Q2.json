@@ -1,0 +1,277 @@
+{
+  "ticker": "MAA",
+  "quarter": "2023Q2",
+  "period_end": "2023-06-30",
+  "source": {
+    "accession": "0000950170-23-034730",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000095017023034730/maa-ex99_1.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income available for MAA common shareholders",
+      "amount": 144766,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization of real estate assets",
+        "amount": 137456,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Loss (gain) on sale of depreciable real estate assets",
+        "amount": 1,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "MAA\u2019s share of depreciation and amortization of real estate assets of real estate joint venture",
+        "amount": 152,
+        "category": "jv_depreciation",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Net income attributable to noncontrolling interests",
+        "amount": 3969,
+        "category": "noncontrolling_interest",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common shareholders and unitholders",
+      "amount": 286344,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "core_adjustments": [
+      {
+        "label": "(Gain) loss on embedded derivative in preferred shares",
+        "amount": -4952,
+        "category": "derivative_mtm",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Gain on sale of non-depreciable real estate assets",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "(Gain) loss on investments, net of tax",
+        "amount": -6575,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Casualty related charges (recoveries), net",
+        "amount": 75,
+        "category": "casualty",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Legal costs and settlements, net",
+        "amount": -1600,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "COVID-19 related costs",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Mark-to-market debt adjustment",
+        "amount": -12,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common shareholders and unitholders",
+      "amount": 273280,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -32669,
+        "category": "recurring_capex",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO attributable to common shareholders and unitholders",
+      "amount": 240611,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "diluted_shares": {
+      "label": "Weighted average common shares and units - diluted (FFO weighted average common shares and units - diluted)",
+      "amount": 119823,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 2.39,
+      "core": 2.28,
+      "affo": 2.01
+    },
+    "notes": "Three months ended June 30, 2023 column from the FFO reconciliation (seq 11). Starting line is net income available for MAA common shareholders ($144,766), which is the reconciliation's first line. Two lines show an em dash for 2023 and are recorded as 0: Gain on sale of non-depreciable real estate assets and COVID-19 related costs. Mark-to-market debt adjustment is printed as (12) and recorded as -12; it is categorized as 'other' because it fits no listed category. Per-share check: 286,344/119,823 = 2.39; 273,280/119,823 = 2.28; 240,611/119,823 = 2.01. The AFFO subtracts recurring capex, so recurring_capex_disclosed is null. Diluted share count is in the Share and Unit Data table (seq 9); the FFO-and-AFFO count of 119,823 is used and was not taken from seq 11 separately. Net income per share and FAD items were excluded because they are below Core AFFO.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10006,
+      "output_tokens": 3269
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "8"
+      },
+      {
+        "seq": 9,
+        "printed": "9"
+      },
+      {
+        "seq": 11,
+        "printed": "11"
+      },
+      {
+        "seq": 12,
+        "printed": "12"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 286344,
+    "nareit_ffo_ps": 2.3897,
+    "company_core_name": "Core FFO",
+    "company_core": 273280,
+    "company_core_ps": 2.2807,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 240611,
+    "company_affo_ps": 2.0081,
+    "conservative_core_ffo": 273205,
+    "conservative_core_ffo_ps": 2.2801,
+    "conservative_affo": 240536,
+    "conservative_affo_ps": 2.0074,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -32669,
+        "category": "recurring_capex",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "(Gain) loss on embedded derivative in preferred shares",
+        "amount": -4952,
+        "category": "derivative_mtm",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -4952,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Gain on sale of non-depreciable real estate assets",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "(Gain) loss on investments, net of tax",
+        "amount": -6575,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -6575,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Casualty related charges (recoveries), net",
+        "amount": 75,
+        "category": "casualty",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Legal costs and settlements, net",
+        "amount": -1600,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -1600,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (gain/recovery removed)"
+      },
+      {
+        "label": "COVID-19 related costs",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Mark-to-market debt adjustment",
+        "amount": -12,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -12,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Mark-to-market debt adjustment' (other) handled by a provisional rule"
+    ],
+    "diluted_shares": 119823
+  }
+}

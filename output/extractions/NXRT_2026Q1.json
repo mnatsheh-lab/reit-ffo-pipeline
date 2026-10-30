@@ -115,7 +115,7 @@
       "label": "Capitalized Maintenance Expenditures - Recurring",
       "amount": 3390,
       "basis": "quarter",
-      "scope": "company total",
+      "scope": "company total (as presented in Historical Capital Expenditures table)",
       "page_seq": 20,
       "page_printed": "18"
     },
@@ -124,19 +124,17 @@
       "core": 0.68,
       "affo": 0.77
     },
-    "notes": "AFFO does not subtract recurring capex; recurring capex of $3,390K taken from the Historical Capital Expenditures table. The Casualty loss line is \"\u2014\" for Q1 2026 (recorded as 0). Diluted shares equal basic because the company treats potential shares as anti-dilutive.",
+    "notes": "Reconciliation starts from consolidated net loss of $(6,781) (not the $(6,754) net loss attributable to common stockholders shown in the summary). Casualty loss line is em-dash (zero) in Q1 2026. Diluted shares 25,398 equals basic because the company is in a net loss (anti-dilutive); this reproduces reported per-share figures: 17,441/25,398=0.69, 17,274/25,398=0.68, 19,627/25,398=0.77. Recurring capex is not subtracted in AFFO, so it is taken from the Historical Capital Expenditures table (Q1 2026 quarter, $3,390K); scope is not explicitly labeled as company share, so recorded as company total.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 18411,
-      "output_tokens": 1292
+      "input_tokens": 8536,
+      "output_tokens": 2363
     },
     "candidate_pages": [
-      {
-        "seq": 2,
-        "printed": ""
-      },
       {
         "seq": 9,
         "printed": "7"
@@ -148,10 +146,6 @@
       {
         "seq": 20,
         "printed": "18"
-      },
-      {
-        "seq": 32,
-        "printed": "30"
       },
       {
         "seq": 33,
@@ -177,7 +171,7 @@
         "label": "Capitalized Maintenance Expenditures - Recurring",
         "amount": -3390,
         "basis": "quarter",
-        "scope": "company total",
+        "scope": "company total (as presented in Historical Capital Expenditures table)",
         "page_seq": 20,
         "page_printed": "18",
         "category": "recurring_capex"

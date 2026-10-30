@@ -110,13 +110,15 @@
       "core": 2.08,
       "affo": 1.77
     },
-    "notes": "Reconciliation starts from net income available for MAA common shareholders. FAD section below Core AFFO (redevelopment, revenue enhancing, commercial, other capex) ignored as beyond Core AFFO. Per-share checks: 249,846/119,094=2.10; 247,524/119,094=2.08; 210,282/119,094=1.77.",
+    "notes": "Three months ended June 30, 2026 column from the FFO/Core FFO/Core AFFO reconciliation (seq 10). Recomputed subtotals tie: 120,828 to 249,846 (FFO), to 247,524 (Core FFO), to 210,282 (Core AFFO). Per-share checks: 249,846/119,094=2.10; 247,524/119,094=2.08; 210,282/119,094=1.77. AFFO total is Core AFFO, printed before the redevelopment, revenue-enhancing, commercial and other capex lines (which fall after the AFFO subtotal and lead to FAD); those are excluded. Footnote markers kept as printed in labels. Recurring capex is in the AFFO section, so recurring_capex_disclosed is null.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 23446,
-      "output_tokens": 1283
+      "input_tokens": 9594,
+      "output_tokens": 2980
     },
     "candidate_pages": [
       {
@@ -128,20 +130,12 @@
         "printed": "8"
       },
       {
-        "seq": 9,
-        "printed": "9"
-      },
-      {
         "seq": 10,
         "printed": "10"
       },
       {
         "seq": 11,
         "printed": "11"
-      },
-      {
-        "seq": 13,
-        "printed": "13"
       }
     ]
   },

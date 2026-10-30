@@ -117,23 +117,18 @@
       "core": 1.76,
       "affo": 1.46
     },
-    "notes": "Casualty-related expenses line is labeled \"Less:\" but the amount of 59 is printed positive and is added (189,501+59+2,277+1,131+106=193,074). Severance, loss on early retirement of debt and advocacy contributions are zero or dashes this quarter, so they are omitted. The same reconciliation also appears on page 23.",
+    "notes": "Amounts in thousands. The casualty line is labeled 'Less:' and printed as 59 without parentheses; the subtotals only reconcile if it is an add-back (+59), so it is recorded as +59. Severance and debt extinguishment lines are dashes (zero) in the current quarter and were omitted. Miscellaneous line appears as 'Miscellaneous other items' on p.23 and 'Other miscellaneous items (a)' on p.6; p.6 label used. Diluted shares 109,486 (thousands) reproduce FFO $1.73, Core FFO $1.76, Core AFFO $1.46. Recurring capex is subtracted in AFFO, so no separate disclosure needed.",
+    "ffo_total_placeholder": null,
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 14809,
-      "output_tokens": 1274
+      "input_tokens": 8504,
+      "output_tokens": 2871
     },
     "candidate_pages": [
-      {
-        "seq": 4,
-        "printed": "4"
-      },
-      {
-        "seq": 5,
-        "printed": "5"
-      },
       {
         "seq": 6,
         "printed": "6"
@@ -145,10 +140,6 @@
       {
         "seq": 23,
         "printed": "23"
-      },
-      {
-        "seq": 27,
-        "printed": "27"
       }
     ]
   },

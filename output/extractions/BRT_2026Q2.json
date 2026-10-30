@@ -10,7 +10,7 @@
   "extraction": {
     "amount_unit": "thousands",
     "core_metric_name": null,
-    "affo_metric_name": "Adjusted funds from operations",
+    "affo_metric_name": "Adjusted funds from operations attributable to common stockholders",
     "affo_starts_from": "ffo",
     "starting_line": {
       "label": "GAAP Net loss attributable to common stockholders",
@@ -106,10 +106,10 @@
       "page_printed": "7"
     },
     "recurring_capex_disclosed": {
-      "label": "Estimated Recurring Capital Expenditures",
+      "label": "Estimated Recurring Capital Expenditures (BRT Share of Capital Expenditures)",
       "amount": 1816,
       "basis": "quarter",
-      "scope": "BRT share of capital expenditures (consolidated and unconsolidated, excl. JV partners)",
+      "scope": "company share (excl. JV partners)",
       "page_seq": 16,
       "page_printed": "12"
     },
@@ -118,19 +118,17 @@
       "core": null,
       "affo": 0.36
     },
-    "notes": "AFFO does not subtract recurring capex; the quarter's recurring capex is from the capex table (printed in full dollars as $1,816,000, converted to thousands). No core/adjusted FFO metric. Diluted shares printed as 18,825,000, converted to thousands.",
+    "notes": "Three-month column (June 30, 2026) only. Starting line is GAAP net loss attributable to common stockholders. No core/adjusted FFO metric is reported; AFFO starts from NAREIT FFO. Checks: 5,505 + adjustments = 6,849; 5,505/18,825 = $0.29 and 6,849/18,825 = $0.36, matching reported per-share figures. Diluted share count printed in full (18,825,000), converted to thousands. AFFO does not deduct recurring capex, so the BRT-share estimated recurring capex for the quarter (1,816 thousand; gross company total 1,927 thousand) from the Capital Expenditures table on page 12 is recorded. The fair value adjustment for mortgage debt amortization was categorized as debt_cost_amortization.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 10801,
-      "output_tokens": 1389
+      "input_tokens": 7331,
+      "output_tokens": 2696
     },
     "candidate_pages": [
-      {
-        "seq": 4,
-        "printed": "29"
-      },
       {
         "seq": 6,
         "printed": "2"
@@ -146,18 +144,6 @@
       {
         "seq": 16,
         "printed": "12"
-      },
-      {
-        "seq": 29,
-        "printed": "25"
-      },
-      {
-        "seq": 30,
-        "printed": "26"
-      },
-      {
-        "seq": 32,
-        "printed": "28"
       }
     ]
   },
@@ -167,7 +153,7 @@
     "company_core_name": null,
     "company_core": null,
     "company_core_ps": null,
-    "company_affo_name": "Adjusted funds from operations",
+    "company_affo_name": "Adjusted funds from operations attributable to common stockholders",
     "company_affo": 6849,
     "company_affo_ps": 0.3638,
     "conservative_core_ffo": 5505,
@@ -176,10 +162,10 @@
     "conservative_affo_ps": 0.196,
     "recurring_capex": [
       {
-        "label": "Estimated Recurring Capital Expenditures",
+        "label": "Estimated Recurring Capital Expenditures (BRT Share of Capital Expenditures)",
         "amount": -1816,
         "basis": "quarter",
-        "scope": "BRT share of capital expenditures (consolidated and unconsolidated, excl. JV partners)",
+        "scope": "company share (excl. JV partners)",
         "page_seq": 16,
         "page_printed": "12",
         "category": "recurring_capex"

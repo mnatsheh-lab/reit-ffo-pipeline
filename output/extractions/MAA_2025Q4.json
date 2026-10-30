@@ -113,10 +113,10 @@
       "page_printed": "10"
     },
     "diluted_shares": {
-      "label": "FFO weighted average common shares and units - diluted",
+      "label": "Weighted average common shares and units - diluted",
       "amount": 119987,
-      "page_seq": 10,
-      "page_printed": "10"
+      "page_seq": 8,
+      "page_printed": "8"
     },
     "recurring_capex_disclosed": null,
     "reported_per_share": {
@@ -124,13 +124,15 @@
       "core": 2.23,
       "affo": 1.91
     },
-    "notes": "Gain on consolidation of third-party development was \"\u2014\" in the current quarter (recorded as 0). Per-share check: 214,630/119,987=1.79; 267,572/119,987=2.23; 229,312/119,987=1.91. FAD is also presented below Core AFFO but is not part of the Core AFFO reconciliation.",
+    "notes": "Three months ended December 31, 2025 column only. Share count uses the FFO Shares and Units diluted figure (119,987 thousand) from the Share and Unit Data section on page 8 (also shown as 'FFO weighted average common shares and units - diluted' on page 10); it reproduces reported per-share figures (214,630/119,987=1.79; 267,572/119,987=2.23; 229,312/119,987=1.91). Gain on consolidation of third-party development is shown as '\u2014' for Q4 2025, recorded as 0. Other capital expenditures (redevelopment, revenue enhancing, commercial, other) appear below Core AFFO in the FAD section and are not part of AFFO, so they are excluded. Gain on investments is net of tax ($0.4M tax expense in Q4 2025) on the reconciliation; pre-tax figure of 1,687 appears in the EBITDAre table and was not used. Legal line includes $53.0M of accrued legal settlements and defense costs. Starting line is net income available for MAA common shareholders (not net income).",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 23614,
-      "output_tokens": 1378
+      "input_tokens": 9842,
+      "output_tokens": 2723
     },
     "candidate_pages": [
       {
@@ -142,20 +144,12 @@
         "printed": "8"
       },
       {
-        "seq": 9,
-        "printed": "9"
-      },
-      {
         "seq": 10,
         "printed": "10"
       },
       {
         "seq": 11,
         "printed": "11"
-      },
-      {
-        "seq": 13,
-        "printed": "13"
       }
     ]
   },

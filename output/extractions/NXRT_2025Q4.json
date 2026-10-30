@@ -9,8 +9,8 @@
   },
   "extraction": {
     "amount_unit": "thousands",
-    "core_metric_name": "Core FFO attributable to common stockholders",
-    "affo_metric_name": "AFFO attributable to common stockholders",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
     "affo_starts_from": "core",
     "starting_line": {
       "label": "Net income (loss)",
@@ -133,10 +133,10 @@
       "page_printed": "19"
     },
     "recurring_capex_disclosed": {
-      "label": "Capitalized Maintenance Expenditures - Recurring",
+      "label": "Capitalized Maintenance Expenditures - Recurring (Q4 2025)",
       "amount": 3845,
       "basis": "quarter",
-      "scope": "company total",
+      "scope": "company total as printed (no JV/partner split stated)",
       "page_seq": 22,
       "page_printed": "20"
     },
@@ -145,30 +145,21 @@
       "core": 0.65,
       "affo": 0.75
     },
-    "notes": "Q4 2025 column used. Zero-valued lines (gain on sales, loss on extinguishment, forfeited deposits) printed as \"\u2014\". Diluted share count of 25,411 is from the FFO table (differs from the 25,364 in the income statement summary). AFFO does not subtract recurring capex; Q4 recurring capex of $3,845 is from the Historical Capital Expenditures table.",
+    "ffo_total_placeholder": null,
+    "notes": "Q4 2025 column (three months ended Dec 31, 2025) of the FFO, Core FFO and AFFO table on printed page 19. Gain on sales of real estate shows an em dash for Q4 2025 (zero). Gain on forfeited deposits and loss on extinguishment show zero/dash in Q4 2025 and are included as 0. Subtotals verified: -10,348+23,560-52=13,160; 13,160+1,700+4+1,656+26-13=16,533; 16,533+2,546-10=19,069. Diluted share count: the FFO table (p.19) shows 25,411 for Q4 2025; the summary table (p.7) shows Q4 2025 diluted as 25,364 (same as basic). Both reproduce the reported per-share figures (0.52, 0.65, 0.75), so I used the reconciliation-page figure of 25,411 and flag the discrepancy. Recurring capex: AFFO does not subtract recurring capex; Q4 2025 Recurring maintenance capex of 3,845 disclosed on printed page 20 (quarter basis, scope not further specified). Net income attributable to common stockholders on p.7 is (10,307), differing from the (10,348) net income line in the reconciliation; the reconciliation starting line (10,348) is used.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 24886,
-      "output_tokens": 1506
+      "input_tokens": 8101,
+      "output_tokens": 4498
     },
     "candidate_pages": [
       {
-        "seq": 2,
-        "printed": ""
-      },
-      {
         "seq": 9,
         "printed": "7"
-      },
-      {
-        "seq": 13,
-        "printed": "11"
-      },
-      {
-        "seq": 14,
-        "printed": "12"
       },
       {
         "seq": 21,
@@ -177,20 +168,16 @@
       {
         "seq": 22,
         "printed": "20"
-      },
-      {
-        "seq": 33,
-        "printed": "31"
       }
     ]
   },
   "restated": {
     "nareit_ffo": 13160,
     "nareit_ffo_ps": 0.5179,
-    "company_core_name": "Core FFO attributable to common stockholders",
+    "company_core_name": "Core FFO",
     "company_core": 16533,
     "company_core_ps": 0.6506,
-    "company_affo_name": "AFFO attributable to common stockholders",
+    "company_affo_name": "AFFO",
     "company_affo": 19069,
     "company_affo_ps": 0.7504,
     "conservative_core_ffo": 13173,
@@ -199,10 +186,10 @@
     "conservative_affo_ps": 0.3671,
     "recurring_capex": [
       {
-        "label": "Capitalized Maintenance Expenditures - Recurring",
+        "label": "Capitalized Maintenance Expenditures - Recurring (Q4 2025)",
         "amount": -3845,
         "basis": "quarter",
-        "scope": "company total",
+        "scope": "company total as printed (no JV/partner split stated)",
         "page_seq": 22,
         "page_printed": "20",
         "category": "recurring_capex"

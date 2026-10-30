@@ -1,0 +1,239 @@
+{
+  "ticker": "MAA",
+  "quarter": "2024Q1",
+  "period_end": "2024-03-31",
+  "source": {
+    "accession": "0000950170-24-051311",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000095017024051311/maa-ex99_1.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income available for MAA common shareholders",
+      "amount": 142827,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization of real estate assets",
+        "amount": 141591,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Loss (gain) on sale of depreciable real estate assets",
+        "amount": 2,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "MAA\u2019s share of depreciation and amortization of real estate assets of real estate joint venture",
+        "amount": 155,
+        "category": "jv_depreciation",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Net income attributable to noncontrolling interests",
+        "amount": 3861,
+        "category": "noncontrolling_interest",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common shareholders and unitholders",
+      "amount": 288436,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "core_adjustments": [
+      {
+        "label": "Gain on embedded derivative in preferred shares",
+        "amount": -13092,
+        "category": "derivative_mtm",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Gain on sale of non-depreciable real estate assets",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "(Gain) loss on investments, net of tax",
+        "amount": -4090,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Casualty related (recoveries) charges, net",
+        "amount": -5085,
+        "category": "casualty",
+        "page_seq": 11,
+        "page_printed": "11"
+      },
+      {
+        "label": "Mark-to-market debt adjustment",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common shareholders and unitholders",
+      "amount": 266169,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -18934,
+        "category": "recurring_capex",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO attributable to common shareholders and unitholders",
+      "amount": 247235,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "diluted_shares": {
+      "label": "FFO weighted average common shares and units - diluted",
+      "amount": 119857,
+      "page_seq": 11,
+      "page_printed": "11"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 2.41,
+      "core": 2.22,
+      "affo": 2.06
+    },
+    "notes": "Current-quarter (three months ended March 31, 2024) column only. Subtotals verified: 142,827 + adjustments = 288,436 FFO; 288,436 + adjustments = 266,169 Core FFO; 266,169 - 18,934 = 247,235 Core AFFO. Per-share check: 288,436/119,857=2.41; 266,169/119,857=2.22; 247,235/119,857=2.06. The gain on sale of non-depreciable real estate and the mark-to-market debt adjustment are shown as '\u2014' (zero) for Q1 2024; they are included at 0 because they are printed lines. Mark-to-market debt adjustment categorized as 'other' since it is a debt fair-value amortization item not matching a listed category. AFFO subtracts recurring capex, so recurring_capex_disclosed is null. Redevelopment, revenue-enhancing, commercial and other capex lines appear after Core AFFO (in the FAD section) and were not included in the AFFO total.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8446,
+      "output_tokens": 3100
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "8"
+      },
+      {
+        "seq": 9,
+        "printed": "9"
+      },
+      {
+        "seq": 11,
+        "printed": "11"
+      },
+      {
+        "seq": 12,
+        "printed": "12"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 288436,
+    "nareit_ffo_ps": 2.4065,
+    "company_core_name": "Core FFO",
+    "company_core": 266169,
+    "company_core_ps": 2.2207,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 247235,
+    "company_affo_ps": 2.0627,
+    "conservative_core_ffo": 266169,
+    "conservative_core_ffo_ps": 2.2207,
+    "conservative_affo": 247235,
+    "conservative_affo_ps": 2.0627,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -18934,
+        "category": "recurring_capex",
+        "page_seq": 11,
+        "page_printed": "11"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Gain on embedded derivative in preferred shares",
+        "amount": -13092,
+        "category": "derivative_mtm",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -13092,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Gain on sale of non-depreciable real estate assets",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "'property_sale_gain_loss' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (zero this quarter)"
+      },
+      {
+        "label": "(Gain) loss on investments, net of tax",
+        "amount": -4090,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -4090,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Casualty related (recoveries) charges, net",
+        "amount": -5085,
+        "category": "casualty",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": true,
+        "effect": -5085,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Mark-to-market debt adjustment",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "11",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 119857
+  }
+}

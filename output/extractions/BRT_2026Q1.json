@@ -113,7 +113,7 @@
       "page_printed": "7"
     },
     "recurring_capex_disclosed": {
-      "label": "Estimated Recurring Capital Expenditures - BRT Share of Capital Expenditures",
+      "label": "Estimated Recurring Capital Expenditures (BRT Share of Capital Expenditures)",
       "amount": 1638,
       "basis": "quarter",
       "scope": "company share (excl. JV partners)",
@@ -125,26 +125,21 @@
       "core": null,
       "affo": 0.39
     },
-    "notes": "No adjusted/core FFO metric. AFFO does not subtract recurring capex; BRT share of recurring capex was $1,638,000 (shown here in thousands) from the capex table. The AFFO non-controlling interest adjustment is printed as \"\u2014\" (recorded as 0). Diluted shares were printed in full as 18,967,250 and converted to thousands.",
+    "notes": "AFFO does not subtract recurring capex; recurring capex disclosed in the Capital Expenditures table (quarter ended March 31, 2026 header), BRT share $1,638,000 (table in full dollars, converted to thousands as 1,638). Table is labeled 'Estimated'. Diluted shares printed in full (18,967,250), converted to 18,967.25 thousands; reproduces FFO/share 0.33 (6,243/18,967) and AFFO/share 0.39 (7,339/18,967). No core FFO metric. Per-share tables on page 7 use the same share count. The AFFO non-controlling interest line is a dash (zero) and is recorded as 0.",
+    "starting_line_dummy": null,
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 9889,
-      "output_tokens": 1759
+      "input_tokens": 7071,
+      "output_tokens": 3056
     },
     "candidate_pages": [
       {
-        "seq": 4,
-        "printed": "23"
-      },
-      {
         "seq": 6,
         "printed": "2"
-      },
-      {
-        "seq": 8,
-        "printed": "4"
       },
       {
         "seq": 10,
@@ -157,14 +152,6 @@
       {
         "seq": 15,
         "printed": "11"
-      },
-      {
-        "seq": 24,
-        "printed": "20"
-      },
-      {
-        "seq": 25,
-        "printed": "21"
       }
     ]
   },
@@ -183,7 +170,7 @@
     "conservative_affo_ps": 0.2428,
     "recurring_capex": [
       {
-        "label": "Estimated Recurring Capital Expenditures - BRT Share of Capital Expenditures",
+        "label": "Estimated Recurring Capital Expenditures (BRT Share of Capital Expenditures)",
         "amount": -1638,
         "basis": "quarter",
         "scope": "company share (excl. JV partners)",

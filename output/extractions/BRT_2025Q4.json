@@ -10,7 +10,7 @@
   "extraction": {
     "amount_unit": "thousands",
     "core_metric_name": null,
-    "affo_metric_name": "Adjusted funds from operations",
+    "affo_metric_name": "AFFO",
     "affo_starts_from": "ffo",
     "starting_line": {
       "label": "GAAP Net loss income attributable to common stockholders",
@@ -36,7 +36,7 @@
       {
         "label": "Add: provision for credit loss",
         "amount": 5,
-        "category": "nareit_other",
+        "category": "other",
         "page_seq": 10,
         "page_printed": "6"
       },
@@ -134,10 +134,10 @@
       "page_printed": "7"
     },
     "recurring_capex_disclosed": {
-      "label": "Estimated Recurring Capital Expenditures (1) - BRT Share of Expenditures",
+      "label": "Estimated Recurring Capital Expenditures (BRT Share of Expenditures), twelve months ended December 31, 2025",
       "amount": 5278,
       "basis": "annual",
-      "scope": "company share (excl. JV partners), consolidated and unconsolidated, twelve months ended Dec 31, 2025",
+      "scope": "company share (excl. JV partners)",
       "page_seq": 16,
       "page_printed": "12"
     },
@@ -146,26 +146,21 @@
       "core": null,
       "affo": 0.34
     },
-    "notes": "No adjusted FFO (core) metric. AFFO starts from FFO and does not subtract recurring capex; recurring capex disclosed only on a twelve-month basis ($5,278,000 BRT share, converted to thousands). Gain on sales of real estate and NCI AFFO adjustment printed as \"\u2014\" (recorded as 0). Provision for credit loss categorized as nareit_other since it is in the FFO section.",
+    "starting_line_dummy": null,
+    "notes": "Three-month column ended December 31, 2025. Starting line label printed as 'GAAP Net loss income attributable to common stockholders'. Gain on sales of real estate shown as '\u2014' for the quarter (zero). AFFO non-controlling interest adjustment shown as '\u2014' (zero). BRT has no separate core FFO metric. Diluted share count printed in full as 18,956,528; converted to thousands (18,956.528). Check: 4,877/18,956.528 = 0.26 FFO/share; 6,474/18,956.528 = 0.34 AFFO/share. Recurring capex is not subtracted in AFFO; the only recurring capex figure is for the twelve months ended December 31, 2025 (BRT share $5,278,000 = $5,278 thousands), so no quarterly figure is disclosed. Gross recurring capex $5,845,000 includes JV partner share of $567,000.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 11083,
-      "output_tokens": 2111
+      "input_tokens": 7572,
+      "output_tokens": 3547
     },
     "candidate_pages": [
       {
-        "seq": 4,
-        "printed": "29"
-      },
-      {
         "seq": 6,
         "printed": "2"
-      },
-      {
-        "seq": 8,
-        "printed": "4"
       },
       {
         "seq": 10,
@@ -178,14 +173,6 @@
       {
         "seq": 16,
         "printed": "12"
-      },
-      {
-        "seq": 29,
-        "printed": "25"
-      },
-      {
-        "seq": 30,
-        "printed": "26"
       }
     ]
   },
@@ -195,7 +182,7 @@
     "company_core_name": null,
     "company_core": null,
     "company_core_ps": null,
-    "company_affo_name": "Adjusted funds from operations",
+    "company_affo_name": "AFFO",
     "company_affo": 6474,
     "company_affo_ps": 0.3415,
     "conservative_core_ffo": 4877,

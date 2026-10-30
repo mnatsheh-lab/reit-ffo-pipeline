@@ -72,7 +72,7 @@
       {
         "label": "Prepayment (gains) penalties on asset dispositions",
         "amount": 0,
-        "category": "debt_extinguishment",
+        "category": "property_sale_gain_loss",
         "page_seq": 13,
         "page_printed": "11"
       },
@@ -109,7 +109,7 @@
       "label": "recurring capital expenditures were $6.1 million, or $176 per unit",
       "amount": 6100,
       "basis": "quarter",
-      "scope": "total portfolio",
+      "scope": "company total (total portfolio, three months ended March 31, 2026)",
       "page_seq": 7,
       "page_printed": "5"
     },
@@ -118,19 +118,17 @@
       "core": 0.26,
       "affo": null
     },
-    "notes": "No AFFO metric reported. Net loss of $(127) is before noncontrolling interests; the FFO share count includes OP units. Zero-valued lines are printed as dashes for the current quarter. The recurring capex of $6.1 million is rounded, as printed in text.",
+    "notes": "IRT reports FFO and CFFO only; no AFFO metric, so affo fields are null. The CFFO section does not deduct recurring capex, so recurring capex is taken from the Capital Expenditures discussion ($6.1 million, quarter, total portfolio); this is not a reconciliation line. Two rows are printed as dashes (zero): loss on impairment excluding prepayment gains and loss on extinguishment of debt, plus prepayment gains/penalties. Recomputed: -127+64,114+876+0=64,863 FFO; 64,863+518+77-2,017+0+0+86=63,527 CFFO. Per share: 64,863/242,374 = 0.27, 63,527/242,374 = 0.26, matching reported. Diluted share count is weighted average shares and OP units 242,374,371 (shown in thousands as 242,374.371). Starting line taken from the three-month statement on printed page 11; identical Q1 2026 figures appear on printed page 10.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 29869,
-      "output_tokens": 1246
+      "input_tokens": 10871,
+      "output_tokens": 3080
     },
     "candidate_pages": [
-      {
-        "seq": 2,
-        "printed": "21"
-      },
       {
         "seq": 7,
         "printed": "5"
@@ -138,10 +136,6 @@
       {
         "seq": 10,
         "printed": "8"
-      },
-      {
-        "seq": 11,
-        "printed": "9"
       },
       {
         "seq": 12,
@@ -154,10 +148,6 @@
       {
         "seq": 14,
         "printed": "12"
-      },
-      {
-        "seq": 24,
-        "printed": "22"
       }
     ]
   },
@@ -179,7 +169,7 @@
         "label": "recurring capital expenditures were $6.1 million, or $176 per unit",
         "amount": -6100,
         "basis": "quarter",
-        "scope": "total portfolio",
+        "scope": "company total (total portfolio, three months ended March 31, 2026)",
         "page_seq": 7,
         "page_printed": "5",
         "category": "recurring_capex"
@@ -223,13 +213,13 @@
       {
         "label": "Prepayment (gains) penalties on asset dispositions",
         "amount": 0,
-        "category": "debt_extinguishment",
+        "category": "property_sale_gain_loss",
         "page_seq": 13,
         "page_printed": "11",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+        "reason": "'property_sale_gain_loss' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (zero this quarter)"
       },
       {
         "label": "Loss on extinguishment of debt",

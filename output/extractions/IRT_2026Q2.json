@@ -58,7 +58,7 @@
       {
         "label": "Loan (premium accretion) discount amortization, net",
         "amount": -2021,
-        "category": "debt_cost_amortization",
+        "category": "other",
         "page_seq": 14,
         "page_printed": "12"
       },
@@ -79,7 +79,7 @@
     "affo_adjustments": [],
     "affo_total": null,
     "diluted_shares": {
-      "label": "Weighted-average shares and units outstanding",
+      "label": "Weighted average shares and OP units outstanding (Weighted-average shares and units outstanding)",
       "amount": 241342.036,
       "page_seq": 14,
       "page_printed": "12"
@@ -88,7 +88,7 @@
       "label": "recurring capital expenditures were $12.4 million, or $360 per unit",
       "amount": 12400,
       "basis": "quarter",
-      "scope": "total portfolio",
+      "scope": "company total (total portfolio, three months ended June 30, 2026)",
       "page_seq": 6,
       "page_printed": "4"
     },
@@ -97,19 +97,17 @@
       "core": 0.28,
       "affo": null
     },
-    "notes": "No AFFO reported. Net income is before noncontrolling interests; FFO is computed on shares and OP units. Recurring capex of $12.4M is from the highlights text and is a rounded figure.",
+    "notes": "IRT reports FFO and CFFO (Core FFO equivalent) but no AFFO metric; affo fields left null. Diluted share count uses weighted-average shares and OP units (241,342,036) converted to thousands; it reproduces $0.28 for both FFO (68,568/241,342) and CFFO (66,641/241,342). The 'Loan (premium accretion) discount amortization, net' line relates to loans receivable rather than debt, so it was classed as 'other' rather than debt_cost_amortization. Recurring capex of $12.4 million is stated in the text on page 4 (rounded to $12,400 thousand from the printed $12.4 million); it is the total portfolio figure for the quarter. Same-page three-month column used; the FFO/CFFO reconciliation appears on printed page 12 (also trailing-five-quarter table on page 11 agrees).",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 16474,
-      "output_tokens": 1045
+      "input_tokens": 11420,
+      "output_tokens": 2823
     },
     "candidate_pages": [
-      {
-        "seq": 2,
-        "printed": "23"
-      },
       {
         "seq": 6,
         "printed": "4"
@@ -117,10 +115,6 @@
       {
         "seq": 11,
         "printed": "9"
-      },
-      {
-        "seq": 12,
-        "printed": "10"
       },
       {
         "seq": 13,
@@ -133,10 +127,6 @@
       {
         "seq": 15,
         "printed": "13"
-      },
-      {
-        "seq": 26,
-        "printed": "24"
       }
     ]
   },
@@ -158,7 +148,7 @@
         "label": "recurring capital expenditures were $12.4 million, or $360 per unit",
         "amount": -12400,
         "basis": "quarter",
-        "scope": "total portfolio",
+        "scope": "company total (total portfolio, three months ended June 30, 2026)",
         "page_seq": 6,
         "page_printed": "4",
         "category": "recurring_capex"
@@ -191,13 +181,13 @@
       {
         "label": "Loan (premium accretion) discount amortization, net",
         "amount": -2021,
-        "category": "debt_cost_amortization",
+        "category": "other",
         "page_seq": 14,
         "page_printed": "12",
         "section": "core",
         "applied": true,
         "effect": -2021,
-        "reason": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost (gain/recovery removed)"
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
       },
       {
         "label": "Other loss",
@@ -212,6 +202,7 @@
       }
     ],
     "flags": [
+      "Review: 'Loan (premium accretion) discount amortization, net' (other) handled by a provisional rule",
       "Review: 'Other loss' (other) handled by a provisional rule",
       "Recurring capex taken from a separate table (page 4): the company's own AFFO does not deduct it"
     ],

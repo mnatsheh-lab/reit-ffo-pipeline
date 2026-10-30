@@ -1,0 +1,281 @@
+{
+  "ticker": "MAA",
+  "quarter": "2023Q1",
+  "period_end": "2023-03-31",
+  "source": {
+    "accession": "0000950170-23-014824",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000095017023014824/maa-ex99_1.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income available for MAA common shareholders",
+      "amount": 134988,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization of real estate assets",
+        "amount": 136798,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "(Gain) loss on sale of depreciable real estate assets",
+        "amount": -15,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "MAA's share of depreciation and amortization of real estate assets of real estate joint venture",
+        "amount": 151,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Net income attributable to noncontrolling interests",
+        "amount": 3664,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common shareholders and unitholders",
+      "amount": 275586,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "core_adjustments": [
+      {
+        "label": "Gain on embedded derivative in preferred shares (1)",
+        "amount": -4435,
+        "category": "derivative_mtm",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Gain on sale of non-depreciable real estate assets",
+        "amount": -54,
+        "category": "nareit_other",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Loss on investments, net of tax (1) (2)",
+        "amount": 806,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Casualty related charges (recoveries), net (1) (3)",
+        "amount": 296,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Legal costs and settlements, net (1)",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "COVID-19 related costs (1)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "10"
+      },
+      {
+        "label": "Mark-to-market debt adjustment (4)",
+        "amount": -13,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common shareholders and unitholders",
+      "amount": 272186,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -16330,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO attributable to common shareholders and unitholders",
+      "amount": 255856,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "diluted_shares": {
+      "label": "FFO weighted average common shares and units - diluted",
+      "amount": 119392,
+      "page_seq": 10,
+      "page_printed": "10"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 2.31,
+      "core": 2.28,
+      "affo": 2.14
+    },
+    "notes": "All lines from the page 10 reconciliation, current quarter column. Subtotals tie: 134,988 + adjustments = 275,586 (FFO); 275,586 + core adjustments = 272,186; 272,186 - 16,330 = 255,856. Diluted FFO shares 119,392 thousand reproduce FFO/Core FFO/Core AFFO per share (2.31/2.28/2.14). Loss on investments uses the 806 net-of-tax figure from the FFO reconciliation (EBITDA table shows 1,024). Gain on embedded derivative classified as derivative_mtm. Mark-to-market debt adjustment (13) classified as debt_cost_amortization as the closest fit (fair-value premium amortization on debt). Legal and COVID-19 lines are dashes (zero) in 2023 and are included at 0. Redevelopment, revenue enhancing, commercial and other capex appear after Core AFFO (FAD section) and are excluded from AFFO. Recurring capex is subtracted in AFFO, so recurring_capex_disclosed is null.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10300,
+      "output_tokens": 3276
+    },
+    "candidate_pages": [
+      {
+        "seq": 4,
+        "printed": "4"
+      },
+      {
+        "seq": 7,
+        "printed": "7"
+      },
+      {
+        "seq": 8,
+        "printed": "8"
+      },
+      {
+        "seq": 10,
+        "printed": "10"
+      },
+      {
+        "seq": 11,
+        "printed": "11"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 275586,
+    "nareit_ffo_ps": 2.3082,
+    "company_core_name": "Core FFO",
+    "company_core": 272186,
+    "company_core_ps": 2.2798,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 255856,
+    "company_affo_ps": 2.143,
+    "conservative_core_ffo": 271890,
+    "conservative_core_ffo_ps": 2.2773,
+    "conservative_affo": 255560,
+    "conservative_affo_ps": 2.1405,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -16330,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "10"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Gain on embedded derivative in preferred shares (1)",
+        "amount": -4435,
+        "category": "derivative_mtm",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": true,
+        "effect": -4435,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Gain on sale of non-depreciable real estate assets",
+        "amount": -54,
+        "category": "nareit_other",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": true,
+        "effect": -54,
+        "reason": "'nareit_other' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (gain/recovery removed)"
+      },
+      {
+        "label": "Loss on investments, net of tax (1) (2)",
+        "amount": 806,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": true,
+        "effect": 806,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Casualty related charges (recoveries), net (1) (3)",
+        "amount": 296,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Legal costs and settlements, net (1)",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+      },
+      {
+        "label": "COVID-19 related costs (1)",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+      },
+      {
+        "label": "Mark-to-market debt adjustment (4)",
+        "amount": -13,
+        "category": "debt_cost_amortization",
+        "page_seq": 10,
+        "page_printed": "10",
+        "section": "core",
+        "applied": true,
+        "effect": -13,
+        "reason": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost (gain/recovery removed)"
+      }
+    ],
+    "flags": [
+      "Review: 'Gain on sale of non-depreciable real estate assets' (nareit_other) handled by a provisional rule"
+    ],
+    "diluted_shares": 119392
+  }
+}

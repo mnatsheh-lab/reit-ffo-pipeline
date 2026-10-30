@@ -110,13 +110,16 @@
       "core": 2.13,
       "affo": 1.98
     },
-    "notes": "Core AFFO is derived from Core FFO less recurring capex. FAD and subsequent capex lines below Core AFFO were excluded because they are beyond the AFFO total.",
+    "notes": "Current quarter (three months ended March 31, 2026) column only. Starting line and all subtotals tie: 123,437 -> 266,188 -> 255,044 -> 236,296. Per-share checks: 266,188/119,629 = 2.23; 255,044/119,629 = 2.13; 236,296/119,629 = 1.98. AFFO subtracts only recurring capex; the redevelopment, revenue-enhancing, commercial and other capex lines appear below Core AFFO (in the FAD calculation) and were excluded from AFFO. Gain on investments is shown net of tax ($4.7 million tax expense) at (17,237); pre-tax gain in the EBITDA reconciliation is (21,894). Diluted share count for FFO is the FFO weighted average common shares and units figure (119,629 thousand), already in thousands.",
+    "starting_line_placeholder": "unused",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 18845,
-      "output_tokens": 1211
+      "input_tokens": 8423,
+      "output_tokens": 2420
     },
     "candidate_pages": [
       {
@@ -128,20 +131,12 @@
         "printed": "8"
       },
       {
-        "seq": 9,
-        "printed": "9"
-      },
-      {
         "seq": 10,
         "printed": "10"
       },
       {
         "seq": 11,
         "printed": "11"
-      },
-      {
-        "seq": 13,
-        "printed": "13"
       }
     ]
   },

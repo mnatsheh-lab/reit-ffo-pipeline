@@ -106,7 +106,7 @@
       "page_printed": "6"
     },
     "diluted_shares": {
-      "label": "FFO/Core FFO/Core AFFO - diluted",
+      "label": "Weighted average number of common shares outstanding: FFO/Core FFO/Core AFFO - diluted",
       "amount": 103957,
       "page_seq": 6,
       "page_printed": "6"
@@ -117,27 +117,18 @@
       "core": 1.68,
       "affo": 1.39
     },
-    "notes": "Gain on sale of operating property and Investment losses show \"\u2014\" for the current quarter, so I recorded them as 0. Page 22 repeats the same reconciliation. FFO and the other totals use the three-month 2026 column.",
+    "notes": "Three months ended June 30, 2026 column. Gain on sale of operating property and Investment losses are printed as dashes for the quarter, recorded as 0. Casualty-related expenses are printed as (3,729) under a 'Plus:' label; recorded as -3,729 so the subtotal reconciles (174,157 - 3,729 + 412 + 4,237 + 0 + 1 = 175,078). Share count 103,957 thousand reproduces reported per-share figures (174,157/103,957=1.68; 175,078/103,957=1.68; 144,936/103,957=1.39). Same figures repeated on page 22 (seq 22). Page 22 omits footnote markers from labels; page 6 labels used here.",
+    "starting_line_placeholder": "none",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
     "usage": {
-      "input_tokens": 15582,
-      "output_tokens": 1230
+      "input_tokens": 8397,
+      "output_tokens": 2453
     },
     "candidate_pages": [
-      {
-        "seq": 2,
-        "printed": "2"
-      },
-      {
-        "seq": 4,
-        "printed": "4"
-      },
-      {
-        "seq": 5,
-        "printed": "5"
-      },
       {
         "seq": 6,
         "printed": "6"
@@ -149,10 +140,6 @@
       {
         "seq": 22,
         "printed": "22"
-      },
-      {
-        "seq": 26,
-        "printed": "26"
       }
     ]
   },

@@ -1,0 +1,228 @@
+{
+  "ticker": "MAA",
+  "quarter": "2025Q3",
+  "period_end": "2025-09-30",
+  "source": {
+    "accession": "0001193125-25-256342",
+    "filename": "maa-ex99_1.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/912595/000119312525256342/maa-ex99_1.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income available for MAA common shareholders",
+      "amount": 98616,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization of real estate assets",
+        "amount": 155267,
+        "category": "re_depreciation",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "(Gain) loss on sale of depreciable real estate assets",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "MAA\u2019s share of depreciation and amortization of real estate assets of real estate joint venture",
+        "amount": 168,
+        "category": "jv_depreciation",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Gain on consolidation of third-party development (1)",
+        "amount": 0,
+        "category": "nareit_other",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Net income attributable to noncontrolling interests",
+        "amount": 2506,
+        "category": "noncontrolling_interest",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common shareholders and unitholders",
+      "amount": 256557,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "(Gain) loss on embedded derivative in preferred shares (1)",
+        "amount": -2009,
+        "category": "derivative_mtm",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "(Gain) loss on investments, net of tax (1)(2)",
+        "amount": -4396,
+        "category": "investment_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Casualty related (recoveries) and charges, net (1)",
+        "amount": -127,
+        "category": "casualty",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Legal costs, settlements and (recoveries), net (1)(3)",
+        "amount": 8908,
+        "category": "legal",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common shareholders and unitholders",
+      "amount": 258933,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -41666,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO attributable to common shareholders and unitholders",
+      "amount": 217267,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "diluted_shares": {
+      "label": "FFO weighted average common shares and units - diluted",
+      "amount": 120022,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 2.14,
+      "core": 2.16,
+      "affo": 1.81
+    },
+    "notes": "Three months ended Sept 30, 2025 column. Per-share check: 256,557/120,022 = 2.14; 258,933/120,022 = 2.16; 217,267/120,022 = 1.81, all matching reported figures. Gain on sale of depreciable real estate and gain on consolidation are shown as '\u2014' (zero) for Q3 2025. AFFO subtracts recurring capex, so no separate disclosure needed. Redevelopment, revenue enhancing, commercial and other capex lines appear below Core AFFO (in FAD) and were excluded. Labels retain footnote markers as printed.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10505,
+      "output_tokens": 2807
+    },
+    "candidate_pages": [
+      {
+        "seq": 6,
+        "printed": "6"
+      },
+      {
+        "seq": 7,
+        "printed": "7"
+      },
+      {
+        "seq": 9,
+        "printed": "9"
+      },
+      {
+        "seq": 10,
+        "printed": "10"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 256557,
+    "nareit_ffo_ps": 2.1376,
+    "company_core_name": "Core FFO",
+    "company_core": 258933,
+    "company_core_ps": 2.1574,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 217267,
+    "company_affo_ps": 1.8102,
+    "conservative_core_ffo": 250025,
+    "conservative_core_ffo_ps": 2.0832,
+    "conservative_affo": 208359,
+    "conservative_affo_ps": 1.736,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -41666,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "(Gain) loss on embedded derivative in preferred shares (1)",
+        "amount": -2009,
+        "category": "derivative_mtm",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -2009,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "(Gain) loss on investments, net of tax (1)(2)",
+        "amount": -4396,
+        "category": "investment_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -4396,
+        "reason": "Non-real-estate investment results removed (gains and losses)"
+      },
+      {
+        "label": "Casualty related (recoveries) and charges, net (1)",
+        "amount": -127,
+        "category": "casualty",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": -127,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+      },
+      {
+        "label": "Legal costs, settlements and (recoveries), net (1)(3)",
+        "amount": 8908,
+        "category": "legal",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 120022
+  }
+}
