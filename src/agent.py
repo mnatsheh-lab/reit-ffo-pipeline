@@ -24,7 +24,8 @@ company's own adjusted metric (Core FFO, CFFO, Normalized FFO, FFO as Adjusted, 
 
 How to work:
 1. Call list_earnings_filings for a quarter. Earnings 8-Ks (Item 2.02) are usually filed 3-10 weeks
-   after quarter end. Ignore filings for other quarters (e.g. preliminary or guidance-only releases).
+   after quarter end; some companies file the supplemental separately under Item 7.01. Ignore filings
+   for other quarters, investor presentations, and preliminary or guidance-only releases.
 2. Call list_filing_documents and look at the exhibits. Exhibit 99.1 is usually the press release;
    some companies put a fuller supplemental package in Exhibit 99.2.
 3. Call read_document on the candidates. Prefer the document whose reconciliation is the most

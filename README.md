@@ -1,6 +1,6 @@
 # REIT FFO Comparability Pipeline
 
-An AI pipeline that tracks every U.S. publicly traded multifamily REIT, collects each quarterly earnings filing from SEC EDGAR since 2018, extracts every line of each FFO reconciliation, and restates all companies to one common FFO definition, so they can be compared fairly across companies and over time. It updates itself daily.
+An AI pipeline that tracks every U.S. publicly traded multifamily REIT, collects each quarterly earnings filing from SEC EDGAR since 2022, extracts every line of each FFO reconciliation, and restates all companies to one common FFO definition, so they can be compared fairly across companies and over time. It updates itself daily.
 
 > Helps REIT equity analysts and real estate investors make apples-to-apples valuation and peer-comparison decisions across all U.S. listed multifamily REITs, by using an AI agent that monitors SEC EDGAR daily to produce a continuously updated, restated FFO history with source-page citations.
 
@@ -23,8 +23,8 @@ Track universe → Collect → Extract → Restate → Explain and report
 
 ## Scope
 
-- **Companies:** every U.S. exchange-listed multifamily REIT at any point since 2018.
-- **Period:** Q1 2018 to the latest quarter, then each new quarter as it is filed.
+- **Companies:** every U.S. exchange-listed multifamily REIT at any point since 2022.
+- **Period:** Q1 2022 (post-pandemic) to the latest quarter, then each new quarter as it is filed.
 
 Current universe (October 2026):
 
@@ -56,9 +56,16 @@ A web dashboard, rebuilt after each daily pipeline run:
 
 The dashboard only displays stored pipeline records and does no calculation of its own, so every figure traces back to a page in a filing.
 
+## Keeping costs down
+
+- **Collection:** free rules pick the exhibit when the choice is clear (verified FFO reconciliation for the right period, one qualifying filing); the Claude agent only handles the rest.
+- **Extraction, stage 1:** a fast, low-cost model (Claude Haiku 5.5) reads a small set of pages: the two best reconciliation pages plus the share-count and capex pages, with table filler stripped out.
+- **Extraction, stage 2:** only if stage 1 does not tie to the reported totals, Claude Sonnet 5.5 re-reads the full page set.
+- Every result must still pass the same arithmetic checks, so the cheaper path cannot lower accuracy without being caught.
+
 ## Accuracy testing
 
-An answer key was built by hand: 15 supplementals (MAA, CPT, IRT, NXRT, BRT for Q4 2025–Q2 2026), a full manual reconciliation of MAA (`data/answer_key/`), and spot checks of other REITs and pre-2020 quarters. The pipeline is graded on:
+An answer key was built by hand: 15 supplementals (MAA, CPT, IRT, NXRT, BRT for Q4 2025–Q2 2026), a full manual reconciliation of MAA (`data/answer_key/`), and spot checks of other REITs and of 2022 quarters. The pipeline is graded on:
 
 - **Collection:** correct filing and exhibit for every company-quarter.
 - **Extraction:** figures match to $0.01 per share.
@@ -84,10 +91,15 @@ output/            restated FFO tables
 
 | Command | What it does |
 |---|---|
+| `run_test_cheap.bat` | Tests the low-cost setup on the 15 answer-key quarters: free rule check, then a few-cent re-extraction compared with the answer key. |
+| `run_check_universe.bat` | Free: checks every REIT's SEC ID against EDGAR before any paid run. |
+| `run_pilot_MAA.bat` | Pilot: MAA from 2022 to today (~18 quarters), then rebuilds the dashboard. Asks before spending. |
+| `run_all.bat` | Every REIT, every missing quarter since 2022. Asks before each paid step; safe to stop and restart. |
 | `run_test_MAA.bat` | Collects one quarter (MAA Q2 2026). Use first to check everything works. |
 | `run_collect.bat` | Collects all five answer-key REITs, Q4 2025 to Q2 2026. |
 | `python -m src.collect --tickers MAA CPT --start 2025Q4 --end 2026Q2` | Custom run. |
 | `run_extract.bat` | Extracts every saved reconciliation, applies the Conservative Core FFO definition, and checks MAA against the answer key. Results in `output/restated_ffo.csv` and `output/extractions/`. |
+| `run_dashboard.bat` | Rebuilds `dashboard/index.html` from the latest results and opens it in your browser. |
 | `run_verify.bat` | Re-checks saved documents and compares them with the hand-collected answer key. |
 | `python -m unittest discover tests` | Offline tests (no API key or internet needed). |
 
@@ -95,17 +107,17 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 
 ## Status
 
-- [x] Scope defined: all U.S. listed multifamily REITs, Q1 2018 to present
+- [x] Scope defined: all U.S. listed multifamily REITs, Q1 2022 to present (post-pandemic; narrowed from 2018 to reduce cost, 2019–2021 can be backfilled later)
 - [x] Answer-key documents collected
 - [x] MAA hand reconciliation (Q4 2025, Q1 2026, Q2 2026; all checks tie to reported figures)
 - [x] Common FFO definition (`docs/common_definition.md`)
 - [x] Multifamily rule (`docs/multifamily_rule.md`)
 - [x] Collection agent — 15/15 documents correct against the answer key ([results](docs/collection_test_results.md))
-- [ ] Extraction and restatement — code written and tested offline; first live run pending
+- [x] Extraction and restatement — 15/15 quarters tie; MAA 42/42 vs answer key ([results](docs/extraction_test_results.md))
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
-- [ ] Backfill to Q1 2018
-- [ ] FFO dashboard
+- [ ] Backfill to Q1 2022 — universe of 17 REITs / 240 company-quarters configured; resumable yearly batches; pilot pending
+- [x] FFO dashboard demo (`dashboard/index.html`, built by `python -m src.build_dashboard`)
 
 ## Author
 

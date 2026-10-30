@@ -45,7 +45,7 @@ in quarterly filings with different layouts.
 and real estate investors make apples-to-apples valuation and peer-comparison
 decisions across all U.S.\ publicly traded multifamily REITs by using an AI
 agent that monitors SEC EDGAR daily to track which REITs are listed, collect
-every quarterly earnings filing since 2018, and extract each FFO
+every quarterly earnings filing since 2022, and extract each FFO
 reconciliation, to produce a continuously updated, restated FFO history on one
 common definition, with source-page citations and plain-language explanations
 of how each REIT's reported metrics differ.
@@ -53,7 +53,7 @@ of how each REIT's reported metrics differ.
 The pipeline is written in Python on the Claude API and:
 \begin{enumerate}[itemsep=1pt]
   \item \textbf{tracks the universe}: finds every listed multifamily REIT,
-        including those listed at any point since 2018 that have since been
+        including those listed at any point since 2022 that have since been
         acquired, merged or liquidated;
   \item \textbf{collects} each quarterly earnings document from SEC EDGAR;
   \item \textbf{extracts} every line of each FFO reconciliation into structured data;
@@ -75,9 +75,9 @@ The pipeline is written in Python on the Claude API and:
 
 \begin{itemize}[itemsep=2pt]
   \item \textbf{Companies:} every U.S.\ exchange-listed REIT that meets the
-        multifamily rule (Phase 4), at any point from 2018 to today.
-  \item \textbf{Period:} Q1 2018 to the latest reported quarter, then every new
-        quarter as it is filed. Roughly 35 quarters of history.
+        multifamily rule (Phase 4), at any point from 2022 to today.
+  \item \textbf{Period:} Q1 2022 (post-pandemic) to the latest reported quarter, then every new
+        quarter as it is filed. Roughly 18 quarters of history; 2019--2021 can be backfilled later.
   \item \textbf{Metrics:} NAREIT FFO, each company's own ``core'' metric, and AFFO.
   \item \textbf{Common definition:} one fixed definition, today's, applied to
         every quarter regardless of what definition the company used at the time.
@@ -107,7 +107,7 @@ CLPR & Clipper Realty & New York City & AFFO; inclusion decided by the multifami
 \bottomrule
 \end{tabularx}}
 
-\subsection*{Former REITs in the 2018+ history (examples)}
+\subsection*{Former REITs in the 2022+ history (examples)}
 Veris Residential (taken private 2026), Elme Communities (liquidated 2026),
 Aimco (liquidating), AIR Communities (taken private 2024), Preferred Apartment
 Communities and Bluerock Residential (acquired 2022). Including them avoids
@@ -122,14 +122,14 @@ The hand-built set is the answer key the pipeline is graded against:
         Q4 2025--Q2 2026.
   \item MAA reconciled by hand for all three quarters (Excel workbook).
   \item Spot checks: one quarter each for three or four other REITs, plus at
-        least two pre-2020 quarters to test older layouts.
+        least two 2022 quarters to test older layouts.
 \end{itemize}
 
 \section{Project Steps}
 
 \subsection{Phase 1 --- Scope and Background}
 \begin{todo}
-  \item Confirm scope: all U.S.-listed multifamily REITs, Q1 2018 to present. \textit{Done.}
+  \item Confirm scope: all U.S.-listed multifamily REITs, Q1 2022 to present (post-pandemic, to reduce cost). \textit{Done.}
   \item Read the Nareit FFO White Paper and list the NAREIT-standard adjustments.
 \end{todo}
 
@@ -194,12 +194,12 @@ The hand-built set is the answer key the pipeline is graded against:
   \item Schedule a daily run with GitHub Actions: new quarters, new REITs, exits.
 \end{todo}
 
-\subsection{Phase 9 --- Backfill to Q1 2018}
+\subsection{Phase 9 --- Backfill to Q1 2022}
 \begin{todo}
-  \item Identify every multifamily REIT listed at any point since 2018, including former ones.
-  \item Collect and extract all quarters from Q1 2018 onward.
+  \item Identify every multifamily REIT listed at any point since 2022, including former ones.
+  \item Collect and extract all quarters from Q1 2022 onward.
   \item Search 10-Q notes where reconciliations lack detail; flag what cannot be separated.
-  \item Spot-check pre-2020 quarters by hand.
+  \item Spot-check 2022 quarters by hand.
   \item Report the share of quarters fully restated vs.\ restated with limits.
 \end{todo}
 
@@ -218,7 +218,7 @@ The hand-built set is the answer key the pipeline is graded against:
 A web dashboard, rebuilt automatically after each daily pipeline run, with:
 \begin{enumerate}[itemsep=2pt]
   \item \textbf{REIT selector.} A drop-down menu listing every REIT in the
-        universe (current and former), plus a quarter selector (Q1 2018 to latest).
+        universe (current and former), plus a quarter selector (Q1 2022 to latest).
   \item \textbf{Restated FFO on the common definition.} The headline figure
         (total and per share) using this project's calculation, shown beside
         the company's own reported FFO and ``core'' metric.
