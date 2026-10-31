@@ -1,0 +1,249 @@
+{
+  "ticker": "AIRC",
+  "quarter": "2024Q1",
+  "period_end": "2024-03-31",
+  "source": {
+    "accession": "0001628280-24-021680",
+    "filename": "0001628280-24-021680.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1820877/000162828024021680/0001628280-24-021680.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Pro forma FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net loss attributable to AIR common stockholders",
+      "amount": -6570,
+      "page_seq": 31,
+      "page_printed": "30"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization, net of noncontrolling partners\u2019 interest",
+        "amount": 86184,
+        "category": "re_depreciation",
+        "page_seq": 31,
+        "page_printed": "30"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -5480,
+        "category": "noncontrolling_interest",
+        "page_seq": 31,
+        "page_printed": "30"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT FFO attributable to AIR common stockholders",
+      "amount": 74134,
+      "page_seq": 31,
+      "page_printed": "30"
+    },
+    "core_adjustments": [
+      {
+        "label": "(Gain) loss on derivative instruments (1)",
+        "amount": -1361,
+        "category": "derivative_mtm",
+        "page_seq": 31,
+        "page_printed": "30"
+      },
+      {
+        "label": "Non-cash straight-line rent (2)",
+        "amount": 3068,
+        "category": "straight_line_rent",
+        "page_seq": 31,
+        "page_printed": "30"
+      },
+      {
+        "label": "Business transformation and transition related costs (3)",
+        "amount": 1824,
+        "category": "severance_restructuring",
+        "page_seq": 31,
+        "page_printed": "30"
+      },
+      {
+        "label": "Casualty losses and other (5)",
+        "amount": 872,
+        "category": "casualty",
+        "page_seq": 31,
+        "page_printed": "30"
+      },
+      {
+        "label": "Blackstone transaction costs (6)",
+        "amount": 3200,
+        "category": "transaction_costs",
+        "page_seq": 31,
+        "page_printed": "30"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -455,
+        "category": "noncontrolling_interest",
+        "page_seq": 31,
+        "page_printed": "30"
+      }
+    ],
+    "core_total": {
+      "label": "Pro forma FFO attributable to AIR common stockholders",
+      "amount": 81282,
+      "page_seq": 31,
+      "page_printed": "30"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Capital Replacements, net of common noncontrolling interests in AIR OP and participating securities",
+        "amount": -9141,
+        "category": "recurring_capex",
+        "page_seq": 31,
+        "page_printed": "30"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to AIR common stockholders",
+      "amount": 72141,
+      "page_seq": 31,
+      "page_printed": "30"
+    },
+    "diluted_shares": {
+      "label": "Weighted average common shares/units outstanding - diluted (Statements of Operations; not on the marked reconciliation page)",
+      "amount": 144550,
+      "page_seq": 31,
+      "page_printed": "30"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": null,
+      "core": null,
+      "affo": null
+    },
+    "notes": "Current-quarter (three months ended March 31, 2024) column only. Subtotals verified: -6,570 + 86,184 - 5,480 = 74,134; 74,134 + 7,148 = 81,282; 81,282 - 9,141 = 72,141. The 'Loss on extinguishment of debt (4)' line shows an em dash for 2024 and was omitted. Company's FFO metric is 'NAREIT FFO', adjusted metric 'Pro forma FFO', AFFO built from Pro forma FFO. Per-share FFO figures are not printed in this table, so reported_per_share is null. Diluted share count 144,550 (thousands) is taken from the Statements of Operations (XBRL R4 'Weighted average common shares/units outstanding - diluted', 144,550,000 shares), which is not on the marked reconciliation page; page_seq 31 is used as the nearest marker. Note the OP-level share count (154,323,000) is not used because these totals are attributable to AIR common stockholders. Business transformation costs mapped to severance_restructuring as the closest category.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 957104,
+      "output_tokens": 3551
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "8"
+      },
+      {
+        "seq": 31,
+        "printed": "30"
+      },
+      {
+        "seq": 32,
+        "printed": "31"
+      },
+      {
+        "seq": 33,
+        "printed": "32"
+      },
+      {
+        "seq": 43,
+        "printed": ""
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 74134,
+    "nareit_ffo_ps": 0.5129,
+    "company_core_name": "Pro forma FFO",
+    "company_core": 81282,
+    "company_core_ps": 0.5623,
+    "company_affo_name": "AFFO",
+    "company_affo": 72141,
+    "company_affo_ps": 0.4991,
+    "conservative_core_ffo": 72318,
+    "conservative_core_ffo_ps": 0.5003,
+    "conservative_affo": 63177,
+    "conservative_affo_ps": 0.4371,
+    "recurring_capex": [
+      {
+        "label": "Capital Replacements, net of common noncontrolling interests in AIR OP and participating securities",
+        "amount": -9141,
+        "category": "recurring_capex",
+        "page_seq": 31,
+        "page_printed": "30"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "(Gain) loss on derivative instruments (1)",
+        "amount": -1361,
+        "category": "derivative_mtm",
+        "page_seq": 31,
+        "page_printed": "30",
+        "section": "core",
+        "applied": true,
+        "effect": -1361,
+        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+      },
+      {
+        "label": "Non-cash straight-line rent (2)",
+        "amount": 3068,
+        "category": "straight_line_rent",
+        "page_seq": 31,
+        "page_printed": "30",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "'straight_line_rent' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (company add-back reversed)"
+      },
+      {
+        "label": "Business transformation and transition related costs (3)",
+        "amount": 1824,
+        "category": "severance_restructuring",
+        "page_seq": 31,
+        "page_printed": "30",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Casualty losses and other (5)",
+        "amount": 872,
+        "category": "casualty",
+        "page_seq": 31,
+        "page_printed": "30",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+      },
+      {
+        "label": "Blackstone transaction costs (6)",
+        "amount": 3200,
+        "category": "transaction_costs",
+        "page_seq": 31,
+        "page_printed": "30",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+      },
+      {
+        "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
+        "amount": -455,
+        "category": "noncontrolling_interest",
+        "page_seq": 31,
+        "page_printed": "30",
+        "section": "core",
+        "applied": true,
+        "effect": -455,
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
+      }
+    ],
+    "flags": [
+      "Review: 'Non-cash straight-line rent (2)' (straight_line_rent) handled by a provisional rule"
+    ],
+    "diluted_shares": 144550
+  }
+}
