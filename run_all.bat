@@ -7,6 +7,8 @@ python -m pip install -q -r requirements.txt
 python -m src.collect
 python -m src.recheck
 python -m src.run_extract
+REM GAAP figures (EPS, revenue, dividends, debt) from SEC XBRL data: free, a few seconds
+python -m src.gaap
 python -m src.build_dashboard
 start "" "dashboard\index.html"
 pause

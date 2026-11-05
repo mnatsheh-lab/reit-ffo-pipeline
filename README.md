@@ -64,6 +64,12 @@ The definition lives in `src/definition.json`: each adjustment type is assigned 
 - **Pipeline:** edit the `default` treatments in `src/definition.json` and run `run_dashboard.bat`. Restatements are recomputed from the stored extractions, with no new AI calls.
 - `tests/test_dashboard_parity.py` checks that the browser and Python engines agree on every company-quarter under every preset.
 
+## Beyond FFO: GAAP figures and key metrics
+
+`python -m src.gaap` (run automatically by `run_dashboard.bat`) downloads each company's XBRL facts from SEC (`data.sec.gov/api/xbrl/companyfacts`) and saves one value per quarter to `output/gaap/<TICKER>.json`: diluted EPS, revenue, net income to common, dividends per share, interest expense, total debt and total assets. It is free (no Claude calls) and records the XBRL concept and filing behind every number. Fourth quarters only appear in the 10-K as a full year, so Q4 is derived as full year minus nine months (marked ≈ for per-share figures).
+
+The dashboard adds a *Beyond FFO* panel (EPS, revenue growth, dividend payout on your AFFO, debt to assets, growth on your definition, and the *definition gap*: how much higher the company's own adjusted FFO is than yours), a *vs GAAP EPS* chart view, and a sortable *Key metrics, all REITs* table. Ratios that use FFO or AFFO follow the rules you choose.
+
 ## Keeping costs down
 
 - **Collection:** free rules pick the exhibit when the choice is clear (verified FFO reconciliation for the right period, one qualifying filing); the Claude agent only handles the rest.
@@ -108,7 +114,8 @@ output/            restated FFO tables
 | `run_collect.bat` | Collects all five answer-key REITs, Q4 2025 to Q2 2026. |
 | `python -m src.collect --tickers MAA CPT --start 2025Q4 --end 2026Q2` | Custom run. |
 | `run_extract.bat` | Extracts every saved reconciliation, applies the Conservative Core FFO definition, and checks MAA against the answer key. Results in `output/restated_ffo.csv` and `output/extractions/`. |
-| `run_dashboard.bat` | Rebuilds `dashboard/index.html` from the latest results and opens it in your browser. |
+| `run_dashboard.bat` | Refreshes GAAP figures from SEC (free), rebuilds `dashboard/index.html` from the latest results and opens it in your browser. |
+| `python -m src.gaap MAA CPT` | Free: GAAP figures from SEC XBRL data for the listed REITs (all if none). |
 | `run_verify.bat` | Re-checks saved documents and compares them with the hand-collected answer key. |
 | `python -m unittest discover tests` | Offline tests (no API key or internet needed). |
 
@@ -126,6 +133,8 @@ Downloaded documents go to `data/raw/edgar/<TICKER>/`, and every decision is log
 - [ ] Accuracy testing
 - [ ] Live universe tracking and daily updates
 - [ ] Backfill to Q1 2022 — universe of 17 REITs / 240 company-quarters configured; resumable yearly batches; pilot pending
+- [x] GAAP figures from XBRL and key-metrics table (`src/gaap.py`)
+- [ ] Operating metrics (same-store NOI, occupancy, lease growth, leverage) and the overall scorecard
 - [x] FFO dashboard demo (`dashboard/index.html`, built by `python -m src.build_dashboard`)
 
 ## Author

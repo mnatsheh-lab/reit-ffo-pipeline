@@ -33,10 +33,10 @@ class EdgarClient:
         self._last = 0.0
 
     # ---------- low-level ----------
-    def _get(self, url: str) -> bytes:
+    def _get(self, url: str, fresh: bool = False) -> bytes:
         key = hashlib.sha1(url.encode()).hexdigest()
         cached = self.cache_dir / key
-        if cached.exists():
+        if cached.exists() and not fresh:
             return cached.read_bytes()
         for attempt in range(5):
             wait = self.min_interval - (time.monotonic() - self._last)
@@ -52,8 +52,9 @@ class EdgarClient:
             return resp.content
         raise RuntimeError(f"EDGAR kept refusing {url}")
 
-    def get_json(self, url: str) -> dict:
-        return json.loads(self._get(url))
+    def get_json(self, url: str, fresh: bool = False) -> dict:
+        """fresh=True re-downloads even if cached (for data that changes, like XBRL company facts)."""
+        return json.loads(self._get(url, fresh))
 
     def get_bytes(self, url: str) -> bytes:
         return self._get(url)

@@ -156,6 +156,19 @@ aside { display: grid; gap: 24px; min-width: 0; }
 .note { font-size: 0.82rem; color: var(--muted); margin: 0; }
 .table-toggle summary { font-size: 0.84rem; }
 .tablewrap { overflow-x: auto; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; padding-bottom: 10px; }
+.kpi { border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; display: grid; gap: 2px; align-content: start; }
+.kpi .value { font: 500 1.3rem/1.15 var(--f-num); font-variant-numeric: tabular-nums; }
+.kpi .sub { font-size: 0.78rem; color: var(--muted); }
+.kpi.na .value { color: var(--muted); }
+table.metrics { font-size: 0.82rem; }
+table.metrics th { font: 600 0.72rem var(--f-body); color: var(--muted); vertical-align: bottom; white-space: normal; min-width: 72px; }
+table.metrics th button { all: unset; cursor: pointer; display: inline-block; }
+table.metrics th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+table.metrics th[aria-sort="ascending"] button::after { content: " ▲"; } table.metrics th[aria-sort="descending"] button::after { content: " ▼"; }
+table.metrics tbody tr { cursor: pointer; }
+table.metrics tbody tr:hover { background: var(--accent-soft); }
+table.metrics tbody tr[aria-current="true"] td:first-child { box-shadow: inset 3px 0 0 var(--accent); font-weight: 600; }
 table.data { border-collapse: collapse; font: 0.8rem var(--f-num); width: 100%; }
 table.data th, table.data td { padding: 4px 8px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
 table.data th:first-child, table.data td:first-child { text-align: left; }
@@ -249,6 +262,14 @@ footer p { margin: 0; max-width: 90ch; }
 
   <section class="figures" id="figures" aria-label="Headline figures, per diluted share"></section>
 
+  <section class="panel" aria-labelledby="kpi-title">
+    <div class="panel-head">
+      <h2 id="kpi-title">Beyond FFO</h2>
+      <p class="note" id="kpi-note"></p>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
   <section class="panel chart-panel" aria-labelledby="chart-title">
     <div class="panel-head">
       <h2 id="chart-title">Over time</h2>
@@ -256,6 +277,7 @@ footer p { margin: 0; max-width: 90ch; }
         <div class="seg small" id="metric" role="group" aria-label="Metric">
           <button type="button" data-v="core" aria-pressed="true">Core FFO</button>
           <button type="button" data-v="affo" aria-pressed="false">AFFO</button>
+          <button type="button" data-v="eps" aria-pressed="false">vs GAAP EPS</button>
         </div>
         <div class="seg small" id="period" role="group" aria-label="Period">
           <button type="button" data-v="q" aria-pressed="true">Quarterly</button>
@@ -294,6 +316,14 @@ footer p { margin: 0; max-width: 90ch; }
     </aside>
   </div>
 
+  <section class="panel" aria-labelledby="table-title">
+    <div class="panel-head">
+      <h2 id="table-title">Key metrics, all REITs</h2>
+      <p class="note" id="table-note"></p>
+    </div>
+    <div class="tablewrap"><table class="data metrics" id="metrics-table"></table></div>
+  </section>
+
   <section aria-labelledby="all-title" style="display:grid;gap:12px">
     <div class="panel-head">
       <h2 id="all-title">All multifamily REITs</h2>
@@ -305,6 +335,7 @@ footer p { margin: 0; max-width: 90ch; }
   <footer>
     <div class="eyebrow">The Conservative Core FFO definition (default)</div>
     <p>Start from NAREIT FFO. Legal costs, casualty losses, deal costs, severance, stock compensation, financing-cost amortization and non-real-estate depreciation stay in earnings; insurance recoveries and debt-extinguishment gains are removed; investment and derivative gains and losses are removed either way. Conservative AFFO then deducts recurring capital expenditures, taken from the company's capex table when its own AFFO leaves them out.</p>
+    <p>GAAP figures (EPS, revenue, dividends, debt, assets) come from the XBRL data in each company's 10-Q and 10-K. Fourth quarters appear only in the annual 10-K, so Q4 is the full year minus the first nine months; for per-share figures that is approximate and marked ≈.</p>
     <p>Data: __COVERAGE__, extracted from SEC EDGAR filings and checked against each company's reported totals. Page numbers are the printed page numbers in the linked exhibit. Built __BUILT__. Not investment advice.</p>
   </footer>
 </div>
@@ -315,6 +346,7 @@ footer p { margin: 0; max-width: 90ch; }
 <script>
 const DATA = /*__DATA__*/[];
 const DEF = /*__DEFINITION__*/{};
+const GAAP = /*__GAAP__*/{};
 const STORE_KEY = "ffo-rules-v1";
 let rules = rulesFromPreset("Conservative", DEF);
 try { const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); if (saved && saved.treatments && saved.capex) rules = { treatments: { ...rules.treatments, ...saved.treatments }, capex: { ...rules.capex, ...saved.capex } }; } catch (e) {}
@@ -347,6 +379,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<
 const money = (k) => {               // amounts are in $ thousands
   if (k == null) return "–";
   const m = k / 1000, a = Math.abs(m);
+  if (a >= 1000) return (m < 0 ? "−$" : "$") + (a / 1000).toFixed(a >= 10000 ? 1 : 2) + "B";
   const s = a >= 100 ? a.toFixed(0) : a >= 10 ? a.toFixed(1) : a.toFixed(2);
   return (m < 0 ? "−$" : "$") + s + "M";
 };
@@ -486,12 +519,81 @@ function flags(d) {
   $("flags").innerHTML = items.map(([c, t]) => `<li class="${c}">${esc(t)}</li>`).join("");
 }
 
+// ---------- Beyond FFO: GAAP figures and ratios ----------
+const hasGaap = Object.keys(GAAP).length > 0;
+const gv = (t, q, m) => GAAP[t]?.[q]?.[m] ?? null;              // {v, c, f, d, a} or null
+const yearAgo = (q) => (Number(q.slice(0, 4)) - 1) + q.slice(4);
+const growth = (now, then) => (now == null || then == null || !then ? null : (now - then) / Math.abs(then));
+const pct = (v, signedOut = true) => v == null ? "–" : (signedOut ? (v < 0 ? "−" : "+") : v < 0 ? "−" : "") + Math.abs(v * 100).toFixed(Math.abs(v) < 0.1 ? 1 : 0) + "%";
+function km(d) {   // key metrics for one company-quarter; rule-dependent ones follow the current definition
+  const t = d.ticker, q = d.quarter, g = (m) => gv(t, q, m), prev = byKey.get(t + "-" + yearAgo(q));
+  const eps = g("eps_diluted"), rev = g("revenue"), dps = g("dividends_ps"), debt = g("total_debt"), assets = g("total_assets");
+  const payBase = d.cons_affo_ps ?? d.cons_core_ps;
+  return {
+    eps, eps_yoy: growth(eps?.v, gv(t, yearAgo(q), "eps_diluted")?.v),
+    rev, rev_yoy: growth(rev?.v, gv(t, yearAgo(q), "revenue")?.v),
+    ni: g("net_income_common"), dps,
+    payout: dps && payBase > 0 ? dps.v / payBase : null, payout_of: d.cons_affo_ps != null ? "affo" : "core",
+    debt, debt_assets: debt && assets?.v ? debt.v / assets.v : null,
+    core_yoy: growth(d.cons_core_ps, prev?.cons_core_ps),
+    gap: d.company_core_ps != null && d.cons_core_ps ? (d.company_core_ps - d.cons_core_ps) / Math.abs(d.cons_core_ps) : null,
+  };
+}
+const approx = (x) => (x?.a ? "≈" : "");
+function kpis(d) {
+  const k = km(d), yr = qLabel(yearAgo(d.quarter));
+  const tile = (label, value, sub, na = false) => `<div class="kpi${na ? " na" : ""}"><span class="eyebrow">${label}</span><span class="value">${value}</span><span class="sub">${sub}</span></div>`;
+  const vs = (v) => (v == null ? `no ${yr} figure to compare` : `${pct(v)} vs ${yr}`);
+  let h = "";
+  if (hasGaap) {
+    h += tile("GAAP diluted EPS", approx(k.eps) + ps(k.eps?.v), k.eps ? vs(k.eps_yoy) : "Not in the XBRL data", !k.eps);
+    h += tile("Revenue", money(k.rev?.v), k.rev ? vs(k.rev_yoy) : "Not in the XBRL data", !k.rev);
+    h += tile("Dividend per share", approx(k.dps) + ps(k.dps?.v), k.payout == null ? "Payout not computable" :
+      `${pct(k.payout, false)} of ${esc(metric(k.payout_of))}`, !k.dps);
+    h += tile("Debt to assets", pct(k.debt_assets, false), k.debt ? money(k.debt.v) + " of debt" : "Not in the XBRL data", k.debt_assets == null);
+  }
+  h += tile(esc(metric("core")) + " growth", pct(k.core_yoy), k.core_yoy == null ? `No ${yr} quarter collected` : `${ps(d.cons_core_ps)} vs ${ps(byKey.get(d.ticker + "-" + yearAgo(d.quarter)).cons_core_ps)} in ${yr}`, k.core_yoy == null);
+  h += tile("Definition gap", k.gap == null ? "–" : pct(k.gap), k.gap == null ? "Company reports no adjusted FFO" :
+    `How much higher ${esc(d.core_name)} is than ${esc(metric("core"))}`, k.gap == null);
+  $("kpis").innerHTML = h;
+  const src = [k.eps, k.rev, k.dps, k.debt].filter(Boolean);
+  $("kpi-note").textContent = !hasGaap ? "GAAP figures not loaded yet: run run_dashboard.bat, which fetches them free from SEC."
+    : src.length ? `GAAP figures from ${[...new Set(src.map((x) => x.f))].join(" and ")} XBRL data${src.some((x) => x.d) ? "; Q4 derived from the annual report" : ""}.` : "";
+}
+
+// ---------- Key metrics table ----------
+let sortBy = { k: "tk", dir: 1 };
+const COLS = [
+  ["tk", "REIT", (r) => r.d.ticker, (r) => `<b>${r.d.ticker}</b>`],
+  ["core", () => esc(metric("core")) + " / share", (r) => r.d.cons_core_ps, (r) => ps(r.d.cons_core_ps)],
+  ["core_yoy", "Growth vs year ago", (r) => r.k.core_yoy, (r) => pct(r.k.core_yoy)],
+  ["eps", "GAAP diluted EPS", (r) => r.k.eps?.v, (r) => approx(r.k.eps) + ps(r.k.eps?.v)],
+  ["rev_yoy", "Revenue growth", (r) => r.k.rev_yoy, (r) => pct(r.k.rev_yoy)],
+  ["payout", "Dividend payout", (r) => r.k.payout, (r) => pct(r.k.payout, false)],
+  ["debt_assets", "Debt to assets", (r) => r.k.debt_assets, (r) => pct(r.k.debt_assets, false)],
+  ["gap", "Definition gap", (r) => r.k.gap, (r) => pct(r.k.gap)],
+];
+function metricsTable() {
+  const cols = hasGaap ? COLS : COLS.filter(([k]) => ["tk", "core", "core_yoy", "gap"].includes(k));
+  const rows = tickers.map((t) => byKey.get(t + "-" + state.quarter)).filter(Boolean).map((d) => ({ d, k: km(d) }));
+  const col = cols.find(([k]) => k === sortBy.k) || cols[0];
+  rows.sort((a, b) => {
+    const x = col[2](a), y = col[2](b);
+    if (x == null || y == null) return (x == null) - (y == null);
+    return (typeof x === "string" ? x.localeCompare(y) : x - y) * sortBy.dir;
+  });
+  const title = (c) => (typeof c[1] === "function" ? c[1]() : c[1]);
+  $("metrics-table").innerHTML = `<thead><tr>${cols.map((c) => `<th scope="col"${c[0] === col[0] ? ` aria-sort="${sortBy.dir > 0 ? "ascending" : "descending"}"` : ""}><button type="button" data-k="${c[0]}">${title(c)}</button></th>`).join("")}</tr></thead>` +
+    `<tbody>${rows.map((r) => `<tr data-t="${r.d.ticker}" aria-current="${r.d.ticker === state.ticker}">${cols.map((c) => `<td>${c[3](r)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  $("table-note").textContent = `${qLabel(state.quarter)}, ${rows.length} REITs. Payout is the dividend as a share of ${metric("affo")} (or ${metric("core")} when AFFO isn't computed). Definition gap: how much higher the company's own adjusted FFO is than ${metric("core")}. Click a column to sort, a row to open that REIT.`;
+}
 
 // ---------- Time series ----------
 function points(t) {
   const rows = series(t);
   const pick = (d) => view.metric === "core"
     ? { reported: d.company_core_ps ?? d.nareit_ps, cons: d.cons_core_ps, base: d.nareit_ps }
+    : view.metric === "eps" ? { reported: null, cons: d.cons_core_ps, base: gv(d.ticker, d.quarter, "eps_diluted")?.v ?? null }
     : { reported: d.company_affo_ps, cons: d.cons_affo_ps, base: null };
   let pts = rows.map((d) => ({ q: d.quarter, ...pick(d) }));
   if (view.period === "ttm") {
@@ -519,14 +621,14 @@ function chart() {
   const d0 = byKey.get(state.ticker + "-" + state.quarter);
   const pts = points(state.ticker);
   const keys = [["reported", "Reported", d0 && view.metric === "core" ? (d0.core_name || "NAREIT FFO (no adjusted metric)") : (d0?.affo_name || "Company AFFO")],
-                ["cons", "Restated", metric(view.metric === "core" ? "core" : "affo")],
-                ["base", "NAREIT FFO", "NAREIT FFO"]]
+                ["cons", "Restated", metric(view.metric === "affo" ? "affo" : "core")],
+                ["base", "NAREIT FFO", view.metric === "eps" ? "GAAP diluted EPS" : "NAREIT FFO"]]
     .filter(([k]) => pts.some((p) => p[k] != null));
   $("chart-legend").innerHTML = keys.map(([k, , name]) => `<span class="key"><i class="${k}"></i>${esc(name)}${k === "reported" ? " (as reported)" : ""}</span>`).join("");
   const el = $("chart");
   const W = Math.max(320, el.clientWidth || 800), H = 300, m = { l: 46, r: 64, t: 12, b: 26 };
   const vals = pts.flatMap((p) => keys.map(([k]) => p[k])).filter((v) => v != null);
-  if (!vals.length) { el.innerHTML = `<p class="note">No ${view.metric === "core" ? "FFO" : "AFFO"} figures for ${esc(state.ticker)}.</p>`; $("chart-table").innerHTML = ""; $("chart-note").textContent = ""; return; }
+  if (!vals.length) { el.innerHTML = `<p class="note">No ${view.metric === "affo" ? "AFFO" : "FFO"} figures for ${esc(state.ticker)}.</p>`; $("chart-table").innerHTML = ""; $("chart-note").textContent = ""; return; }
   const lo = Math.min(0, ...vals), hi = Math.max(...vals);
   const ticks = niceTicks(lo, hi * 1.05);
   const y0 = ticks[0], y1 = ticks[ticks.length - 1];
@@ -582,7 +684,12 @@ function chart() {
   // note + table view
   const valid = pts.filter((p) => p.reported != null && p.cons != null && p.reported);
   const avgGap = valid.length ? valid.reduce((a, p) => a + (p.cons - p.reported) / Math.abs(p.reported), 0) / valid.length : null;
-  $("chart-note").textContent = valid.length
+  const epsPts = pts.filter((p) => p.base != null && p.cons != null);
+  if (view.metric === "eps") {
+    const avg = epsPts.length ? epsPts.reduce((a, p) => a + p.cons - p.base, 0) / epsPts.length : null;
+    $("chart-note").textContent = !hasGaap ? "GAAP EPS not loaded yet: run run_dashboard.bat." : avg == null ? `No GAAP EPS found for ${state.ticker}.`
+      : `${metric("core")} averages ${ps(avg)} per share ${avg >= 0 ? "above" : "below"} GAAP diluted EPS across ${epsPts.length} quarters. Most of the difference is real estate depreciation, which GAAP subtracts and FFO adds back; property-sale gains, which GAAP includes and FFO removes, can push EPS above FFO in some quarters.`;
+  } else $("chart-note").textContent = valid.length
     ? `${esc(state.ticker)}, ${pts[0].q.replace("Q", " Q")} to ${pts[n - 1].q.replace("Q", " Q")}: the conservative figure averages ${avgGap < 0 ? "" : "+"}${(avgGap * 100).toFixed(0)}% versus the company's reported ${view.metric === "core" ? "figure" : "AFFO"} across ${valid.length} quarter${valid.length > 1 ? "s" : ""}.`
     : view.metric === "affo" ? `${state.ticker} does not report an AFFO figure to compare against.` : "";
   $("chart-table").innerHTML = `<table class="data"><thead><tr><th>Quarter</th>${keys.map(([, , name]) => `<th>${esc(name)}</th>`).join("")}</tr></thead><tbody>` +
@@ -655,7 +762,7 @@ function render() {
   $("reit").value = state.ticker;
   quarterOptions();
   $("quarter").value = state.quarter;
-  figures(d); formula(d); ledger(d); peers(); flags(d); chart(); grid();
+  figures(d); kpis(d); formula(d); ledger(d); peers(); flags(d); chart(); metricsTable(); grid();
   try { history.replaceState(null, "", "#" + state.ticker + "-" + state.quarter); } catch (e) {}
 }
 
@@ -669,6 +776,11 @@ const toggle = (id, key) => $(id).addEventListener("click", (e) => { const b = e
   view[key] = b.dataset.v; $(id).querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); chart(); });
 toggle("metric", "metric"); toggle("period", "period");
 let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(chart, 150); });
+$("metrics-table").addEventListener("click", (e) => {
+  const b = e.target.closest("th button");
+  if (b) { sortBy = { k: b.dataset.k, dir: sortBy.k === b.dataset.k ? -sortBy.dir : b.dataset.k === "tk" ? 1 : -1 }; metricsTable(); return; }
+  const tr = e.target.closest("tbody tr"); if (tr) { state.ticker = tr.dataset.t; render(); }
+});
 $("peers").addEventListener("click", (e) => { const b = e.target.closest(".peer"); if (b) { state.ticker = b.dataset.t; render(); } });
 window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (byKey.has(h)) { [state.ticker, state.quarter] = h.split("-"); render(); } });
 render();

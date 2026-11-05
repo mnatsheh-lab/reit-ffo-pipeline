@@ -2,7 +2,8 @@
 
     python -m src.build_dashboard            # writes dashboard/index.html
 
-The page does no math of its own; it shows the stored extraction and restatement records.
+The page embeds the extraction records, the rules definition, restate.js (so readers can change the
+rules) and the GAAP figures from output/gaap (python -m src.gaap).
 """
 from __future__ import annotations
 
@@ -58,11 +59,28 @@ def record(d: dict) -> dict:
     }
 
 
-def build(extract_dir: Path, out: Path = OUT) -> Path:
+def gaap_table(gaap_dir: Path) -> dict:
+    """{ticker: {quarter: {metric: {v, c, f, d, a}}}} from output/gaap. Dollar amounts are converted to
+    $ thousands to match the extractions; per-share amounts stay in dollars."""
+    from .gaap import METRICS
+    out = {}
+    for p in sorted(Path(gaap_dir).glob("*.json")):
+        g = json.loads(p.read_text(encoding="utf-8"))
+        out[g["ticker"]] = {q: {m: {"v": round(x["value"] if METRICS[m]["unit"] == "USD/shares" else x["value"] / 1000, 4),
+                                     "c": x["concept"], "f": x["form"], **({"d": 1} if x["derived"] else {}),
+                                     **({"a": 1} if x.get("approx") else {})}
+                                 for m, x in ms.items() if m in METRICS}
+                            for q, ms in g["quarters"].items()}
+    return out
+
+
+def build(extract_dir: Path, out: Path = OUT, gaap_dir: Path | None = None) -> Path:
     data = [record(json.loads(p.read_text())) for p in sorted(Path(extract_dir).glob("*.json"))]
     data.sort(key=lambda x: (x["ticker"], x["quarter"]))
     html = TEMPLATE.read_text(encoding="utf-8")
     html = html.replace("/*__DATA__*/[]", json.dumps(data, separators=(",", ":")))
+    gaap = gaap_table(gaap_dir or config.OUTPUT_DIR / "gaap")
+    html = html.replace("/*__GAAP__*/{}", json.dumps(gaap, separators=(",", ":")))
     html = html.replace("/*__DEFINITION__*/{}", json.dumps(DEFINITION, separators=(",", ":")))
     html = html.replace("/*__RESTATE_JS__*/", (config.ROOT / "dashboard" / "restate.js").read_text(encoding="utf-8"))
     tick = sorted({d["ticker"] for d in data}); qs = sorted({d["quarter"] for d in data})
