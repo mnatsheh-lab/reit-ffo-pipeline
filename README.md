@@ -56,6 +56,14 @@ A web dashboard, rebuilt after each daily pipeline run:
 
 The dashboard only displays stored pipeline records and does no calculation of its own, so every figure traces back to a page in a filing.
 
+## Choosing your own rules
+
+The definition lives in `src/definition.json`: each adjustment type is assigned one of three treatments (remove as the company did; keep costs, remove gains; keep in earnings), plus two capex options. The pipeline and the dashboard read the same file:
+
+- **Dashboard:** open *Definition → Choose your own rules*. Pick a preset (Conservative, As reported, NAREIT FFO only) or set each adjustment type yourself; every REIT and quarter is restated instantly in the browser. Choices are remembered in your browser.
+- **Pipeline:** edit the `default` treatments in `src/definition.json` and run `run_dashboard.bat`. Restatements are recomputed from the stored extractions, with no new AI calls.
+- `tests/test_dashboard_parity.py` checks that the browser and Python engines agree on every company-quarter under every preset.
+
 ## Keeping costs down
 
 - **Collection:** free rules pick the exhibit when the choice is clear (verified FFO reconciliation for the right period, one qualifying filing); the Claude agent only handles the rest.

@@ -12,6 +12,7 @@ from datetime import date
 from pathlib import Path
 
 from . import config
+from .restate import DEFINITION, default_rules, restate, rule_lines
 
 TEMPLATE = config.ROOT / "dashboard" / "template.html"
 OUT = config.ROOT / "dashboard" / "index.html"
@@ -23,7 +24,8 @@ def page_ref(x: dict) -> str:
 
 
 def record(d: dict) -> dict:
-    e, r = d["extraction"], d["restated"]
+    e = d["extraction"]
+    r = restate(e)          # always recomputed from the stored extraction with the current rules
     line = lambda x, **kw: {"label": x["label"], "amount": x["amount"], "page": page_ref(x), **kw}
     return {
         "ticker": d["ticker"], "name": NAMES.get(d["ticker"], d["ticker"]), "quarter": d["quarter"],
@@ -31,13 +33,20 @@ def record(d: dict) -> dict:
         "shares": e["diluted_shares"]["amount"], "shares_label": e["diluted_shares"]["label"],
         "shares_page": page_ref(e["diluted_shares"]),
         "start": line(e["starting_line"]),
-        "ffo_lines": [line(x, category=x["category"]) for x in e["ffo_adjustments"] if x["amount"]],
+        "ffo_lines": [line(x, category=x["category"]) for x in e.get("ffo_adjustments", []) if x["amount"]],
         "ffo": line(e["ffo_total"]),
-        "core_name": e.get("core_metric_name"), "core": e["core_total"] and line(e["core_total"]),
-        "affo_name": e.get("affo_metric_name"), "affo": e["affo_total"] and line(e["affo_total"]),
+        "core_name": e.get("core_metric_name"), "core": e.get("core_total") and line(e["core_total"]),
+        "affo_name": e.get("affo_metric_name"), "affo": e.get("affo_total") and line(e["affo_total"]),
         "steps": [line(s, category=s["category"], applied=s["applied"], reason=s["reason"], section=s["section"])
                   for s in r["steps"] if s["amount"]],
-        "affo_unused": [line(x, category=x["category"]) for x in e["affo_adjustments"]
+        # raw inputs for the in-browser rules engine (dashboard/restate.js)
+        "rule_lines": [line(l, category=l["category"], section=sec) for sec, l in rule_lines(e)],
+        "capex_recon": [line(x) for x in e.get("affo_adjustments", []) if x["category"] == "recurring_capex"],
+        "capex_disclosed": e.get("recurring_capex_disclosed") and {
+            "label": e["recurring_capex_disclosed"]["label"], "amount": e["recurring_capex_disclosed"]["amount"],
+            "basis": e["recurring_capex_disclosed"].get("basis"), "page": page_ref(e["recurring_capex_disclosed"])},
+        "validation_failed": bool(e.get("validation_errors")),
+        "affo_unused": [line(x, category=x["category"]) for x in e.get("affo_adjustments", [])
                         if x["amount"] and x["category"] not in ("recurring_capex",)
                         and not any(s["label"] == x["label"] and s["section"] == "affo" for s in r["steps"])],
         "capex": [line(x) for x in r["recurring_capex"]], "capex_source": r.get("recurring_capex_source"),
@@ -54,6 +63,8 @@ def build(extract_dir: Path, out: Path = OUT) -> Path:
     data.sort(key=lambda x: (x["ticker"], x["quarter"]))
     html = TEMPLATE.read_text(encoding="utf-8")
     html = html.replace("/*__DATA__*/[]", json.dumps(data, separators=(",", ":")))
+    html = html.replace("/*__DEFINITION__*/{}", json.dumps(DEFINITION, separators=(",", ":")))
+    html = html.replace("/*__RESTATE_JS__*/", (config.ROOT / "dashboard" / "restate.js").read_text(encoding="utf-8"))
     tick = sorted({d["ticker"] for d in data}); qs = sorted({d["quarter"] for d in data})
     q = lambda x: f"Q{x[5]} {x[:4]}"
     coverage = f"{len(tick)} REITs, {len(data)} company-quarters ({q(qs[0])}–{q(qs[-1])})" if data else "no data yet"

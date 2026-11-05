@@ -1,0 +1,232 @@
+{
+  "name": "Conservative",
+  "description": "Risk-averse definition: costs that recur in some form stay in earnings; gains, recoveries and non-cash swings come out. Written by Mohammad Natsheh (docs/common_definition.md).",
+  "treatment_labels": {
+    "apply": "Remove, as company did",
+    "keep_costs": "Keep costs, remove gains",
+    "keep_all": "Keep in earnings"
+  },
+  "treatment_reasons": {
+    "apply": "Removed from earnings, as the company did",
+    "keep_costs": "Costs kept in earnings; gains and recoveries removed",
+    "keep_all": "Kept in earnings; the company's adjustment is reversed"
+  },
+  "categories": {
+    "legal": {
+      "label": "Legal costs and settlements",
+      "default": "keep_costs",
+      "why": "Lawsuits are a normal cost of operating large apartment portfolios"
+    },
+    "casualty": {
+      "label": "Casualty and storm losses",
+      "default": "keep_costs",
+      "why": "Weather is a recurring cost; only insurance recoveries are removed"
+    },
+    "investment_gain_loss": {
+      "label": "Non-real-estate investment gains/losses",
+      "default": "apply",
+      "why": "Measures the apartment business only"
+    },
+    "derivative_mtm": {
+      "label": "Derivative and hedge revaluations",
+      "default": "apply",
+      "why": "Non-cash and reverses over time"
+    },
+    "debt_extinguishment": {
+      "label": "Debt extinguishment costs/gains",
+      "default": "keep_costs",
+      "why": "Refinancing is a recurring part of running a leveraged REIT"
+    },
+    "transaction_costs": {
+      "label": "Transaction, merger and pursuit costs",
+      "default": "keep_costs",
+      "why": "Growth through acquisitions has a real cost"
+    },
+    "severance_restructuring": {
+      "label": "Severance, restructuring, relocation",
+      "default": "keep_costs",
+      "why": "Reorganizations recur"
+    },
+    "stock_comp": {
+      "label": "Stock-based compensation",
+      "default": "keep_costs",
+      "why": "Dilutes shareholders, so it is a real cost"
+    },
+    "debt_cost_amortization": {
+      "label": "Financing-cost and debt fair-value amortization",
+      "default": "keep_costs",
+      "why": "The real cost of borrowing is kept; non-cash benefits are removed"
+    },
+    "non_re_depreciation": {
+      "label": "Non-real-estate depreciation",
+      "default": "keep_costs",
+      "why": "Only real estate depreciation is added back (Nareit)"
+    },
+    "land_sale_gain_loss": {
+      "label": "Land sale gains/losses",
+      "default": "keep_costs",
+      "why": "Land sales are one-off, not rental earnings"
+    },
+    "pandemic_costs": {
+      "label": "COVID-19 costs",
+      "default": "apply",
+      "why": "Treated as a one-time event (deliberate exception)"
+    },
+    "advocacy_costs": {
+      "label": "Political and ballot-measure advocacy",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Rent-control ballot fights recur in some markets"
+    },
+    "intangible_amortization": {
+      "label": "Lease and tax intangible amortization",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Treated like other non-cash adjustments: costs kept, benefits removed"
+    },
+    "condo_activity": {
+      "label": "For-sale condominium activity",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Condo sales are not rental earnings: gains removed, costs kept"
+    },
+    "loan_reserves": {
+      "label": "Loan loss reserves on structured investments",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Credit losses on lending programs are a real cost"
+    },
+    "income_tax": {
+      "label": "Income tax expense/benefit",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Taxes are a real cost; one-off benefits removed"
+    },
+    "jv_promote": {
+      "label": "Joint-venture promote income",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Promotes are lumpy, one-off gains"
+    },
+    "straight_line_rent": {
+      "label": "Straight-line rent",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Non-cash revenue timing"
+    },
+    "re_depreciation": {
+      "label": "Real estate items in the adjusted section",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Unusual placement; handled conservatively"
+    },
+    "jv_depreciation": {
+      "label": "JV depreciation in the adjusted section",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Unusual placement; handled conservatively"
+    },
+    "property_sale_gain_loss": {
+      "label": "Property sale items in the adjusted section",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Unusual placement; handled conservatively"
+    },
+    "re_impairment": {
+      "label": "Impairments in the adjusted section",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Unusual placement; handled conservatively"
+    },
+    "nareit_other": {
+      "label": "Other NAREIT-type items in the adjusted section",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Unusual placement; handled conservatively"
+    },
+    "other": {
+      "label": "Other / unlisted items",
+      "default": "keep_costs",
+      "provisional": true,
+      "why": "Unlisted type; handled conservatively"
+    }
+  },
+  "label_rules": [
+    [
+      "covid|pandemic",
+      "pandemic_costs"
+    ],
+    [
+      "non-?depreciable",
+      "land_sale_gain_loss"
+    ],
+    [
+      "swap.{0,20}amortization|amortization.{0,30}swap",
+      "debt_cost_amortization"
+    ],
+    [
+      "mark[- ]to[- ]market (adjustment(s)? (on|of|to) )?debt|fair value adjustment.{0,30}(debt|mortgage)",
+      "debt_cost_amortization"
+    ],
+    [
+      "^(?=.*\\bother\\b)(?=.*depreciation)",
+      "non_re_depreciation"
+    ],
+    [
+      "advocacy",
+      "advocacy_costs"
+    ],
+    [
+      "intangible",
+      "intangible_amortization"
+    ],
+    [
+      "condominium",
+      "condo_activity"
+    ],
+    [
+      "loan reserve",
+      "loan_reserves"
+    ],
+    [
+      "income tax",
+      "income_tax"
+    ],
+    [
+      "\\bpromote\\b",
+      "jv_promote"
+    ],
+    [
+      "relocation",
+      "severance_restructuring"
+    ],
+    [
+      "non-operating asset",
+      "investment_gain_loss"
+    ],
+    [
+      "straight-line",
+      "straight_line_rent"
+    ],
+    [
+      "swap (acceleration|termination|settlement)",
+      "derivative_mtm"
+    ]
+  ],
+  "capex": {
+    "deduct": true,
+    "use_capex_table": true
+  },
+  "affo_excluded": [
+    "recurring_capex",
+    "stock_comp",
+    "debt_cost_amortization",
+    "straight_line_rent",
+    "noncontrolling_interest"
+  ],
+  "presets": {
+    "Conservative": "default",
+    "As reported": "apply",
+    "NAREIT FFO only": "keep_all"
+  }
+}

@@ -1,111 +1,97 @@
-"""Apply the Conservative Core FFO definition (docs/common_definition.md) to an extraction.
+"""Apply an FFO definition to an extraction.
 
-All arithmetic is here, in code. Each adjustment is either APPLIED (we make the same
-adjustment the company made) or KEPT IN (we undo the company's adjustment, so the item
-stays in earnings), with the reason recorded for the dashboard.
+The rules live in src/definition.json (shared with the dashboard, which runs the same logic in
+the browser so users can pick their own rules). Each company adjustment gets one of three
+treatments by category:
+
+    apply       remove the item from earnings, as the company did (gains and losses)
+    keep_costs  keep costs in earnings, remove gains and recoveries (the risk-averse default)
+    keep_all    keep the item in earnings (the company's adjustment is reversed)
+
+All arithmetic is here, in code; the AI only transcribes the reconciliation.
 """
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 
-# Remove both gains and losses (apply the company's adjustment whatever its sign).
-# pandemic_costs: the one deliberate exception to the risk-averse approach (user decision, Oct 30, 2026):
-# COVID-19 costs are treated as a true one-time event and the company's add-back is applied.
-REMOVE_BOTH = {"investment_gain_loss", "derivative_mtm", "pandemic_costs"}
-# Keep costs in earnings; remove gains/recoveries. A positive adjustment is an add-back of a cost
-# (kept in, i.e. not applied); a negative adjustment removes a gain or recovery (applied).
-KEEP_COSTS = {"legal", "casualty", "debt_extinguishment", "transaction_costs", "severance_restructuring", "stock_comp",
-              "debt_cost_amortization", "non_re_depreciation", "land_sale_gain_loss"}
+DEFINITION = json.loads((Path(__file__).with_name("definition.json")).read_text(encoding="utf-8"))
+CATEGORIES = DEFINITION["categories"]
+LABEL_RULES = [(re.compile(p, re.I), cat) for p, cat in DEFINITION["label_rules"]]
+AFFO_EXCLUDED = set(DEFINITION["affo_excluded"])
 
-# Label patterns that fix the category regardless of what the model chose, so a rule never depends
-# on the model filing an item consistently.
-LABEL_RULES = [
-    (re.compile(r"covid|pandemic", re.I), "pandemic_costs"),
-    (re.compile(r"non-?depreciable", re.I), "land_sale_gain_loss"),
-    (re.compile(r"mark[- ]to[- ]market (adjustment(s)? (on|of|to) )?debt|fair value adjustment.{0,30}(debt|mortgage)", re.I), "debt_cost_amortization"),
-    (re.compile(r"^(?=.*\bother\b)(?=.*depreciation)", re.I), "non_re_depreciation"),
-]
+
+def default_rules() -> dict:
+    return {"treatments": {c: v["default"] for c, v in CATEGORIES.items()}, "capex": dict(DEFINITION["capex"])}
 
 
 def normalize(line: dict) -> dict:
+    """Fix the category from the line's label where a label rule matches."""
     for pattern, cat in LABEL_RULES:
         if pattern.search(line.get("label", "")):
             return {**line, "category": cat}
     return line
-CAPEX = {"recurring_capex"}
-# AFFO-only items our definition does not use.
-IGNORED_AFFO = {"straight_line_rent", "debt_cost_amortization"}
-
-REASONS = {
-    "legal": "Legal costs are a normal cost of operating; kept as a cost",
-    "casualty": "Casualty losses are a recurring cost; only insurance recoveries are removed",
-    "debt_extinguishment": "Refinancing is recurring; costs kept, gains removed",
-    "transaction_costs": "Acquisition-driven growth has a real cost; kept as a cost",
-    "severance_restructuring": "Reorganizations recur; kept as a cost",
-    "stock_comp": "Stock compensation dilutes shareholders; kept as a cost",
-    "debt_cost_amortization": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed",
-    "land_sale_gain_loss": "Land sales are one-off, not rental earnings: gains removed, losses kept",
-    "pandemic_costs": "COVID-19 costs treated as a one-time event; company's add-back applied (deliberate exception)",
-    "non_re_depreciation": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost",
-    "investment_gain_loss": "Non-real-estate investment results removed (gains and losses)",
-    "derivative_mtm": "Non-cash derivative revaluation removed (gains and losses)",
-    "other": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review",
-}
 
 
-# Types the definition does not list yet. Until reviewed they get the conservative default
-# (costs kept, gains removed) and are flagged.
-PROVISIONAL = {"other": REASONS["other"]}
-REVIEW_NEEDED = set(PROVISIONAL) | {"re_depreciation", "jv_depreciation", "property_sale_gain_loss", "re_impairment", "nareit_other", "straight_line_rent", "recurring_capex"}
+def rule_lines(ext: dict) -> list[tuple[str, dict]]:
+    """Company adjustments the definition rules on: the adjusted-FFO section, plus items a company
+    lists in its AFFO section that are earnings items (not capex, stock comp, financing-cost
+    amortization or straight-line rent, which this definition simply doesn't add back)."""
+    lines = [("core", normalize(l)) for l in ext.get("core_adjustments", [])]
+    lines += [("affo", l) for l in map(normalize, ext.get("affo_adjustments", [])) if l["category"] not in AFFO_EXCLUDED]
+    return lines
 
 
-def treat(line: dict) -> tuple[bool, str]:
+def treat(line: dict, rules: dict) -> tuple[bool, str]:
     """Return (applied?, reason) for one company adjustment."""
     cat, amt = line["category"], line["amount"]
-    if cat in REMOVE_BOTH:
-        return True, REASONS[cat]
     if cat == "noncontrolling_interest":
         return True, "Noncontrolling interests' share of the adjustments; applied as the company did"
-    reason = REASONS.get(cat) or PROVISIONAL.get(cat) or f"'{cat}' item in the company's adjusted section; costs kept, gains removed (provisional rule, review)"
+    info = CATEGORIES.get(cat, CATEGORIES["other"])
+    t = rules["treatments"].get(cat, rules["treatments"].get("other", "keep_costs"))
+    reason = DEFINITION["treatment_reasons"][t]
+    if t == info["default"]:
+        reason += f" ({info['why']})"
     if amt == 0:
-        return False, reason + " (zero this quarter)"
-    return (amt < 0), reason + (" (gain/recovery removed)" if amt < 0 else " (company add-back reversed)")
+        return False, reason + "; zero this quarter"
+    if t == "apply":
+        return True, reason
+    if t == "keep_all":
+        return False, reason
+    return (amt < 0), reason + ("; gain/recovery removed" if amt < 0 else "; company add-back reversed")
 
 
-def restate(ext: dict) -> dict:
+def restate(ext: dict, rules: dict | None = None) -> dict:
+    rules = rules or default_rules()
     flags = list(ext.get("validation_errors") and ["Extraction did not tie to reported totals"] or [])
     ffo = ext["ffo_total"]["amount"]
     shares = ext["diluted_shares"]["amount"]
     steps = []
-
-    # Company adjustments that our definition rules on: the core section, plus any
-    # definition items a company places in its AFFO section.
-    rule_lines = [("core", normalize(l)) for l in ext.get("core_adjustments", [])]
-    # AFFO-section items: only those the definition rules on as part of earnings. Stock comp and
-    # financing-cost amortization added back in AFFO are simply not added back (no effect needed).
-    rule_lines += [("affo", l) for l in map(normalize, ext.get("affo_adjustments", []))
-                   if l["category"] in REMOVE_BOTH | KEEP_COSTS | {"other"} and l["category"] not in {"stock_comp", "debt_cost_amortization"}]
     cons_core = ffo
-    for section, line in rule_lines:
-        applied, reason = treat(line)
-        if line["category"] in REVIEW_NEEDED and line["amount"] != 0:
+    for section, line in rule_lines(ext):
+        applied, reason = treat(line, rules)
+        info = CATEGORIES.get(line["category"])
+        if line["amount"] != 0 and line["category"] != "noncontrolling_interest" and (info is None or info.get("provisional")):
             flags.append(f"Review: '{line['label']}' ({line['category']}) handled by a provisional rule")
         if applied:
             cons_core += line["amount"]
         steps.append({**line, "section": section, "applied": applied, "effect": line["amount"] if applied else 0.0, "reason": reason})
 
-    capex_lines = [l for l in ext.get("affo_adjustments", []) if l["category"] in CAPEX]
-    capex_source = "affo_reconciliation" if capex_lines else None
-    disclosed = ext.get("recurring_capex_disclosed")
-    if not capex_lines and disclosed and disclosed.get("basis") == "quarter" and disclosed.get("amount"):
-        capex_lines = [{**disclosed, "amount": -abs(disclosed["amount"]), "category": "recurring_capex"}]
-        capex_source = "capex_table"
-        flags.append(f"Recurring capex taken from a separate table (page {disclosed.get('page_printed') or disclosed.get('page_seq')}): "
-                     "the company's own AFFO does not deduct it")
-    elif not capex_lines and disclosed:
-        flags.append(f"Recurring capex only disclosed on a '{disclosed.get('basis')}' basis; Conservative AFFO not computed")
-    elif not capex_lines:
-        flags.append("No recurring capex disclosed; Conservative AFFO not computed")
+    capex_lines, capex_source = [], None
+    if rules["capex"].get("deduct", True):
+        capex_lines = [l for l in ext.get("affo_adjustments", []) if l["category"] == "recurring_capex"]
+        capex_source = "affo_reconciliation" if capex_lines else None
+        disclosed = ext.get("recurring_capex_disclosed")
+        if not capex_lines and disclosed and rules["capex"].get("use_capex_table", True) and disclosed.get("basis") == "quarter" and disclosed.get("amount"):
+            capex_lines = [{**disclosed, "amount": -abs(disclosed["amount"]), "category": "recurring_capex"}]
+            capex_source = "capex_table"
+            flags.append(f"Recurring capex taken from a separate table (page {disclosed.get('page_printed') or disclosed.get('page_seq')}): "
+                         "the company's own AFFO does not deduct it")
+        elif not capex_lines and disclosed and disclosed.get("basis") != "quarter":
+            flags.append(f"Recurring capex only disclosed on a '{disclosed.get('basis')}' basis; Conservative AFFO not computed")
+        elif not capex_lines:
+            flags.append("No recurring capex disclosed; Conservative AFFO not computed")
     cons_affo = cons_core + sum(l["amount"] for l in capex_lines) if capex_lines else None
 
     def ps(x):

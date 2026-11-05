@@ -173,6 +173,31 @@ table.data th:first-child, table.data td:first-child { text-align: left; }
 .tile .stat { font: 0.75rem var(--f-num); color: var(--muted); display: flex; justify-content: space-between; gap: 6px; }
 .tile .gone { font-size: 0.7rem; color: var(--muted); }
 
+/* Rules panel */
+.rules { padding: 0; }
+.rules > summary { list-style: none; cursor: pointer; padding: 14px 18px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.rules > summary::-webkit-details-marker { display: none; }
+.rules > summary .defname { font: 600 1.05rem var(--f-display); }
+.rules > summary .changes { font-size: 0.85rem; color: var(--kept); }
+.rules > summary .edit { margin-left: auto; font-size: 0.85rem; color: var(--accent); }
+.rules[open] > summary .edit::after { content: " (close)"; }
+.rules-body { padding: 0 18px 18px; display: grid; gap: 14px; }
+.presets { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.presets button, .btn { font: 500 0.85rem var(--f-body); border: 1px solid var(--rule); background: var(--surface); color: var(--ink);
+  border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+.presets button[aria-pressed="true"] { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.rule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 6px 24px; }
+.rule { display: grid; grid-template-columns: minmax(0, 1fr) 215px; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--rule); }
+.rule .nm { font-size: 0.88rem; min-width: 0; }
+.rule .nm small { display: block; color: var(--muted); font-size: 0.75rem; }
+.rule select { font-size: 0.82rem; padding: 5px 8px; width: 100%; }
+.rule.changed .nm { color: var(--kept); }
+.rule.changed select { border-color: var(--kept); }
+.capex-opts { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 0.88rem; }
+.capex-opts label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.rules-note { font-size: 0.8rem; color: var(--muted); margin: 0; max-width: 90ch; }
+@media (max-width: 560px) { .rule-grid { grid-template-columns: minmax(0, 1fr); } .rule { grid-template-columns: minmax(0, 1fr); } }
+
 footer { display: grid; gap: 10px; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 18px; }
 footer ul { margin: 0; padding-left: 18px; display: grid; gap: 2px; }
 footer p { margin: 0; max-width: 90ch; }
@@ -195,7 +220,7 @@ footer p { margin: 0; max-width: 90ch; }
   <header>
     <div class="eyebrow">REIT FFO Comparability Pipeline</div>
     <h1>Multifamily FFO, restated on one conservative definition</h1>
-    <p>Pick a REIT and a quarter. Every figure below is taken from the company's own SEC filing, shown with its line-item name and page, and restated in code using the Conservative Core FFO definition.</p>
+    <p>Pick a REIT and a quarter. Every figure below is taken from the company's own SEC filing, shown with its line-item name and page, and restated in code using the definition shown below: the Conservative default, or rules you choose yourself.</p>
     <div class="controls">
       <div class="field">
         <label for="reit">REIT</label>
@@ -207,6 +232,20 @@ footer p { margin: 0; max-width: 90ch; }
       </div>
     </div>
   </header>
+
+  <details class="panel rules" id="rules-panel">
+    <summary><span class="eyebrow">Definition</span><span class="defname" id="def-name">Conservative</span><span class="changes" id="def-changes"></span><span class="edit">Choose your own rules</span></summary>
+    <div class="rules-body">
+      <div class="presets" id="presets"><span class="eyebrow">Start from</span></div>
+      <p class="rules-note">For each type of adjustment a company makes between NAREIT FFO and its own "core" figure, choose how your definition treats it. Every REIT and quarter is restated instantly. Only types that appear in the data are listed; the count shows how many company-quarters contain each one.</p>
+      <div class="rule-grid" id="rule-grid"></div>
+      <div class="capex-opts">
+        <label><input type="checkbox" id="capex-deduct"> Deduct recurring capital expenditures for AFFO</label>
+        <label><input type="checkbox" id="capex-table"> Use the company's capex table when its own AFFO leaves capex out</label>
+      </div>
+      <p class="rules-note">Your choices are remembered in this browser only. The published default is the Conservative definition.</p>
+    </div>
+  </details>
 
   <section class="figures" id="figures" aria-label="Headline figures, per diluted share"></section>
 
@@ -258,20 +297,40 @@ footer p { margin: 0; max-width: 90ch; }
   <section aria-labelledby="all-title" style="display:grid;gap:12px">
     <div class="panel-head">
       <h2 id="all-title">All multifamily REITs</h2>
-      <span class="legend-row"><span class="key"><i class="reported"></i>Reported</span><span class="key"><i class="cons"></i>Conservative Core FFO</span></span>
+      <span class="legend-row"><span class="key"><i class="reported"></i>Reported</span><span class="key"><i class="cons"></i><span id="grid-cons-label">Conservative Core FFO</span></span></span>
     </div>
     <div class="grid-reits" id="grid"></div>
   </section>
 
   <footer>
-    <div class="eyebrow">The Conservative Core FFO definition</div>
+    <div class="eyebrow">The Conservative Core FFO definition (default)</div>
     <p>Start from NAREIT FFO. Legal costs, casualty losses, deal costs, severance, stock compensation, financing-cost amortization and non-real-estate depreciation stay in earnings; insurance recoveries and debt-extinguishment gains are removed; investment and derivative gains and losses are removed either way. Conservative AFFO then deducts recurring capital expenditures, taken from the company's capex table when its own AFFO leaves them out.</p>
     <p>Data: __COVERAGE__, extracted from SEC EDGAR filings and checked against each company's reported totals. Page numbers are the printed page numbers in the linked exhibit. Built __BUILT__. Not investment advice.</p>
   </footer>
 </div>
 
 <script>
+/*__RESTATE_JS__*/
+</script>
+<script>
 const DATA = /*__DATA__*/[];
+const DEF = /*__DEFINITION__*/{};
+const STORE_KEY = "ffo-rules-v1";
+let rules = rulesFromPreset("Conservative", DEF);
+try { const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); if (saved && saved.treatments && saved.capex) rules = { treatments: { ...rules.treatments, ...saved.treatments }, capex: { ...rules.capex, ...saved.capex } }; } catch (e) {}
+const sameRules = (a, b) => JSON.stringify(a.treatments) === JSON.stringify(b.treatments) && a.capex.deduct === b.capex.deduct && a.capex.use_capex_table === b.capex.use_capex_table;
+function defName() { for (const p of Object.keys(DEF.presets)) if (sameRules(rules, rulesFromPreset(p, DEF))) return p; return "Custom"; }
+function metric(kind) {   // name of the restated metric under the current rules
+  const n = defName(), base = kind === "core" ? "Core FFO" : "AFFO";
+  return n === "Conservative" ? "Conservative " + base : n === "Custom" ? "Your " + base : base + " (" + n + " rules)";
+}
+function recompute() {
+  DATA.forEach((d) => {
+    const r = restateRecord(d, rules, DEF);
+    d.steps = r.steps.filter((s) => s.amount); d.cons_core = r.cons_core; d.cons_core_ps = r.cons_core_ps;
+    d.cons_affo = r.cons_affo; d.cons_affo_ps = r.cons_affo_ps; d.capex = r.capex; d.capex_source = r.capex_source; d.flags = r.flags;
+  });
+}
 const CAT_NAMES = {
   re_depreciation: "Real estate depreciation", jv_depreciation: "JV real estate depreciation",
   property_sale_gain_loss: "Gains on property sales", re_impairment: "Real estate impairments",
@@ -327,9 +386,9 @@ function figures(d) {
     <div class="fig"><span class="eyebrow">NAREIT FFO</span><span class="value">${ps(d.nareit_ps)}</span><span class="sub">Industry-standard baseline</span></div>
     <div class="fig"><span class="eyebrow">Company's ${esc(d.core_name || "adjusted FFO")}</span><span class="value">${ps(d.company_core_ps)}</span>
       <span class="sub">${d.core_name ? "As the company reports it" : "This company reports no adjusted FFO"}</span></div>
-    <div class="fig lead"><span class="eyebrow">Conservative Core FFO</span><span class="value">${ps(d.cons_core_ps)}</span>
+    <div class="fig lead"><span class="eyebrow">${esc(metric("core"))}</span><span class="value">${ps(d.cons_core_ps)}</span>
       <span class="sub">${delta(d.cons_core_ps, coreBase)} vs ${esc(coreBaseName)}</span></div>
-    <div class="fig"><span class="eyebrow">Conservative AFFO</span><span class="value">${ps(d.cons_affo_ps)}</span>
+    <div class="fig"><span class="eyebrow">${esc(metric("affo"))}</span><span class="value">${ps(d.cons_affo_ps)}</span>
       <span class="sub">${d.cons_affo_ps == null ? "Not computed this quarter" : d.company_affo_ps != null
         ? delta(d.cons_affo_ps, d.company_affo_ps) + " vs " + esc(d.affo_name || "company AFFO") + " " + ps(d.company_affo_ps)
         : "Company reports no AFFO"}</span></div>`;
@@ -346,9 +405,9 @@ function formula(d) {
   const capex = d.capex.reduce((a, s) => a + s.amount, 0);
   let html = `<span class="eyebrow">Per share, to three decimals</span><br>`;
   html += `NAREIT FFO = ${nareit.join(" ")} = <span class="res">${ps3(d.nareit_ps)}</span><br>`;
-  html += `Conservative Core FFO = NAREIT FFO ${ps3(d.nareit_ps)} <span class="term">${signed(applied)} applied adjustments ${ps3(Math.abs(perShare(applied, d)))}</span> = <span class="res">${ps3(d.cons_core_ps)}</span>`;
+  html += `${esc(metric("core"))} = NAREIT FFO ${ps3(d.nareit_ps)} <span class="term">${signed(applied)} applied adjustments ${ps3(Math.abs(perShare(applied, d)))}</span> = <span class="res">${ps3(d.cons_core_ps)}</span>`;
   if (d.cons_affo_ps != null)
-    html += `<br>Conservative AFFO = Conservative Core FFO ${ps3(d.cons_core_ps)} <span class="term">− recurring capex ${ps3(Math.abs(perShare(capex, d)))}</span> = <span class="res">${ps3(d.cons_affo_ps)}</span>`;
+    html += `<br>${esc(metric("affo"))} = ${esc(metric("core"))} ${ps3(d.cons_core_ps)} <span class="term">− recurring capex ${ps3(Math.abs(perShare(capex, d)))}</span> = <span class="res">${ps3(d.cons_affo_ps)}</span>`;
   $("formula").innerHTML = html;
 }
 
@@ -376,7 +435,7 @@ function ledger(d) {
     h += row({ op: s.applied ? signed(s.amount) : "·", label: q(s.label), chip, why: esc(s.reason) + (s.section === "affo" ? " (listed in the company's AFFO section)" : ""),
       page: s.page, amt: s.amount, psv: s.applied ? perShare(s.amount, d) : null, cls: s.applied ? "" : "kept" });
   });
-  h += row({ op: "=", label: "Conservative Core FFO", amt: d.cons_core, psv: d.cons_core_ps, cls: "total final" });
+  h += row({ op: "=", label: esc(metric("core")), amt: d.cons_core, psv: d.cons_core_ps, cls: "total final" });
   if (d.core) h += row({ label: `Company's ${esc(d.core_name)}, for comparison<span class="why">${q(d.core.label)}</span>`, page: d.core.page, amt: d.core.amount, psv: d.company_core_ps, cls: "compare" });
 
   h += `<div class="section-title"><h3>3 · Recurring capital spending</h3></div>`;
@@ -386,9 +445,9 @@ function ledger(d) {
       const why = d.capex_source === "capex_table" ? "The company's own AFFO does not deduct this; taken from its capital expenditures disclosure." : "";
       h += row({ op: "−", label: q(c.label), chip, why, page: c.page, amt: c.amount, psv: perShare(c.amount, d) });
     });
-    h += row({ op: "=", label: "Conservative AFFO", amt: d.cons_affo, psv: d.cons_affo_ps, cls: "total final" });
+    h += row({ op: "=", label: esc(metric("affo")), amt: d.cons_affo, psv: d.cons_affo_ps, cls: "total final" });
   } else {
-    h += `<div class="empty">No quarterly recurring capex is disclosed for this quarter, so Conservative AFFO is not computed rather than estimated.</div>`;
+    h += `<div class="empty">No quarterly recurring capex is disclosed for this quarter, so ${esc(metric("affo"))} is not computed rather than estimated.</div>`;
   }
   if (d.affo) h += row({ label: `Company's ${esc(d.affo_name || "AFFO")}, for comparison<span class="why">${q(d.affo.label)}</span>`, page: d.affo.page, amt: d.affo.amount, psv: d.company_affo_ps, cls: "compare" });
   if (d.affo_unused.length) {
@@ -460,7 +519,7 @@ function chart() {
   const d0 = byKey.get(state.ticker + "-" + state.quarter);
   const pts = points(state.ticker);
   const keys = [["reported", "Reported", d0 && view.metric === "core" ? (d0.core_name || "NAREIT FFO (no adjusted metric)") : (d0?.affo_name || "Company AFFO")],
-                ["cons", "Conservative", view.metric === "core" ? "Conservative Core FFO" : "Conservative AFFO"],
+                ["cons", "Restated", metric(view.metric === "core" ? "core" : "affo")],
                 ["base", "NAREIT FFO", "NAREIT FFO"]]
     .filter(([k]) => pts.some((p) => p[k] != null));
   $("chart-legend").innerHTML = keys.map(([k, , name]) => `<span class="key"><i class="${k}"></i>${esc(name)}${k === "reported" ? " (as reported)" : ""}</span>`).join("");
@@ -510,7 +569,7 @@ function chart() {
     const gap = p.reported && p.cons != null ? (p.cons - p.reported) / Math.abs(p.reported) : null;
     tip.innerHTML = `<div style="font-weight:600;margin-bottom:4px">${qLabel(p.q)}${view.period === "ttm" ? " · trailing 4Q" : ""}</div>` +
       keys.map(([k, , name]) => `<div class="tr"><span><i class="sw" style="background:var(--series-${k})"></i>${esc(name)}</span><b>${ps(p[k])}</b></div>`).join("") +
-      (gap != null ? `<div class="tr" style="margin-top:4px"><span>Conservative vs reported</span><b>${gap < 0 ? "−" : "+"}${Math.abs(gap * 100).toFixed(0)}%</b></div>` : "") +
+      (gap != null ? `<div class="tr" style="margin-top:4px"><span>Restated vs reported</span><b>${gap < 0 ? "−" : "+"}${Math.abs(gap * 100).toFixed(0)}%</b></div>` : "") +
       `<div class="note" style="margin-top:4px">Click to open this quarter</div>`;
     tip.hidden = false;
     const r = svg.getBoundingClientRect(), left = (x(i) / W) * r.width;
@@ -557,6 +616,38 @@ function grid() {
   }).join("");
 }
 
+// ---------- Rules panel ----------
+const usage = {};
+DATA.forEach((d) => d.rule_lines.forEach((l) => { if (l.amount && l.category !== "noncontrolling_interest") usage[l.category] = (usage[l.category] || 0) + 1; }));
+function rulesPanel() {
+  const n = defName(), base = rulesFromPreset("Conservative", DEF);
+  const changes = Object.keys(rules.treatments).filter((c) => rules.treatments[c] !== base.treatments[c]).length
+    + (rules.capex.deduct !== base.capex.deduct) + (rules.capex.use_capex_table !== base.capex.use_capex_table);
+  $("def-name").textContent = n === "Custom" ? "Custom definition" : n;
+  $("def-changes").textContent = n === "Conservative" ? "" : changes + " change" + (changes === 1 ? "" : "s") + " from Conservative";
+  $("presets").innerHTML = `<span class="eyebrow">Start from</span>` + Object.keys(DEF.presets).map((p) =>
+    `<button type="button" data-p="${esc(p)}" aria-pressed="${p === n}">${esc(p)}</button>`).join("");
+  const cats = Object.keys(DEF.categories).filter((c) => usage[c]).sort((a, b) => usage[b] - usage[a]);
+  $("rule-grid").innerHTML = cats.map((c) => {
+    const info = DEF.categories[c], t = rules.treatments[c];
+    return `<div class="rule${t !== info.default ? " changed" : ""}"><label class="nm" for="rule-${c}">${esc(info.label)}
+      <small>${usage[c]} quarter${usage[c] > 1 ? "s" : ""} · default: ${esc(DEF.treatment_labels[info.default])}${info.provisional ? " · provisional" : ""}</small></label>
+      <select id="rule-${c}" data-c="${c}">${Object.entries(DEF.treatment_labels).map(([k, v]) => `<option value="${k}"${k === t ? " selected" : ""}>${esc(v)}</option>`).join("")}</select></div>`;
+  }).join("");
+  $("capex-deduct").checked = rules.capex.deduct;
+  $("capex-table").checked = rules.capex.use_capex_table;
+  $("capex-table").disabled = !rules.capex.deduct;
+  $("grid-cons-label").textContent = metric("core");
+}
+function rulesChanged() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(rules)); } catch (e) {}
+  recompute(); rulesPanel(); render();
+}
+$("presets").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; rules = rulesFromPreset(b.dataset.p, DEF); rulesChanged(); });
+$("rule-grid").addEventListener("change", (e) => { const sel = e.target.closest("select"); if (!sel) return; rules.treatments[sel.dataset.c] = sel.value; rulesChanged(); });
+$("capex-deduct").addEventListener("change", (e) => { rules.capex.deduct = e.target.checked; rulesChanged(); });
+$("capex-table").addEventListener("change", (e) => { rules.capex.use_capex_table = e.target.checked; rulesChanged(); });
+
 function render() {
   quarterOptions();
   const d = byKey.get(state.ticker + "-" + state.quarter);
@@ -568,6 +659,8 @@ function render() {
   try { history.replaceState(null, "", "#" + state.ticker + "-" + state.quarter); } catch (e) {}
 }
 
+recompute();
+rulesPanel();
 controls();
 $("reit").addEventListener("change", (e) => { state.ticker = e.target.value; render(); });
 $("quarter").addEventListener("change", (e) => { state.quarter = e.target.value; render(); });
