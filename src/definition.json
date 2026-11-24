@@ -2,14 +2,14 @@
  "name": "Conservative",
  "description": "Risk-averse definition: costs that recur in some form stay in earnings; gains, recoveries and non-cash swings come out. Written by Mohammad Natsheh (docs/common_definition.md).",
  "treatment_labels": {
-  "apply": "Remove, as company did",
-  "keep_costs": "Keep costs, remove gains",
-  "keep_all": "Keep in earnings"
+  "apply": "Exclude (as the company does)",
+  "keep_costs": "Count costs, exclude gains",
+  "keep_all": "Count everything"
  },
  "treatment_reasons": {
-  "apply": "Removed from earnings, as the company did",
-  "keep_costs": "Costs kept in earnings; gains and recoveries removed",
-  "keep_all": "Kept in earnings; the company's adjustment is reversed"
+  "apply": "Excluded from earnings, as the company does",
+  "keep_costs": "Costs counted in earnings; gains and recoveries excluded",
+  "keep_all": "Counted in earnings; the company's adjustment is reversed"
  },
  "categories": {
   "legal": {
