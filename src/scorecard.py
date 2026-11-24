@@ -103,10 +103,10 @@ def metrics_for(t: str, ffo: dict, gaap: dict, end: Quarter) -> tuple[dict, dict
         core = sum(ps(q) for q in both)
         m["payout"] = sum(gv(q, "dividends_ps") for q in both) / core if core > 0 else None
         asof["payout"] = both[-1]
-    # definition gap: the company's headline adjusted figure (or NAREIT FFO if it reports none) vs conservative
+    # definition gap: the company's own adjusted FFO vs the restated figure
     def headline(q):
         r = f.get(q, {})
-        return r.get("company_core_ps") if r.get("company_core_ps") is not None else r.get("nareit_ffo_ps")
+        return r.get("company_core_ps")          # companies with no adjusted FFO aren't scored on this
     w = _window(lambda q: headline(q) is not None and ps(q) is not None, end)
     if w:
         cons = sum(ps(q) for q in w)
@@ -124,6 +124,8 @@ def score(rows: dict[str, dict]) -> dict[str, dict]:
         if len(have) < 2:
             continue
         vals = sorted(set(have.values()), reverse=hib)
+        if len(vals) < 2:          # no spread across the group: the metric carries no information
+            continue
         for t, v in have.items():
             out[t]["metrics"][k] = 100 * (1 - vals.index(v) / (len(vals) - 1)) if len(vals) > 1 else 50
     for t, o in out.items():
