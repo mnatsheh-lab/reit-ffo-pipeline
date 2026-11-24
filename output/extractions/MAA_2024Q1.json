@@ -186,18 +186,18 @@
         "section": "core",
         "applied": true,
         "effect": -13092,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
       },
       {
         "label": "Gain on sale of non-depreciable real estate assets",
         "amount": 0,
-        "category": "property_sale_gain_loss",
+        "category": "land_sale_gain_loss",
         "page_seq": 11,
         "page_printed": "11",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "'property_sale_gain_loss' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Land sales are one-off, not rental earnings); zero this quarter"
       },
       {
         "label": "(Gain) loss on investments, net of tax",
@@ -208,7 +208,7 @@
         "section": "core",
         "applied": true,
         "effect": -4090,
-        "reason": "Non-real-estate investment results removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
       },
       {
         "label": "Casualty related (recoveries) charges, net",
@@ -219,18 +219,18 @@
         "section": "core",
         "applied": true,
         "effect": -5085,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
       },
       {
         "label": "Mark-to-market debt adjustment",
         "amount": 0,
-        "category": "other",
+        "category": "debt_cost_amortization",
         "page_seq": 11,
         "page_printed": "11",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); zero this quarter"
       }
     ],
     "flags": [],

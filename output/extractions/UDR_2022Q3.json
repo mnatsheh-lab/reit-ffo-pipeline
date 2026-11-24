@@ -1,0 +1,322 @@
+{
+  "ticker": "UDR",
+  "quarter": "2022Q3",
+  "period_end": "2022-09-30",
+  "source": {
+    "accession": "0000074208-22-000064",
+    "filename": "0000074208-22-000064.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/74208/000007420822000064/0000074208-22-000064.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "FFO as Adjusted",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income/(loss) attributable to common stockholders",
+      "amount": 22499,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 166781,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Noncontrolling interests",
+        "amount": 1540,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Real estate depreciation and amortization on unconsolidated joint ventures",
+        "amount": 7457,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Net gain on the sale of unconsolidated depreciable property",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Net gain on the sale of depreciable real estate owned, net of tax",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Distributions to preferred stockholders - Series E (Convertible)",
+        "amount": 1106,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders and unitholders, diluted",
+      "amount": 199383,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "core_adjustments": [
+      {
+        "label": "Debt extinguishment and other associated costs",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Debt extinguishment and other associated costs on unconsolidated joint ventures",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Variable upside participation on DCP, net",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Legal and other",
+        "amount": 10,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Realized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 376,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Unrealized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 9589,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Severance costs",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries), net",
+        "amount": 901,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries) on unconsolidated joint ventures, net",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "core_total": {
+      "label": "FFO as Adjusted attributable to common stockholders and unitholders, diluted",
+      "amount": 210259,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -20383,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to common stockholders and unitholders, diluted",
+      "amount": 189876,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of common shares, OP/DownREIT Units, and common stock equivalents outstanding, diluted",
+      "amount": 350078,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.57,
+      "core": 0.6,
+      "affo": 0.54
+    },
+    "notes": "Three-months-ended September 30, 2022 column only. FFO total is the diluted figure (199,383), so the Series E preferred distribution (1,106), which sits between basic FFO (198,277) and diluted FFO, is included in ffo_adjustments as 'other'. Zero-valued lines (printed as '-') are included with amount 0. Per-share checks: 199,383/350,078=0.57; 210,259/350,078=0.60; 189,876/350,078=0.54. Recurring capex is in the AFFO section, so recurring_capex_disclosed is null.",
+    "starts_from_placeholder": "ignored",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 13050,
+      "output_tokens": 3318
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "3"
+      },
+      {
+        "seq": 11,
+        "printed": "4"
+      },
+      {
+        "seq": 34,
+        "printed": "27"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 199383,
+    "nareit_ffo_ps": 0.5695,
+    "company_core_name": "FFO as Adjusted",
+    "company_core": 210259,
+    "company_core_ps": 0.6006,
+    "company_affo_name": "AFFO",
+    "company_affo": 189876,
+    "company_affo_ps": 0.5424,
+    "conservative_core_ffo": 209348,
+    "conservative_core_ffo_ps": 0.598,
+    "conservative_affo": 188965,
+    "conservative_affo_ps": 0.5398,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -20383,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Debt extinguishment and other associated costs",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
+      },
+      {
+        "label": "Debt extinguishment and other associated costs on unconsolidated joint ventures",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
+      },
+      {
+        "label": "Variable upside participation on DCP, net",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
+      },
+      {
+        "label": "Legal and other",
+        "amount": 10,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
+      },
+      {
+        "label": "Realized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 376,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": 376,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Unrealized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 9589,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": 9589,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Severance costs",
+        "amount": 0,
+        "category": "severance_restructuring",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); zero this quarter"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries), net",
+        "amount": 901,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries) on unconsolidated joint ventures, net",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); zero this quarter"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 350078
+  }
+}

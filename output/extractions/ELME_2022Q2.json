@@ -211,7 +211,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Loss on interest rate derivatives",
@@ -220,9 +220,9 @@
         "page_seq": 13,
         "page_printed": "10",
         "section": "core",
-        "applied": true,
-        "effect": 0,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time); zero this quarter"
       },
       {
         "label": "Transformation costs",
@@ -233,7 +233,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Tenant improvements and incentives, net of reimbursements",
@@ -244,7 +244,7 @@
         "section": "affo",
         "applied": true,
         "effect": -476,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
       },
       {
         "label": "Leasing commissions capitalized",
@@ -255,23 +255,23 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
       },
       {
         "label": "Amortization of lease intangibles, net",
         "amount": -209,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 20,
         "page_printed": "17",
         "section": "affo",
         "applied": true,
         "effect": -209,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
       }
     ],
     "flags": [
       "Review: 'Tenant improvements and incentives, net of reimbursements' (other) handled by a provisional rule",
-      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+      "Review: 'Amortization of lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
     "diluted_shares": 87521
   }

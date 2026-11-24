@@ -1,0 +1,283 @@
+{
+  "ticker": "ESS",
+  "quarter": "2026Q1",
+  "period_end": "2026-03-31",
+  "source": {
+    "accession": "0001140361-26-017477",
+    "filename": "0001140361-26-017477.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/920522/000114036126017477/0001140361-26-017477.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income available to common stockholders",
+      "amount": 106186,
+      "page_seq": 15,
+      "page_printed": "3"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization",
+        "amount": 154895,
+        "category": "re_depreciation",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Gains not included in FFO",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Depreciation and amortization from unconsolidated co-investments",
+        "amount": 13316,
+        "category": "jv_depreciation",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Noncontrolling interest related to Operating Partnership units",
+        "amount": 3669,
+        "category": "noncontrolling_interest",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Depreciation attributable to third party ownership and other",
+        "amount": -38,
+        "category": "re_depreciation",
+        "page_seq": 15,
+        "page_printed": "3"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations attributable to common stockholders and unitholders",
+      "amount": 278028,
+      "page_seq": 15,
+      "page_printed": "3"
+    },
+    "core_adjustments": [
+      {
+        "label": "Tax expense (benefit) on unconsolidated technology co-investments",
+        "amount": 3614,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Realized and unrealized losses on marketable securities, net",
+        "amount": 1726,
+        "category": "investment_gain_loss",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Provision for credit losses",
+        "amount": 34,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Equity income from unconsolidated technology co-investments",
+        "amount": -17036,
+        "category": "investment_gain_loss",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Loss on early retirement of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "General and administrative and other, net (2)",
+        "amount": 4546,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "3"
+      },
+      {
+        "label": "Insurance reimbursements, legal settlements, and other, net",
+        "amount": -51,
+        "category": "legal",
+        "page_seq": 15,
+        "page_printed": "3"
+      }
+    ],
+    "core_total": {
+      "label": "Core funds from operations attributable to common stockholders and unitholders",
+      "amount": 270861,
+      "page_seq": 15,
+      "page_printed": "3"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average number of shares outstanding diluted (3)",
+      "amount": 66688.617,
+      "page_seq": 15,
+      "page_printed": "3"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Non-revenue generating capital expenditures",
+      "amount": 19639,
+      "basis": "quarter",
+      "scope": "company total as printed in capital expenditures table (no AFFO metric reported)",
+      "page_seq": 24,
+      "page_printed": "12"
+    },
+    "reported_per_share": {
+      "ffo": 4.17,
+      "core": 4.06,
+      "affo": null
+    },
+    "notes": "ESS reports FFO and Core FFO only; no AFFO metric, so affo fields are null. Starting line is net income available to common stockholders (the FFO section starts there, not at net income). Page marker for the FFO table reads printed=3 (text shows S-3). The 'Gains not included in FFO' line is '-' (zero) for Q1 2026. Core/FFO sums verified: 106,186 + adjustments = 278,028; 278,028 + adjustments = 270,861. Diluted shares 66,688,617 divided by 1,000 = 66,688.617 thousand; per-share check: 278,028/66,688.617 = 4.17 and 270,861/66,688.617 = 4.06. Recurring capex: ESS has no AFFO, so the Q1 2026 non-revenue generating capex of $19,639K from the Capital Expenditures table (seq 24) is recorded as the maintenance-equivalent figure; revenue generating capex ($8,694K) was not treated as recurring. Tax on tech co-investments and provision for credit losses were categorized as 'other' because no listed category fits. The 'General and administrative and other, net' line was categorized as 'other' (it includes $1.6M political advocacy costs per footnote).",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 8366,
+      "output_tokens": 3456
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": ""
+      },
+      {
+        "seq": 11,
+        "printed": ""
+      },
+      {
+        "seq": 15,
+        "printed": "3"
+      },
+      {
+        "seq": 24,
+        "printed": "12"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 278028,
+    "nareit_ffo_ps": 4.169,
+    "company_core_name": "Core FFO",
+    "company_core": 270861,
+    "company_core_ps": 4.0616,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 262667,
+    "conservative_core_ffo_ps": 3.9387,
+    "conservative_affo": 243028,
+    "conservative_affo_ps": 3.6442,
+    "recurring_capex": [
+      {
+        "label": "Non-revenue generating capital expenditures",
+        "amount": -19639,
+        "basis": "quarter",
+        "scope": "company total as printed in capital expenditures table (no AFFO metric reported)",
+        "page_seq": 24,
+        "page_printed": "12",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
+    "steps": [
+      {
+        "label": "Tax expense (benefit) on unconsolidated technology co-investments",
+        "amount": 3614,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "Realized and unrealized losses on marketable securities, net",
+        "amount": 1726,
+        "category": "investment_gain_loss",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": 1726,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Provision for credit losses",
+        "amount": 34,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "Equity income from unconsolidated technology co-investments",
+        "amount": -17036,
+        "category": "investment_gain_loss",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": -17036,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Loss on early retirement of debt",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
+      },
+      {
+        "label": "General and administrative and other, net (2)",
+        "amount": 4546,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "Insurance reimbursements, legal settlements, and other, net",
+        "amount": -51,
+        "category": "legal",
+        "page_seq": 15,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": -51,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); gain/recovery removed"
+      }
+    ],
+    "flags": [
+      "Review: 'Tax expense (benefit) on unconsolidated technology co-investments' (other) handled by a provisional rule",
+      "Review: 'Provision for credit losses' (other) handled by a provisional rule",
+      "Review: 'General and administrative and other, net (2)' (other) handled by a provisional rule",
+      "Recurring capex taken from a separate table (page 12): the company's own AFFO does not deduct it"
+    ],
+    "diluted_shares": 66688.617
+  }
+}

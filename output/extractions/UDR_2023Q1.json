@@ -1,0 +1,242 @@
+{
+  "ticker": "UDR",
+  "quarter": "2023Q1",
+  "period_end": "2023-03-31",
+  "source": {
+    "accession": "0000074208-23-000040",
+    "filename": "0000074208-23-000040.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/74208/000007420823000040/0000074208-23-000040.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "FFO as Adjusted",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income/(loss) attributable to common stockholders",
+      "amount": 29781,
+      "page_seq": 9,
+      "page_printed": "3"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 169300,
+        "category": "re_depreciation",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Noncontrolling interests",
+        "amount": 1961,
+        "category": "noncontrolling_interest",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Real estate depreciation and amortization on unconsolidated joint ventures",
+        "amount": 7485,
+        "category": "jv_depreciation",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Net gain on the sale of depreciable real estate owned, net of tax",
+        "amount": -1,
+        "category": "property_sale_gain_loss",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Distributions to preferred stockholders - Series E (Convertible) (2)",
+        "amount": 1183,
+        "category": "other",
+        "page_seq": 9,
+        "page_printed": "3"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders and unitholders, diluted",
+      "amount": 209709,
+      "page_seq": 9,
+      "page_printed": "3"
+    },
+    "core_adjustments": [
+      {
+        "label": "Variable upside participation on DCP, net",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Legal and other",
+        "amount": -1258,
+        "category": "legal",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Realized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 595,
+        "category": "investment_gain_loss",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Unrealized (gain)/loss on real estate technology investments, net of tax",
+        "amount": -858,
+        "category": "investment_gain_loss",
+        "page_seq": 9,
+        "page_printed": "3"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries), net",
+        "amount": 4156,
+        "category": "casualty",
+        "page_seq": 9,
+        "page_printed": "3"
+      }
+    ],
+    "core_total": {
+      "label": "FFO as Adjusted attributable to common stockholders and unitholders, diluted",
+      "amount": 212344,
+      "page_seq": 9,
+      "page_printed": "3"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -12299,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "3"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to common stockholders and unitholders, diluted",
+      "amount": 200045,
+      "page_seq": 9,
+      "page_printed": "3"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of common shares, OP/DownREIT Units, and common stock equivalents outstanding, diluted",
+      "amount": 353653,
+      "page_seq": 9,
+      "page_printed": "3"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.59,
+      "core": 0.6,
+      "affo": 0.57
+    },
+    "notes": "Attachment 2 (seq 9, p.3), current quarter column only. The printed FFO subtotal is basic ($208,526); the diluted FFO ($209,709) adds back Series E preferred distributions ($1,183). Because the FFO-as-Adjusted and per-share figures are diluted, ffo_total is set to the diluted subtotal and the preferred add-back is carried as an 'other' adjustment in ffo_adjustments. Basic FFO of 208,526 is reproduced by the adjustments before that line. Checks: 208,526 + 1,183 = 209,709; 209,709 + 2,635 = 212,344; 212,344 - 12,299 = 200,045. Per-share checks: 209,709/353,653 = 0.59; 212,344/353,653 = 0.60; 200,045/353,653 = 0.57. DCP line is printed as '$-' and recorded as 0. Recurring capex is deducted in AFFO, so recurring_capex_disclosed is null.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 11663,
+      "output_tokens": 3743
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "3"
+      },
+      {
+        "seq": 10,
+        "printed": "4"
+      },
+      {
+        "seq": 30,
+        "printed": "24"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 209709,
+    "nareit_ffo_ps": 0.593,
+    "company_core_name": "FFO as Adjusted",
+    "company_core": 212344,
+    "company_core_ps": 0.6004,
+    "company_affo_name": "AFFO",
+    "company_affo": 200045,
+    "company_affo_ps": 0.5657,
+    "conservative_core_ffo": 208188,
+    "conservative_core_ffo_ps": 0.5887,
+    "conservative_affo": 195889,
+    "conservative_affo_ps": 0.5539,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures",
+        "amount": -12299,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "3"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Variable upside participation on DCP, net",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 9,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
+      },
+      {
+        "label": "Legal and other",
+        "amount": -1258,
+        "category": "legal",
+        "page_seq": 9,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": -1258,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); gain/recovery removed"
+      },
+      {
+        "label": "Realized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 595,
+        "category": "investment_gain_loss",
+        "page_seq": 9,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": 595,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Unrealized (gain)/loss on real estate technology investments, net of tax",
+        "amount": -858,
+        "category": "investment_gain_loss",
+        "page_seq": 9,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": -858,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries), net",
+        "amount": 4156,
+        "category": "casualty",
+        "page_seq": 9,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 353653
+  }
+}

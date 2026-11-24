@@ -1,0 +1,303 @@
+{
+  "ticker": "CSR",
+  "quarter": "2026Q3",
+  "period_end": "2026-09-30",
+  "source": {
+    "accession": "0000798359-26-000095",
+    "filename": "0000798359-26-000095.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/798359/000079835926000095/0000798359-26-000095.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income (loss) available to common shareholders",
+      "amount": 123328,
+      "page_seq": 15,
+      "page_printed": "S-8"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Noncontrolling interests \u2013 Operating Partnership and Series E preferred units",
+        "amount": 20262,
+        "category": "noncontrolling_interest",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Depreciation and amortization",
+        "amount": 23127,
+        "category": "re_depreciation",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Less depreciation \u2013 non real estate",
+        "amount": -64,
+        "category": "non_re_depreciation",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Less depreciation \u2013 partially owned entities",
+        "amount": 0,
+        "category": "jv_depreciation",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Impairment of real estate investments",
+        "amount": 0,
+        "category": "re_impairment",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "(Gain) loss on sale of real estate and other investments",
+        "amount": -150308,
+        "category": "property_sale_gain_loss",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Less gain on sale of real estate - partially owned entities",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Loss on sale of non real estate assets",
+        "amount": -174,
+        "category": "nareit_other",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO applicable to common shares and Units",
+      "amount": 16171,
+      "page_seq": 15,
+      "page_printed": "S-8"
+    },
+    "core_adjustments": [
+      {
+        "label": "Non-cash casualty loss (recovery)",
+        "amount": -555,
+        "category": "casualty",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 526,
+        "category": "debt_extinguishment",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Loss on sale of non real estate assets",
+        "amount": 174,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Amortization of assumed debt",
+        "amount": 214,
+        "category": "debt_cost_amortization",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Severance and related costs",
+        "amount": 197,
+        "category": "severance_restructuring",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Legal and other costs related to strategic review",
+        "amount": 126,
+        "category": "legal",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Merger related costs",
+        "amount": 5020,
+        "category": "transaction_costs",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      },
+      {
+        "label": "Other miscellaneous items (2)",
+        "amount": -34,
+        "category": "investment_gain_loss",
+        "page_seq": 15,
+        "page_printed": "S-8"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO applicable to common shares and Units",
+      "amount": 21839,
+      "page_seq": 15,
+      "page_printed": "S-8"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average shares and Units for net income, FFO and Core FFO - diluted",
+      "amount": 19660,
+      "page_seq": 15,
+      "page_printed": "S-8"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.83,
+      "core": 1.11,
+      "affo": null
+    },
+    "notes": "Column: three months ended 9/30/2026 (first column of S-8). Company reports FFO and Core FFO only; no AFFO metric, so affo fields are null. Starting line is net income (loss) available to common shareholders, as printed. FFO check: 123,328 + adjustments = 16,171; Core check: 16,171 + adjustments = 21,839. Per-share check: 16,228 / 19,660 = 0.83 (FFO diluted incl. Series D distributions); 21,896 / 19,660 = 1.11 (Core). Categorization judgments: 'Loss on sale of non real estate assets' (174) in the FFO section tagged nareit_other, and the same line in Core tagged 'other'; 'Legal and other costs related to strategic review' tagged legal; 'Other miscellaneous items' (consists of (gain) loss on investments and interest rate swap amortization) tagged investment_gain_loss. Recurring capex: no AFFO section exists; the only disclosure on S-15 is Same-Store Total Recurring Capital Expenditures per Apartment Home of $452 for the quarter, which is a per-unit dollar figure, not a company total in thousands, so it was not recorded as an amount.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10180,
+      "output_tokens": 4502
+    },
+    "candidate_pages": [
+      {
+        "seq": 15,
+        "printed": "8"
+      },
+      {
+        "seq": 16,
+        "printed": "9"
+      },
+      {
+        "seq": 22,
+        "printed": "15"
+      },
+      {
+        "seq": 26,
+        "printed": "19"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 16171,
+    "nareit_ffo_ps": 0.8225,
+    "company_core_name": "Core FFO",
+    "company_core": 21839,
+    "company_core_ps": 1.1108,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 15582,
+    "conservative_core_ffo_ps": 0.7926,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Non-cash casualty loss (recovery)",
+        "amount": -555,
+        "category": "casualty",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": true,
+        "effect": -555,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
+      },
+      {
+        "label": "Loss on extinguishment of debt",
+        "amount": 526,
+        "category": "debt_extinguishment",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
+      },
+      {
+        "label": "Loss on sale of non real estate assets",
+        "amount": 174,
+        "category": "other",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "Amortization of assumed debt",
+        "amount": 214,
+        "category": "debt_cost_amortization",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
+      },
+      {
+        "label": "Severance and related costs",
+        "amount": 197,
+        "category": "severance_restructuring",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
+      },
+      {
+        "label": "Legal and other costs related to strategic review",
+        "amount": 126,
+        "category": "legal",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
+      },
+      {
+        "label": "Merger related costs",
+        "amount": 5020,
+        "category": "transaction_costs",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
+      },
+      {
+        "label": "Other miscellaneous items (2)",
+        "amount": -34,
+        "category": "investment_gain_loss",
+        "page_seq": 15,
+        "page_printed": "S-8",
+        "section": "core",
+        "applied": true,
+        "effect": -34,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      }
+    ],
+    "flags": [
+      "Review: 'Loss on sale of non real estate assets' (other) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 19660
+  }
+}

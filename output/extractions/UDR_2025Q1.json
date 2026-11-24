@@ -1,0 +1,243 @@
+{
+  "ticker": "UDR",
+  "quarter": "2025Q1",
+  "period_end": "2025-03-31",
+  "source": {
+    "accession": "0000074208-25-000032",
+    "filename": "0000074208-25-000032.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/74208/000007420825000032/0000074208-25-000032.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "FFO as Adjusted",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net income/(loss) attributable to common stockholders",
+      "amount": 75514,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 161394,
+        "category": "re_depreciation",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Noncontrolling interests",
+        "amount": 5351,
+        "category": "noncontrolling_interest",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Real estate depreciation and amortization on unconsolidated joint ventures",
+        "amount": 12766,
+        "category": "jv_depreciation",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Net (gain)/loss on the sale of depreciable real estate owned, net of tax",
+        "amount": -47939,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Distributions to preferred stockholders - Series E (Convertible) (2)",
+        "amount": 1206,
+        "category": "other",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders and unitholders, diluted",
+      "amount": 208292,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "core_adjustments": [
+      {
+        "label": "Legal and other costs",
+        "amount": 3805,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Realized and unrealized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 211,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Severance costs",
+        "amount": 499,
+        "category": "severance_restructuring",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Software transition related costs",
+        "amount": 2967,
+        "category": "severance_restructuring",
+        "page_seq": 10,
+        "page_printed": "3"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries)",
+        "amount": 3297,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "core_total": {
+      "label": "FFO as Adjusted attributable to common stockholders and unitholders, diluted",
+      "amount": 219071,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Recurring capital expenditures, inclusive of unconsolidated joint ventures",
+        "amount": -18405,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to common stockholders and unitholders, diluted",
+      "amount": 200666,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of common shares, OP/DownREIT Units, and common stock equivalents outstanding, diluted",
+      "amount": 357432,
+      "page_seq": 10,
+      "page_printed": "3"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.58,
+      "core": 0.61,
+      "affo": 0.56
+    },
+    "notes": "Current-quarter (three months ended March 31, 2025) column of Attachment 2. Starting line is net income attributable to common stockholders ($75,514), not UDR Inc. net income of $76,720 in Attachment 14(B); the $1,206 difference equals the Series E preferred distribution. Series E distribution is added back to reach diluted FFO ($208,292), which is the base for FFO as Adjusted and AFFO; it is recorded as an 'other' FFO adjustment. Basic FFO subtotal of $207,086 is an intermediate line and is reconciled via the listed adjustments. All subtotals tie: 207,086 + 1,206 = 208,292; 208,292 + 10,779 = 219,071; 219,071 - 18,405 = 200,666. Per-share checks: 208,292/357,432 = 0.58; 219,071/357,432 = 0.61; 200,666/357,432 = 0.56. AFFO deducts recurring capex, so recurring_capex_disclosed is null.",
+    "ffo_total_placeholder": null,
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 11711,
+      "output_tokens": 3423
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "3"
+      },
+      {
+        "seq": 11,
+        "printed": "4"
+      },
+      {
+        "seq": 30,
+        "printed": "23"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 208292,
+    "nareit_ffo_ps": 0.5827,
+    "company_core_name": "FFO as Adjusted",
+    "company_core": 219071,
+    "company_core_ps": 0.6129,
+    "company_affo_name": "AFFO",
+    "company_affo": 200666,
+    "company_affo_ps": 0.5614,
+    "conservative_core_ffo": 208503,
+    "conservative_core_ffo_ps": 0.5833,
+    "conservative_affo": 190098,
+    "conservative_affo_ps": 0.5318,
+    "recurring_capex": [
+      {
+        "label": "Recurring capital expenditures, inclusive of unconsolidated joint ventures",
+        "amount": -18405,
+        "category": "recurring_capex",
+        "page_seq": 10,
+        "page_printed": "3"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Legal and other costs",
+        "amount": 3805,
+        "category": "legal",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
+      },
+      {
+        "label": "Realized and unrealized (gain)/loss on real estate technology investments, net of tax",
+        "amount": 211,
+        "category": "investment_gain_loss",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": true,
+        "effect": 211,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Severance costs",
+        "amount": 499,
+        "category": "severance_restructuring",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
+      },
+      {
+        "label": "Software transition related costs",
+        "amount": 2967,
+        "category": "severance_restructuring",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
+      },
+      {
+        "label": "Casualty-related charges/(recoveries)",
+        "amount": 3297,
+        "category": "casualty",
+        "page_seq": 10,
+        "page_printed": "3",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
+      }
+    ],
+    "flags": [],
+    "diluted_shares": 357432
+  }
+}

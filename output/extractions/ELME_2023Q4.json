@@ -219,7 +219,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Write-off of pursuit costs",
@@ -230,18 +230,18 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Relocation expense",
         "amount": 3,
-        "category": "other",
+        "category": "severance_restructuring",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Adjustment to deferred taxes",
@@ -252,24 +252,23 @@
         "section": "core",
         "applied": true,
         "effect": -526,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
       },
       {
         "label": "Amortization of lease intangibles, net",
         "amount": -248,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 21,
         "page_printed": "18",
         "section": "affo",
         "applied": true,
         "effect": -248,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
       }
     ],
     "flags": [
-      "Review: 'Relocation expense' (other) handled by a provisional rule",
       "Review: 'Adjustment to deferred taxes' (other) handled by a provisional rule",
-      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+      "Review: 'Amortization of lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
     "diluted_shares": 87836
   }

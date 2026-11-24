@@ -212,7 +212,7 @@
         "section": "core",
         "applied": true,
         "effect": -65,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
       },
       {
         "label": "Loss on extinguishment of debt",
@@ -223,7 +223,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
       },
       {
         "label": "Interest rate swap amortization",
@@ -234,7 +234,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); zero this quarter"
       },
       {
         "label": "Amortization of assumed debt",
@@ -245,7 +245,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
       },
       {
         "label": "Severance and related costs",
@@ -256,7 +256,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Legal and other costs related to strategic review",
@@ -267,7 +267,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
       },
       {
         "label": "Other miscellaneous items (2)",
@@ -276,9 +276,9 @@
         "page_seq": 16,
         "page_printed": "8",
         "section": "core",
-        "applied": true,
-        "effect": 0,
-        "reason": "Non-real-estate investment results removed (gains and losses)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only); zero this quarter"
       }
     ],
     "flags": [

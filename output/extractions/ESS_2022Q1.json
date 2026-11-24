@@ -1,0 +1,354 @@
+{
+  "ticker": "ESS",
+  "quarter": "2022Q1",
+  "period_end": "2022-03-31",
+  "source": {
+    "accession": "0001140361-22-015978",
+    "filename": "0001140361-22-015978.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/920522/000114036122015978/0001140361-22-015978.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income available to common stockholders",
+      "amount": 73254,
+      "page_seq": 11,
+      "page_printed": ""
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization",
+        "amount": 133533,
+        "category": "re_depreciation",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Gains not included in FFO",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Depreciation and amortization from unconsolidated co-investments",
+        "amount": 18115,
+        "category": "jv_depreciation",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Noncontrolling interest related to Operating Partnership units",
+        "amount": 2563,
+        "category": "noncontrolling_interest",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Depreciation attributable to third party ownership and other",
+        "amount": -353,
+        "category": "nareit_other",
+        "page_seq": 11,
+        "page_printed": ""
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from Operations attributable to common stockholders and unitholders",
+      "amount": 227112,
+      "page_seq": 11,
+      "page_printed": ""
+    },
+    "core_adjustments": [
+      {
+        "label": "Expensed acquisition and investment related costs",
+        "amount": 8,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Deferred tax (benefit) expense on unconsolidated co-investments",
+        "amount": -2754,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Gain on sale of marketable securities",
+        "amount": -12171,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Change in unrealized losses (gains) on marketable securities, net",
+        "amount": 24585,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Provision for credit losses",
+        "amount": -62,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Equity loss (income) from non-core co-investments",
+        "amount": 8844,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Loss on early retirement of debt, net",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Loss on early retirement of debt from unconsolidated co-investment",
+        "amount": 86,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Co-investment promote income",
+        "amount": -17076,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Income from early redemption of preferred equity investments",
+        "amount": -858,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "General and administrative and other, net",
+        "amount": 448,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": ""
+      },
+      {
+        "label": "Insurance reimbursements, legal settlements, and other, net",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": ""
+      }
+    ],
+    "core_total": {
+      "label": "Core Funds from Operations attributable to common stockholders and unitholders",
+      "amount": 228162,
+      "page_seq": 11,
+      "page_printed": ""
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average number of shares outstanding diluted",
+      "amount": 67621.842,
+      "page_seq": 11,
+      "page_printed": ""
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 3.36,
+      "core": 3.37,
+      "affo": null
+    },
+    "notes": "ESS reports FFO and Core FFO only; no AFFO metric, so affo_total is null and recurring capex is not applicable (null). The reconciliation starts from net income available to common stockholders. Amounts are in thousands; the share count 67,621,842 was converted to 67,621.842 thousands. Subtotals check: 73,254 + adjustments = 227,112; 227,112 + adjustments = 228,162. FFO per share 227,112/67,621.842 = 3.36 and Core 228,162/67,621.842 = 3.37, both matching. Zero-valued lines ('Gains not included in FFO', 'Loss on early retirement of debt, net', 'Insurance reimbursements...') are printed as '-' for Q1 2022 and are recorded as 0. The same figures appear on page seq 17 (S-3). Page printed numbers are blank in the markers provided.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 7679,
+      "output_tokens": 3307
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": ""
+      },
+      {
+        "seq": 11,
+        "printed": ""
+      },
+      {
+        "seq": 17,
+        "printed": "3"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 227112,
+    "nareit_ffo_ps": 3.3586,
+    "company_core_name": "Core FFO",
+    "company_core": 228162,
+    "company_core_ps": 3.3741,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 227620,
+    "conservative_core_ffo_ps": 3.3661,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Expensed acquisition and investment related costs",
+        "amount": 8,
+        "category": "transaction_costs",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
+      },
+      {
+        "label": "Deferred tax (benefit) expense on unconsolidated co-investments",
+        "amount": -2754,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": -2754,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
+      },
+      {
+        "label": "Gain on sale of marketable securities",
+        "amount": -12171,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": -12171,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Change in unrealized losses (gains) on marketable securities, net",
+        "amount": 24585,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": 24585,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Provision for credit losses",
+        "amount": -62,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": -62,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
+      },
+      {
+        "label": "Equity loss (income) from non-core co-investments",
+        "amount": 8844,
+        "category": "investment_gain_loss",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": 8844,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Loss on early retirement of debt, net",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
+      },
+      {
+        "label": "Loss on early retirement of debt from unconsolidated co-investment",
+        "amount": 86,
+        "category": "debt_extinguishment",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
+      },
+      {
+        "label": "Co-investment promote income",
+        "amount": -17076,
+        "category": "jv_promote",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": -17076,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Promotes are lumpy, one-off gains); gain/recovery removed"
+      },
+      {
+        "label": "Income from early redemption of preferred equity investments",
+        "amount": -858,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": true,
+        "effect": -858,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
+      },
+      {
+        "label": "General and administrative and other, net",
+        "amount": 448,
+        "category": "other",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "Insurance reimbursements, legal settlements, and other, net",
+        "amount": 0,
+        "category": "legal",
+        "page_seq": 11,
+        "page_printed": "",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); zero this quarter"
+      }
+    ],
+    "flags": [
+      "Review: 'Deferred tax (benefit) expense on unconsolidated co-investments' (other) handled by a provisional rule",
+      "Review: 'Provision for credit losses' (other) handled by a provisional rule",
+      "Review: 'Co-investment promote income' (jv_promote) handled by a provisional rule",
+      "Review: 'Income from early redemption of preferred equity investments' (other) handled by a provisional rule",
+      "Review: 'General and administrative and other, net' (other) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 67621.842
+  }
+}

@@ -177,8 +177,8 @@
     "company_affo_name": null,
     "company_affo": null,
     "company_affo_ps": null,
-    "conservative_core_ffo": 363407,
-    "conservative_core_ffo_ps": 0.929,
+    "conservative_core_ffo": 363724,
+    "conservative_core_ffo_ps": 0.9298,
     "conservative_affo": null,
     "conservative_affo_ps": null,
     "recurring_capex": [],
@@ -193,7 +193,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Debt extinguishment and preferred share redemption (gains) losses",
@@ -204,18 +204,18 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
       },
       {
         "label": "Non-operating asset (gains) losses",
         "amount": 317,
-        "category": "other",
+        "category": "investment_gain_loss",
         "page_seq": 12,
         "page_printed": "7",
         "section": "core",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "applied": true,
+        "effect": 317,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
       },
       {
         "label": "Other miscellaneous items",
@@ -226,11 +226,10 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       }
     ],
     "flags": [
-      "Review: 'Non-operating asset (gains) losses' (other) handled by a provisional rule",
       "Review: 'Other miscellaneous items' (other) handled by a provisional rule",
       "Recurring capex only disclosed on a 'year_to_date' basis; Conservative AFFO not computed"
     ],

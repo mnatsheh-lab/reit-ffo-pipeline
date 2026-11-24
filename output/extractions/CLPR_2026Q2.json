@@ -174,13 +174,13 @@
       {
         "label": "Amortization of real estate tax intangible",
         "amount": 121,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 10,
         "page_printed": "",
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); company add-back reversed"
       },
       {
         "label": "Transaction pursuit costs",
@@ -191,7 +191,29 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); zero this quarter"
+      },
+      {
+        "label": "Loss on impairment of Long-Lived Assets",
+        "amount": 0,
+        "category": "re_impairment",
+        "page_seq": 10,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unusual placement; handled conservatively); zero this quarter"
+      },
+      {
+        "label": "Loss on disposal of long-lived assets",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 10,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unusual placement; handled conservatively); zero this quarter"
       },
       {
         "label": "Litigation settlement and other",
@@ -202,11 +224,11 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
       }
     ],
     "flags": [
-      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+      "Review: 'Amortization of real estate tax intangible' (intangible_amortization) handled by a provisional rule"
     ],
     "diluted_shares": 42475
   }

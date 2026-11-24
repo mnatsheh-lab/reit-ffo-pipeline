@@ -1,0 +1,338 @@
+{
+  "ticker": "VMRK",
+  "quarter": "2026Q3",
+  "period_end": "2026-09-30",
+  "source": {
+    "accession": "0001193125-26-448699",
+    "filename": "0001193125-26-448699.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906107/000119312526448699/0001193125-26-448699.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO available to Common Shares and Units",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income (loss)",
+      "amount": -747141,
+      "page_seq": 28,
+      "page_printed": "8"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Net (income) loss attributable to Noncontrolling Interests \u2013 Partially Owned Communities",
+        "amount": 966,
+        "category": "noncontrolling_interest",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Preferred distributions",
+        "amount": -355,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Real estate depreciation",
+        "amount": 898675,
+        "category": "re_depreciation",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Net (gain) loss on sale of real estate",
+        "amount": -108304,
+        "category": "property_sale_gain_loss",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Casualty loss on real estate",
+        "amount": 2374,
+        "category": "casualty",
+        "page_seq": 28,
+        "page_printed": "8"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO available to Common Shares and Units",
+      "amount": 46215,
+      "page_seq": 28,
+      "page_printed": "8"
+    },
+    "core_adjustments": [
+      {
+        "label": "Unconsolidated investment activity",
+        "amount": 530,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Loan reserve adjustment",
+        "amount": -202,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Hedge accounting activity",
+        "amount": 159,
+        "category": "derivative_mtm",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Severance",
+        "amount": 40,
+        "category": "severance_restructuring",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Expensed development and pursuit costs",
+        "amount": 4075,
+        "category": "transaction_costs",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Merger-related costs (1)",
+        "amount": 544040,
+        "category": "transaction_costs",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "(Gain) loss on extinguishment of debt",
+        "amount": 2028,
+        "category": "debt_extinguishment",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Merger accounting interest expense adjustment (2)",
+        "amount": 8344,
+        "category": "debt_cost_amortization",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Non-operating (gains) losses",
+        "amount": -3587,
+        "category": "investment_gain_loss",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Legal settlements and costs",
+        "amount": 7409,
+        "category": "legal",
+        "page_seq": 28,
+        "page_printed": "8"
+      },
+      {
+        "label": "Tax benefit (expense)",
+        "amount": -809,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "8"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO available to Common Shares and Units",
+      "amount": 608242,
+      "page_seq": 28,
+      "page_printed": "8"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted average Common Shares and Units outstanding \u2013 diluted",
+      "amount": 589531,
+      "page_seq": 28,
+      "page_printed": "8"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.08,
+      "core": 1.03,
+      "affo": null
+    },
+    "notes": "Reconciliation is on page seq 28 (printed 8). Starts from Net income (loss) of $(747,141) and runs through Net income (loss) available to Common Shares and Units (subtotal -746,530) before FFO; the preferred distributions and NCI lines are placed between starting line and FFO as printed. Company reports no AFFO metric, so affo fields are null. Advocacy contributions is a dash (zero) for Q3 2026 and was omitted. Merger accounting interest expense adjustment is categorized as debt_cost_amortization (fair value discount / OID amortization). Core total verified: 46,215 + 562,027 = 608,242. Per-share checks: 46,215/589,531 = $0.08; 608,242/589,531 = $1.03. Preferred distributions and tax benefit categorized as other.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10291,
+      "output_tokens": 3286
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "7"
+      },
+      {
+        "seq": 28,
+        "printed": "8"
+      },
+      {
+        "seq": 29,
+        "printed": "9"
+      },
+      {
+        "seq": 45,
+        "printed": "25"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 46215,
+    "nareit_ffo_ps": 0.0784,
+    "company_core_name": "Core FFO available to Common Shares and Units",
+    "company_core": 608242,
+    "company_core_ps": 1.0317,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 41776,
+    "conservative_core_ffo_ps": 0.0709,
+    "conservative_affo": null,
+    "conservative_affo_ps": null,
+    "recurring_capex": [],
+    "recurring_capex_source": null,
+    "steps": [
+      {
+        "label": "Unconsolidated investment activity",
+        "amount": 530,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "Loan reserve adjustment",
+        "amount": -202,
+        "category": "loan_reserves",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": true,
+        "effect": -202,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Credit losses on lending programs are a real cost); gain/recovery removed"
+      },
+      {
+        "label": "Hedge accounting activity",
+        "amount": 159,
+        "category": "derivative_mtm",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": true,
+        "effect": 159,
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
+      },
+      {
+        "label": "Severance",
+        "amount": 40,
+        "category": "severance_restructuring",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
+      },
+      {
+        "label": "Expensed development and pursuit costs",
+        "amount": 4075,
+        "category": "transaction_costs",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
+      },
+      {
+        "label": "Merger-related costs (1)",
+        "amount": 544040,
+        "category": "transaction_costs",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
+      },
+      {
+        "label": "(Gain) loss on extinguishment of debt",
+        "amount": 2028,
+        "category": "debt_extinguishment",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
+      },
+      {
+        "label": "Merger accounting interest expense adjustment (2)",
+        "amount": 8344,
+        "category": "debt_cost_amortization",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
+      },
+      {
+        "label": "Non-operating (gains) losses",
+        "amount": -3587,
+        "category": "investment_gain_loss",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": true,
+        "effect": -3587,
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
+      },
+      {
+        "label": "Legal settlements and costs",
+        "amount": 7409,
+        "category": "legal",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
+      },
+      {
+        "label": "Tax benefit (expense)",
+        "amount": -809,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "8",
+        "section": "core",
+        "applied": true,
+        "effect": -809,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
+      }
+    ],
+    "flags": [
+      "Review: 'Unconsolidated investment activity' (other) handled by a provisional rule",
+      "Review: 'Loan reserve adjustment' (loan_reserves) handled by a provisional rule",
+      "Review: 'Tax benefit (expense)' (other) handled by a provisional rule",
+      "No recurring capex disclosed; Conservative AFFO not computed"
+    ],
+    "diluted_shares": 589531
+  }
+}

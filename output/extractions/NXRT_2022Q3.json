@@ -1,0 +1,266 @@
+{
+  "ticker": "NXRT",
+  "quarter": "2022Q3",
+  "period_end": "2022-09-30",
+  "source": {
+    "accession": "0001564590-22-034997",
+    "filename": "nxrt-ex991_6.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1620393/000156459022034997/nxrt-ex991_6.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net loss",
+      "amount": -599,
+      "page_seq": 22,
+      "page_printed": "20"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Depreciation and amortization",
+        "amount": 25224,
+        "category": "re_depreciation",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": -99,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": "20"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO attributable to common stockholders",
+      "amount": 24526,
+      "page_seq": 22,
+      "page_printed": "20"
+    },
+    "core_adjustments": [
+      {
+        "label": "Loss on extinguishment of debt and modification costs",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Casualty-related expenses/(recoveries)",
+        "amount": -2976,
+        "category": "casualty",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Casualty gains",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Pandemic expense",
+        "amount": 0,
+        "category": "pandemic_costs",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Amortization of deferred financing costs - acquisition term notes",
+        "amount": 281,
+        "category": "debt_cost_amortization",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": 11,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": "20"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO attributable to common stockholders",
+      "amount": 21842,
+      "page_seq": 22,
+      "page_printed": "20"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Amortization of deferred financing costs - long term debt",
+        "amount": 453,
+        "category": "debt_cost_amortization",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Equity-based compensation expense",
+        "amount": 2025,
+        "category": "stock_comp",
+        "page_seq": 22,
+        "page_printed": "20"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": -10,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": "20"
+      }
+    ],
+    "affo_total": {
+      "label": "AFFO attributable to common stockholders",
+      "amount": 24310,
+      "page_seq": 22,
+      "page_printed": "20"
+    },
+    "diluted_shares": {
+      "label": "Weighted average common stock outstanding - diluted",
+      "amount": 25598,
+      "page_seq": 22,
+      "page_printed": "20"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Capitalized Maintenance Expenditures - Recurring",
+      "amount": 3943,
+      "basis": "quarter",
+      "scope": "company total (as presented in Historical Capital Expenditures table)",
+      "page_seq": 23,
+      "page_printed": "21"
+    },
+    "reported_per_share": {
+      "ffo": 0.96,
+      "core": 0.85,
+      "affo": 0.95
+    },
+    "notes": "Three months ended September 30, 2022 column used. The FFO/Core/AFFO reconciliation starts from net loss of $(599), while the Financial Summary shows net loss attributable to common stockholders of $(597); the reconciliation figure was used as the starting line. Zero-valued lines (\u2014) are included as printed. Per-share checks: 24,526/25,598 = 0.96; 21,842/25,598 = 0.85; 24,310/25,598 = 0.95. AFFO does not deduct recurring capex, so the Q3 2022 recurring capitalized maintenance figure ($3,943K) from the Historical Capital Expenditures table is reported in recurring_capex_disclosed. The table does not explicitly state its scope; it is treated as company total.",
+    "page_seq": 22,
+    "page_printed": 20,
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 7782,
+      "output_tokens": 2799
+    },
+    "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "8"
+      },
+      {
+        "seq": 22,
+        "printed": "20"
+      },
+      {
+        "seq": 23,
+        "printed": "21"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 24526,
+    "nareit_ffo_ps": 0.9581,
+    "company_core_name": "Core FFO",
+    "company_core": 21842,
+    "company_core_ps": 0.8533,
+    "company_affo_name": "AFFO",
+    "company_affo": 24310,
+    "company_affo_ps": 0.9497,
+    "conservative_core_ffo": 21561,
+    "conservative_core_ffo_ps": 0.8423,
+    "conservative_affo": 17618,
+    "conservative_affo_ps": 0.6883,
+    "recurring_capex": [
+      {
+        "label": "Capitalized Maintenance Expenditures - Recurring",
+        "amount": -3943,
+        "basis": "quarter",
+        "scope": "company total (as presented in Historical Capital Expenditures table)",
+        "page_seq": 23,
+        "page_printed": "21",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
+    "steps": [
+      {
+        "label": "Loss on extinguishment of debt and modification costs",
+        "amount": 0,
+        "category": "debt_extinguishment",
+        "page_seq": 22,
+        "page_printed": "20",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
+      },
+      {
+        "label": "Casualty-related expenses/(recoveries)",
+        "amount": -2976,
+        "category": "casualty",
+        "page_seq": 22,
+        "page_printed": "20",
+        "section": "core",
+        "applied": true,
+        "effect": -2976,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
+      },
+      {
+        "label": "Casualty gains",
+        "amount": 0,
+        "category": "casualty",
+        "page_seq": 22,
+        "page_printed": "20",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); zero this quarter"
+      },
+      {
+        "label": "Pandemic expense",
+        "amount": 0,
+        "category": "pandemic_costs",
+        "page_seq": 22,
+        "page_printed": "20",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Removed from earnings, as the company did (Treated as a one-time event (deliberate exception)); zero this quarter"
+      },
+      {
+        "label": "Amortization of deferred financing costs - acquisition term notes",
+        "amount": 281,
+        "category": "debt_cost_amortization",
+        "page_seq": 22,
+        "page_printed": "20",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
+      },
+      {
+        "label": "Adjustment for noncontrolling interests",
+        "amount": 11,
+        "category": "noncontrolling_interest",
+        "page_seq": 22,
+        "page_printed": "20",
+        "section": "core",
+        "applied": true,
+        "effect": 11,
+        "reason": "Noncontrolling interests' share of the adjustments; applied as the company did"
+      }
+    ],
+    "flags": [
+      "Recurring capex taken from a separate table (page 21): the company's own AFFO does not deduct it"
+    ],
+    "diluted_shares": 25598
+  }
+}

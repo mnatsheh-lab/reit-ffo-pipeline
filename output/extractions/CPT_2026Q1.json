@@ -175,7 +175,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
       },
       {
         "label": "Plus: Legal costs and settlements",
@@ -186,7 +186,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
       },
       {
         "label": "Plus: Expensed transaction, development, and other pursuit costs",
@@ -197,7 +197,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Plus: Investment losses",
@@ -208,7 +208,7 @@
         "section": "core",
         "applied": true,
         "effect": 4855,
-        "reason": "Non-real-estate investment results removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
       },
       {
         "label": "Plus: Other miscellaneous items",
@@ -219,7 +219,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       }
     ],
     "flags": [

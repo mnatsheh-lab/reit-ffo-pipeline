@@ -246,7 +246,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Loss on extinguishment of debt, net",
@@ -257,7 +257,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
       },
       {
         "label": "Severance expense",
@@ -268,7 +268,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Transformation costs",
@@ -279,7 +279,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Write-off of pursuit costs",
@@ -290,18 +290,18 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Relocation expense",
         "amount": 186,
-        "category": "other",
+        "category": "severance_restructuring",
         "page_seq": 13,
         "page_printed": "10",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Non-cash loss on extinguishment of debt",
@@ -312,7 +312,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
       },
       {
         "label": "Non-real estate depreciation and amortization of debt costs",
@@ -323,23 +323,22 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Only real estate depreciation is added back (Nareit)); company add-back reversed"
       },
       {
         "label": "Amortization of lease intangibles, net",
         "amount": -237,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 21,
         "page_printed": "18",
         "section": "affo",
         "applied": true,
         "effect": -237,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
       }
     ],
     "flags": [
-      "Review: 'Relocation expense' (other) handled by a provisional rule",
-      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+      "Review: 'Amortization of lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
     "diluted_shares": 87840
   }

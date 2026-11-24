@@ -1,0 +1,189 @@
+{
+  "ticker": "BRT",
+  "quarter": "2026Q3",
+  "period_end": "2026-09-30",
+  "source": {
+    "accession": "0000014846-26-000049",
+    "filename": "0000014846-26-000049.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/14846/000001484626000049/0000014846-26-000049.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "AFFO",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "GAAP Net loss attributable to common stockholders",
+      "amount": -3955,
+      "page_seq": 13,
+      "page_printed": "7"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Add: depreciation and amortization of properties",
+        "amount": 6712,
+        "category": "re_depreciation",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Add: our share of depreciation in unconsolidated joint venture properties",
+        "amount": 2208,
+        "category": "jv_depreciation",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Deduct: gain on sale of real estate",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Adjustments for non-controlling interests",
+        "amount": -4,
+        "category": "noncontrolling_interest",
+        "page_seq": 13,
+        "page_printed": "7"
+      }
+    ],
+    "ffo_total": {
+      "label": "NAREIT Funds from operations attributable to common stockholders",
+      "amount": 4961,
+      "page_seq": 13,
+      "page_printed": "7"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Adjustments for: deferred rent concessions and straight line rent",
+        "amount": -283,
+        "category": "straight_line_rent",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Adjustments for: our share of straight-line rent and rent concession accruals from unconsolidated joint venture properties",
+        "amount": -19,
+        "category": "straight_line_rent",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Add: amortization of restricted stock and RSU expense",
+        "amount": 836,
+        "category": "stock_comp",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Add: amortization of deferred mortgage and debt costs",
+        "amount": 305,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Add: our share of deferred mortgage costs from unconsolidated joint venture properties",
+        "amount": 42,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "7"
+      },
+      {
+        "label": "Add: amortization of fair value adjustment for mortgage debt",
+        "amount": 47,
+        "category": "debt_cost_amortization",
+        "page_seq": 13,
+        "page_printed": "7"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations attributable to common stockholders",
+      "amount": 5889,
+      "page_seq": 13,
+      "page_printed": "7"
+    },
+    "diluted_shares": {
+      "label": "Diluted shares outstanding for FFO and AFFO",
+      "amount": 18737.53,
+      "page_seq": 14,
+      "page_printed": "8"
+    },
+    "recurring_capex_disclosed": {
+      "label": "Estimated Recurring Capital Expenditures, BRT Share of Capital Expenditures",
+      "amount": 1658,
+      "basis": "quarter",
+      "scope": "BRT share (excl. JV partner share), converted from dollars to thousands",
+      "page_seq": 19,
+      "page_printed": "13"
+    },
+    "reported_per_share": {
+      "ffo": 0.26,
+      "core": null,
+      "affo": 0.31
+    },
+    "notes": "Three-month 2026 column used. Starting line is GAAP net loss attributable to common stockholders. The gain on sale of real estate line is a dash for 2026, recorded as 0. Totals verified: -3955+6712+2208+0-4=4961; 4961-283-19+836+305+42+47=5889. Diluted share count 18,737,530 printed in full, converted to 18,737.53 thousands; 4961/18737.53=0.26 and 5889/18737.53=0.31, matching reported per-share figures. BRT reports no core FFO. AFFO does not deduct recurring capex, so the recurring capex disclosure was taken from the Capital Expenditures table on printed page 13. That table is in whole dollars ($1,658,000 BRT share), converted to 1,658 thousands. The table's recurring capex figure is an estimate for the quarter and includes units across the portfolio; the basis is recorded as quarter.",
+    "ffo_total_placeholder": null,
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 7546,
+      "output_tokens": 3310
+    },
+    "candidate_pages": [
+      {
+        "seq": 9,
+        "printed": "3"
+      },
+      {
+        "seq": 13,
+        "printed": "7"
+      },
+      {
+        "seq": 14,
+        "printed": "8"
+      },
+      {
+        "seq": 19,
+        "printed": "13"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 4961,
+    "nareit_ffo_ps": 0.2648,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "AFFO",
+    "company_affo": 5889,
+    "company_affo_ps": 0.3143,
+    "conservative_core_ffo": 4961,
+    "conservative_core_ffo_ps": 0.2648,
+    "conservative_affo": 3303,
+    "conservative_affo_ps": 0.1763,
+    "recurring_capex": [
+      {
+        "label": "Estimated Recurring Capital Expenditures, BRT Share of Capital Expenditures",
+        "amount": -1658,
+        "basis": "quarter",
+        "scope": "BRT share (excl. JV partner share), converted from dollars to thousands",
+        "page_seq": 19,
+        "page_printed": "13",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
+    "steps": [],
+    "flags": [
+      "Recurring capex taken from a separate table (page 13): the company's own AFFO does not deduct it"
+    ],
+    "diluted_shares": 18737.53
+  }
+}

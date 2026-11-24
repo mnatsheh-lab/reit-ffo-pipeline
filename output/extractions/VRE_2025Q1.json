@@ -1,0 +1,382 @@
+{
+  "ticker": "VRE",
+  "quarter": "2025Q1",
+  "period_end": "2025-03-31",
+  "source": {
+    "accession": "0000924901-25-000025",
+    "filename": "a992earningsreleaseandsupp.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/924901/000092490125000025/a992earningsreleaseandsupp.htm"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "Core FFO",
+    "affo_metric_name": "Core AFFO",
+    "affo_starts_from": "core",
+    "starting_line": {
+      "label": "Net loss available to common shareholders",
+      "amount": -10699,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Noncontrolling interests in Operating Partnership",
+        "amount": -998,
+        "category": "noncontrolling_interest",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Noncontrolling interests in discontinued operations",
+        "amount": 11,
+        "category": "noncontrolling_interest",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Real estate-related depreciation and amortization on continuing operations (2)",
+        "amount": 23445,
+        "category": "re_depreciation",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Real estate-related depreciation and amortization on discontinued operations",
+        "amount": 0,
+        "category": "re_depreciation",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Continuing operations: Loss (gain) on sale from unconsolidated joint ventures",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Discontinued operations: Realized (gains) losses and unrealized (gains) losses on disposition of rental property, net",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO (3)",
+      "amount": 11759,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "core_adjustments": [
+      {
+        "label": "Land and other impairments (4)",
+        "amount": 1600,
+        "category": "re_impairment",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "(Gain) loss on disposition of developable land",
+        "amount": 156,
+        "category": "land_sale_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Rebranding and Severance/Compensation related costs (G&A) (5)",
+        "amount": 168,
+        "category": "severance_restructuring",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Rebranding and Severance/Compensation related costs (Property Management) (6)",
+        "amount": 510,
+        "category": "severance_restructuring",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Amortization of derivative premium (7)",
+        "amount": 1084,
+        "category": "debt_cost_amortization",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Derivative mark to market adjustment",
+        "amount": 255,
+        "category": "derivative_mtm",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Transaction related costs",
+        "amount": 308,
+        "category": "transaction_costs",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "core_total": {
+      "label": "Core FFO",
+      "amount": 15840,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "affo_adjustments": [
+      {
+        "label": "Straight-line rent adjustments (8)",
+        "amount": -146,
+        "category": "straight_line_rent",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Amortization of market lease intangibles, net",
+        "amount": -3,
+        "category": "other",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Amortization of lease inducements",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Amortization of stock compensation",
+        "amount": 3366,
+        "category": "stock_comp",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization",
+        "amount": 150,
+        "category": "non_re_depreciation",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Amortization of deferred financing costs",
+        "amount": 1707,
+        "category": "debt_cost_amortization",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Building improvements",
+        "amount": -3306,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Tenant improvements and leasing commissions (9)",
+        "amount": -33,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "affo_total": {
+      "label": "Core AFFO (3)",
+      "amount": 17575,
+      "page_seq": 9,
+      "page_printed": "9"
+    },
+    "diluted_shares": {
+      "label": "Diluted weighted average shares outstanding (1)",
+      "amount": 101690,
+      "page_seq": 8,
+      "page_printed": "8"
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 0.12,
+      "core": 0.16,
+      "affo": 0.17
+    },
+    "notes": "All current-quarter (three months ended March 31, 2025) figures. Starting line and all adjustments reconcile exactly: FFO 11,759; Core FFO 15,840; Core AFFO 17,575. Diluted share count 101,690 (thousands) from the Statement of Operations; it reproduces the reported per-share figures ($0.12 / $0.16 / $0.17). Judgment calls: 'Amortization of derivative premium' was classified as debt_cost_amortization (no exact fit; could be argued as derivative-related). 'Amortization of market lease intangibles, net' and 'Amortization of lease inducements' were classified as 'other' since no listed category fits. Recurring-type capex (building improvements and TI/leasing commissions, labeled non-incremental revenue generating capex) is already deducted in AFFO, so recurring_capex_disclosed is null.",
+    "ffo_total_placeholder": null,
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 7517,
+      "output_tokens": 4106
+    },
+    "candidate_pages": [
+      {
+        "seq": 8,
+        "printed": "8"
+      },
+      {
+        "seq": 9,
+        "printed": "9"
+      },
+      {
+        "seq": 10,
+        "printed": "10"
+      },
+      {
+        "seq": 20,
+        "printed": "20"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 11759,
+    "nareit_ffo_ps": 0.1156,
+    "company_core_name": "Core FFO",
+    "company_core": 15840,
+    "company_core_ps": 0.1558,
+    "company_affo_name": "Core AFFO",
+    "company_affo": 17575,
+    "company_affo_ps": 0.1728,
+    "conservative_core_ffo": 12011,
+    "conservative_core_ffo_ps": 0.1181,
+    "conservative_affo": 8672,
+    "conservative_affo_ps": 0.0853,
+    "recurring_capex": [
+      {
+        "label": "Building improvements",
+        "amount": -3306,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "9"
+      },
+      {
+        "label": "Tenant improvements and leasing commissions (9)",
+        "amount": -33,
+        "category": "recurring_capex",
+        "page_seq": 9,
+        "page_printed": "9"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [
+      {
+        "label": "Land and other impairments (4)",
+        "amount": 1600,
+        "category": "re_impairment",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unusual placement; handled conservatively); company add-back reversed"
+      },
+      {
+        "label": "(Gain) loss on disposition of developable land",
+        "amount": 156,
+        "category": "land_sale_gain_loss",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Land sales are one-off, not rental earnings); company add-back reversed"
+      },
+      {
+        "label": "Rebranding and Severance/Compensation related costs (G&A) (5)",
+        "amount": 168,
+        "category": "severance_restructuring",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
+      },
+      {
+        "label": "Rebranding and Severance/Compensation related costs (Property Management) (6)",
+        "amount": 510,
+        "category": "severance_restructuring",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
+      },
+      {
+        "label": "Amortization of derivative premium (7)",
+        "amount": 1084,
+        "category": "debt_cost_amortization",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
+      },
+      {
+        "label": "Derivative mark to market adjustment",
+        "amount": 255,
+        "category": "derivative_mtm",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": true,
+        "effect": 255,
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
+      },
+      {
+        "label": "Transaction related costs",
+        "amount": 308,
+        "category": "transaction_costs",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
+      },
+      {
+        "label": "Amortization of market lease intangibles, net",
+        "amount": -3,
+        "category": "intangible_amortization",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "affo",
+        "applied": true,
+        "effect": -3,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
+      },
+      {
+        "label": "Amortization of lease inducements",
+        "amount": 0,
+        "category": "other",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
+      },
+      {
+        "label": "Non-real estate depreciation and amortization",
+        "amount": 150,
+        "category": "non_re_depreciation",
+        "page_seq": 9,
+        "page_printed": "9",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Only real estate depreciation is added back (Nareit)); company add-back reversed"
+      }
+    ],
+    "flags": [
+      "Review: 'Land and other impairments (4)' (re_impairment) handled by a provisional rule",
+      "Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule"
+    ],
+    "diluted_shares": 101690
+  }
+}

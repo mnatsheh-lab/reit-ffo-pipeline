@@ -170,13 +170,13 @@
       {
         "label": "Amortization of real estate tax intangible",
         "amount": 120,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 8,
         "page_printed": "45",
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); company add-back reversed"
       },
       {
         "label": "Amortization of above- and below-market leases",
@@ -187,7 +187,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
       },
       {
         "label": "Transaction pursuit costs",
@@ -198,7 +198,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); zero this quarter"
       },
       {
         "label": "Loss on extinguishment of debt",
@@ -209,7 +209,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
       },
       {
         "label": "Certain litigation-related expenses",
@@ -220,11 +220,11 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); zero this quarter"
       }
     ],
     "flags": [
-      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+      "Review: 'Amortization of real estate tax intangible' (intangible_amortization) handled by a provisional rule"
     ],
     "diluted_shares": 42380
   }

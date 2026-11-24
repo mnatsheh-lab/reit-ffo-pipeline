@@ -1,0 +1,228 @@
+{
+  "ticker": "IRT",
+  "quarter": "2022Q3",
+  "period_end": "2022-09-30",
+  "source": {
+    "accession": "0001466085-22-000071",
+    "filename": "0001466085-22-000071.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/1466085/000146608522000071/0001466085-22-000071.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": "CORE Funds From Operations (CFFO)",
+    "affo_metric_name": null,
+    "affo_starts_from": null,
+    "starting_line": {
+      "label": "Net income (loss)",
+      "amount": 16653,
+      "page_seq": 28,
+      "page_printed": "14"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 49347,
+        "category": "re_depreciation",
+        "page_seq": 28,
+        "page_printed": "14"
+      },
+      {
+        "label": "Real estate depreciation and amortization from investments in unconsolidated real estate entities",
+        "amount": 1388,
+        "category": "jv_depreciation",
+        "page_seq": 28,
+        "page_printed": "14"
+      }
+    ],
+    "ffo_total": {
+      "label": "FFO",
+      "amount": 67388,
+      "page_seq": 28,
+      "page_printed": "14"
+    },
+    "core_adjustments": [
+      {
+        "label": "Other depreciation and amortization",
+        "amount": 375,
+        "category": "non_re_depreciation",
+        "page_seq": 28,
+        "page_printed": "14"
+      },
+      {
+        "label": "Casualty (gains) losses, net",
+        "amount": -191,
+        "category": "casualty",
+        "page_seq": 28,
+        "page_printed": "14"
+      },
+      {
+        "label": "Loan (premium accretion) discount amortization, net",
+        "amount": -2750,
+        "category": "debt_cost_amortization",
+        "page_seq": 28,
+        "page_printed": "14"
+      },
+      {
+        "label": "Other (income) expense",
+        "amount": -765,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "14"
+      },
+      {
+        "label": "Merger and integration costs",
+        "amount": 275,
+        "category": "transaction_costs",
+        "page_seq": 28,
+        "page_printed": "14"
+      }
+    ],
+    "core_total": {
+      "label": "CFFO",
+      "amount": 64332,
+      "page_seq": 28,
+      "page_printed": "14"
+    },
+    "affo_adjustments": [],
+    "affo_total": null,
+    "diluted_shares": {
+      "label": "Weighted-average shares and units outstanding",
+      "amount": 228051.78,
+      "page_seq": 28,
+      "page_printed": "14"
+    },
+    "recurring_capex_disclosed": {
+      "label": "For the three months ended September 30, 2022, recurring capital expenditures for the total portfolio were $8.7 million, or $242 per unit",
+      "amount": 8700,
+      "basis": "quarter",
+      "scope": "company total (total portfolio)",
+      "page_seq": 5,
+      "page_printed": "3"
+    },
+    "reported_per_share": {
+      "ffo": 0.3,
+      "core": 0.28,
+      "affo": null
+    },
+    "notes": "Three-month column for Sep 30, 2022 from the Statements of Operations, FFO & CORE FFO page (seq 28). Company reports CORE FFO (CFFO) only; no AFFO metric, so affo fields are null. Gain on sale of real estate is zero in Q3 2022 and omitted. Diluted share count uses weighted-average shares and units (228,051,780), which reproduces CFFO per share of $0.28 (using 222,867,546 diluted EPS shares would give $0.29). Recurring capex of $8.7 million (quarter, total portfolio) disclosed on the Capital Expenditures paragraph of seq 5; company AFFO does not exist so this is disclosed for reference only. Other (income) expense of (765) is labeled 'other' as it doesn't clearly fit a defined category.\"",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 11152,
+      "output_tokens": 2481
+    },
+    "candidate_pages": [
+      {
+        "seq": 5,
+        "printed": "3"
+      },
+      {
+        "seq": 9,
+        "printed": "7"
+      },
+      {
+        "seq": 27,
+        "printed": "13"
+      },
+      {
+        "seq": 28,
+        "printed": "14"
+      },
+      {
+        "seq": 29,
+        "printed": "15"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 67388,
+    "nareit_ffo_ps": 0.2955,
+    "company_core_name": "CORE Funds From Operations (CFFO)",
+    "company_core": 64332,
+    "company_core_ps": 0.2821,
+    "company_affo_name": null,
+    "company_affo": null,
+    "company_affo_ps": null,
+    "conservative_core_ffo": 63682,
+    "conservative_core_ffo_ps": 0.2792,
+    "conservative_affo": 54982,
+    "conservative_affo_ps": 0.2411,
+    "recurring_capex": [
+      {
+        "label": "For the three months ended September 30, 2022, recurring capital expenditures for the total portfolio were $8.7 million, or $242 per unit",
+        "amount": -8700,
+        "basis": "quarter",
+        "scope": "company total (total portfolio)",
+        "page_seq": 5,
+        "page_printed": "3",
+        "category": "recurring_capex"
+      }
+    ],
+    "recurring_capex_source": "capex_table",
+    "steps": [
+      {
+        "label": "Other depreciation and amortization",
+        "amount": 375,
+        "category": "non_re_depreciation",
+        "page_seq": 28,
+        "page_printed": "14",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Only real estate depreciation is added back (Nareit)); company add-back reversed"
+      },
+      {
+        "label": "Casualty (gains) losses, net",
+        "amount": -191,
+        "category": "casualty",
+        "page_seq": 28,
+        "page_printed": "14",
+        "section": "core",
+        "applied": true,
+        "effect": -191,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
+      },
+      {
+        "label": "Loan (premium accretion) discount amortization, net",
+        "amount": -2750,
+        "category": "debt_cost_amortization",
+        "page_seq": 28,
+        "page_printed": "14",
+        "section": "core",
+        "applied": true,
+        "effect": -2750,
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); gain/recovery removed"
+      },
+      {
+        "label": "Other (income) expense",
+        "amount": -765,
+        "category": "other",
+        "page_seq": 28,
+        "page_printed": "14",
+        "section": "core",
+        "applied": true,
+        "effect": -765,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
+      },
+      {
+        "label": "Merger and integration costs",
+        "amount": 275,
+        "category": "transaction_costs",
+        "page_seq": 28,
+        "page_printed": "14",
+        "section": "core",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
+      }
+    ],
+    "flags": [
+      "Review: 'Other (income) expense' (other) handled by a provisional rule",
+      "Recurring capex taken from a separate table (page 3): the company's own AFFO does not deduct it"
+    ],
+    "diluted_shares": 228051.78
+  }
+}

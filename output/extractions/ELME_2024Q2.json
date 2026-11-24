@@ -190,7 +190,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Severance expense",
@@ -201,18 +201,18 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Amortization of lease intangibles, net",
         "amount": -163,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 21,
         "page_printed": "18",
         "section": "affo",
         "applied": true,
         "effect": -163,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
       },
       {
         "label": "Non-share-based severance expense",
@@ -223,7 +223,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Structuring expenses",
@@ -234,11 +234,11 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       }
     ],
     "flags": [
-      "Review: 'Amortization of lease intangibles, net' (other) handled by a provisional rule"
+      "Review: 'Amortization of lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
     "diluted_shares": 87975
   }

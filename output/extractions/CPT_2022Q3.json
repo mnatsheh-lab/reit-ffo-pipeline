@@ -1,0 +1,153 @@
+{
+  "ticker": "CPT",
+  "quarter": "2022Q3",
+  "period_end": "2022-09-30",
+  "source": {
+    "accession": "0000906345-22-000040",
+    "filename": "0000906345-22-000040.txt",
+    "url": "https://www.sec.gov/Archives/edgar/data/906345/000090634522000040/0000906345-22-000040.txt"
+  },
+  "extraction": {
+    "amount_unit": "thousands",
+    "core_metric_name": null,
+    "affo_metric_name": "Adjusted funds from operations",
+    "affo_starts_from": "ffo",
+    "starting_line": {
+      "label": "Net income attributable to common shareholders (a)",
+      "amount": 29844,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "ffo_adjustments": [
+      {
+        "label": "Real estate depreciation and amortization",
+        "amount": 156065,
+        "category": "re_depreciation",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Adjustments for unconsolidated joint ventures",
+        "amount": 0,
+        "category": "jv_depreciation",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Income allocated to non-controlling interests",
+        "amount": 1706,
+        "category": "noncontrolling_interest",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on sale of operating property",
+        "amount": 0,
+        "category": "property_sale_gain_loss",
+        "page_seq": 7,
+        "page_printed": "5"
+      },
+      {
+        "label": "Gain on acquisition of unconsolidated joint venture interests",
+        "amount": 0,
+        "category": "nareit_other",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "ffo_total": {
+      "label": "Funds from operations",
+      "amount": 187615,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "core_adjustments": [],
+    "core_total": null,
+    "affo_adjustments": [
+      {
+        "label": "Less: recurring capitalized expenditures (b)",
+        "amount": -26001,
+        "category": "recurring_capex",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "affo_total": {
+      "label": "Adjusted funds from operations",
+      "amount": 161614,
+      "page_seq": 7,
+      "page_printed": "5"
+    },
+    "diluted_shares": {
+      "label": "Weighted average number of common shares outstanding: FFO/AFFO - diluted",
+      "amount": 110112,
+      "page_printed": "5",
+      "page_seq": 7
+    },
+    "recurring_capex_disclosed": null,
+    "reported_per_share": {
+      "ffo": 1.7,
+      "core": null,
+      "affo": 1.47
+    },
+    "notes": "Three months ended Sep 30, 2022 column used. Figures in thousands. Shares 110,112 are printed in thousands already (no division needed); check: 187,615/110,112 = 1.70 and 161,614/110,112 = 1.47, matching reported per-share figures. Company has no core/adjusted FFO metric beyond AFFO, so core fields are null. Two zero-value lines (JV adjustments, gain on sale of operating property, gain on acquisition of JV interests) are included as printed for the Q3 2022 column; the gain on acquisition of JV interests and gain on sale of operating property are nil this quarter. Footnote (a) notes ~$1.0 million of Hurricane Ian storm expenses included in net income; this is not a separate reconciling line and was not adjusted. Reconciliation found on both seq 7 (printed 5) and seq 18 (printed 8) and on seq 9 (printed 7); seq 7 used as the source.",
+    "version": 2,
+    "validation_errors": [],
+    "attempts": 1,
+    "model": "claude-haiku-5-5",
+    "stage": 1,
+    "usage": {
+      "input_tokens": 10758,
+      "output_tokens": 2252
+    },
+    "candidate_pages": [
+      {
+        "seq": 7,
+        "printed": "5"
+      },
+      {
+        "seq": 8,
+        "printed": "6"
+      },
+      {
+        "seq": 9,
+        "printed": "7"
+      },
+      {
+        "seq": 18,
+        "printed": "8"
+      },
+      {
+        "seq": 19,
+        "printed": "9"
+      }
+    ]
+  },
+  "restated": {
+    "nareit_ffo": 187615,
+    "nareit_ffo_ps": 1.7039,
+    "company_core_name": null,
+    "company_core": null,
+    "company_core_ps": null,
+    "company_affo_name": "Adjusted funds from operations",
+    "company_affo": 161614,
+    "company_affo_ps": 1.4677,
+    "conservative_core_ffo": 187615,
+    "conservative_core_ffo_ps": 1.7039,
+    "conservative_affo": 161614,
+    "conservative_affo_ps": 1.4677,
+    "recurring_capex": [
+      {
+        "label": "Less: recurring capitalized expenditures (b)",
+        "amount": -26001,
+        "category": "recurring_capex",
+        "page_seq": 7,
+        "page_printed": "5"
+      }
+    ],
+    "recurring_capex_source": "affo_reconciliation",
+    "steps": [],
+    "flags": [],
+    "diluted_shares": 110112
+  }
+}

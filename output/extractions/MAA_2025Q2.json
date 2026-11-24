@@ -180,7 +180,7 @@
         "section": "core",
         "applied": true,
         "effect": -1693,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
       },
       {
         "label": "Loss (gain) on investments, net of tax",
@@ -191,7 +191,7 @@
         "section": "core",
         "applied": true,
         "effect": 317,
-        "reason": "Non-real-estate investment results removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
       },
       {
         "label": "Casualty related (recoveries) charges, net",
@@ -202,7 +202,7 @@
         "section": "core",
         "applied": true,
         "effect": -3346,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
       },
       {
         "label": "Legal costs, settlements and (recoveries), net",
@@ -213,7 +213,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); zero this quarter"
       }
     ],
     "flags": [],

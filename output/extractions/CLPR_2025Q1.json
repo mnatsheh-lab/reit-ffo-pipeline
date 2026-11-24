@@ -153,17 +153,29 @@
       {
         "label": "Amortization of real estate tax intangible",
         "amount": 120,
-        "category": "other",
+        "category": "intangible_amortization",
         "page_seq": 8,
         "page_printed": "",
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); company add-back reversed"
+      },
+      {
+        "label": "Impairment of Long-Lived Assets",
+        "amount": 33780,
+        "category": "re_impairment",
+        "page_seq": 8,
+        "page_printed": "",
+        "section": "affo",
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unusual placement; handled conservatively); company add-back reversed"
       }
     ],
     "flags": [
-      "Review: 'Amortization of real estate tax intangible' (other) handled by a provisional rule"
+      "Review: 'Amortization of real estate tax intangible' (intangible_amortization) handled by a provisional rule",
+      "Review: 'Impairment of Long-Lived Assets' (re_impairment) handled by a provisional rule"
     ],
     "diluted_shares": 42464
   }

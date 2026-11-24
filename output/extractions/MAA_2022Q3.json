@@ -183,10 +183,10 @@
     "company_affo_name": "Core AFFO",
     "company_affo": 220836,
     "company_affo_ps": 1.8613,
-    "conservative_core_ffo": 259379,
-    "conservative_core_ffo_ps": 2.1862,
-    "conservative_affo": 220710,
-    "conservative_affo_ps": 1.8603,
+    "conservative_core_ffo": 259439,
+    "conservative_core_ffo_ps": 2.1867,
+    "conservative_affo": 220770,
+    "conservative_affo_ps": 1.8608,
     "recurring_capex": [
       {
         "label": "Recurring capital expenditures",
@@ -207,18 +207,18 @@
         "section": "core",
         "applied": true,
         "effect": 425,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
       },
       {
         "label": "Gain on sale of non-depreciable real estate assets",
         "amount": -431,
-        "category": "nareit_other",
+        "category": "land_sale_gain_loss",
         "page_seq": 11,
         "page_printed": "11",
         "section": "core",
         "applied": true,
         "effect": -431,
-        "reason": "'nareit_other' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Land sales are one-off, not rental earnings); gain/recovery removed"
       },
       {
         "label": "Loss (gain) on investments, net of tax (1)(2)",
@@ -229,7 +229,7 @@
         "section": "core",
         "applied": true,
         "effect": 6470,
-        "reason": "Non-real-estate investment results removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
       },
       {
         "label": "Net casualty (gain) loss and other settlement proceeds (3)",
@@ -240,7 +240,7 @@
         "section": "core",
         "applied": true,
         "effect": -7046,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); gain/recovery removed"
       },
       {
         "label": "Loss on debt extinguishment (1)",
@@ -251,7 +251,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
       },
       {
         "label": "Legal costs and settlements, net (1)",
@@ -262,18 +262,18 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); zero this quarter"
       },
       {
         "label": "COVID-19 related costs (1)",
         "amount": 60,
-        "category": "other",
+        "category": "pandemic_costs",
         "page_seq": 11,
         "page_printed": "11",
         "section": "core",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "applied": true,
+        "effect": 60,
+        "reason": "Removed from earnings, as the company did (Treated as a one-time event (deliberate exception))"
       },
       {
         "label": "Mark-to-market debt adjustment (4)",
@@ -284,13 +284,10 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Financing fees are a real cost of borrowing, spread over the loan's life; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
       }
     ],
-    "flags": [
-      "Review: 'Gain on sale of non-depreciable real estate assets' (nareit_other) handled by a provisional rule",
-      "Review: 'COVID-19 related costs (1)' (other) handled by a provisional rule"
-    ],
+    "flags": [],
     "diluted_shares": 118643
   }
 }

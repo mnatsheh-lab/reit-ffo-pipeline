@@ -184,8 +184,8 @@
     "company_affo_name": null,
     "company_affo": null,
     "company_affo_ps": null,
-    "conservative_core_ffo": 21127,
-    "conservative_core_ffo_ps": 1.1237,
+    "conservative_core_ffo": 20923,
+    "conservative_core_ffo_ps": 1.1129,
     "conservative_affo": null,
     "conservative_affo_ps": null,
     "recurring_capex": [],
@@ -200,7 +200,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
       },
       {
         "label": "Loss on extinguishment of debt",
@@ -211,7 +211,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); zero this quarter"
       },
       {
         "label": "Technology implementation costs (1)",
@@ -222,7 +222,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Commercial lease termination proceeds",
@@ -233,7 +233,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
       },
       {
         "label": "Acquisition related costs",
@@ -244,18 +244,18 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); zero this quarter"
       },
       {
         "label": "Interest rate swap termination, amortization, and mark-to-market",
         "amount": 204,
-        "category": "derivative_mtm",
+        "category": "debt_cost_amortization",
         "page_seq": 15,
         "page_printed": "8",
         "section": "core",
-        "applied": true,
-        "effect": 204,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
       },
       {
         "label": "Amortization of assumed debt",
@@ -266,7 +266,7 @@
         "section": "core",
         "applied": true,
         "effect": -116,
-        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); gain/recovery removed"
       },
       {
         "label": "Pursuit costs",
@@ -277,7 +277,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Other miscellaneous items",
@@ -288,7 +288,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       }
     ],
     "flags": [
