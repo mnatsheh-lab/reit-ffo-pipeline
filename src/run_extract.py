@@ -59,6 +59,7 @@ def main(argv=None) -> int:
     EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
     rows, tin, tout = [], 0, 0
     stage_counts: dict[int, int] = {}
+    failed: list[str] = []
 
     for r in todo:
         out_path = EXTRACT_DIR / f"{r['ticker']}_{r['quarter']}.json"
@@ -73,8 +74,13 @@ def main(argv=None) -> int:
         else:
             print(f"{r['ticker']} {r['quarter']}: extracting {r['filename']} ...", flush=True)
             fast = None if config.EXTRACT_FAST_MODEL.lower() == "none" else config.EXTRACT_FAST_MODEL
-            ext = extract_document(client, model, Path(r["path"]).read_bytes(), r["filename"],
-                                   r["ticker"], str(q), q.period_end_text, fast_model=fast)
+            try:
+                ext = extract_document(client, model, Path(r["path"]).read_bytes(), r["filename"],
+                                       r["ticker"], str(q), q.period_end_text, fast_model=fast)
+            except Exception as e:        # one bad document must not stop the whole run
+                print(f"    FAILED, skipped: {type(e).__name__}: {str(e)[:200]}")
+                failed.append(f"{r['ticker']} {r['quarter']}")
+                continue
             tin += ext["usage"]["input_tokens"]
             tout += ext["usage"]["output_tokens"]
             result = {
@@ -122,6 +128,8 @@ def main(argv=None) -> int:
     print(head)
     for t in sorted({r["ticker"] for r in rows}):
         print(line(max((r for r in rows if r["ticker"] == t), key=lambda r: r["quarter"])))
+    if failed:
+        print(f"\n=== Failed, not extracted ({len(failed)}): {', '.join(failed)} ===")
     if tin:
         print(f"\nClaude tokens used: {tin:,} in / {tout:,} out")
         if stage_counts:
