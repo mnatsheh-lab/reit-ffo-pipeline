@@ -197,10 +197,10 @@
       "page_printed": "9"
     },
     "diluted_shares": {
-      "label": "NOT PRINTED on provided pages - no FFO per-share denominator given (footnote 6 gives only 8,418 OP unit redemption shares, in thousands); placeholder 0, do not use",
-      "amount": 0,
-      "page_seq": 23,
-      "page_printed": "20"
+      "label": "Diluted weighted average shares outstanding (6)",
+      "amount": 100968,
+      "page_seq": 11,
+      "page_printed": "8"
     },
     "recurring_capex_disclosed": null,
     "reported_per_share": {
@@ -208,17 +208,21 @@
       "core": 0.14,
       "affo": null
     },
-    "notes": "Current-quarter (three months ended March 31, 2024) column only. FFO, Core FFO and Core AFFO subtotals all tie: -3,903 + FFO adjustments = 10,380; + core adjustments = 14,179; + AFFO adjustments = 18,334. Company has no separate AFFO metric; its AFFO is named Core AFFO and starts from Core FFO. Recurring capex is deducted in AFFO (building improvements and TI/LC lines, labeled 'non-incremental revenue generating capital expenditures'), so recurring_capex_disclosed is null. Diluted share count is not printed on the provided pages; the amount field is a placeholder 0 and should be replaced from the weighted average shares table (not provided). Judgment calls: 'Land and other impairments' is zero this quarter and was categorized re_impairment (it is non-depreciable land, so a different category could apply; amount is zero either way). 'Amortization of derivative premium' ($904) was categorized derivative_mtm; it could also be debt_cost_amortization. Market lease intangible amortization and lease inducement amortization were grouped under straight_line_rent as similar non-cash revenue items. Rebranding and severance lines were both categorized severance_restructuring.",
+    "notes": "Dashes for current quarter recorded as 0 (extinguishment of debt, land and other impairments, TI/LC on space vacant >1 year). No per-share AFFO reported. Diluted shares (includes OP units) 100,968 reproduce $0.10 FFO and $0.14 Core FFO. Same pages are duplicated at seq 37-39.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
-    "model": "claude-haiku-5-5",
-    "stage": 1,
+    "model": "claude-sonnet-5-5",
+    "stage": 2,
     "usage": {
-      "input_tokens": 8753,
-      "output_tokens": 4803
+      "input_tokens": 33455,
+      "output_tokens": 10340
     },
     "candidate_pages": [
+      {
+        "seq": 11,
+        "printed": "8"
+      },
       {
         "seq": 12,
         "printed": "9"
@@ -232,28 +236,40 @@
         "printed": "20"
       },
       {
+        "seq": 28,
+        "printed": "25"
+      },
+      {
+        "seq": 37,
+        "printed": "8"
+      },
+      {
         "seq": 38,
         "printed": "9"
       },
       {
         "seq": 39,
         "printed": "10"
+      },
+      {
+        "seq": 49,
+        "printed": "20"
       }
     ]
   },
   "restated": {
     "nareit_ffo": 10380,
-    "nareit_ffo_ps": null,
+    "nareit_ffo_ps": 0.1028,
     "company_core_name": "Core FFO",
     "company_core": 14179,
-    "company_core_ps": null,
+    "company_core_ps": 0.1404,
     "company_affo_name": "Core AFFO",
     "company_affo": 18334,
-    "company_affo_ps": null,
+    "company_affo_ps": 0.1816,
     "conservative_core_ffo": 10493,
-    "conservative_core_ffo_ps": null,
+    "conservative_core_ffo_ps": 0.1039,
     "conservative_affo": 9444,
-    "conservative_affo_ps": null,
+    "conservative_affo_ps": 0.0935,
     "recurring_capex": [
       {
         "label": "Building improvements",
@@ -382,6 +398,6 @@
     "flags": [
       "Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
-    "diluted_shares": 0
+    "diluted_shares": 100968
   }
 }

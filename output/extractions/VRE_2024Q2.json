@@ -79,7 +79,7 @@
       {
         "label": "Land and other impairments",
         "amount": 0,
-        "category": "other",
+        "category": "re_impairment",
         "page_seq": 12,
         "page_printed": "9"
       },
@@ -114,7 +114,7 @@
       {
         "label": "Amortization of derivative premium",
         "amount": 886,
-        "category": "other",
+        "category": "debt_cost_amortization",
         "page_seq": 12,
         "page_printed": "9"
       },
@@ -143,14 +143,14 @@
       {
         "label": "Amortization of market lease intangibles, net",
         "amount": -9,
-        "category": "other",
+        "category": "straight_line_rent",
         "page_seq": 12,
         "page_printed": "9"
       },
       {
         "label": "Amortization of lease inducements",
         "amount": 0,
-        "category": "other",
+        "category": "straight_line_rent",
         "page_seq": 12,
         "page_printed": "9"
       },
@@ -204,10 +204,10 @@
       "page_printed": "9"
     },
     "diluted_shares": {
-      "label": "NOT PRINTED on these pages (footnote 6 gives only OP units of 8,689 thousand for Q2 2024; total diluted count not shown)",
-      "amount": 0,
-      "page_seq": 23,
-      "page_printed": "20"
+      "label": "IMPLIED: FFO / reported FFO per share (not printed in filing; 25,711 / 0.25)",
+      "amount": 102844,
+      "page_seq": 12,
+      "page_printed": "9"
     },
     "recurring_capex_disclosed": null,
     "reported_per_share": {
@@ -215,7 +215,7 @@
       "core": 0.18,
       "affo": null
     },
-    "notes": "Three-month (Q2 2024) column only; all subtotals tie: 2,922 + FFO adjustments = 25,711; + core adjustments = 18,615; + AFFO adjustments = 21,634. Company has no separate AFFO metric; Core AFFO is the AFFO-type total and starts from Core FFO. Building improvements and TI/LC are already deducted in Core AFFO, so recurring_capex_disclosed is null. Diluted share count is NOT printed on these pages: the pages give only OP units (8,689 thousand) in footnote 6, and the total weighted-average diluted count needed for FFO per share is absent, so diluted_shares is entered as 0 as a placeholder and must be filled from the source (the implied count from 25,711/0.25 and 18,615/0.18 is roughly 103 million, but this is an estimate, not a disclosed figure). Items with zero amounts were printed as em-dashes. 'Amortization of derivative premium' is an amortization rather than a fair-value change, so it is coded 'other'. 'Land and other impairments' is coded 'other' because it is a land impairment, not depreciable real estate. Page seq 38/39 repeat the same content as seq 12/13; seq 12 used as the source.",
+    "notes": "All three subtotals tie: FFO 2,922+153+122+22,514 = 25,711; Core FFO 25,711 - 7,096 = 18,615; Core AFFO 18,615 + 3,019 = 21,634. Amounts are the three-months-ended June 30, 2024 column. The '\u2014' entries are recorded as 0. Category judgments: 'Amortization of derivative premium' was mapped to debt_cost_amortization (no better fit; it is a premium amortization, not a fair-value change). Market lease intangibles amortization and lease inducements were mapped to straight_line_rent as similar non-cash revenue adjustments. The 'Redemption value adjustments' line is zero this quarter and was mapped to 'other'. The diluted share count is NOT printed on these pages; the 102,844 value is implied from FFO of 25,711 divided by reported FFO per share of $0.25, so it is approximate (rounding of $0.25 allows roughly 100.8k to 104.9k). Footnote 6 gives OP units of 8,689 for the quarter, but the total weighted average common shares plus units figure is not on these pages. Company AFFO deducts building improvements (recurring capex) and TI/LC, so recurring_capex_disclosed is null. Reconciliation is on page 9 (seq 12) and the same tables repeat on seq 38; page 10 (seq 13) holds Adjusted EBITDA, which was not used.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
@@ -223,7 +223,7 @@
     "stage": 1,
     "usage": {
       "input_tokens": 10500,
-      "output_tokens": 4694
+      "output_tokens": 5219
     },
     "candidate_pages": [
       {
@@ -250,17 +250,17 @@
   },
   "restated": {
     "nareit_ffo": 25711,
-    "nareit_ffo_ps": null,
+    "nareit_ffo_ps": 0.25,
     "company_core_name": "Core FFO",
     "company_core": 18615,
-    "company_core_ps": null,
+    "company_core_ps": 0.181,
     "company_affo_name": "Core AFFO",
     "company_affo": 21634,
-    "company_affo_ps": null,
+    "company_affo_ps": 0.2104,
     "conservative_core_ffo": 14971,
-    "conservative_core_ffo_ps": null,
+    "conservative_core_ffo_ps": 0.1456,
     "conservative_affo": 13331,
-    "conservative_affo_ps": null,
+    "conservative_affo_ps": 0.1296,
     "recurring_capex": [
       {
         "label": "Building improvements",
@@ -300,13 +300,13 @@
       {
         "label": "Land and other impairments",
         "amount": 0,
-        "category": "other",
+        "category": "re_impairment",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unusual placement; handled conservatively); zero this quarter"
       },
       {
         "label": "(Gain) Loss on disposition of developable land",
@@ -355,13 +355,13 @@
       {
         "label": "Amortization of derivative premium",
         "amount": 886,
-        "category": "other",
+        "category": "debt_cost_amortization",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
       },
       {
         "label": "Transaction related costs",
@@ -386,17 +386,6 @@
         "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
       },
       {
-        "label": "Amortization of lease inducements",
-        "amount": 0,
-        "category": "other",
-        "page_seq": 12,
-        "page_printed": "9",
-        "section": "affo",
-        "applied": false,
-        "effect": 0.0,
-        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
-      },
-      {
         "label": "Non-real estate depreciation and amortization",
         "amount": 219,
         "category": "non_re_depreciation",
@@ -409,9 +398,8 @@
       }
     ],
     "flags": [
-      "Review: 'Amortization of derivative premium' (other) handled by a provisional rule",
       "Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
-    "diluted_shares": 0
+    "diluted_shares": 102844
   }
 }

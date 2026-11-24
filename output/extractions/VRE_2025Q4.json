@@ -34,7 +34,7 @@
         "page_printed": "8"
       },
       {
-        "label": "Real estate-related depreciation and amortization on continuing operations 3",
+        "label": "Real estate-related depreciation and amortization on continuing operations",
         "amount": 21735,
         "category": "re_depreciation",
         "page_seq": 11,
@@ -84,35 +84,35 @@
         "page_printed": "8"
       },
       {
-        "label": "Land and other impairments 5",
+        "label": "Land and other impairments",
         "amount": 2317,
         "category": "re_impairment",
         "page_seq": 11,
         "page_printed": "8"
       },
       {
-        "label": "(Gain) loss on disposition of developable land 6",
+        "label": "(Gain) loss on disposition of developable land",
         "amount": 1252,
         "category": "land_sale_gain_loss",
         "page_seq": 11,
         "page_printed": "8"
       },
       {
-        "label": "Severance/Compensation related costs (G&A) 7",
+        "label": "Severance/Compensation related costs (G&A)",
         "amount": 108,
         "category": "severance_restructuring",
         "page_seq": 11,
         "page_printed": "8"
       },
       {
-        "label": "Severance/Compensation related costs (Property Management) 8",
+        "label": "Severance/Compensation related costs (Property Management)",
         "amount": 375,
         "category": "severance_restructuring",
         "page_seq": 11,
         "page_printed": "8"
       },
       {
-        "label": "Amortization of derivative premium 9",
+        "label": "Amortization of derivative premium",
         "amount": 374,
         "category": "derivative_mtm",
         "page_seq": 11,
@@ -141,7 +141,7 @@
     },
     "affo_adjustments": [
       {
-        "label": "Straight-line rent adjustments 10",
+        "label": "Straight-line rent adjustments",
         "amount": -463,
         "category": "straight_line_rent",
         "page_seq": 11,
@@ -197,7 +197,7 @@
         "page_printed": "8"
       },
       {
-        "label": "Tenant improvements and leasing commissions 11",
+        "label": "Tenant improvements and leasing commissions",
         "amount": -205,
         "category": "recurring_capex",
         "page_seq": 11,
@@ -211,10 +211,10 @@
       "page_printed": "8"
     },
     "diluted_shares": {
-      "label": "NOT DISCLOSED on these pages (no FFO share count printed; placeholder 0)",
-      "amount": 0,
-      "page_seq": 11,
-      "page_printed": "8"
+      "label": "Diluted weighted average shares outstanding",
+      "amount": 102077,
+      "page_seq": 10,
+      "page_printed": "7"
     },
     "recurring_capex_disclosed": null,
     "reported_per_share": {
@@ -222,17 +222,21 @@
       "core": 0.19,
       "affo": 0.19
     },
-    "notes": "Pages seq 11 and seq 36 are duplicates; seq 11 used. Dollar reconciliation ties: -203 + adjustments = FFO 14,842; + core adjustments = Core FFO 19,940; + AFFO adjustments = Core AFFO 19,753. Diluted share count is not printed on the provided pages (footnote 2 gives only OP unit counts of 8,589 thousand for the quarter), so diluted_shares is a placeholder of 0 and per-share figures could not be re-derived; it should be filled from the company's weighted average share count. Judgment calls: land and other impairments mapped to re_impairment (land is non-depreciable; closest category); amortization of derivative premium mapped to derivative_mtm (not a financing-cost amortization); market lease intangibles and lease inducements mapped to straight_line_rent as similar non-cash revenue adjustments; the Core AFFO capex lines are labeled 'Non-incremental revenue generating capital expenditures' and mapped to recurring_capex since the company deducts them in AFFO. Zero-amount lines (discontinued ops D&A, JV gain, discontinued disposition gain, lease inducements) recorded as 0 as printed em-dashes.",
+    "notes": "The same reconciliation appears twice (seq 11 and seq 36), so I used seq 11. The company doesn't print a separate share count for FFO per share/unit. I used diluted weighted average shares of 102,077 thousand, which already includes OP units. That gives about $0.145 for FFO and $0.195 for Core FFO, so it only roughly matches the reported $0.14 and $0.19. Core AFFO divided by that count is $0.193, which matches the reported $0.19. \"Land and other impairments\" is categorized as re_impairment because there is no closer category. The Amortization of derivative premium line is categorized as derivative_mtm. Dash entries are recorded as 0.",
     "version": 2,
     "validation_errors": [],
     "attempts": 1,
-    "model": "claude-haiku-5-5",
-    "stage": 1,
+    "model": "claude-sonnet-5-5",
+    "stage": 2,
     "usage": {
-      "input_tokens": 10708,
-      "output_tokens": 4698
+      "input_tokens": 69736,
+      "output_tokens": 11083
     },
     "candidate_pages": [
+      {
+        "seq": 10,
+        "printed": "7"
+      },
       {
         "seq": 11,
         "printed": "8"
@@ -246,28 +250,40 @@
         "printed": "19"
       },
       {
+        "seq": 27,
+        "printed": "24"
+      },
+      {
+        "seq": 35,
+        "printed": "7"
+      },
+      {
         "seq": 36,
         "printed": "8"
       },
       {
         "seq": 37,
         "printed": "9"
+      },
+      {
+        "seq": 47,
+        "printed": "19"
       }
     ]
   },
   "restated": {
     "nareit_ffo": 14842,
-    "nareit_ffo_ps": null,
+    "nareit_ffo_ps": 0.1454,
     "company_core_name": "Core FFO",
     "company_core": 19940,
-    "company_core_ps": null,
+    "company_core_ps": 0.1953,
     "company_affo_name": "Core AFFO",
     "company_affo": 19753,
-    "company_affo_ps": null,
+    "company_affo_ps": 0.1935,
     "conservative_core_ffo": 15236,
-    "conservative_core_ffo_ps": null,
+    "conservative_core_ffo_ps": 0.1493,
     "conservative_affo": 11034,
-    "conservative_affo_ps": null,
+    "conservative_affo_ps": 0.1081,
     "recurring_capex": [
       {
         "label": "Building improvements",
@@ -277,7 +293,7 @@
         "page_printed": "8"
       },
       {
-        "label": "Tenant improvements and leasing commissions 11",
+        "label": "Tenant improvements and leasing commissions",
         "amount": -205,
         "category": "recurring_capex",
         "page_seq": 11,
@@ -298,7 +314,7 @@
         "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
       },
       {
-        "label": "Land and other impairments 5",
+        "label": "Land and other impairments",
         "amount": 2317,
         "category": "re_impairment",
         "page_seq": 11,
@@ -309,7 +325,7 @@
         "reason": "Costs kept in earnings; gains and recoveries removed (Unusual placement; handled conservatively); company add-back reversed"
       },
       {
-        "label": "(Gain) loss on disposition of developable land 6",
+        "label": "(Gain) loss on disposition of developable land",
         "amount": 1252,
         "category": "land_sale_gain_loss",
         "page_seq": 11,
@@ -320,7 +336,7 @@
         "reason": "Costs kept in earnings; gains and recoveries removed (Land sales are one-off, not rental earnings); company add-back reversed"
       },
       {
-        "label": "Severance/Compensation related costs (G&A) 7",
+        "label": "Severance/Compensation related costs (G&A)",
         "amount": 108,
         "category": "severance_restructuring",
         "page_seq": 11,
@@ -331,7 +347,7 @@
         "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
-        "label": "Severance/Compensation related costs (Property Management) 8",
+        "label": "Severance/Compensation related costs (Property Management)",
         "amount": 375,
         "category": "severance_restructuring",
         "page_seq": 11,
@@ -342,7 +358,7 @@
         "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
-        "label": "Amortization of derivative premium 9",
+        "label": "Amortization of derivative premium",
         "amount": 374,
         "category": "derivative_mtm",
         "page_seq": 11,
@@ -398,9 +414,9 @@
       }
     ],
     "flags": [
-      "Review: 'Land and other impairments 5' (re_impairment) handled by a provisional rule",
+      "Review: 'Land and other impairments' (re_impairment) handled by a provisional rule",
       "Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule"
     ],
-    "diluted_shares": 0
+    "diluted_shares": 102077
   }
 }

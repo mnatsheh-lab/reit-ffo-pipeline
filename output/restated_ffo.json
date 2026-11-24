@@ -3390,13 +3390,13 @@
   {
     "ticker": "VRE",
     "quarter": "2024Q1",
-    "nareit_ffo_ps": null,
+    "nareit_ffo_ps": 0.1028,
     "company_core_name": "Core FFO",
-    "company_core_ps": null,
-    "conservative_core_ffo_ps": null,
+    "company_core_ps": 0.1404,
+    "conservative_core_ffo_ps": 0.1039,
     "company_affo_name": "Core AFFO",
-    "company_affo_ps": null,
-    "conservative_affo_ps": null,
+    "company_affo_ps": 0.1816,
+    "conservative_affo_ps": 0.0935,
     "ties": true,
     "flags": "Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule",
     "source_url": "https://www.sec.gov/Archives/edgar/data/924901/000092490124000021/0000924901-24-000021.txt"
@@ -3404,15 +3404,15 @@
   {
     "ticker": "VRE",
     "quarter": "2024Q2",
-    "nareit_ffo_ps": null,
+    "nareit_ffo_ps": 0.25,
     "company_core_name": "Core FFO",
-    "company_core_ps": null,
-    "conservative_core_ffo_ps": null,
+    "company_core_ps": 0.181,
+    "conservative_core_ffo_ps": 0.1456,
     "company_affo_name": "Core AFFO",
-    "company_affo_ps": null,
-    "conservative_affo_ps": null,
+    "company_affo_ps": 0.2104,
+    "conservative_affo_ps": 0.1296,
     "ties": true,
-    "flags": "Review: 'Amortization of derivative premium' (other) handled by a provisional rule | Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule",
+    "flags": "Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule",
     "source_url": "https://www.sec.gov/Archives/edgar/data/924901/000092490124000045/0000924901-24-000045.txt"
   },
   {
@@ -3488,15 +3488,15 @@
   {
     "ticker": "VRE",
     "quarter": "2025Q4",
-    "nareit_ffo_ps": null,
+    "nareit_ffo_ps": 0.1454,
     "company_core_name": "Core FFO",
-    "company_core_ps": null,
-    "conservative_core_ffo_ps": null,
+    "company_core_ps": 0.1953,
+    "conservative_core_ffo_ps": 0.1493,
     "company_affo_name": "Core AFFO",
-    "company_affo_ps": null,
-    "conservative_affo_ps": null,
+    "company_affo_ps": 0.1935,
+    "conservative_affo_ps": 0.1081,
     "ties": true,
-    "flags": "Review: 'Land and other impairments 5' (re_impairment) handled by a provisional rule | Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule",
+    "flags": "Review: 'Land and other impairments' (re_impairment) handled by a provisional rule | Review: 'Amortization of market lease intangibles, net' (intangible_amortization) handled by a provisional rule",
     "source_url": "https://www.sec.gov/Archives/edgar/data/924901/000162828026010382/0001628280-26-010382.txt"
   }
 ]
