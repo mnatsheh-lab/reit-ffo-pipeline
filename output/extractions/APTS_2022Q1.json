@@ -256,10 +256,10 @@
     "company_affo_name": "AFFO",
     "company_affo": 8711,
     "company_affo_ps": 0.1536,
-    "conservative_core_ffo": -121,
-    "conservative_core_ffo_ps": -0.0021,
-    "conservative_affo": -2004,
-    "conservative_affo_ps": -0.0353,
+    "conservative_core_ffo": -1725,
+    "conservative_core_ffo_ps": -0.0304,
+    "conservative_affo": -3608,
+    "conservative_affo_ps": -0.0636,
     "recurring_capex": [
       {
         "label": "Normally recurring capital expenditures (See note 15)",
@@ -280,7 +280,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Loan cost amortization on acquisition line of credit and loan coordination fees (See note 3)",
@@ -291,7 +291,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Financing fees and debt fair-value amortization: the real cost of borrowing is kept; non-cash benefits are removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (The real cost of borrowing is kept; non-cash benefits are removed); company add-back reversed"
       },
       {
         "label": "Payment of costs related to property refinancing",
@@ -302,7 +302,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Refinancing is recurring; costs kept, gains removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Refinancing is a recurring part of running a leveraged REIT); company add-back reversed"
       },
       {
         "label": "Internalization costs (See note 4)",
@@ -313,7 +313,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       },
       {
         "label": "Corporate governance and merger-related costs",
@@ -324,7 +324,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Deemed dividends for redemptions of and non-cash dividends on preferred stock, plus expenses incurred on calls of preferred stock (See note 5)",
@@ -335,7 +335,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       },
       {
         "label": "Expenses related to the COVID-19 global pandemic",
@@ -344,9 +344,9 @@
         "page_seq": 14,
         "page_printed": "S - 3",
         "section": "core",
-        "applied": true,
-        "effect": 0,
-        "reason": "COVID-19 costs treated as a one-time event; company's add-back applied (deliberate exception)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Removed from earnings, as the company did (Treated as a one-time event (deliberate exception)); zero this quarter"
       },
       {
         "label": "Non-cash income for current expected credit losses (See note 12)",
@@ -357,7 +357,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       },
       {
         "label": "Depreciation/amortization of non-real estate assets",
@@ -368,7 +368,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Only real estate depreciation is added back (Nareit); other assets wear out and are replaced; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Only real estate depreciation is added back (Nareit)); company add-back reversed"
       },
       {
         "label": "Net loan origination fees received (See note 7)",
@@ -379,7 +379,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       },
       {
         "label": "Deferred interest income received (See note 8)",
@@ -390,7 +390,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
       },
       {
         "label": "Amortization of lease inducements (See note 9)",
@@ -401,7 +401,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); company add-back reversed"
       },
       {
         "label": "Cash received in excess of (exceeded by) amortization of purchase option termination revenues (See note 10)",
@@ -412,7 +412,7 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
       },
       {
         "label": "Non-cash loan interest income (See note 11)",
@@ -423,7 +423,7 @@
         "section": "affo",
         "applied": true,
         "effect": -2027,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
       },
       {
         "label": "Cash paid for loan closing costs",
@@ -434,7 +434,18 @@
         "section": "affo",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); zero this quarter"
+      },
+      {
+        "label": "Amortization of acquired real estate intangible liabilities and straight-line rent adjustments (See note 13)",
+        "amount": -1604,
+        "category": "intangible_amortization",
+        "page_seq": 14,
+        "page_printed": "S - 3",
+        "section": "affo",
+        "applied": true,
+        "effect": -1604,
+        "reason": "Costs kept in earnings; gains and recoveries removed (Treated like other non-cash adjustments: costs kept, benefits removed); gain/recovery removed"
       },
       {
         "label": "Amortization of deferred revenues (See note 14)",
@@ -445,7 +456,7 @@
         "section": "affo",
         "applied": true,
         "effect": -940,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
       }
     ],
     "flags": [
@@ -455,6 +466,7 @@
       "Review: 'Net loan origination fees received (See note 7)' (other) handled by a provisional rule",
       "Review: 'Amortization of lease inducements (See note 9)' (other) handled by a provisional rule",
       "Review: 'Non-cash loan interest income (See note 11)' (other) handled by a provisional rule",
+      "Review: 'Amortization of acquired real estate intangible liabilities and straight-line rent adjustments (See note 13)' (intangible_amortization) handled by a provisional rule",
       "Review: 'Amortization of deferred revenues (See note 14)' (other) handled by a provisional rule"
     ],
     "diluted_shares": 56723

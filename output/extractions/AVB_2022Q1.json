@@ -207,7 +207,7 @@
         "section": "core",
         "applied": true,
         "effect": -255,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
       },
       {
         "label": "Gain on interest rate contract",
@@ -218,18 +218,18 @@
         "section": "core",
         "applied": true,
         "effect": -729,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
       },
       {
         "label": "Advocacy contributions",
         "amount": 150,
-        "category": "other",
+        "category": "advocacy_costs",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Rent-control ballot fights recur in some markets); company add-back reversed"
       },
       {
         "label": "Executive transition compensation costs",
@@ -240,7 +240,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Severance related costs",
@@ -251,7 +251,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Development pursuit write-offs and expensed transaction costs, net of recoveries",
@@ -262,40 +262,40 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Gain on for-sale condominiums (1)",
         "amount": -1002,
-        "category": "other",
+        "category": "condo_activity",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": true,
         "effect": -1002,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Condo sales are not rental earnings: gains removed, costs kept); gain/recovery removed"
       },
       {
         "label": "For-sale condominium marketing, operating and administrative costs (1)",
         "amount": 766,
-        "category": "other",
+        "category": "condo_activity",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Condo sales are not rental earnings: gains removed, costs kept); company add-back reversed"
       },
       {
         "label": "For-sale condominium imputed carry cost (2)",
         "amount": 919,
-        "category": "other",
+        "category": "condo_activity",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Condo sales are not rental earnings: gains removed, costs kept); company add-back reversed"
       },
       {
         "label": "Gain on other real estate transactions, net",
@@ -306,7 +306,7 @@
         "section": "core",
         "applied": true,
         "effect": -37,
-        "reason": "Land sales are one-off, not rental earnings: gains removed, losses kept (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Land sales are one-off, not rental earnings); gain/recovery removed"
       },
       {
         "label": "Legal settlements",
@@ -317,27 +317,27 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
       },
       {
         "label": "Income tax expense (benefit) (3)",
         "amount": 2471,
-        "category": "other",
+        "category": "income_tax",
         "page_seq": 12,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Taxes are a real cost; one-off benefits removed); company add-back reversed"
       }
     ],
     "flags": [
       "Review: 'Unconsolidated entity (gains) losses, net' (other) handled by a provisional rule",
-      "Review: 'Advocacy contributions' (other) handled by a provisional rule",
-      "Review: 'Gain on for-sale condominiums (1)' (other) handled by a provisional rule",
-      "Review: 'For-sale condominium marketing, operating and administrative costs (1)' (other) handled by a provisional rule",
-      "Review: 'For-sale condominium imputed carry cost (2)' (other) handled by a provisional rule",
-      "Review: 'Income tax expense (benefit) (3)' (other) handled by a provisional rule",
+      "Review: 'Advocacy contributions' (advocacy_costs) handled by a provisional rule",
+      "Review: 'Gain on for-sale condominiums (1)' (condo_activity) handled by a provisional rule",
+      "Review: 'For-sale condominium marketing, operating and administrative costs (1)' (condo_activity) handled by a provisional rule",
+      "Review: 'For-sale condominium imputed carry cost (2)' (condo_activity) handled by a provisional rule",
+      "Review: 'Income tax expense (benefit) (3)' (income_tax) handled by a provisional rule",
       "No recurring capex disclosed; Conservative AFFO not computed"
     ],
     "diluted_shares": 139976.082

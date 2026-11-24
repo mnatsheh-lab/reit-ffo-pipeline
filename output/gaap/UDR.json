@@ -1,0 +1,1362 @@
+{
+ "ticker": "UDR",
+ "cik": 74208,
+ "entity": "UDR, Inc.",
+ "fetched": "2026-11-24",
+ "first_quarter": "2022Q1",
+ "metrics": {
+  "eps_diluted": "Diluted EPS",
+  "revenue": "Total revenue",
+  "net_income_common": "Net income to common shareholders",
+  "dividends_ps": "Dividends declared per share",
+  "interest_expense": "Interest expense",
+  "total_debt": "Total debt",
+  "total_assets": "Total assets"
+ },
+ "quarters": {
+  "2021Q1": {
+   "eps_diluted": {
+    "value": 0.01,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   },
+   "revenue": {
+    "value": 301441000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   },
+   "net_income_common": {
+    "value": 2048000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   },
+   "dividends_ps": {
+    "value": 0.3625,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   },
+   "interest_expense": {
+    "value": 78156000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   },
+   "total_debt": {
+    "value": 5041175000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-21-000056",
+    "filed": "2021-04-28"
+   },
+   "total_assets": {
+    "value": 9566556000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-21-000056",
+    "filed": "2021-04-28"
+   }
+  },
+  "2021Q2": {
+   "eps_diluted": {
+    "value": 0.04,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   },
+   "revenue": {
+    "value": 311348000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   },
+   "net_income_common": {
+    "value": 10663000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   },
+   "dividends_ps": {
+    "value": 0.3625,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   },
+   "interest_expense": {
+    "value": 35404000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   },
+   "total_debt": {
+    "value": 5452107000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-21-000080",
+    "filed": "2021-07-29"
+   },
+   "total_assets": {
+    "value": 9919271000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-21-000080",
+    "filed": "2021-07-29"
+   }
+  },
+  "2021Q3": {
+   "eps_diluted": {
+    "value": 0.06,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   },
+   "revenue": {
+    "value": 329770000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   },
+   "net_income_common": {
+    "value": 16673000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   },
+   "dividends_ps": {
+    "value": 0.3625,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   },
+   "interest_expense": {
+    "value": 36289000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   },
+   "total_debt": {
+    "value": 5522439000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-21-000108",
+    "filed": "2021-10-27"
+   },
+   "total_assets": {
+    "value": 10400564000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-21-000108",
+    "filed": "2021-10-27"
+   }
+  },
+  "2021Q4": {
+   "eps_diluted": {
+    "value": 0.38,
+    "derived": true,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20",
+    "approx": true
+   },
+   "revenue": {
+    "value": 348208000,
+    "derived": true,
+    "concept": "Revenues",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20"
+   },
+   "net_income_common": {
+    "value": 116403000,
+    "derived": true,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20"
+   },
+   "dividends_ps": {
+    "value": 0.3625,
+    "derived": true,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20",
+    "approx": true
+   },
+   "interest_expense": {
+    "value": 36418000,
+    "derived": true,
+    "concept": "InterestExpenseDebt",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20"
+   },
+   "total_debt": {
+    "value": 5412787000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-K",
+    "accn": "0000074208-23-000007",
+    "filed": "2023-02-13"
+   },
+   "total_assets": {
+    "value": 10775220000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-K",
+    "accn": "0000074208-23-000007",
+    "filed": "2023-02-13"
+   }
+  },
+  "2022Q1": {
+   "eps_diluted": {
+    "value": 0.04,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   },
+   "revenue": {
+    "value": 357266000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   },
+   "net_income_common": {
+    "value": 12613000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   },
+   "dividends_ps": {
+    "value": 0.38,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   },
+   "interest_expense": {
+    "value": 35916000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   },
+   "total_debt": {
+    "value": 5479010000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   },
+   "total_assets": {
+    "value": 10684964000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-22-000030",
+    "filed": "2022-04-27"
+   }
+  },
+  "2022Q2": {
+   "eps_diluted": {
+    "value": 0.01,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   },
+   "revenue": {
+    "value": 369167000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   },
+   "net_income_common": {
+    "value": 3975000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   },
+   "dividends_ps": {
+    "value": 0.38,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   },
+   "interest_expense": {
+    "value": 36832000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   },
+   "total_debt": {
+    "value": 5517234000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   },
+   "total_assets": {
+    "value": 10996986000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-22-000053",
+    "filed": "2022-07-27"
+   }
+  },
+  "2022Q3": {
+   "eps_diluted": {
+    "value": 0.07,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   },
+   "revenue": {
+    "value": 391297000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   },
+   "net_income_common": {
+    "value": 22499000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   },
+   "dividends_ps": {
+    "value": 0.38,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   },
+   "interest_expense": {
+    "value": 39905000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   },
+   "total_debt": {
+    "value": 5626362000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   },
+   "total_assets": {
+    "value": 11097962000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-22-000068",
+    "filed": "2022-10-27"
+   }
+  },
+  "2022Q4": {
+   "eps_diluted": {
+    "value": 0.14,
+    "derived": true,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18",
+    "approx": true
+   },
+   "revenue": {
+    "value": 399656000,
+    "derived": true,
+    "concept": "Revenues",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18"
+   },
+   "net_income_common": {
+    "value": 43425000,
+    "derived": true,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18"
+   },
+   "dividends_ps": {
+    "value": 0.38,
+    "derived": true,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18",
+    "approx": true
+   },
+   "interest_expense": {
+    "value": 43247000,
+    "derived": true,
+    "concept": "InterestExpenseDebt",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18"
+   },
+   "total_debt": {
+    "value": 5487303000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20"
+   },
+   "total_assets": {
+    "value": 11038470000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-K",
+    "accn": "0000074208-24-000011",
+    "filed": "2024-02-20"
+   }
+  },
+  "2023Q1": {
+   "eps_diluted": {
+    "value": 0.09,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   },
+   "revenue": {
+    "value": 399549000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   },
+   "net_income_common": {
+    "value": 29781000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   },
+   "dividends_ps": {
+    "value": 0.42,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   },
+   "interest_expense": {
+    "value": 43742000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   },
+   "total_debt": {
+    "value": 5576963000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   },
+   "total_assets": {
+    "value": 10967700000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-23-000044",
+    "filed": "2023-04-27"
+   }
+  },
+  "2023Q2": {
+   "eps_diluted": {
+    "value": 1.05,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   },
+   "revenue": {
+    "value": 404548000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   },
+   "net_income_common": {
+    "value": 346323000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   },
+   "dividends_ps": {
+    "value": 0.42,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   },
+   "interest_expense": {
+    "value": 45113000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   },
+   "total_debt": {
+    "value": 5427212000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   },
+   "total_assets": {
+    "value": 11085705000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-23-000056",
+    "filed": "2023-07-27"
+   }
+  },
+  "2023Q3": {
+   "eps_diluted": {
+    "value": 0.1,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   },
+   "revenue": {
+    "value": 410131000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   },
+   "net_income_common": {
+    "value": 31637000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   },
+   "dividends_ps": {
+    "value": 0.42,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   },
+   "interest_expense": {
+    "value": 44664000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   },
+   "total_debt": {
+    "value": 5752822000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   },
+   "total_assets": {
+    "value": 11420062000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-23-000066",
+    "filed": "2023-10-27"
+   }
+  },
+  "2023Q4": {
+   "eps_diluted": {
+    "value": 0.1,
+    "derived": true,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17",
+    "approx": true
+   },
+   "revenue": {
+    "value": 413273000,
+    "derived": true,
+    "concept": "Revenues",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "net_income_common": {
+    "value": 31764000,
+    "derived": true,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "dividends_ps": {
+    "value": 0.84,
+    "derived": true,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17",
+    "approx": true
+   },
+   "interest_expense": {
+    "value": 47347000,
+    "derived": true,
+    "concept": "InterestExpenseDebt",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "total_debt": {
+    "value": 5798709000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18"
+   },
+   "total_assets": {
+    "value": 11373242000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-K",
+    "accn": "0000074208-25-000010",
+    "filed": "2025-02-18"
+   }
+  },
+  "2024Q1": {
+   "eps_diluted": {
+    "value": 0.13,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   },
+   "revenue": {
+    "value": 413634000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   },
+   "net_income_common": {
+    "value": 41918000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   },
+   "dividends_ps": {
+    "value": 0.425,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   },
+   "interest_expense": {
+    "value": 48062000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   },
+   "total_debt": {
+    "value": 5762328000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   },
+   "total_assets": {
+    "value": 11190488000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-24-000039",
+    "filed": "2024-05-01"
+   }
+  },
+  "2024Q2": {
+   "eps_diluted": {
+    "value": 0.08,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   },
+   "revenue": {
+    "value": 415320000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   },
+   "net_income_common": {
+    "value": 27673000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   },
+   "dividends_ps": {
+    "value": 0.425,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   },
+   "interest_expense": {
+    "value": 47811000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   },
+   "total_debt": {
+    "value": 5776136000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   },
+   "total_assets": {
+    "value": 11117805000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-24-000060",
+    "filed": "2024-07-31"
+   }
+  },
+  "2024Q3": {
+   "eps_diluted": {
+    "value": 0.06,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   },
+   "revenue": {
+    "value": 420160000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   },
+   "net_income_common": {
+    "value": 21400000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   },
+   "dividends_ps": {
+    "value": 0.425,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   },
+   "interest_expense": {
+    "value": 50214000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   },
+   "total_debt": {
+    "value": 5865263000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   },
+   "total_assets": {
+    "value": 11079764000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-24-000081",
+    "filed": "2024-10-31"
+   }
+  },
+  "2024Q4": {
+   "eps_diluted": {
+    "value": -0.02,
+    "derived": true,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17",
+    "approx": true
+   },
+   "revenue": {
+    "value": 422728000,
+    "derived": true,
+    "concept": "Revenues",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "net_income_common": {
+    "value": -6241000,
+    "derived": true,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "dividends_ps": {
+    "value": 0.425,
+    "derived": true,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17",
+    "approx": true
+   },
+   "interest_expense": {
+    "value": 49625000,
+    "derived": true,
+    "concept": "InterestExpenseDebt",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "total_debt": {
+    "value": 5826965000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "total_assets": {
+    "value": 10897586000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   }
+  },
+  "2025Q1": {
+   "eps_diluted": {
+    "value": 0.23,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "revenue": {
+    "value": 421948000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "net_income_common": {
+    "value": 75514000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "dividends_ps": {
+    "value": 0.43,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "interest_expense": {
+    "value": 47701000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "total_debt": {
+    "value": 5811209000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   },
+   "total_assets": {
+    "value": 10745412000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-25-000036",
+    "filed": "2025-05-01"
+   }
+  },
+  "2025Q2": {
+   "eps_diluted": {
+    "value": 0.11,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "revenue": {
+    "value": 425399000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "net_income_common": {
+    "value": 36462000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "dividends_ps": {
+    "value": 0.43,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "interest_expense": {
+    "value": 48665000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "total_debt": {
+    "value": 5775583000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   },
+   "total_assets": {
+    "value": 10647085000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-25-000051",
+    "filed": "2025-07-31"
+   }
+  },
+  "2025Q3": {
+   "eps_diluted": {
+    "value": 0.12,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "revenue": {
+    "value": 431864000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "net_income_common": {
+    "value": 39198000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "dividends_ps": {
+    "value": 0.43,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "interest_expense": {
+    "value": 50569000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "total_debt": {
+    "value": 5834169000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   },
+   "total_assets": {
+    "value": 10601912000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-25-000072",
+    "filed": "2025-10-30"
+   }
+  },
+  "2025Q4": {
+   "eps_diluted": {
+    "value": 0.67,
+    "derived": true,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17",
+    "approx": true
+   },
+   "revenue": {
+    "value": 433106000,
+    "derived": true,
+    "concept": "Revenues",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "net_income_common": {
+    "value": 221691000,
+    "derived": true,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "dividends_ps": {
+    "value": 0.43,
+    "derived": true,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17",
+    "approx": true
+   },
+   "interest_expense": {
+    "value": 49684000,
+    "derived": true,
+    "concept": "InterestExpenseDebt",
+    "form": "10-K",
+    "accn": "0000074208-26-000013",
+    "filed": "2026-02-17"
+   },
+   "total_debt": {
+    "value": 5821369000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "total_assets": {
+    "value": 10605674000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   }
+  },
+  "2026Q1": {
+   "eps_diluted": {
+    "value": 0.57,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "revenue": {
+    "value": 425849000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "net_income_common": {
+    "value": 188611000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "dividends_ps": {
+    "value": 0.435,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "interest_expense": {
+    "value": 48576000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "total_debt": {
+    "value": 5663316000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   },
+   "total_assets": {
+    "value": 10333774000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-26-000049",
+    "filed": "2026-04-30"
+   }
+  },
+  "2026Q2": {
+   "eps_diluted": {
+    "value": 0.21,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "revenue": {
+    "value": 425399000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "net_income_common": {
+    "value": 67810000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "dividends_ps": {
+    "value": 0.435,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "interest_expense": {
+    "value": 47640000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "total_debt": {
+    "value": 5813832000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   },
+   "total_assets": {
+    "value": 10265348000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-26-000073",
+    "filed": "2026-07-28"
+   }
+  },
+  "2026Q3": {
+   "eps_diluted": {
+    "value": 0.67,
+    "derived": false,
+    "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "revenue": {
+    "value": 428081000,
+    "derived": false,
+    "concept": "Revenues",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "net_income_common": {
+    "value": 214869000,
+    "derived": false,
+    "concept": "NetIncomeLossAvailableToCommonStockholdersBasic",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "dividends_ps": {
+    "value": 0.435,
+    "derived": false,
+    "concept": "CommonStockDividendsPerShareDeclared",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "interest_expense": {
+    "value": 48583000,
+    "derived": false,
+    "concept": "InterestExpenseDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "total_debt": {
+    "value": 5756311000,
+    "derived": false,
+    "concept": "LongTermDebt",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   },
+   "total_assets": {
+    "value": 10301216000,
+    "derived": false,
+    "concept": "Assets",
+    "form": "10-Q",
+    "accn": "0000074208-26-000087",
+    "filed": "2026-11-03"
+   }
+  }
+ }
+}

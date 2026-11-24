@@ -211,7 +211,7 @@
         "section": "core",
         "applied": true,
         "effect": 13467,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
       },
       {
         "label": "Non-cash straight-line rent (2)",
@@ -222,7 +222,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "'straight_line_rent' item in the company's adjusted section; costs kept, gains removed (provisional rule, review) (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Non-cash revenue timing); company add-back reversed"
       },
       {
         "label": "Business transformation and transition related costs (3)",
@@ -233,7 +233,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Legal reserve",
@@ -244,7 +244,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
       },
       {
         "label": "Casualty loss (gain) and other (5)",
@@ -255,7 +255,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
       },
       {
         "label": "Common noncontrolling interests in AIR OP\u2019s share of above adjustments and amounts allocable to participating securities",
@@ -271,13 +271,13 @@
       {
         "label": "Cash swap acceleration income, net of common noncontrolling interests in AIR OP and participating securities",
         "amount": -2857,
-        "category": "other",
+        "category": "derivative_mtm",
         "page_seq": 15,
         "page_printed": "13",
         "section": "core",
         "applied": true,
         "effect": -2857,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time)"
       },
       {
         "label": "Casualty and legal expense in excess of run-rate, net of common noncontrolling interests in AIR OP and participating securities (5)",
@@ -288,12 +288,11 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Casualty losses are a recurring cost; only insurance recoveries are removed (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Weather is a recurring cost; only insurance recoveries are removed); company add-back reversed"
       }
     ],
     "flags": [
-      "Review: 'Non-cash straight-line rent (2)' (straight_line_rent) handled by a provisional rule",
-      "Review: 'Cash swap acceleration income, net of common noncontrolling interests in AIR OP and participating securities' (other) handled by a provisional rule"
+      "Review: 'Non-cash straight-line rent (2)' (straight_line_rent) handled by a provisional rule"
     ],
     "diluted_shares": 146514
   }

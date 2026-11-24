@@ -196,18 +196,18 @@
         "section": "core",
         "applied": true,
         "effect": 658,
-        "reason": "Non-real-estate investment results removed (gains and losses)"
+        "reason": "Removed from earnings, as the company did (Measures the apartment business only)"
       },
       {
         "label": "Structured Investment Program loan reserve (2)",
         "amount": -310,
-        "category": "other",
+        "category": "loan_reserves",
         "page_seq": 11,
         "page_printed": "9",
         "section": "core",
         "applied": true,
         "effect": -310,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Credit losses on lending programs are a real cost); gain/recovery removed"
       },
       {
         "label": "Hedge accounting activity",
@@ -216,20 +216,20 @@
         "page_seq": 11,
         "page_printed": "9",
         "section": "core",
-        "applied": true,
-        "effect": 0,
-        "reason": "Non-cash derivative revaluation removed (gains and losses)"
+        "applied": false,
+        "effect": 0.0,
+        "reason": "Removed from earnings, as the company did (Non-cash and reverses over time); zero this quarter"
       },
       {
         "label": "Advocacy contributions",
         "amount": 350,
-        "category": "other",
+        "category": "advocacy_costs",
         "page_seq": 11,
         "page_printed": "9",
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Rent-control ballot fights recur in some markets); company add-back reversed"
       },
       {
         "label": "Executive transition compensation costs",
@@ -240,7 +240,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (zero this quarter)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); zero this quarter"
       },
       {
         "label": "Severance related costs",
@@ -251,7 +251,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Reorganizations recur; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Reorganizations recur); company add-back reversed"
       },
       {
         "label": "Expensed transaction, development and other pursuit costs, net of recoveries (3)",
@@ -262,7 +262,7 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Acquisition-driven growth has a real cost; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Growth through acquisitions has a real cost); company add-back reversed"
       },
       {
         "label": "Other real estate activity (4)",
@@ -273,7 +273,7 @@
         "section": "core",
         "applied": true,
         "effect": -212,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Unlisted type; handled conservatively); gain/recovery removed"
       },
       {
         "label": "Legal settlements and costs",
@@ -284,25 +284,25 @@
         "section": "core",
         "applied": false,
         "effect": 0.0,
-        "reason": "Legal costs are a normal cost of operating; kept as a cost (company add-back reversed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Lawsuits are a normal cost of operating large apartment portfolios); company add-back reversed"
       },
       {
         "label": "Income tax (benefit) expense",
         "amount": -295,
-        "category": "other",
+        "category": "income_tax",
         "page_seq": 11,
         "page_printed": "9",
         "section": "core",
         "applied": true,
         "effect": -295,
-        "reason": "Unlisted adjustment type: treated conservatively (costs kept, gains removed) and flagged for review (gain/recovery removed)"
+        "reason": "Costs kept in earnings; gains and recoveries removed (Taxes are a real cost; one-off benefits removed); gain/recovery removed"
       }
     ],
     "flags": [
-      "Review: 'Structured Investment Program loan reserve (2)' (other) handled by a provisional rule",
-      "Review: 'Advocacy contributions' (other) handled by a provisional rule",
+      "Review: 'Structured Investment Program loan reserve (2)' (loan_reserves) handled by a provisional rule",
+      "Review: 'Advocacy contributions' (advocacy_costs) handled by a provisional rule",
       "Review: 'Other real estate activity (4)' (other) handled by a provisional rule",
-      "Review: 'Income tax (benefit) expense' (other) handled by a provisional rule",
+      "Review: 'Income tax (benefit) expense' (income_tax) handled by a provisional rule",
       "No recurring capex disclosed; Conservative AFFO not computed"
     ],
     "diluted_shares": 141991.262
