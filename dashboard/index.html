@@ -168,6 +168,13 @@ table.metrics th button:focus-visible { outline: 2px solid var(--accent); outlin
 table.metrics th[aria-sort="ascending"] button::after { content: " ▲"; } table.metrics th[aria-sort="descending"] button::after { content: " ▼"; }
 table.metrics tbody tr { cursor: pointer; }
 table.metrics tbody tr:hover { background: var(--accent-soft); }
+.weights { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; padding: 4px 0 12px; font-size: 0.85rem; }
+.weights label { display: inline-flex; gap: 6px; align-items: center; }
+.weights select { font: inherit; padding: 2px 4px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); color: var(--ink); }
+table.score td.sc { white-space: nowrap; }
+table.score .bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--accent); vertical-align: middle; margin-right: 8px; }
+table.score td.pil { font-variant-numeric: tabular-nums; color: var(--ink); }
+table.score td.na { color: var(--muted); }
 table.metrics tbody tr[aria-current="true"] td:first-child { box-shadow: inset 3px 0 0 var(--accent); font-weight: 600; }
 table.data { border-collapse: collapse; font: 0.8rem var(--f-num); width: 100%; }
 table.data th, table.data td { padding: 4px 8px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
@@ -315,6 +322,15 @@ footer p { margin: 0; max-width: 90ch; }
       </section>
     </aside>
   </div>
+
+  <section class="panel" aria-labelledby="score-title">
+    <div class="panel-head">
+      <h2 id="score-title">Performance scorecard</h2>
+      <p class="note" id="score-note"></p>
+    </div>
+    <div class="weights" id="weights"></div>
+    <div class="tablewrap"><table class="data metrics score" id="score-table"></table></div>
+  </section>
 
   <section class="panel" aria-labelledby="table-title">
     <div class="panel-head">
@@ -645,6 +661,76 @@ function metricsTable() {
   $("table-note").textContent = `${qLabel(state.quarter)}, ${rows.length} REITs. Payout is the dividend as a share of ${metric("affo")} (or ${metric("core")} when AFFO isn't computed). Definition gap: how much higher the company's own adjusted FFO is than ${metric("core")}. Click a column to sort, a row to open that REIT.`;
 }
 
+// ---------- Performance scorecard ----------
+// Same method as src/scorecard.py: trailing four quarters, each metric scored 0-100 within the group of
+// REITs reporting in the chosen quarter, pillars averaged, then weighted. Follows the current rules.
+const PILLARS = ["Growth", "Balance sheet", "Dividend safety", "Earnings quality"];
+const SC_METRICS = {
+  ffo_growth: ["FFO/share growth", "Growth", true], revenue_growth: ["Revenue growth", "Growth", true],
+  interest_coverage: ["Interest coverage", "Balance sheet", true], debt_to_assets: ["Debt to assets", "Balance sheet", false],
+  payout: ["Dividend payout", "Dividend safety", false], definition_gap: ["Definition gap", "Earnings quality", false],
+};
+const WKEY = "ffo-weights-v1";
+let weights = Object.fromEntries(PILLARS.map((p) => [p, 1]));
+try { const w = JSON.parse(localStorage.getItem(WKEY) || "null"); if (w) weights = { ...weights, ...w }; } catch (e) {}
+const backQ = (q, n) => { const i = Number(q.slice(0, 4)) * 4 + Number(q.slice(5)) - 1 - n; return Math.floor(i / 4) + "Q" + (i % 4 + 1); };
+function scWindow(have, end, n = 4, look = 4) {
+  for (let s = 0; s <= look; s++) {
+    const last = backQ(end, s), qs = [...Array(n).keys()].reverse().map((i) => backQ(last, i));
+    if (qs.every(have)) return qs;
+  }
+  return null;
+}
+function scMetrics(t, end) {
+  const rec = (q) => byKey.get(t + "-" + q), ps = (q) => rec(q)?.cons_core_ps ?? null, g = (q, m) => gv(t, q, m)?.v ?? null;
+  const m = {}, sum = (a) => a.reduce((x, y) => x + y, 0);
+  let w = scWindow((q) => ps(q) != null && ps(backQ(q, 4)) != null, end);
+  if (w) {
+    const ch = w.filter((q) => ps(backQ(q, 4)) > 0).map((q) => (ps(q) - ps(backQ(q, 4))) / ps(backQ(q, 4))).sort((a, b) => a - b);
+    if (ch.length >= 3) m.ffo_growth = ch.length % 2 ? ch[(ch.length - 1) / 2] : (ch[ch.length / 2 - 1] + ch[ch.length / 2]) / 2;
+  }
+  w = scWindow((q) => g(q, "revenue") && g(backQ(q, 4), "revenue"), end);
+  if (w) m.revenue_growth = (sum(w.map((q) => g(q, "revenue"))) - sum(w.map((q) => g(backQ(q, 4), "revenue")))) / Math.abs(sum(w.map((q) => g(backQ(q, 4), "revenue"))));
+  w = scWindow((q) => rec(q)?.cons_core != null && g(q, "interest_expense"), end);
+  if (w) { const i = sum(w.map((q) => Math.abs(g(q, "interest_expense")))); if (i) m.interest_coverage = (sum(w.map((q) => rec(q).cons_core)) + i) / i; }
+  w = scWindow((q) => g(q, "total_debt") && g(q, "total_assets"), end, 1);
+  if (w) m.debt_to_assets = g(w[0], "total_debt") / g(w[0], "total_assets");
+  const both = [...Array(4).keys()].reverse().map((i) => backQ(end, i)).filter((q) => g(q, "dividends_ps") != null && ps(q) != null);
+  if (both.length >= 3) { const c = sum(both.map(ps)); if (c > 0) m.payout = sum(both.map((q) => g(q, "dividends_ps"))) / c; }
+  const head = (q) => rec(q)?.company_core_ps ?? null;      // companies with no adjusted FFO aren't scored on this
+  w = scWindow((q) => head(q) != null && ps(q) != null, end);
+  if (w) { const c = sum(w.map(ps)); if (c > 0) m.definition_gap = (sum(w.map(head)) - c) / c; }
+  return m;
+}
+function scorecard() {
+  const end = state.quarter;
+  const group = tickers.filter((t) => byKey.has(t + "-" + end) && series(t).length >= 5);
+  const raw = Object.fromEntries(group.map((t) => [t, scMetrics(t, end)]));
+  const sc = Object.fromEntries(group.map((t) => [t, { m: {}, p: {} }]));
+  const used = [];
+  for (const [k, [, , hib]] of Object.entries(SC_METRICS)) {
+    const have = group.filter((t) => raw[t][k] != null);
+    const vals = [...new Set(have.map((t) => raw[t][k]))].sort((a, b) => (hib ? b - a : a - b));
+    if (vals.length < 2) continue;                       // no spread (e.g. definition gap under As reported): no information
+    used.push(k);
+    have.forEach((t) => { sc[t].m[k] = 100 * (1 - vals.indexOf(raw[t][k]) / (vals.length - 1)); });
+  }
+  group.forEach((t) => {
+    PILLARS.forEach((p) => { const v = used.filter((k) => SC_METRICS[k][1] === p && sc[t].m[k] != null).map((k) => sc[t].m[k]); if (v.length) sc[t].p[p] = v.reduce((a, b) => a + b, 0) / v.length; });
+    const ps_ = PILLARS.filter((p) => sc[t].p[p] != null && weights[p] > 0), wsum = ps_.reduce((a, p) => a + weights[p], 0);
+    sc[t].overall = wsum ? ps_.reduce((a, p) => a + sc[t].p[p] * weights[p], 0) / wsum : null;
+  });
+  const order = group.filter((t) => sc[t].overall != null).sort((a, b) => sc[b].overall - sc[a].overall);
+  const f = (k, v) => v == null ? "–" : k === "interest_coverage" ? v.toFixed(1) + "x" : pct(v, !["debt_to_assets", "payout"].includes(k));
+  const cell = (v) => v == null ? `<td class="pil na">–</td>` : `<td class="pil">${v.toFixed(0)}</td>`;
+  $("score-table").innerHTML = `<thead><tr><th scope="col">#</th><th scope="col">REIT</th><th scope="col">Score</th>${PILLARS.map((p) => `<th scope="col">${p}</th>`).join("")}${Object.values(SC_METRICS).map(([l]) => `<th scope="col">${l}</th>`).join("")}</tr></thead><tbody>` +
+    order.map((t, i) => `<tr data-t="${t}" aria-current="${t === state.ticker}"><td>${i + 1}</td><td><b>${t}</b></td><td class="sc"><span class="bar" style="width:${(sc[t].overall * 0.6).toFixed(0)}px"></span>${sc[t].overall.toFixed(0)}</td>${PILLARS.map((p) => cell(sc[t].p[p])).join("")}${Object.keys(SC_METRICS).map((k) => `<td${raw[t][k] == null ? ' class="na"' : ""}>${f(k, raw[t][k])}</td>`).join("")}</tr>`).join("") + "</tbody>";
+  $("score-note").textContent = `${order.length} REITs reporting in ${qLabel(end)}, trailing four quarters. Each metric is scored 0–100 within this group (best = 100), averaged into pillars, then weighted. FFO figures follow your rules (${metric("core")}); growth is the median year-over-year quarterly change, so one unusual quarter can't drive it.${used.includes("definition_gap") ? "" : " Earnings quality only scores once your rules differ from the companies' own."} A dash means the filings don't disclose it, or (definition gap) the company publishes no adjusted FFO.`;
+  $("weights").innerHTML = `<span class="eyebrow">Weights</span>` + PILLARS.map((p) => `<label>${p} <select data-p="${p}">${[0, 1, 2, 3].map((v) => `<option value="${v}"${weights[p] === v ? " selected" : ""}>${v}×</option>`).join("")}</select></label>`).join("");
+}
+$("weights").addEventListener("change", (e) => { const sel = e.target.closest("select"); if (!sel) return; weights[sel.dataset.p] = Number(sel.value); try { localStorage.setItem(WKEY, JSON.stringify(weights)); } catch (err) {} scorecard(); });
+$("score-table").addEventListener("click", (e) => { const tr = e.target.closest("tbody tr"); if (tr) { state.ticker = tr.dataset.t; render(); } });
+
 // ---------- Time series ----------
 function points(t) {
   const rows = series(t);
@@ -819,7 +905,7 @@ function render() {
   $("reit").value = state.ticker;
   quarterOptions();
   $("quarter").value = state.quarter;
-  figures(d); kpis(d); formula(d); ledger(d); peers(); flags(d); chart(); metricsTable(); grid();
+  figures(d); kpis(d); formula(d); ledger(d); peers(); flags(d); chart(); scorecard(); metricsTable(); grid();
   try { history.replaceState(null, "", "#" + state.ticker + "-" + state.quarter); } catch (e) {}
 }
 
