@@ -9,6 +9,8 @@ from bs4 import BeautifulSoup
 
 PAGE_BREAK = re.compile(r"<[^>]+page-break-(?:before|after)\s*:\s*always[^>]*>", re.I)
 NUM = re.compile(r"\(?\d{1,3}(?:,\d{3})+\)?")
+MAX_PAGE_CHARS = 12_000      # a real printed page is 2-8k characters; anything longer is cut into chunks
+MAX_SEND_CHARS = 200_000     # hard cap on text sent to Claude per attempt (~50k tokens)
 
 
 @dataclass
@@ -50,7 +52,33 @@ def _printed_number(text: str) -> str:
     return m.group(1) if m else ""
 
 
+def _chunks(pages: list[Page]) -> list[Page]:
+    """Cut over-long 'pages' (documents without page breaks, inline-XBRL filings) into page-sized
+    chunks at line boundaries, so page selection still sends only the relevant part."""
+    out = []
+    for p in pages:
+        if len(p.text) <= MAX_PAGE_CHARS:
+            out.append(Page(len(out) + 1, p.printed, p.text))
+            continue
+        buf = ""
+        for line in p.text.splitlines(keepends=True):
+            while len(line) > MAX_PAGE_CHARS:                      # a single enormous line
+                if buf:
+                    out.append(Page(len(out) + 1, p.printed, buf)); buf = ""
+                out.append(Page(len(out) + 1, p.printed, line[:MAX_PAGE_CHARS])); line = line[MAX_PAGE_CHARS:]
+            if len(buf) + len(line) > MAX_PAGE_CHARS and buf:
+                out.append(Page(len(out) + 1, p.printed, buf)); buf = ""
+            buf += line
+        if buf:
+            out.append(Page(len(out) + 1, p.printed, buf))
+    return out
+
+
 def split_pages(raw: bytes, name: str) -> list[Page]:
+    return _chunks(_split_pages(raw, name))
+
+
+def _split_pages(raw: bytes, name: str) -> list[Page]:
     if name.lower().endswith(".pdf"):
         import pdfplumber
 
@@ -133,4 +161,9 @@ def candidate_pages(pages: list[Page], small: bool = False) -> list[Page]:
     for scorer in (shares_score, capex_score):
         best = sorted((p for p in pages if scorer(p.text) > 0), key=lambda p: scorer(p.text), reverse=True)[:extra]
         chosen |= {p.seq for p in best}
-    return [p for p in pages if p.seq in chosen]
+    picked = [p for p in pages if p.seq in chosen]
+    while sum(len(p.text) for p in picked) > MAX_SEND_CHARS and len(picked) > 1:   # drop the weakest page
+        picked.remove(min(picked, key=lambda p: reconciliation_score(p.text)))
+    if picked and len(picked[0].text) > MAX_SEND_CHARS:
+        picked = [Page(picked[0].seq, picked[0].printed, picked[0].text[:MAX_SEND_CHARS])]
+    return picked

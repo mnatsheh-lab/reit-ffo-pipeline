@@ -61,8 +61,13 @@ class EdgarClient:
 
     # ---------- filings ----------
     def filings(self, cik: int) -> list[dict]:
-        """All filings for a company, newest first, as dicts."""
-        data = self.get_json(SUBMISSIONS_URL.format(cik=cik))
+        """All filings for a company, newest first, as dicts.
+
+        The recent-filings list changes every time a company files, so it is downloaded fresh once per
+        run (a cached copy would hide new quarters); older pages never change and stay cached."""
+        seen = self.__dict__.setdefault("_fresh_ciks", set())
+        data = self.get_json(SUBMISSIONS_URL.format(cik=cik), fresh=cik not in seen)
+        seen.add(cik)
         rows = _rows(data["filings"]["recent"])
         for page in data["filings"].get("files", []):
             rows += _rows(self.get_json(SUBMISSIONS_PAGE_URL.format(name=page["name"])))
