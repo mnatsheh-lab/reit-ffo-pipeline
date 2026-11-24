@@ -15,7 +15,7 @@ NODE = shutil.which("node")
 
 
 def preset_rules(name):
-    how = DEFINITION["presets"][name]
+    how = {**DEFINITION.get("saved_presets", {}), **DEFINITION["presets"]}[name]
     return {"treatments": {c: (v["default"] if how == "default" else how) for c, v in DEFINITION["categories"].items()},
             "capex": dict(DEFINITION["capex"])}
 
@@ -28,7 +28,7 @@ class ParityTests(unittest.TestCase):
             self.skipTest("no extractions committed")
         docs = [json.loads(p.read_text()) for p in files]
         records = [record(d) for d in docs]
-        rule_sets = {name: preset_rules(name) for name in DEFINITION["presets"]}
+        rule_sets = {name: preset_rules(name) for name in [*DEFINITION["presets"], *DEFINITION.get("saved_presets", {})]}
         rule_sets["No capex"] = {**preset_rules("Conservative"), "capex": {"deduct": False, "use_capex_table": True}}
         rule_sets["No capex tables"] = {**preset_rules("Conservative"), "capex": {"deduct": True, "use_capex_table": False}}
         with tempfile.TemporaryDirectory() as d:

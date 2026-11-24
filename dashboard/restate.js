@@ -19,7 +19,7 @@ function restateRecord(rec, rules, def) {
       else if (t === "apply") applied = true;
       else if (t === "keep_all") applied = false;
       else { applied = amt < 0; reason += amt < 0 ? "; gain/recovery removed" : "; company add-back reversed"; }
-      if (amt !== 0 && (!def.categories[cat] || def.categories[cat].provisional))
+      if (amt !== 0 && (!def.categories[cat] || def.categories[cat].provisional) && t === info.default)
         flags.push("Review: '" + line.label + "' (" + cat + ") handled by a provisional rule");
     }
     if (applied) consCore += amt;
@@ -35,9 +35,9 @@ function restateRecord(rec, rules, def) {
       capexSource = "capex_table";
       flags.push("Recurring capex taken from a separate table (page " + (d.page || "") + "): the company's own AFFO does not deduct it");
     } else if (!capex.length && d && d.basis !== "quarter") {
-      flags.push("Recurring capex only disclosed on a '" + d.basis + "' basis; Conservative AFFO not computed");
+      flags.push("Recurring capex only disclosed on a '" + d.basis + "' basis; AFFO not restated");
     } else if (!capex.length) {
-      flags.push("No recurring capex disclosed; Conservative AFFO not computed");
+      flags.push("No recurring capex disclosed; AFFO not restated");
     }
   }
   const consAffo = capex.length ? consCore + capex.reduce((a, c) => a + c.amount, 0) : null;
@@ -47,7 +47,7 @@ function restateRecord(rec, rules, def) {
 }
 
 function rulesFromPreset(preset, def) {
-  const how = def.presets[preset];
+  const how = def.presets[preset] !== undefined ? def.presets[preset] : (def.saved_presets || {})[preset];
   const treatments = {};
   Object.entries(def.categories).forEach(([c, v]) => { treatments[c] = how === "default" ? v.default : how; });
   return { treatments, capex: Object.assign({}, def.capex) };

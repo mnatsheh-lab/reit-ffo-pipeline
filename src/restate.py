@@ -72,7 +72,9 @@ def restate(ext: dict, rules: dict | None = None) -> dict:
     for section, line in rule_lines(ext):
         applied, reason = treat(line, rules)
         info = CATEGORIES.get(line["category"])
-        if line["amount"] != 0 and line["category"] != "noncontrolling_interest" and (info is None or info.get("provisional")):
+        t = rules["treatments"].get(line["category"], rules["treatments"].get("other", "keep_costs"))
+        if (line["amount"] != 0 and line["category"] != "noncontrolling_interest" and (info is None or info.get("provisional"))
+                and t == (info or CATEGORIES["other"])["default"]):   # only while the provisional choice is in use
             flags.append(f"Review: '{line['label']}' ({line['category']}) handled by a provisional rule")
         if applied:
             cons_core += line["amount"]
@@ -89,9 +91,9 @@ def restate(ext: dict, rules: dict | None = None) -> dict:
             flags.append(f"Recurring capex taken from a separate table (page {disclosed.get('page_printed') or disclosed.get('page_seq')}): "
                          "the company's own AFFO does not deduct it")
         elif not capex_lines and disclosed and disclosed.get("basis") != "quarter":
-            flags.append(f"Recurring capex only disclosed on a '{disclosed.get('basis')}' basis; Conservative AFFO not computed")
+            flags.append(f"Recurring capex only disclosed on a '{disclosed.get('basis')}' basis; AFFO not restated")
         elif not capex_lines:
-            flags.append("No recurring capex disclosed; Conservative AFFO not computed")
+            flags.append("No recurring capex disclosed; AFFO not restated")
     cons_affo = cons_core + sum(l["amount"] for l in capex_lines) if capex_lines else None
 
     def ps(x):

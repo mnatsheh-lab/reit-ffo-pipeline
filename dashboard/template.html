@@ -232,8 +232,8 @@ footer p { margin: 0; max-width: 90ch; }
 <div class="wrap">
   <header>
     <div class="eyebrow">REIT FFO Comparability Pipeline</div>
-    <h1>Multifamily FFO, restated on one conservative definition</h1>
-    <p>Pick a REIT and a quarter. Every figure below is taken from the company's own SEC filing, shown with its line-item name and page, and restated in code using the definition shown below: the Conservative default, or rules you choose yourself.</p>
+    <h1>Multifamily FFO, restated on rules you choose</h1>
+    <p>Pick a REIT and a quarter. Every figure below is taken from the company's own SEC filing, shown with its line-item name and page, and restated in code on the rules below. The page opens on each company's own adjustments (As reported); change how any type of adjustment is treated and every REIT and quarter restates instantly.</p>
     <div class="controls">
       <div class="field">
         <label for="reit">REIT</label>
@@ -247,7 +247,7 @@ footer p { margin: 0; max-width: 90ch; }
   </header>
 
   <details class="panel rules" id="rules-panel">
-    <summary><span class="eyebrow">Definition</span><span class="defname" id="def-name">Conservative</span><span class="changes" id="def-changes"></span><span class="edit">Choose your own rules</span></summary>
+    <summary><span class="eyebrow">Definition</span><span class="defname" id="def-name">As reported</span><span class="changes" id="def-changes"></span><span class="edit">Choose your own rules</span></summary>
     <div class="rules-body">
       <div class="presets" id="presets"><span class="eyebrow">Start from</span></div>
       <p class="rules-note">For each type of adjustment a company makes between NAREIT FFO and its own "core" figure, choose how your definition treats it. Every REIT and quarter is restated instantly. Only types that appear in the data are listed; the count shows how many company-quarters contain each one.</p>
@@ -256,7 +256,7 @@ footer p { margin: 0; max-width: 90ch; }
         <label><input type="checkbox" id="capex-deduct"> Deduct recurring capital expenditures for AFFO</label>
         <label><input type="checkbox" id="capex-table"> Use the company's capex table when its own AFFO leaves capex out</label>
       </div>
-      <p class="rules-note">Your choices are remembered in this browser only. The published default is the Conservative definition.</p>
+      <p class="rules-note">Your choices are remembered in this browser only. The page opens on As reported: every company's own adjustments, applied as the company did.</p>
     </div>
   </details>
 
@@ -305,7 +305,7 @@ footer p { margin: 0; max-width: 90ch; }
       <section class="panel" aria-labelledby="peers-title">
         <div>
           <h3 id="peers-title">Peers this quarter</h3>
-          <p class="legend" id="peers-legend">How far the conservative figure sits below each company's own metric.</p>
+          <p class="legend" id="peers-legend">How far the restated figure sits from each company's own metric.</p>
         </div>
         <div class="peers" id="peers"></div>
       </section>
@@ -327,14 +327,14 @@ footer p { margin: 0; max-width: 90ch; }
   <section aria-labelledby="all-title" style="display:grid;gap:12px">
     <div class="panel-head">
       <h2 id="all-title">All multifamily REITs</h2>
-      <span class="legend-row"><span class="key"><i class="reported"></i>Reported</span><span class="key"><i class="cons"></i><span id="grid-cons-label">Conservative Core FFO</span></span></span>
+      <span class="legend-row"><span class="key"><i class="reported"></i>Reported</span><span class="key"><i class="cons"></i><span id="grid-cons-label">Core FFO (restated)</span></span></span>
     </div>
     <div class="grid-reits" id="grid"></div>
   </section>
 
   <footer>
-    <div class="eyebrow">The Conservative Core FFO definition (default)</div>
-    <p>Start from NAREIT FFO. Legal costs, casualty losses, deal costs, severance, stock compensation, financing-cost amortization and non-real-estate depreciation stay in earnings; insurance recoveries and debt-extinguishment gains are removed; investment and derivative gains and losses are removed either way. Conservative AFFO then deducts recurring capital expenditures, taken from the company's capex table when its own AFFO leaves them out.</p>
+    <div class="eyebrow">How the restatement works</div>
+    <p>Every restated figure starts from NAREIT FFO, the industry-standard measure, and then applies each adjustment the company made toward its own "core" figure according to the rule you choose for that type: remove it as the company did, keep costs in earnings but remove gains, or keep it in earnings entirely. AFFO then deducts recurring capital expenditures, taken from the company's capex table when its own AFFO leaves them out (both options can be switched off).</p>
     <p>GAAP figures (EPS, revenue, dividends, debt, assets) come from the XBRL data in each company's 10-Q and 10-K. Fourth quarters appear only in the annual 10-K, so Q4 is the full year minus the first nine months; for per-share figures that is approximate and marked ≈.</p>
     <p>Data: __COVERAGE__, extracted from SEC EDGAR filings and checked against each company's reported totals. Page numbers are the printed page numbers in the linked exhibit. Built __BUILT__. Not investment advice.</p>
   </footer>
@@ -347,14 +347,15 @@ footer p { margin: 0; max-width: 90ch; }
 const DATA = /*__DATA__*/[];
 const DEF = /*__DEFINITION__*/{};
 const GAAP = /*__GAAP__*/{};
-const STORE_KEY = "ffo-rules-v1";
-let rules = rulesFromPreset("Conservative", DEF);
+const STORE_KEY = "ffo-rules-v2";
+const BASE_PRESET = DEF.default_preset || Object.keys(DEF.presets)[0];
+let rules = rulesFromPreset(BASE_PRESET, DEF);
 try { const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); if (saved && saved.treatments && saved.capex) rules = { treatments: { ...rules.treatments, ...saved.treatments }, capex: { ...rules.capex, ...saved.capex } }; } catch (e) {}
 const sameRules = (a, b) => JSON.stringify(a.treatments) === JSON.stringify(b.treatments) && a.capex.deduct === b.capex.deduct && a.capex.use_capex_table === b.capex.use_capex_table;
 function defName() { for (const p of Object.keys(DEF.presets)) if (sameRules(rules, rulesFromPreset(p, DEF))) return p; return "Custom"; }
 function metric(kind) {   // name of the restated metric under the current rules
   const n = defName(), base = kind === "core" ? "Core FFO" : "AFFO";
-  return n === "Conservative" ? "Conservative " + base : n === "Custom" ? "Your " + base : base + " (" + n + " rules)";
+  return n === "Custom" ? "Your " + base : base + " (" + n + ")";
 }
 function recompute() {
   DATA.forEach((d) => {
@@ -508,7 +509,7 @@ function peers() {
       <span class="tk">${d.ticker}</span>
       <span class="bars">${bar("Core", core, "core")}${bar("AFFO", affo, "affo")}</span>
     </button>`).join("");
-  $("peers-legend").textContent = `${qLabel(state.quarter)}: conservative figure vs the company's own adjusted FFO (Core) and AFFO. Longer bar = bigger cut.`;
+  $("peers-legend").textContent = `${qLabel(state.quarter)}: ${metric("core")} vs the company's own adjusted FFO (Core) and AFFO. Longer bar = bigger difference.`;
 }
 
 function flags(d) {
@@ -690,7 +691,7 @@ function chart() {
     $("chart-note").textContent = !hasGaap ? "GAAP EPS not loaded yet: run run_dashboard.bat." : avg == null ? `No GAAP EPS found for ${state.ticker}.`
       : `${metric("core")} averages ${ps(avg)} per share ${avg >= 0 ? "above" : "below"} GAAP diluted EPS across ${epsPts.length} quarters. Most of the difference is real estate depreciation, which GAAP subtracts and FFO adds back; property-sale gains, which GAAP includes and FFO removes, can push EPS above FFO in some quarters.`;
   } else $("chart-note").textContent = valid.length
-    ? `${esc(state.ticker)}, ${pts[0].q.replace("Q", " Q")} to ${pts[n - 1].q.replace("Q", " Q")}: the conservative figure averages ${avgGap < 0 ? "" : "+"}${(avgGap * 100).toFixed(0)}% versus the company's reported ${view.metric === "core" ? "figure" : "AFFO"} across ${valid.length} quarter${valid.length > 1 ? "s" : ""}.`
+    ? `${esc(state.ticker)}, ${pts[0].q.replace("Q", " Q")} to ${pts[n - 1].q.replace("Q", " Q")}: ${esc(metric(view.metric === "affo" ? "affo" : "core"))} averages ${avgGap < 0 ? "" : "+"}${(avgGap * 100).toFixed(0)}% versus the company's reported ${view.metric === "core" ? "figure" : "AFFO"} across ${valid.length} quarter${valid.length > 1 ? "s" : ""}.`
     : view.metric === "affo" ? `${state.ticker} does not report an AFFO figure to compare against.` : "";
   $("chart-table").innerHTML = `<table class="data"><thead><tr><th>Quarter</th>${keys.map(([, , name]) => `<th>${esc(name)}</th>`).join("")}</tr></thead><tbody>` +
     pts.slice().reverse().map((p) => `<tr><td>${qLabel(p.q)}</td>${keys.map(([k]) => `<td>${ps(p[k])}</td>`).join("")}</tr>`).join("") + `</tbody></table>`;
@@ -727,18 +728,18 @@ function grid() {
 const usage = {};
 DATA.forEach((d) => d.rule_lines.forEach((l) => { if (l.amount && l.category !== "noncontrolling_interest") usage[l.category] = (usage[l.category] || 0) + 1; }));
 function rulesPanel() {
-  const n = defName(), base = rulesFromPreset("Conservative", DEF);
+  const n = defName(), base = rulesFromPreset(BASE_PRESET, DEF);
   const changes = Object.keys(rules.treatments).filter((c) => rules.treatments[c] !== base.treatments[c]).length
     + (rules.capex.deduct !== base.capex.deduct) + (rules.capex.use_capex_table !== base.capex.use_capex_table);
   $("def-name").textContent = n === "Custom" ? "Custom definition" : n;
-  $("def-changes").textContent = n === "Conservative" ? "" : changes + " change" + (changes === 1 ? "" : "s") + " from Conservative";
+  $("def-changes").textContent = n === BASE_PRESET ? "" : changes + " change" + (changes === 1 ? "" : "s") + " from " + BASE_PRESET;
   $("presets").innerHTML = `<span class="eyebrow">Start from</span>` + Object.keys(DEF.presets).map((p) =>
     `<button type="button" data-p="${esc(p)}" aria-pressed="${p === n}">${esc(p)}</button>`).join("");
   const cats = Object.keys(DEF.categories).filter((c) => usage[c]).sort((a, b) => usage[b] - usage[a]);
   $("rule-grid").innerHTML = cats.map((c) => {
     const info = DEF.categories[c], t = rules.treatments[c];
-    return `<div class="rule${t !== info.default ? " changed" : ""}"><label class="nm" for="rule-${c}">${esc(info.label)}
-      <small>${usage[c]} quarter${usage[c] > 1 ? "s" : ""} · default: ${esc(DEF.treatment_labels[info.default])}${info.provisional ? " · provisional" : ""}</small></label>
+    return `<div class="rule${t !== base.treatments[c] ? " changed" : ""}"><label class="nm" for="rule-${c}">${esc(info.label)}
+      <small>${usage[c]} quarter${usage[c] > 1 ? "s" : ""}</small></label>
       <select id="rule-${c}" data-c="${c}">${Object.entries(DEF.treatment_labels).map(([k, v]) => `<option value="${k}"${k === t ? " selected" : ""}>${esc(v)}</option>`).join("")}</select></div>`;
   }).join("");
   $("capex-deduct").checked = rules.capex.deduct;
