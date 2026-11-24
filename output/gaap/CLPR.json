@@ -23,6 +23,14 @@
     "accn": "0001437749-21-011525",
     "filed": "2021-05-10"
    },
+   "revenue": {
+    "value": 30651000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-22-011732",
+    "filed": "2022-05-10"
+   },
    "net_income_common": {
     "value": -2704000,
     "derived": false,
@@ -65,6 +73,14 @@
     "accn": "0001437749-21-019139",
     "filed": "2021-08-09"
    },
+   "revenue": {
+    "value": 30671000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-22-019622",
+    "filed": "2022-08-09"
+   },
    "net_income_common": {
     "value": -1225000,
     "derived": false,
@@ -106,6 +122,14 @@
     "form": "10-Q",
     "accn": "0001437749-21-025922",
     "filed": "2021-11-09"
+   },
+   "revenue": {
+    "value": 30631000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-22-026617",
+    "filed": "2022-11-09"
    },
    "net_income_common": {
     "value": -1295000,
@@ -150,6 +174,14 @@
     "filed": "2022-03-15",
     "approx": true
    },
+   "revenue": {
+    "value": 30776000,
+    "derived": true,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-K",
+    "accn": "0001437749-23-006886",
+    "filed": "2023-03-16"
+   },
    "net_income_common": {
     "value": -2363000,
     "derived": true,
@@ -184,6 +216,22 @@
    }
   },
   "2022Q1": {
+   "eps_diluted": {
+    "value": -0.09,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-23-012555",
+    "filed": "2023-05-04"
+   },
+   "revenue": {
+    "value": 32050000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-23-012555",
+    "filed": "2023-05-04"
+   },
    "net_income_common": {
     "value": -1318000,
     "derived": false,
@@ -218,6 +266,22 @@
    }
   },
   "2022Q2": {
+   "eps_diluted": {
+    "value": -0.08,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-23-021956",
+    "filed": "2023-08-03"
+   },
+   "revenue": {
+    "value": 31887000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-23-021956",
+    "filed": "2023-08-03"
+   },
    "net_income_common": {
     "value": -1119000,
     "derived": false,
@@ -252,6 +316,22 @@
    }
   },
   "2022Q3": {
+   "eps_diluted": {
+    "value": -0.08,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-23-030021",
+    "filed": "2023-11-02"
+   },
+   "revenue": {
+    "value": 32800000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-23-030021",
+    "filed": "2023-11-02"
+   },
    "net_income_common": {
     "value": -1057000,
     "derived": false,
@@ -286,6 +366,23 @@
    }
   },
   "2022Q4": {
+   "eps_diluted": {
+    "value": -0.1,
+    "derived": true,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-K",
+    "accn": "0001437749-24-007842",
+    "filed": "2024-03-14",
+    "approx": true
+   },
+   "revenue": {
+    "value": 33009000,
+    "derived": true,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-K",
+    "accn": "0001437749-24-007842",
+    "filed": "2024-03-14"
+   },
    "net_income_common": {
     "value": -1270000,
     "derived": true,
@@ -320,6 +417,22 @@
    }
   },
   "2023Q1": {
+   "eps_diluted": {
+    "value": -0.19,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-24-015069",
+    "filed": "2024-05-07"
+   },
+   "revenue": {
+    "value": 33667000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-24-015069",
+    "filed": "2024-05-07"
+   },
    "net_income_common": {
     "value": -2687000,
     "derived": false,
@@ -354,6 +467,22 @@
    }
   },
   "2023Q2": {
+   "eps_diluted": {
+    "value": -0.1,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-24-024284",
+    "filed": "2024-08-01"
+   },
+   "revenue": {
+    "value": 34543000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-24-024284",
+    "filed": "2024-08-01"
+   },
    "net_income_common": {
     "value": -1249000,
     "derived": false,
@@ -388,6 +517,22 @@
    }
   },
   "2023Q3": {
+   "eps_diluted": {
+    "value": -0.09,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-24-032782",
+    "filed": "2024-10-31"
+   },
+   "revenue": {
+    "value": 35128000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-24-032782",
+    "filed": "2024-10-31"
+   },
    "net_income_common": {
     "value": -881000,
     "derived": false,
@@ -422,6 +567,23 @@
    }
   },
   "2023Q4": {
+   "eps_diluted": {
+    "value": -0.09,
+    "derived": true,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-K",
+    "accn": "0001437749-25-003988",
+    "filed": "2025-02-14",
+    "approx": true
+   },
+   "revenue": {
+    "value": 34867000,
+    "derived": true,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-K",
+    "accn": "0001437749-25-003988",
+    "filed": "2025-02-14"
+   },
    "net_income_common": {
     "value": -1083000,
     "derived": true,
@@ -456,6 +618,22 @@
    }
   },
   "2024Q1": {
+   "eps_diluted": {
+    "value": -0.09,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-25-016113",
+    "filed": "2025-05-12"
+   },
+   "revenue": {
+    "value": 35760000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-25-016113",
+    "filed": "2025-05-12"
+   },
    "net_income_common": {
     "value": -1011000,
     "derived": false,
@@ -490,6 +668,22 @@
    }
   },
   "2024Q2": {
+   "eps_diluted": {
+    "value": -0.06,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-25-025574",
+    "filed": "2025-08-08"
+   },
+   "revenue": {
+    "value": 37346000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-25-025574",
+    "filed": "2025-08-08"
+   },
    "net_income_common": {
     "value": -660000,
     "derived": false,
@@ -524,6 +718,22 @@
    }
   },
   "2024Q3": {
+   "eps_diluted": {
+    "value": -0.05,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-25-034911",
+    "filed": "2025-11-14"
+   },
+   "revenue": {
+    "value": 37622000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-25-034911",
+    "filed": "2025-11-14"
+   },
    "net_income_common": {
     "value": -412000,
     "derived": false,
@@ -558,6 +768,23 @@
    }
   },
   "2024Q4": {
+   "eps_diluted": {
+    "value": -0.05,
+    "derived": true,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-K",
+    "accn": "0001437749-26-005856",
+    "filed": "2026-02-26",
+    "approx": true
+   },
+   "revenue": {
+    "value": 38047000,
+    "derived": true,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-K",
+    "accn": "0001437749-26-005856",
+    "filed": "2026-02-26"
+   },
    "net_income_common": {
     "value": -418000,
     "derived": true,
@@ -596,6 +823,14 @@
     "value": -0.86,
     "derived": false,
     "concept": "EarningsPerShareDiluted",
+    "form": "10-Q",
+    "accn": "0001437749-26-017036",
+    "filed": "2026-05-14"
+   },
+   "revenue": {
+    "value": 39398000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
     "form": "10-Q",
     "accn": "0001437749-26-017036",
     "filed": "2026-05-14"
@@ -642,6 +877,14 @@
     "accn": "0001437749-26-026249",
     "filed": "2026-08-06"
    },
+   "revenue": {
+    "value": 39036000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-26-026249",
+    "filed": "2026-08-06"
+   },
    "net_income_common": {
     "value": -516000,
     "derived": false,
@@ -684,6 +927,14 @@
     "accn": "0001437749-26-034925",
     "filed": "2026-11-04"
    },
+   "revenue": {
+    "value": 37698000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-26-034925",
+    "filed": "2026-11-04"
+   },
    "net_income_common": {
     "value": -1751000,
     "derived": false,
@@ -710,6 +961,23 @@
    }
   },
   "2025Q4": {
+   "eps_diluted": {
+    "value": -0.31,
+    "derived": true,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-K",
+    "accn": "0001437749-26-005856",
+    "filed": "2026-02-26",
+    "approx": true
+   },
+   "revenue": {
+    "value": 37070000,
+    "derived": true,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-K",
+    "accn": "0001437749-26-005856",
+    "filed": "2026-02-26"
+   },
    "net_income_common": {
     "value": -4285000,
     "derived": true,
@@ -752,6 +1020,14 @@
     "accn": "0001437749-26-017036",
     "filed": "2026-05-14"
    },
+   "revenue": {
+    "value": 38115000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-26-017036",
+    "filed": "2026-05-14"
+   },
    "net_income_common": {
     "value": -4238000,
     "derived": false,
@@ -786,6 +1062,22 @@
    }
   },
   "2026Q2": {
+   "eps_diluted": {
+    "value": -0.19,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-26-026249",
+    "filed": "2026-08-06"
+   },
+   "revenue": {
+    "value": 38575000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-26-026249",
+    "filed": "2026-08-06"
+   },
    "net_income_common": {
     "value": -2383000,
     "derived": false,
@@ -820,6 +1112,22 @@
    }
   },
   "2026Q3": {
+   "eps_diluted": {
+    "value": -0.18,
+    "derived": false,
+    "concept": "EarningsPerShareBasic",
+    "form": "10-Q",
+    "accn": "0001437749-26-034925",
+    "filed": "2026-11-04"
+   },
+   "revenue": {
+    "value": 40484000,
+    "derived": false,
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "form": "10-Q",
+    "accn": "0001437749-26-034925",
+    "filed": "2026-11-04"
+   },
    "net_income_common": {
     "value": -2249000,
     "derived": false,

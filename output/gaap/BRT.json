@@ -47,6 +47,14 @@
     "accn": "0000014846-22-000053",
     "filed": "2022-11-09"
    },
+   "interest_expense": {
+    "value": 1660000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-23-000005",
+    "filed": "2023-03-15"
+   },
    "total_debt": {
     "value": 129698000,
     "derived": false,
@@ -96,6 +104,14 @@
     "form": "10-Q",
     "accn": "0000014846-22-000053",
     "filed": "2022-11-09"
+   },
+   "interest_expense": {
+    "value": 1609000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-23-000005",
+    "filed": "2023-03-15"
    },
    "total_debt": {
     "value": 114745000,
@@ -147,6 +163,14 @@
     "accn": "0000014846-22-000053",
     "filed": "2022-11-09"
    },
+   "interest_expense": {
+    "value": 1535000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-23-000005",
+    "filed": "2023-03-15"
+   },
    "total_debt": {
     "value": 134193000,
     "derived": false,
@@ -185,6 +209,14 @@
     "value": -1225000,
     "derived": true,
     "concept": "NetIncomeLossAvailableToCommonStockholdersDiluted",
+    "form": "10-K",
+    "accn": "0000014846-23-000005",
+    "filed": "2023-03-15"
+   },
+   "interest_expense": {
+    "value": 1953000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
     "form": "10-K",
     "accn": "0000014846-23-000005",
     "filed": "2023-03-15"
@@ -239,6 +271,14 @@
     "accn": "0000014846-23-000040",
     "filed": "2023-11-06"
    },
+   "interest_expense": {
+    "value": 2021000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-24-000019",
+    "filed": "2024-03-14"
+   },
    "total_debt": {
     "value": 211565000,
     "derived": false,
@@ -288,6 +328,14 @@
     "form": "10-Q",
     "accn": "0000014846-23-000040",
     "filed": "2023-11-06"
+   },
+   "interest_expense": {
+    "value": 2912000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-24-000019",
+    "filed": "2024-03-14"
    },
    "total_debt": {
     "value": 296974000,
@@ -339,6 +387,14 @@
     "accn": "0000014846-23-000040",
     "filed": "2023-11-06"
    },
+   "interest_expense": {
+    "value": 5061000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-24-000019",
+    "filed": "2024-03-14"
+   },
    "total_debt": {
     "value": 419115000,
     "derived": false,
@@ -377,6 +433,14 @@
     "value": -4007000,
     "derived": true,
     "concept": "NetIncomeLossAvailableToCommonStockholdersDiluted",
+    "form": "10-K",
+    "accn": "0000014846-24-000019",
+    "filed": "2024-03-14"
+   },
+   "interest_expense": {
+    "value": 5520000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
     "form": "10-K",
     "accn": "0000014846-24-000019",
     "filed": "2024-03-14"
@@ -431,6 +495,14 @@
     "accn": "0000014846-24-000061",
     "filed": "2024-11-07"
    },
+   "interest_expense": {
+    "value": 5483000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-25-000005",
+    "filed": "2025-03-12"
+   },
    "total_debt": {
     "value": 423820000,
     "derived": false,
@@ -480,6 +552,14 @@
     "form": "10-Q",
     "accn": "0000014846-24-000061",
     "filed": "2024-11-07"
+   },
+   "interest_expense": {
+    "value": 5513000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-25-000005",
+    "filed": "2025-03-12"
    },
    "total_debt": {
     "value": 423383000,
@@ -531,6 +611,14 @@
     "accn": "0000014846-24-000061",
     "filed": "2024-11-07"
    },
+   "interest_expense": {
+    "value": 5581000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-25-000005",
+    "filed": "2025-03-12"
+   },
    "total_debt": {
     "value": 422935000,
     "derived": false,
@@ -569,6 +657,14 @@
     "value": -2422000,
     "derived": true,
     "concept": "NetIncomeLossAvailableToCommonStockholdersDiluted",
+    "form": "10-K",
+    "accn": "0000014846-25-000005",
+    "filed": "2025-03-12"
+   },
+   "interest_expense": {
+    "value": 5584000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
     "form": "10-K",
     "accn": "0000014846-25-000005",
     "filed": "2025-03-12"
@@ -623,6 +719,14 @@
     "accn": "0000014846-25-000037",
     "filed": "2025-11-06"
    },
+   "interest_expense": {
+    "value": 5523000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-25-000012",
+    "filed": "2025-05-08"
+   },
    "total_debt": {
     "value": 421835000,
     "derived": false,
@@ -672,6 +776,14 @@
     "form": "10-Q",
     "accn": "0000014846-25-000037",
     "filed": "2025-11-06"
+   },
+   "interest_expense": {
+    "value": 5500000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-25-000027",
+    "filed": "2025-08-07"
    },
    "total_debt": {
     "value": 421250000,
@@ -723,6 +835,14 @@
     "accn": "0000014846-25-000037",
     "filed": "2025-11-06"
    },
+   "interest_expense": {
+    "value": 5745000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-25-000037",
+    "filed": "2025-11-06"
+   },
    "total_debt": {
     "value": 447147000,
     "derived": false,
@@ -764,6 +884,14 @@
     "form": "10-K",
     "accn": "0000014846-26-000007",
     "filed": "2026-03-13"
+   },
+   "interest_expense": {
+    "value": 5828000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-K",
+    "accn": "0000014846-25-000005",
+    "filed": "2025-03-12"
    },
    "total_debt": {
     "value": 446471000,
@@ -815,6 +943,14 @@
     "accn": "0000014846-26-000048",
     "filed": "2026-11-05"
    },
+   "interest_expense": {
+    "value": 5676000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-26-000017",
+    "filed": "2026-05-07"
+   },
    "total_debt": {
     "value": 445711000,
     "derived": false,
@@ -864,6 +1000,14 @@
     "form": "10-Q",
     "accn": "0000014846-26-000048",
     "filed": "2026-11-05"
+   },
+   "interest_expense": {
+    "value": 5707000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-26-000037",
+    "filed": "2026-08-10"
    },
    "total_debt": {
     "value": 444983000,
@@ -915,6 +1059,14 @@
     "accn": "0000014846-26-000048",
     "filed": "2026-11-05"
    },
+   "interest_expense": {
+    "value": 5882000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-26-000048",
+    "filed": "2026-11-05"
+   },
    "total_debt": {
     "value": 443803000,
     "derived": false,
@@ -954,6 +1106,14 @@
     "value": -4105000,
     "derived": true,
     "concept": "NetIncomeLossAvailableToCommonStockholdersDiluted",
+    "form": "10-K",
+    "accn": "0000014846-26-000007",
+    "filed": "2026-03-13"
+   },
+   "interest_expense": {
+    "value": 6246000,
+    "derived": true,
+    "concept": "FinancingInterestExpense",
     "form": "10-K",
     "accn": "0000014846-26-000007",
     "filed": "2026-03-13"
@@ -1008,6 +1168,14 @@
     "accn": "0000014846-26-000048",
     "filed": "2026-11-05"
    },
+   "interest_expense": {
+    "value": 5960000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-26-000017",
+    "filed": "2026-05-07"
+   },
    "total_debt": {
     "value": 470200000,
     "derived": false,
@@ -1050,6 +1218,14 @@
     "accn": "0000014846-26-000048",
     "filed": "2026-11-05"
    },
+   "interest_expense": {
+    "value": 5993000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
+    "form": "10-Q",
+    "accn": "0000014846-26-000037",
+    "filed": "2026-08-10"
+   },
    "total_debt": {
     "value": 469352000,
     "derived": false,
@@ -1088,6 +1264,14 @@
     "value": 0.25,
     "derived": false,
     "concept": "CommonStockDividendsPerShareCashPaid",
+    "form": "10-Q",
+    "accn": "0000014846-26-000048",
+    "filed": "2026-11-05"
+   },
+   "interest_expense": {
+    "value": 6302000,
+    "derived": false,
+    "concept": "FinancingInterestExpense",
     "form": "10-Q",
     "accn": "0000014846-26-000048",
     "filed": "2026-11-05"

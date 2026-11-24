@@ -32,10 +32,13 @@ OUT_DIR = config.OUTPUT_DIR / "gaap"
 METRICS: dict[str, dict] = {
     "eps_diluted": {"label": "Diluted EPS", "unit": "USD/shares", "kind": "duration", "per_share": True,
                     "concepts": ["EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted",
-                                 "IncomeLossFromContinuingOperationsPerDilutedShare"]},
+                                 "IncomeLossFromContinuingOperationsPerDilutedShare", "EarningsPerShareBasic"],
+                    "fill_only": ["EarningsPerShareBasic"]},   # some small REITs tag only basic EPS (no dilutive securities)
     "revenue": {"label": "Total revenue", "unit": "USD", "kind": "duration",
                 "concepts": ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax",
-                             "OperatingLeaseLeaseIncome", "RealEstateRevenueNet", "OperatingLeasesIncomeStatementLeaseRevenue"]},
+                             "OperatingLeaseLeaseIncome", "RealEstateRevenueNet", "OperatingLeasesIncomeStatementLeaseRevenue",
+                             "RevenueFromContractWithCustomerIncludingAssessedTax"],
+                "prefer": "largest"},   # contract revenue is often only a REIT's small non-lease revenue
     "net_income_common": {"label": "Net income to common shareholders", "unit": "USD", "kind": "duration",
                           "concepts": ["NetIncomeLossAvailableToCommonStockholdersDiluted",
                                        "NetIncomeLossAvailableToCommonStockholdersBasic", "NetIncomeLoss"]},
@@ -43,7 +46,7 @@ METRICS: dict[str, dict] = {
                      "concepts": ["CommonStockDividendsPerShareDeclared", "CommonStockDividendsPerShareCashPaid"]},
     "interest_expense": {"label": "Interest expense", "unit": "USD", "kind": "duration",
                          "concepts": ["InterestExpense", "InterestExpenseNonoperating", "InterestExpenseDebt",
-                                      "InterestExpenseOperating"]},
+                                      "InterestExpenseOperating", "FinancingInterestExpense"]},
     "total_debt": {"label": "Total debt", "unit": "USD", "kind": "instant",
                    "concepts": ["LongTermDebt", "DebtInstrumentCarryingAmount", "DebtLongtermAndShorttermCombinedAmount",
                                 ("SecuredDebt", "UnsecuredDebt"), "NotesPayable", "SecuredDebt"],
@@ -131,7 +134,13 @@ def metrics_for(facts: dict, quarters: list[Quarter]) -> dict[str, dict]:
         cache: dict = {}
         found = {c: {str(q): v for q in quarters if (v := _concept_value(facts, c, spec, q, cache))} for c in spec["concepts"]}
         main = [c for c in spec["concepts"] if c not in spec.get("fill_only", [])]
-        order = sorted(main, key=lambda c: (-len(found[c]), spec["concepts"].index(c))) + spec.get("fill_only", [])
+        if spec.get("prefer") == "largest":   # a component can cover as many quarters as the total does
+            most = max((len(found[c]) for c in main), default=0)
+            med = lambda c: sorted(abs(v["value"]) for v in found[c].values())[len(found[c]) // 2] if found[c] else 0
+            order = sorted(main, key=lambda c: (len(found[c]) < 0.7 * most, -med(c)))
+        else:
+            order = sorted(main, key=lambda c: (-len(found[c]), spec["concepts"].index(c)))
+        order += spec.get("fill_only", [])
         for q in quarters:
             for c in order:
                 v = found[c].get(str(q))

@@ -41,7 +41,9 @@ def main(argv=None) -> int:
         p = EXTRACT_DIR / f"{r['ticker']}_{r['quarter']}.json"
         if args.redo or not p.exists():
             return True
-        return json.loads(p.read_text())["extraction"].get("version") != EXTRACTION_VERSION
+        ext = json.loads(p.read_text())["extraction"]
+        # outdated, or saved without a share count (per-share figures impossible): extract again
+        return ext.get("version") != EXTRACTION_VERSION or not (ext.get("diluted_shares") or {}).get("amount")
 
     new = [r for r in todo if needs_extraction(r)]
     if new:
@@ -65,7 +67,7 @@ def main(argv=None) -> int:
         out_path = EXTRACT_DIR / f"{r['ticker']}_{r['quarter']}.json"
         q = Quarter.parse(r["quarter"])
         existing = json.loads(out_path.read_text()) if out_path.exists() else None
-        current = existing and existing["extraction"].get("version") == EXTRACTION_VERSION
+        current = existing and not needs_extraction(r)
         if current and not args.redo:
             result = existing
             result["restated"] = restate(result["extraction"])   # definition changes apply without re-extraction

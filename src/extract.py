@@ -158,6 +158,9 @@ def validate(ext: dict) -> list[str]:
             errors.append(f"{ext.get('affo_starts_from')} total + affo_adjustments = {affo_calc:,.0f} but affo_total = {ext['affo_total']['amount']:,.0f}")
     shares = ext["diluted_shares"]["amount"]
     rps = ext["reported_per_share"]
+    if not shares or shares <= 0:
+        errors.append("diluted_shares is missing: find the share (plus unit) count the company divides by for FFO "
+                      "per share; it is often in a separate share-count table or a footnote")
     for key, total in (("ffo", ext["ffo_total"]), ("core", ext.get("core_total")), ("affo", ext.get("affo_total"))):
         if total and rps.get(key) is not None and shares:
             calc = round(total["amount"] / shares, 2)

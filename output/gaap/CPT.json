@@ -24,9 +24,9 @@
     "filed": "2022-04-29"
    },
    "revenue": {
-    "value": 2206000,
+    "value": 267568000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-22-000022",
     "filed": "2022-04-29"
@@ -82,9 +82,9 @@
     "filed": "2022-07-29"
    },
    "revenue": {
-    "value": 2263000,
+    "value": 276523000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-22-000029",
     "filed": "2022-07-29"
@@ -140,9 +140,9 @@
     "filed": "2022-10-28"
    },
    "revenue": {
-    "value": 3248000,
+    "value": 294130000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-22-000042",
     "filed": "2022-10-28"
@@ -199,9 +199,9 @@
     "approx": true
    },
    "revenue": {
-    "value": 2815000,
+    "value": 305364000,
     "derived": true,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-K",
     "accn": "0000906345-24-000007",
     "filed": "2024-02-22"
@@ -258,9 +258,9 @@
     "filed": "2023-04-28"
    },
    "revenue": {
-    "value": 2450000,
+    "value": 311359000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-23-000026",
     "filed": "2023-04-28"
@@ -316,9 +316,9 @@
     "filed": "2023-08-04"
    },
    "revenue": {
-    "value": 1190000,
+    "value": 361716000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-23-000039",
     "filed": "2023-08-04"
@@ -374,9 +374,9 @@
     "filed": "2023-10-27"
    },
    "revenue": {
-    "value": 617000,
+    "value": 373772000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-23-000045",
     "filed": "2023-10-27"
@@ -433,9 +433,9 @@
     "approx": true
    },
    "revenue": {
-    "value": 931000,
+    "value": 375909000,
     "derived": true,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-K",
     "accn": "0000906345-25-000008",
     "filed": "2025-02-20"
@@ -492,9 +492,9 @@
     "filed": "2024-05-03"
    },
    "revenue": {
-    "value": 578000,
+    "value": 378163000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-24-000017",
     "filed": "2024-05-03"
@@ -550,9 +550,9 @@
     "filed": "2024-08-02"
    },
    "revenue": {
-    "value": 718000,
+    "value": 385499000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-24-000027",
     "filed": "2024-08-02"
@@ -608,9 +608,9 @@
     "filed": "2024-11-01"
    },
    "revenue": {
-    "value": 1077000,
+    "value": 390778000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-24-000041",
     "filed": "2024-11-01"
@@ -667,9 +667,9 @@
     "approx": true
    },
    "revenue": {
-    "value": 1078000,
+    "value": 387587000,
     "derived": true,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-K",
     "accn": "0001628280-26-007697",
     "filed": "2026-02-12"
@@ -726,9 +726,9 @@
     "filed": "2025-05-02"
    },
    "revenue": {
-    "value": 1284000,
+    "value": 383141000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-25-000023",
     "filed": "2025-05-02"
@@ -784,9 +784,9 @@
     "filed": "2025-08-01"
    },
    "revenue": {
-    "value": 2606000,
+    "value": 387150000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0000906345-25-000034",
     "filed": "2025-08-01"
@@ -842,9 +842,9 @@
     "filed": "2025-11-07"
    },
    "revenue": {
-    "value": 1707000,
+    "value": 387232000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-25-050524",
     "filed": "2025-11-07"
@@ -901,9 +901,9 @@
     "approx": true
    },
    "revenue": {
-    "value": 1540000,
+    "value": 386319000,
     "derived": true,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-K",
     "accn": "0001628280-26-007697",
     "filed": "2026-02-12"
@@ -960,9 +960,9 @@
     "filed": "2026-05-01"
    },
    "revenue": {
-    "value": 2487000,
+    "value": 390565000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-26-029188",
     "filed": "2026-05-01"
@@ -1018,9 +1018,9 @@
     "filed": "2026-07-31"
    },
    "revenue": {
-    "value": 2633000,
+    "value": 396509000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-26-051327",
     "filed": "2026-07-31"
@@ -1076,9 +1076,9 @@
     "filed": "2026-11-06"
    },
    "revenue": {
-    "value": 2565000,
+    "value": 395676000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-26-071470",
     "filed": "2026-11-06"
@@ -1135,9 +1135,9 @@
     "approx": true
    },
    "revenue": {
-    "value": 5282000,
+    "value": 390794000,
     "derived": true,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-K",
     "accn": "0001628280-26-007697",
     "filed": "2026-02-12"
@@ -1194,9 +1194,9 @@
     "filed": "2026-05-01"
    },
    "revenue": {
-    "value": 2143000,
+    "value": 388773000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-26-029188",
     "filed": "2026-05-01"
@@ -1252,9 +1252,9 @@
     "filed": "2026-07-31"
    },
    "revenue": {
-    "value": 3131000,
+    "value": 392944000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-26-051327",
     "filed": "2026-07-31"
@@ -1310,9 +1310,9 @@
     "filed": "2026-11-06"
    },
    "revenue": {
-    "value": 4377000,
+    "value": 381061000,
     "derived": false,
-    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "concept": "OperatingLeaseLeaseIncome",
     "form": "10-Q",
     "accn": "0001628280-26-071470",
     "filed": "2026-11-06"
